@@ -6,7 +6,12 @@
 \usepackage[english]{babel}
 
 % ── Font (Arial-like sans serif) ───────────────
-\usepackage{helvet}
+% \usepackage{helvet}
+% \renewcommand{\familydefault}{\sfdefault}
+\usepackage{fontspec}
+\setmainfont{Noto Sans}
+\setsansfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
 \renewcommand{\familydefault}{\sfdefault}
 
 % ── Page Geometry ──────────────────────────────
@@ -100,53 +105,28 @@ TODO
 
 \mainmatter
 
-\chapter{Vector Calculus}
+\chapter{Divergence}\label{chapter_divergence}
 
-\section{Gradient, Divergence, Curl}
 TODO
 
-\section{Integral Theorems}
+\section{Intuition}
+
 TODO
 
-\chapter{Hilbert Spaces}
+\subsection{Definition}
 
-\section{Inner Products and Norms}
 TODO
 
-\section{Linear Operators}
-TODO
+\chapter{Sample Section}
 
-\chapter{Special Functions}
 
-\section{Legendre Polynomials}
-TODO
-
-\section{Bessel Functions}
-TODO
-
-\chapter{Classical Mechanics}
-
-\section{Lagrangian Formulation}
-TODO
-
-\section{Hamiltonian Formulation}
-TODO
-
-\chapter{Quantum Mechanics}
-
-\section{The Schrödinger Equation}
-TODO
-
-\section{Angular Momentum}
+\section{Sample Subsection}
 TODO
 
 \appendix
-\chapter{Useful Identities}
+\chapter{Appendix A}
 
-\section{Vector Calculus Identities}
-TODO
-
-\section{Fourier Transform}
+\section{Sample section}
 TODO
 
 \backmatter
