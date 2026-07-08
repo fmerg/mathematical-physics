@@ -23,6 +23,7 @@
 \usepackage{mathtools}
 \usepackage{physics}
 \usepackage{siunitx}
+\usepackage{esint}
 
 % ── Graphics ───────────────────────────────────
 \usepackage{graphicx}
@@ -106,24 +107,69 @@ TODO
 
 \mainmatter
 
-\chapter{Divergence}\label{chapter_divergence}
+\chapter{Απόκλιση}\label{chapter_divergence}
 
-Η απόκλιση ενός διανυσματικού πεδίου είναι βαθμωτό μέγεθος
+Η απόκλιση ενός πεδίου είναι βαθμωτό μέγεθος
 που εκφράζει τον τοπικό ρυθμό μεταβολής του όγκου κατα μήκος
-της ροής του. Ακριβέστερα, σε δεδομένο σημείο του χώρου,
-απόκλιση είναι ο ρυθμός με τον οποίο αυξομοιώνεται
-ένα απειροστό στοιχείο όγκου καθώς παρασύρεται από
-τις δυναμικές γραμμές του πεδίου,
-όπου απειροστό σημαίνει εν προκειμένω αυθαίρετα συρρικνούμενο
+της ροής του. Ακριβέστερα, σε κάθε σημείο του χώρου,
+η απόκλιση ισούται με τον ρυθμό αυξομείωσης του απειροστού στοιχείου όγκου
+καθώς αυτό παρασύρεται από τις δυναμικές γραμμές του πεδίου,
+όπου απειροστό σημαίνει αυθαίρετα συρρικνούμενο
 γύρω από το εν λόγω σημείο.
+Η απόκλιση είναι θετική ή αρνητική
+αναλόγως του εάν το απειροστό στοιχείο διαστέλλεται ή συστέλλεται,
+και μηδενική εάν ο όγκος του παραμένει αναλλοίωτος
+(τουλάχιστον σε πρώτο βαθμό προσέγγισης).
+Σε κάθε περίπτωση, η απόλυτη τιμή της απόκλισης εκφράζει την ένταση
+με την οποία ο όγκος μεταβάλλεται ---αυξανόμενος ή μειούμενος---
+κατά μήκος της τοπικής ροής του πεδίου.
 
+Ισοδύναμα, η απόκλιση ποσοτικοποιεί τον βαθμό στον οποίο το πεδίο
+\textit{τείνει} να συμπεριφέρεται τοπικά ως ακτινική πηγή ή καταβόθρα:
+θετική απόκλιση σημαίνει ότι η τοπική απόκλιση των δυναμικών γραμμών
+υπερισχύει της σύγκλισης (οπότε η τοπική ροή διαστέλλει τον όγκο)
+ενώ αρνητική απόκλιση σημαίνει το αντίθετο
+(οπότε η τοπική ροή προκαλεί συστολή).
+Αυτό δε σημαίνει, λόγου χάρη, ότι
+εάν η απόκλιση είναι θετική σε κάποιο σημείο,
+τότε εκεί βρίσκεται πράγματι κάποια ακτινική πηγή,
+παρά μόνον ότι η εκροή του πεδίου μέσω της επιφάνειας
+του απειροστού στοιχείου όγκου είναι τελικά μεγαλύτερη από την εισροή.
+Ακτινική πηγή ή καταβόθρα είναι μια οριακή περίπτωση όπου τελικά
+\textit{όλες} οι δυναμικές γραμμές εισέρχονται ή εξέρχονται
+της επιφάνειας του στοιχείου όγκου καθώς αυτό συρρικνώνεται αυθαίρετα
+γύρω από το σημείο· ωστόσο,
+η απόκλιση από μόνη της δεν αρκεί για να διακρίνει
+μια ακτινική πηγή ή καταβόθρα
+από την τοπικά υπερισχύουσα διαστολή ή συστολή της ροής.
 
-απειροστού στοιχείου όγκου γύρω από το σημείο αυτό
-καθώς παρασύρεται από τις δυναμικές γραμμές του πεδίου.
+\begin{equation}
+\nabla \cdot \mathbf{F}(\mathbf{r}) = 
+\lim_{\Delta V \to 0} 
+\frac{1}{\Delta V}
+\oint_{\partial(\Delta V)} \mathbf{F} \cdot \hat{\mathbf{n}} \, dS
+\end{equation}
 
-that operates on a vector field, producing a scalar field giving the rate that the vector field alters the volume in an infinitesimal neighborhood of each point. (In 2D this "volume" refers to area.) More precisely, the divergence at a point is the rate that the flow of the vector field modifies a volume about the point in the limit, as a small volume shrinks down to the point.
+\begin{equation}
+\text{div} \, \boldsymbol{\xi}(\mathbf{p}) = 
+\lim_{\Delta V \to 0} 
+\frac{1}{\Delta V}
+\oint_{\partial(\Delta V)} \boldsymbol{\xi} \cdot \hat{\mathbf{n}} \, d\sigma
+\end{equation}
 
-In physical terms, the divergence of a vector field is the extent to which the vector field flux behaves like a source or a sink at a given point. It is a local measure of its "outgoingness" – the extent to which there are more of the field vectors exiting from an infinitesimal region of space than entering it. A point at which the flux is outgoing has positive divergence, and is often called a "source" of the field. A point at which the flux is directed inward has negative divergence, and is often called a "sink" of the field. The greater the flux of field through a small surface enclosing a given point, the greater the value of divergence at that point. A point at which there is zero flux through an enclosing surface has zero divergence.
+\begin{equation}
+\text{div} \, \xi(p) = 
+\lim_{\Delta V \to 0} 
+\frac{1}{\Delta V}
+\oint_{\partial(\Delta V)} \xi \cdot \hat{n} \, d\sigma
+\end{equation}
+
+\begin{equation}
+\text{div} \, \xi(p) = 
+\lim_{|V| \to 0} 
+\frac{1}{|V|}
+\oint_{\partial V} \xi^*(\hat{n}) \, d\sigma
+\end{equation}
 
 \section{Intuition}
 
