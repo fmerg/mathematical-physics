@@ -1,0 +1,159 @@
+\documentclass[10pt,a4paper,twoside,openany]{book}
+
+% ── Encoding and Language ──────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% ── Font (Arial-like sans serif) ───────────────
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ── Page Geometry ──────────────────────────────
+\usepackage[margin=2.5cm]{geometry}
+
+% ── Mathematics and Physics ────────────────────
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{siunitx}
+
+% ── Graphics ───────────────────────────────────
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ── Theorem Environments (shared counter) ──────
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+
+% ── Equation numbering within sections ─────────
+\numberwithin{equation}{section}
+
+% ── Hyperlinks (plain black) ───────────────────
+\usepackage[colorlinks=true,
+            linkcolor=black,
+            citecolor=black,
+            urlcolor=black]{hyperref}
+
+% ── Chapter Formatting (no "Chapter X") ────────
+\usepackage{titlesec}
+\titleformat{\chapter}
+  {\normalfont\large\bfseries}
+  {\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{4pt}
+
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\itshape}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{3pt}{1pt}
+
+% ── Tight Spacing ──────────────────────────────
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+% ── List Spacing ───────────────────────────────
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*,itemsep=0pt,topsep=0pt,parsep=0pt}
+
+% ── Plain Page Style ───────────────────────────
+\pagestyle{plain}
+
+% ── Title ──────────────────────────────────────
+\title{\normalsize\bfseries A Concise Introduction to\\[0.2em] Mathematical Physics}
+\author{Your Name}
+\date{\today}
+
+% ════════════════════════════════════════════════
+\begin{document}
+% ════════════════════════════════════════════════
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+TODO
+
+\mainmatter
+
+\chapter{Vector Calculus}
+
+\section{Gradient, Divergence, Curl}
+TODO
+
+\section{Integral Theorems}
+TODO
+
+\chapter{Hilbert Spaces}
+
+\section{Inner Products and Norms}
+TODO
+
+\section{Linear Operators}
+TODO
+
+\chapter{Special Functions}
+
+\section{Legendre Polynomials}
+TODO
+
+\section{Bessel Functions}
+TODO
+
+\chapter{Classical Mechanics}
+
+\section{Lagrangian Formulation}
+TODO
+
+\section{Hamiltonian Formulation}
+TODO
+
+\chapter{Quantum Mechanics}
+
+\section{The Schrödinger Equation}
+TODO
+
+\section{Angular Momentum}
+TODO
+
+\appendix
+\chapter{Useful Identities}
+
+\section{Vector Calculus Identities}
+TODO
+
+\section{Fourier Transform}
+TODO
+
+\backmatter
+
+\begin{thebibliography}{9}
+\addcontentsline{toc}{chapter}{Bibliography}
+% TODO: add references
+\end{thebibliography}
+
+\end{document}

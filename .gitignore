@@ -1,0 +1,8 @@
+# Ignore everything in this directory except for the following
+*
+!.gitignore
+!iacrtrans.cls
+!notes.tex
+!osst-eurocrypt.te
+# !refs.bib
+# !compile-biblio.sh
