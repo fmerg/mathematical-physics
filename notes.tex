@@ -11,6 +11,7 @@
 \usepackage{fontspec}
 \setmainfont{Noto Sans}
 \setsansfont{Noto Sans}
+\usepackage{microtype}
 \setmonofont{Noto Sans Mono}
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -57,17 +58,17 @@
 % ── Chapter Formatting (no "Chapter X") ────────
 \usepackage{titlesec}
 \titleformat{\chapter}
-  {\normalfont\large\bfseries}
+  {\normalfont\large\bfseries\raggedright}
   {\thechapter}{1em}{}
 \titlespacing*{\chapter}{0pt}{-20pt}{4pt}
 
 \titleformat{\section}
-  {\normalfont\normalsize\bfseries}
+  {\normalfont\normalsize\bfseries\raggedright}
   {\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{4pt}{2pt}
 
 \titleformat{\subsection}
-  {\normalfont\normalsize\itshape}
+  {\normalfont\normalsize\itshape\raggedright}
   {\thesubsection}{1em}{}
 \titlespacing*{\subsection}{0pt}{3pt}{1pt}
 
