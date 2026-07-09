@@ -5,25 +5,25 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 
-% ── Font (Arial-like sans serif) ───────────────
-% \usepackage{helvet}
-% \renewcommand{\familydefault}{\sfdefault}
-\usepackage{fontspec}
-\setmainfont{Noto Sans}
-\setsansfont{Noto Sans}
-\usepackage{microtype}
-\setmonofont{Noto Sans Mono}
-\renewcommand{\familydefault}{\sfdefault}
-
-% ── Page Geometry ──────────────────────────────
-\usepackage[margin=2.5cm]{geometry}
-
 % ── Mathematics and Physics ────────────────────
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathtools}
 \usepackage{physics}
 \usepackage{siunitx}
-\usepackage{esint}
+
+% ── Font (Arial-like, Greek-capable) ───────────
+\usepackage{fontspec}
+\setmainfont{Noto Sans}
+\setsansfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
+
+% ── Sans-serif for text, serif for math ────────
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathrm{Latin Modern Math}
+
+% ── Page Geometry ──────────────────────────────
+\usepackage[margin=2.5cm]{geometry}
 
 % ── Graphics ───────────────────────────────────
 \usepackage{graphicx}
