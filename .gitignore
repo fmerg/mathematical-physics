@@ -3,6 +3,6 @@
 !.gitignore
 !iacrtrans.cls
 !notes.tex
-!osst-eurocrypt.te
+!tensors.tex
 # !refs.bib
 # !compile-biblio.sh

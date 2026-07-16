@@ -118,30 +118,14 @@ TODO
 δηλαδή τον οριακό ρυθμό αυξομείωσης ενός ρέοντος χωρίου ανά μονάδα όγκου
 καθώς αυτό συρρικνώνεται αυθαίρετα γύρω από το υπό μελέτη σημείο.
 
+% \operatorname{div}\xi(p)
+% =
 \begin{equation}
-\text{div} \, \xi(p) = 
-\lim_{|V| \to 0} 
-\frac{1}{|V|}
-\frac{d}{dt}
-\oint_{\partial V} \xi^*(\hat{n}) \, d\sigma
-\end{equation}
-
-\begin{equation}
-\operatorname{div} \xi(p)
-=
-\lim_{\substack{|V| \to 0 \\ p \in V}}
-\frac{1}{|V|}
-\frac{d}{dt} \bigg|_{t=0}
-\|\phi_t(V)|
-\end{equation}
-
-\begin{equation}
-\operatorname{div}\xi(p)
-=
-\lim_{\substack{|V|\to 0 \\ p\in V}}
-\frac{1}{|V|}
+\lim_{\substack{V \to \{p\}}}
+\frac{1}{\operatorname{vol} (V)}
 \left.\frac{d}{dt}\right|_{t=0}
-\operatorname{Vol}\!\bigl(\phi_t(V)\bigr).
+\hspace{-10pt}
+\operatorname{vol} \bigl(\phi_t(V)\bigr)
 \end{equation}
 
 \noindent
@@ -215,21 +199,42 @@ TODO
 %πράγμα που δικαιολογεί την ονομασία των πεδίων
 %με ταυτοτικά μηδενική απόκλιση ως \textit{σωληνοειδή}.
 
-\section{Ογκομετρική μεταβολή και ροή πεδίου}
+\section{Ρυθμός ογκομετρικής μεταβολής και συνολική εκροή πεδίου}
+
+η μεταβολή του όγκου προέρχεται αποκλειστικά από την κανονική συνιστώσα της ταχύτητας πάνω στο σύνορο.
+
+\begin{equation}
+\left.\frac{d}{dt}\right|_{t=0}
+\hspace{-10pt}
+\operatorname{vol} \bigl(\phi_t(V)\bigr)
+=
+\int_{\partial V} \xi \cdot \hat{n} \,\, d\sigma
+\end{equation}
+
+%\section{Συνολική και κανονικοποιμένη ροή πεδίου}
+%
+%TODO
+
+\section{Τυπικός ορισμός της απόκλισης}
 
 TODO
 
-\section{Συνολική και κανονικοποιμένη ροή πεδίου}
-
-TODO
-
-\section{Ορισμός της απόκλισης}
-
-TODO
+\begin{equation}
+\operatorname{div}\xi(p)
+=
+\lim_{\substack{V \to \{p\}}}
+\frac{1}{\operatorname{vol} (V)}
+\hspace{-0pt}
+\int_{\partial V} \xi \cdot \hat{n} \,\, d\sigma
+\end{equation}
 
 \section{Θεώρημα Gauss-Ostrogradsky}
 
-TODO
+\begin{equation}
+\int_V \operatorname{div}\xi(p) \,\, dv
+=
+\int_{\partial V} \xi \cdot \hat{n} \,\, d\sigma
+\end{equation}
 
 \section{Εξίσωση της συνέχειας}
 
@@ -267,24 +272,624 @@ TODO
 \oint_{\partial V} \xi^*(\hat{n}) \, d\sigma
 \end{equation}
 
-\section{Intuition}
+
+\chapter{Στροβιλισμός}
+
+Ως \textit{στροβιλισμός} ενός διανυσματικού πεδίου εννοείται
+το διανυσματικό μέγεθος που εκφράζει τοπική τάση του πεδίου
+να προκαλεί ιδιοπεριστροφές,
+δηλαδή να περιστρέφει τα στοιχειώδη χωρία του μέσου
+γύρω από κάποιον στιγμαίο άξονά τους.
+Πιο συγκεκριμένα, σε κάθε σημείο το χώρου,
+ο στροβιλισμός ισούται με την σχετική ιδιοπεριστροφή υπό την επίδραση του πεδίου,
+δηλαδή την στιγμιαία ιδιοπεριστροφή ενός ρέοντος χωρίου ανα μονάδα όγκου
+καθώς αυτό συρρικνώνεται αυθαίρετα υπό το μελέτη σημείο.
+
+\begin{equation}
+\lim_{\substack{V \to \{p\}}}
+\frac{1}{\operatorname{vol} (V)}
+\hspace{-0pt}
+\int_{\partial V} \hat{n} \times \xi \,\, d\sigma
+\end{equation}
+
+
+ο στροβιλισμός είναι ανάλογος της στερεοσωματικής περιστροφής
+ενός στοιχείου όγκου υπό την επίδραση της ροής του πεδίου
+καθώς αυτή συρρικνώνεται αυθαίρετα γύρω από το μελέτη σημείο.
+
+
+\section{Ρυθμός κυκλοφοριακής ροής και μέσος εγκάρσιος όρος}
+TODO
+
+\section{Τυπικός ορισμός του στροβιλισμού}
 
 TODO
 
-\subsection{Definition}
+\section{Θεώρημα Kelvin-Stokes}
 
 TODO
 
-\chapter{Sample Section}
+\section{Εκφράσεις σε τοπικό σύστημα συντεταγμένων}
 
+\chapter{Τοπική Προσέγγιση Εμβαδού και Σύγκλιση Επιφανειακών Ολοκληρωμάτων}
 
-\section{Sample Subsection}
-TODO
+\section{Ασυμπτωτικός Συμβολισμός}
+
+Πριν προχωρήσουμε στην κυρίως ανάλυση, υπενθυμίζουμε τον ακριβή ορισμό του συμβολισμού \(O\) (μεγάλο όμικρον) που θα χρησιμοποιείται σε όλο το Παράρτημα.
+
+\begin{definition}[Συμβολισμός \(O\) για μικρές μεταβολές]
+Έστω \(E(\Delta u, \Delta v)\) πραγματική συνάρτηση ορισμένη σε μια περιοχή του \((0,0)\) και \(p \ge 0\) ακέραιος. Γράφουμε
+\[
+E(\Delta u, \Delta v) = O(h^p), \quad h = \max(|\Delta u|, |\Delta v|),
+\]
+αν υπάρχουν σταθερές \(C > 0\) και \(\delta > 0\) ώστε για όλα τα \(\Delta u, \Delta v\) με \(0 < h < \delta\) να ισχύει
+\[
+|E(\Delta u, \Delta v)| \le C \cdot h^p.
+\]
+\end{definition}
+
+\begin{remark}
+Στην περίπτωση του υπολοίπου Taylor, όπου η μεταβλητή απόστασης είναι \(\rho = \sqrt{\delta u^2 + \delta v^2}\), χρησιμοποιούμε τη σχέση \(\rho \le \sqrt{2} h\) για να μεταφράσουμε το φράγμα από \(O(\rho^2)\) σε \(O(h^2)\). Πράγματι, αν \(|R_1| \le M \rho^2\), τότε \(|R_1| \le M \cdot 2h^2 = (2M) h^2\), άρα \(R_1 = O(h^2)\).
+
+Σε καθολικές εκτιμήσεις, όπου έχουμε διαμέριση του χωρίου \(D\) σε \(N\) πλακίδια, το \(h\) δηλώνει τη μέγιστη διάμετρο των πλακιδίων: \(h = \max_i \operatorname{diam}(Q_i)\). Το πλήθος των πλακιδίων \(N\) ικανοποιεί \(N = O(h^{-2})\), δηλαδή υπάρχει σταθερά \(C'\) ώστε \(N \le C' h^{-2}\).
+\end{remark}
+
+\section{Γεωμετρική Εικόνα και Βασικοί Ορισμοί}
+
+Έστω μια κανονική \(C^2\)-παραμέτρηση επιφάνειας
+\[
+\mathbf{r} : D \subset \mathbb{R}^2 \to \mathbb{R}^3, \quad (u,v) \mapsto \mathbf{r}(u,v),
+\]
+όπου \(D\) είναι ανοικτό και φραγμένο χωρίο. Η κανονικότητα σημαίνει
+\[
+\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}, \quad \forall (u,v) \in D.
+\]
+
+Θεωρούμε σημείο \(p_0 = \mathbf{r}(u_0, v_0) \in \mathcal{S}\) και θετικές μεταβολές \(\Delta u, \Delta v\) αρκετά μικρές ώστε το ορθογώνιο
+\[
+R = [u_0, u_0+\Delta u] \times [v_0, v_0+\Delta v]
+\]
+να περιέχεται εξ ολοκλήρου στο \(D\).
+
+\begin{definition}[Στοιχειώδη Πλακίδια]
+\begin{enumerate}
+\item \textbf{Παραμετρικό πλακίδιο} \(Q\): η εικόνα του ορθογωνίου \(R\) μέσω της \(\mathbf{r}\),
+\[
+Q = \mathbf{r}(R) = \{ \mathbf{r}(u,v) : (u,v) \in R \}.
+\]
+\item \textbf{Εφαπτόμενο πλακίδιο} \(P\): το παραλληλόγραμμο στον εφαπτόμενο χώρο \(T_{p_0}\mathcal{S}\) που παράγεται από τα διανύσματα
+\[
+\mathbf{r}_u(p_0)\Delta u, \quad \mathbf{r}_v(p_0)\Delta v.
+\]
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Συναρτήσεις Μέτρου]
+\begin{enumerate}
+\item \textbf{Συνάρτηση εμβαδικού στοιχείου:}
+\[
+f(u,v) = \| \mathbf{r}_u(u,v) \times \mathbf{r}_v(u,v) \|.
+\]
+\item \textbf{Γενικευμένη συνάρτηση μέτρου για βαθμωτό πεδίο} \(g: \mathcal{S} \to \mathbb{R}\):
+\[
+F(u,v) = g(\mathbf{r}(u,v)) \cdot f(u,v).
+\]
+\end{enumerate}
+\end{definition}
+
+Εφόσον η \(\mathbf{r}\) είναι \(C^2\) και \(f > 0\) (από κανονικότητα), η \(f\) είναι \(C^2\) στο \(D\). Αν επιπλέον η \(g \circ \mathbf{r}\) είναι \(C^2\), τότε και η \(F\) είναι \(C^2\).
+
+\section{Τοπική Προσέγγιση του Εμβαδού}
+
+Το πραγματικό εμβαδόν του καμπυλόγραμμου πλακιδίου \(Q\) είναι
+\[
+A(Q) = \iint_Q d\mathcal{A} = \int_{v_0}^{v_0+\Delta v} \int_{u_0}^{u_0+\Delta u} f(u,v) \, du \, dv.
+\]
+
+Το εμβαδόν του εφαπτόμενου πλακιδίου \(P\) είναι
+\[
+A(P) = \| \mathbf{r}_u \times \mathbf{r}_v \|_{p_0} \, \Delta u \, \Delta v = f(p_0) \, \Delta u \, \Delta v.
+\]
+
+\begin{theorem}[Τοπικό σφάλμα για το εμβαδόν]
+\label{thm:local_area}
+Θέτουμε \(h = \max(\Delta u, \Delta v)\). Τότε
+\[
+A(Q) = A(P) + O(h^3).
+\]
+\end{theorem}
+
+\begin{proof}
+Αναπτύσσουμε την \(f\) κατά Taylor γύρω από το \(p_0 = (u_0, v_0)\). Για \(\delta u = u - u_0, \delta v = v - v_0\),
+\[
+f(u,v) = f(p_0) + f_u(p_0)\,\delta u + f_v(p_0)\,\delta v + R_1(\delta u, \delta v),
+\]
+όπου το υπόλοιπο \(R_1\) ορίζεται ως η διαφορά της \(f\) από το γραμμικό της μέρος:
+\[
+R_1(\delta u, \delta v) = f(u,v) - \left[ f(p_0) + f_u(p_0)\delta u + f_v(p_0)\delta v \right].
+\]
+
+Εφόσον η \(f\) είναι \(C^2\) στο \(D\), οι δεύτερες παράγωγοί της είναι συνεχείς και φραγμένες σε κάθε συμπαγές υποσύνολο του \(D\). Από το θεώρημα Taylor για \(C^2\) συναρτήσεις, υπάρχει σταθερά \(M\) (ανεξάρτητη των \(\delta u, \delta v\) για μικρές μεταβολές) ώστε
+\[
+|R_1(\delta u, \delta v)| \le M \cdot (\delta u^2 + \delta v^2).
+\]
+Ισοδύναμα, με \(\rho = \sqrt{\delta u^2 + \delta v^2}\),
+\[
+R_1(\delta u, \delta v) = O(\rho^2).
+\]
+
+Μετατοπίζουμε το χωρίο ολοκλήρωσης στην αρχή και ολοκληρώνουμε:
+\[
+A(Q) = \int_0^{\Delta v} \int_0^{\Delta u} \left[ f(p_0) + f_u(p_0)\,\delta u + f_v(p_0)\,\delta v + R_1 \right] d\delta u \, d\delta v.
+\]
+
+Υπολογίζουμε κάθε όρο χωριστά.
+
+\begin{enumerate}
+\item \textbf{Σταθερός όρος:}
+\[
+\int_0^{\Delta v} \int_0^{\Delta u} f(p_0) \, d\delta u \, d\delta v = f(p_0) \Delta u \Delta v = A(P).
+\]
+
+\item \textbf{Γραμμικοί όροι:}
+\[
+f_u(p_0) \int_0^{\Delta v} \int_0^{\Delta u} \delta u \, d\delta u \, d\delta v = f_u(p_0) \cdot \Delta v \cdot \frac{(\Delta u)^2}{2},
+\]
+\[
+f_v(p_0) \int_0^{\Delta v} \int_0^{\Delta u} \delta v \, d\delta u \, d\delta v = f_v(p_0) \cdot \Delta u \cdot \frac{(\Delta v)^2}{2}.
+\]
+Αυτοί είναι τάξης \(O(h^3)\), διότι π.χ. \(|\Delta v| (\Delta u)^2 \le h \cdot h^2 = h^3\).
+
+\item \textbf{Υπόλοιπο:}
+Λόγω της \(R_1 = O(\rho^2)\) και της \(\rho \le \sqrt{2}h\) στο χωρίο ολοκλήρωσης, έχουμε \(R_1 = O(h^2)\) (βλ. Παρατήρηση Α.1). Το διπλό ολοκλήρωμα του υπολοίπου είναι
+\[
+\int_0^{\Delta v} \int_0^{\Delta u} O(h^2) \, d\delta u \, d\delta v = O(h^2) \cdot \Delta u \Delta v = O(h^2) \cdot O(h^2) = O(h^4),
+\]
+αμελητέο συγκρινόμενο με το \(O(h^3)\).
+\end{enumerate}
+
+Επομένως,
+\[
+A(Q) - A(P) = f_u(p_0) \frac{(\Delta u)^2 \Delta v}{2} + f_v(p_0) \frac{\Delta u (\Delta v)^2}{2} + O(h^4) = O(h^3).
+\]
+\end{proof}
+
+\textbf{Γεωμετρική ερμηνεία.} Το κύριο μέρος του σφάλματος προέρχεται από τη μεταβολή του μήκους του καθέτου διανύσματος κατά μήκος του πλακιδίου (πρώτες παράγωγοι της \(f\)). Αυτή η μεταβολή ολοκληρώνεται και δίνει όρους τάξης \(h^3\), δηλαδή μία τάξη μικρότερους από το ίδιο το εμβαδόν (\(h^2\)). Οι δεύτερες παράγωγοι (καμπυλότητα) συνεισφέρουν μόνο σε όρους \(h^4\) και άνω.
+
+\section{Γενίκευση: Επιφανειακό Ολοκλήρωμα Βαθμωτής Συνάρτησης}
+
+\subsection{Τοπική Προσέγγιση}
+
+Έστω \(g: \mathcal{S} \to \mathbb{R}\) βαθμωτή συνάρτηση τέτοια ώστε η σύνθεση \(g \circ \mathbf{r}\) να είναι \(C^2\) στο \(D\). Το επιφανειακό ολοκλήρωμα της \(g\) στο πλακίδιο \(Q\) είναι
+\[
+I_g(Q) = \iint_Q g \, d\mathcal{A} = \int_{v_0}^{v_0+\Delta v} \int_{u_0}^{u_0+\Delta u} g(\mathbf{r}(u,v)) \, f(u,v) \, du \, dv.
+\]
+
+Η διακριτή προσέγγιση χρησιμοποιεί την τιμή της \(g\) στο σημείο βάσης \(p_0\) και το εμβαδόν του εφαπτόμενου πλακιδίου:
+\[
+I_g(P) = g(p_0) \cdot A(P) = g(p_0) \, f(p_0) \, \Delta u \, \Delta v.
+\]
+
+\begin{theorem}[Τοπικό σφάλμα για βαθμωτή συνάρτηση]
+\label{thm:local_scalar}
+Έστω \(F(u,v) = g(\mathbf{r}(u,v)) \cdot f(u,v)\) και υποθέτουμε ότι η \(F\) είναι \(C^2\) στο \(D\). Τότε, με \(h = \max(\Delta u, \Delta v)\),
+\[
+I_g(Q) = I_g(P) + O(h^3).
+\]
+\end{theorem}
+
+\begin{proof}
+Η απόδειξη είναι πανομοιότυπη με αυτήν του Θεωρήματος \ref{thm:local_area}, αντικαθιστώντας την \(f\) με την \(F\). Αναπτύσσουμε την \(F\) κατά Taylor γύρω από το \(p_0\):
+\[
+F(u,v) = F(p_0) + F_u(p_0)\,\delta u + F_v(p_0)\,\delta v + R_1^F(\delta u, \delta v),
+\]
+όπου \(F(p_0) = g(p_0) f(p_0)\). Λόγω της \(C^2\)-ομαλότητας, \(R_1^F = O(\rho^2)\). Ολοκληρώνοντας, ο σταθερός όρος δίνει \(I_g(P)\), οι γραμμικοί όροι δίνουν \(O(h^3)\) και το υπόλοιπο \(O(h^4)\).
+\end{proof}
+
+\subsection{Καθολική Σύγκλιση}
+
+Θεωρούμε διαμέριση του \(D\) σε \(N\) ορθογώνια \(Q_i\) (\(i=1,\dots,N\)), με πλευρές \(\Delta u_i, \Delta v_i\). Η μέγιστη διάμετρος της διαμέρισης είναι
+\[
+h = \max_i \operatorname{diam}(Q_i) = \max_i \max(\Delta u_i, \Delta v_i).
+\]
+
+Σε κάθε \(Q_i\) επιλέγουμε την κάτω αριστερή κορυφή \((u_i, v_i)\) και ορίζουμε το διακριτό άθροισμα
+\[
+I_h(g) = \sum_{i=1}^N g(\mathbf{r}(u_i, v_i)) \, f(u_i, v_i) \, \Delta u_i \Delta v_i.
+\]
+
+\begin{theorem}[Σύγκλιση επιφανειακού ολοκληρώματος βαθμωτής συνάρτησης]
+\label{thm:global_scalar}
+Υπό την προϋπόθεση ότι η \(F = (g \circ \mathbf{r}) \cdot f\) είναι \(C^2\) στο \(D\),
+\[
+\lim_{h \to 0} I_h(g) = \iint_{\mathcal{S}} g \, d\mathcal{A} = \iint_D g(\mathbf{r}(u,v)) \, f(u,v) \, du \, dv.
+\]
+\end{theorem}
+
+\begin{proof}
+Το συνολικό σφάλμα είναι
+\[
+\mathcal{E}_h = \left| \iint_{\mathcal{S}} g \, d\mathcal{A} - I_h(g) \right| \le \sum_{i=1}^N \left| I_g(Q_i) - I_g(P_i) \right|.
+\]
+
+Από το Θεώρημα \ref{thm:local_scalar}, για κάθε πλακίδιο υπάρχει σταθερά \(K\) (ανεξάρτητη του \(i\), λόγω της \(C^2\)-ομαλότητας της \(F\) στο συμπαγές \(\overline{D}\)) ώστε
+\[
+|E_i| = |I_g(Q_i) - I_g(P_i)| \le K (\operatorname{diam} Q_i)^3 \le K h^3.
+\]
+
+Το πλήθος \(N\) των πλακιδίων ικανοποιεί \(N = O(h^{-2})\), διότι το συνολικό εμβαδόν του \(D\) είναι πεπερασμένο και κάθε \(Q_i\) έχει εμβαδόν \(\Delta u_i \Delta v_i = O(h^2)\). Αυστηρότερα, υπάρχει σταθερά \(C\) ώστε \(N \le C h^{-2}\) για όλες τις αρκετά λεπτές διαμερίσεις.
+
+Συνεπώς,
+\[
+\mathcal{E}_h \le \sum_{i=1}^N K h^3 = N \cdot K h^3 \le (C h^{-2}) \cdot K h^3 = CK h.
+\]
+
+Καθώς \(h \to 0\), το δεξιό μέλος τείνει στο μηδέν.
+\end{proof}
+
+\begin{corollary}[Σύγκλιση για το εμβαδόν]
+Για \(g \equiv 1\), έχουμε \(F = f\) και το διακριτό άθροισμα
+\[
+A_h(\mathcal{S}) = \sum_{i=1}^N f(u_i, v_i) \Delta u_i \Delta v_i
+\]
+συγκλίνει στο εμβαδόν
+\[
+A(\mathcal{S}) = \iint_D f(u,v) \, du \, dv.
+\]
+\end{corollary}
+
+\subsection{Ανεξαρτησία από την Παραμέτρηση}
+
+Το επιφανειακό ολοκλήρωμα που ορίσαμε είναι ανεξάρτητο από την επιλογή της \(C^2\)-παραμέτρησης. Πράγματι, αν \(\tilde{\mathbf{r}} : \tilde{D} \to \mathcal{S}\) είναι μια άλλη κανονική \(C^2\)-παραμέτρηση, η απεικόνιση αλλαγής συντεταγμένων \(\phi = \tilde{\mathbf{r}}^{-1} \circ \mathbf{r} : D \to \tilde{D}\) είναι \(C^1\)-αμφιδιαφόριση. Το θεώρημα αλλαγής μεταβλητών για πολλαπλά ολοκληρώματα δίνει
+\[
+\iint_D g(\mathbf{r}(u,v)) \|\mathbf{r}_u \times \mathbf{r}_v\| \, du \, dv = \iint_{\tilde{D}} g(\tilde{\mathbf{r}}(\tilde{u},\tilde{v})) \|\tilde{\mathbf{r}}_{\tilde{u}} \times \tilde{\mathbf{r}}_{\tilde{v}}\| \, d\tilde{u} \, d\tilde{v},
+\]
+αφού η Ιακωβιανή ορίζουσα της αλλαγής συντεταγμένων ακριβώς αντισταθμίζει τον μετασχηματισμό του στοιχείου εμβαδού. Επομένως το ολοκλήρωμα είναι γεωμετρική ποσότητα, ανεξάρτητη της παραμετρικοποίησης.
+
+\section{Επιφανειακό Ολοκλήρωμα Διανυσματικής Συνάρτησης}
+
+\subsection{Γενικός Ορισμός}
+
+Για μια διανυσματική συνάρτηση \(\mathbf{F} : \mathcal{S} \to \mathbb{R}^3\), το επιφανειακό ολοκλήρωμα ορίζεται κατά συνιστώσες:
+\[
+\iint_{\mathcal{S}} \mathbf{F} \, d\mathcal{A} = \left( \iint_{\mathcal{S}} F_x \, d\mathcal{A}, \; \iint_{\mathcal{S}} F_y \, d\mathcal{A}, \; \iint_{\mathcal{S}} F_z \, d\mathcal{A} \right).
+\]
+
+Κάθε συνιστώσα είναι βαθμωτό επιφανειακό ολοκλήρωμα και επομένως όλη η ανάλυση της §Α.4 εφαρμόζεται αυτούσια. Το διακριτό ανάλογο είναι το διανυσματικό άθροισμα
+\[
+\mathbf{I}_h(\mathbf{F}) = \sum_{i=1}^N \mathbf{F}(\mathbf{r}(u_i, v_i)) \, f(u_i, v_i) \, \Delta u_i \Delta v_i,
+\]
+και συγκλίνει συνιστωσικά στο ολοκλήρωμα καθώς \(h \to 0\), υπό την προϋπόθεση ότι κάθε συνιστώσα της \(\mathbf{F} \circ \mathbf{r}\) είναι \(C^2\) ώστε οι αντίστοιχες \(F\) συναρτήσεις να είναι \(C^2\).
+
+\subsection{Το Ολοκλήρωμα του Μοναδιαίου Καθέτου Διανύσματος}
+
+Μια θεμελιώδης ειδική περίπτωση προκύπτει όταν \(\mathbf{F} = \mathbf{n}\), το μοναδιαίο κάθετο διάνυσμα της επιφάνειας. Αυτό ορίζεται από τη σχέση
+\[
+\mathbf{n}(u,v) = \frac{\mathbf{r}_u \times \mathbf{r}_v}{\|\mathbf{r}_u \times \mathbf{r}_v\|} = \frac{\mathbf{r}_u \times \mathbf{r}_v}{f(u,v)}.
+\]
+
+Το επιφανειακό ολοκλήρωμά του απλοποιείται δραματικά:
+\[
+\iint_{\mathcal{S}} \mathbf{n} \, d\mathcal{A} = \iint_D \mathbf{n}(\mathbf{r}(u,v)) \, f(u,v) \, du \, dv = \iint_D (\mathbf{r}_u \times \mathbf{r}_v) \, du \, dv.
+\]
+
+Παρατηρούμε ότι το βαθμωτό μέτρο \(f\) απαλείφεται εντελώς και το ολοκλήρωμα ανάγεται στο ολοκλήρωμα του μη μοναδιαίου καθέτου διανύσματος \(\mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v\).
+
+Η διακριτή προσέγγιση σε κάθε πλακίδιο είναι
+\[
+\mathbf{n}_i \cdot A(P_i) = \frac{\mathbf{r}_u \times \mathbf{r}_v}{f} \cdot f \, \Delta u_i \Delta v_i = (\mathbf{r}_u \times \mathbf{r}_v) \, \Delta u_i \Delta v_i,
+\]
+δηλαδή ακριβώς το διάνυσμα του εφαπτόμενου παραλληλογράμμου (κάθετο με μέτρο ίσο με το εμβαδόν του). Το συνολικό διακριτό άθροισμα
+\[
+\mathbf{K}_h = \sum_{i=1}^N (\mathbf{r}_u \times \mathbf{r}_v)_{(u_i, v_i)} \, \Delta u_i \Delta v_i
+\]
+συγκλίνει, σύμφωνα με τη γενική θεωρία, στο
+\[
+\mathbf{K} = \iint_D (\mathbf{r}_u \times \mathbf{r}_v) \, du \, dv.
+\]
+
+\subsection{Γεωμετρική Ερμηνεία}
+
+Το διάνυσμα
+\[
+\mathbf{K} = \iint_{\mathcal{S}} \mathbf{n} \, d\mathcal{A}
+\]
+έχει πλούσιο γεωμετρικό περιεχόμενο.
+
+\begin{enumerate}
+\item \textbf{Επίπεδο χωρίο.} Αν η \(\mathcal{S}\) περιέχεται σε ένα επίπεδο με σταθερό μοναδιαίο κάθετο \(\mathbf{n}_0\), τότε
+\[
+\mathbf{K} = \mathbf{n}_0 \iint_{\mathcal{S}} d\mathcal{A} = \mathbf{n}_0 \cdot A(\mathcal{S}).
+\]
+Πρόκειται για ένα διάνυσμα κάθετο στο επίπεδο, με μέτρο ίσο με το εμβαδόν του χωρίου.
+
+\item \textbf{Κλειστή επιφάνεια.} Αν η \(\mathcal{S}\) είναι κλειστή (συμπαγής και χωρίς σύνορο) και περικλείει όγκο \(V\), τότε
+\[
+\mathbf{K} = \iint_{\mathcal{S}} \mathbf{n} \, d\mathcal{A} = \mathbf{0}.
+\]
+Η απόδειξη είναι μια άμεση εφαρμογή του θεωρήματος της απόκλισης: για οποιοδήποτε σταθερό διάνυσμα \(\mathbf{c}\),
+\[
+\mathbf{c} \cdot \iint_{\mathcal{S}} \mathbf{n} \, d\mathcal{A} = \iint_{\mathcal{S}} \mathbf{c} \cdot \mathbf{n} \, d\mathcal{A} = \iiint_V (\nabla \cdot \mathbf{c}) \, dV = \iiint_V 0 \, dV = 0.
+\]
+Εφόσον αυτό ισχύει για κάθε \(\mathbf{c}\), το διάνυσμα \(\mathbf{K}\) είναι υποχρεωτικά μηδενικό.
+
+\item \textbf{Ανοικτή επιφάνεια με σύνορο.} Όταν η \(\mathcal{S}\) είναι ανοικτή, το διάνυσμα \(\mathbf{K}\) δεν είναι κατ' ανάγκη μηδέν. Οι συνιστώσες του έχουν την εξής ερμηνεία:
+\[
+K_x = \iint_{\mathcal{S}} n_x \, d\mathcal{A}, \quad K_y = \iint_{\mathcal{S}} n_y \, d\mathcal{A}, \quad K_z = \iint_{\mathcal{S}} n_z \, d\mathcal{A}.
+\]
+Από τον ορισμό του μοναδιαίου καθέτου, η συνιστώσα \(n_x\) είναι το συνημίτονο της γωνίας που σχηματίζει το κάθετο διάνυσμα με τον άξονα \(x\). Το ολοκλήρωμα \(\iint_{\mathcal{S}} n_x \, d\mathcal{A}\) ισούται ακριβώς με το \textbf{προσημασμένο εμβαδόν της προβολής} της \(\mathcal{S}\) στο επίπεδο \(yz\). Το πρόσημο είναι θετικό αν το κάθετο διάνυσμα ``βλέπει'' προς τη θετική κατεύθυνση \(x\), και αρνητικό διαφορετικά. Ανάλογα για τις άλλες συνιστώσες.
+
+Συνεπώς, το \(\mathbf{K}\) είναι ένα διάνυσμα του οποίου οι συνιστώσες είναι τα προσημασμένα εμβαδά των προβολών της επιφάνειας στα επίπεδα συντεταγμένων.
+\end{enumerate}
+
+\subsection{Σύνδεση με το Θεώρημα του Stokes}
+
+Η παραπάνω ερμηνεία συνδέεται άμεσα με το θεώρημα του Stokes (στη κλασική διανυσματική του μορφή, θεώρημα Kelvin--Stokes). Για ένα διανυσματικό πεδίο \(\mathbf{F}\),
+\[
+\iint_{\mathcal{S}} (\nabla \times \mathbf{F}) \cdot \mathbf{n} \, d\mathcal{A} = \oint_{\partial \mathcal{S}} \mathbf{F} \cdot d\mathbf{r}.
+\]
+
+Επιλέγοντας \(\mathbf{F}\) τέτοιο ώστε \(\nabla \times \mathbf{F} = \mathbf{c}\) (ένα σταθερό διάνυσμα), το αριστερό μέλος γίνεται \(\mathbf{c} \cdot \iint_{\mathcal{S}} \mathbf{n} \, d\mathcal{A}\), ενώ το δεξιό είναι ένα επικαμπύλιο ολοκλήρωμα που εξαρτάται μόνο από το σύνορο \(\partial\mathcal{S}\). Αυτό αποδεικνύει ότι το \(\iint_{\mathcal{S}} \mathbf{n} \, d\mathcal{A}\) είναι μια ποσότητα που εξαρτάται αποκλειστικά από το σύνορο της \(\mathcal{S}\) --- γεγονός που εξηγεί γιατί μηδενίζεται για κλειστές επιφάνειες (όπου \(\partial\mathcal{S} = \emptyset\)) και γιατί για ανοικτές επιφάνειες σχετίζεται με τις προβολικές ιδιότητες του συνόρου.
+
+\section{Ο Θεμελιώδης Μηχανισμός Σύγκλισης}
+
+Όλες οι παραπάνω αποδείξεις σύγκλισης βασίζονται σε έναν ενιαίο, θεμελιώδη μηχανισμό που αξίζει να αναδειχθεί ρητά.
+
+\begin{theorem}[Γενική Αρχή Σύγκλισης]
+\label{thm:general_principle}
+Έστω \(H(u,v)\) μια \(C^2\) συνάρτηση στο φραγμένο χωρίο \(D\) και έστω διαμέριση του \(D\) σε \(N\) ορθογώνια \(Q_i\) μέγιστης διαμέτρου \(h\). Τότε
+\[
+\left| \iint_D H(u,v) \, du \, dv - \sum_{i=1}^N H(u_i, v_i) \Delta u_i \Delta v_i \right| = O(h),
+\]
+όπου \((u_i, v_i)\) είναι η κάτω αριστερή κορυφή του \(Q_i\).
+\end{theorem}
+
+\begin{proof}
+Το σφάλμα σε κάθε πλακίδιο είναι
+\[
+E_i = \iint_{Q_i} H(u,v) \, du \, dv - H(u_i, v_i) \Delta u_i \Delta v_i.
+\]
+
+Αναπτύσσοντας την \(H\) γύρω από το \((u_i, v_i)\) ακριβώς όπως στα Θεωρήματα \ref{thm:local_area} και \ref{thm:local_scalar}, βρίσκουμε \(E_i = O(h^3)\) (οι γραμμικοί όροι δίνουν \(O(h^3)\) και το υπόλοιπο \(O(h^4)\)). Το πλήθος των πλακιδίων είναι \(N = O(h^{-2})\). Άρα το συνολικό σφάλμα είναι
+\[
+\sum_{i=1}^N |E_i| \le N \cdot O(h^3) = O(h^{-2}) \cdot O(h^3) = O(h) \to 0.
+\]
+\end{proof}
+
+Αυτή η αρχή είναι ο λόγος που η μέθοδος των αθροισμάτων Riemann λειτουργεί για επιφανειακά ολοκληρώματα: το τοπικό σφάλμα γραμμικής προσέγγισης είναι μία τάξη μικρότερο (\(h^3\)) από το στοιχειώδες εμβαδόν (\(h^2\)), με αποτέλεσμα η συσσώρευσή του σε \(O(h^{-2})\) πλακίδια να δίνει συνολικό σφάλμα \(O(h)\), το οποίο εξαφανίζεται στο όριο \(h \to 0\).
+
+\section{Συμπέρασμα}
+
+Σε αυτό το Παράρτημα αποδείξαμε με αυστηρό τρόπο τη σύγκλιση της διακριτής προσέγγισης των επιφανειακών ολοκληρωμάτων μέσω εφαπτόμενων παραλληλογράμμων. Τα κύρια σημεία είναι:
+
+\begin{enumerate}
+\item Το τοπικό σφάλμα μεταξύ του πραγματικού εμβαδού ενός μικρού καμπυλόγραμμου πλακιδίου και του εφαπτόμενου παραλληλογράμμου του είναι \(O(h^3)\), όπου \(h\) είναι η μέγιστη διάσταση του πλακιδίου.
+
+\item Το ίδιο ισχύει για το ολοκλήρωμα οποιασδήποτε βαθμωτής ή διανυσματικής συνάρτησης, αρκεί η συνάρτηση προς ολοκλήρωση (πολλαπλασιασμένη με το στοιχείο εμβαδού) να είναι αρκετά ομαλή (\(C^2\)).
+
+\item Το συνολικό σφάλμα μιας διαμέρισης με \(N = O(h^{-2})\) πλακίδια είναι \(O(h)\), το οποίο μηδενίζεται στο όριο \(h \to 0\), εξασφαλίζοντας τη σύγκλιση του διακριτού αθροίσματος στο συνεχές ολοκλήρωμα.
+
+\item Το ολοκλήρωμα του μοναδιαίου καθέτου διανύσματος \(\iint_{\mathcal{S}} \mathbf{n} \, d\mathcal{A}\) έχει ιδιαίτερη γεωμετρική σημασία: οι συνιστώσες του είναι τα προσημασμένα εμβαδά των προβολών της επιφάνειας, μηδενίζεται για κλειστές επιφάνειες, και συνδέεται με το θεώρημα του Stokes.
+\end{enumerate}
+
+Αυτά τα αποτελέσματα θεμελιώνουν τον κλασικό ορισμό του επιφανειακού ολοκληρώματος στη διαφορική γεωμετρία και τη φυσική, και δικαιολογούν γιατί η γραμμική προσέγγιση του εφαπτόμενου επιπέδου επαρκεί για τον ακριβή υπολογισμό γεωμετρικών και φυσικών ποσοτήτων πάνω σε καμπύλες επιφάνειες.
 
 \appendix
 \chapter{Appendix A}
 
-\section{Sample section}
+\section{Γεωμετρικές ερμηνείες εξωτερικού γινομένου}
+
+\begin{equation}
+\xi
+=
+\langle \hspace{1.5pt} \xi, \hat{n} \hspace{1.5pt} \rangle \hspace{1.5pt} \hat{n}
+\hspace{1pt}
++
+\hspace{1pt}
+\hat{n} \times (\xi \times \hat{n})
+\end{equation}
+
+\noindent
+Εγκάρσια συνιστώσα:
+
+\begin{equation}
+\xi_{tr} = \hat{n} \times (\xi \times \hat{n})
+\end{equation}
+
+\noindent
+Iδιοπεριστροφή (``spin'') σημείου· κωδικοποιεί πληροφορία για τον άξονα
+της στιγμαίας περιστροφικής κίνησης τπου επάγεται από την εγκάρσια
+συνιστώσα (δηλαδή το επίπεδο στο οποίο λαμβάνει χώρα η στιγμαία περιστροφή)
+καθώς και το μέτρο της αντίστοιχης γωνιακής ταχύτητας:
+
+\begin{equation}
+\operatorname{spin}(p, \xi) = \hat{n}(p) \times \xi(p)
+\end{equation}
+
+\noindent
+Ιδιοπεριστροφή (``spin'') χωρίου: η συνισταμένη του spin όλων των σημείων του·
+εφόσον τα εσωτερικά σημεία δεν βρίσκονται στην επιφάνεια και άρα δεν υφίστανται
+απομονωμένη την περιστροφική επίδραση του πεδίου:
+
+\begin{equation}
+\int_{\partial V} \hspace{-0.5pt} \hat{n} \times \xi \,\, d\sigma
+\end{equation}
+
+
+\section{Taylor}
+
+\begin{lemma}[Φράγμα Υπολοίπου Taylor Πρώτης Τάξης για \(C^2\) Συναρτήσεις]
+\label{lem:C2_Taylor_bound_Rn}
+Έστω \(D \subset \mathbb{R}^n\) ανοικτό χωρίο και \(f \in C^2(D)\) (δηλαδή η \(f\) έχει συνεχείς δεύτερες μερικές παραγώγους στο \(D\)). 
+
+Για κάθε συμπαγές υποσύνολο \(K \subset D\), υπάρχει σταθερά \(M_K > 0\) (που εξαρτάται μόνο από την \(f\) και το \(K\)) με την ακόλουθη ιδιότητα:
+
+Για κάθε σημείο \(\mathbf{x}_0 = (x_1^0, \dots, x_n^0) \in K\) και για κάθε \(\mathbf{h} = (h_1, \dots, h_n) \in \mathbb{R}^n\) τέτοιο ώστε το ευθύγραμμο τμήμα από το \(\mathbf{x}_0\) μέχρι το \(\mathbf{x}_0 + \mathbf{h}\) να περιέχεται στο \(K\), το υπόλοιπο πρώτης τάξης
+\[
+R_1(\mathbf{h}) = f(\mathbf{x}_0 + \mathbf{h}) - \left[ f(\mathbf{x}_0) + \sum_{i=1}^n \frac{\partial f}{\partial x_i}(\mathbf{x}_0) \, h_i \right]
+\]
+ικανοποιεί το φράγμα
+\[
+|R_1(\mathbf{h})| \le M_K \cdot \|\mathbf{h}\|^2,
+\]
+όπου \(\|\mathbf{h}\| = \sqrt{h_1^2 + \cdots + h_n^2}\) είναι η Ευκλείδεια νόρμα.
+
+Ισοδύναμα, ισχύει
+\[
+R_1(\mathbf{h}) = O(\|\mathbf{h}\|^2) \quad \text{καθώς } \mathbf{h} \to \mathbf{0}.
+\]
+\end{lemma}
+
+\begin{proof}
+Η απόδειξη βασίζεται στο θεώρημα Taylor με ολοκληρωτικό υπόλοιπο για συναρτήσεις πολλών μεταβλητών.
+
+Θεωρούμε τη βοηθητική συνάρτηση μιας μεταβλητής
+\[
+\varphi(t) = f(\mathbf{x}_0 + t\,\mathbf{h}), \quad t \in [0,1].
+\]
+
+Αφού η \(f\) είναι \(C^2\) στο \(D\) και το ευθύγραμμο τμήμα από το \(\mathbf{x}_0\) μέχρι το \(\mathbf{x}_0 + \mathbf{h}\) περιέχεται στο \(K \subset D\), η \(\varphi\) είναι καλά ορισμένη και \(C^2\) στο \([0,1]\).
+
+Υπολογίζουμε τις παραγώγους της \(\varphi\) χρησιμοποιώντας τον κανόνα αλυσίδας.
+
+\textbf{Πρώτη παράγωγος:}
+\[
+\varphi'(t) = \sum_{i=1}^n \frac{\partial f}{\partial x_i}(\mathbf{x}_0 + t\mathbf{h}) \cdot h_i = \nabla f(\mathbf{x}_0 + t\mathbf{h}) \cdot \mathbf{h}.
+\]
+
+\textbf{Δεύτερη παράγωγος:}
+\begin{align*}
+\varphi''(t) &= \frac{d}{dt} \left( \sum_{i=1}^n \frac{\partial f}{\partial x_i}(\mathbf{x}_0 + t\mathbf{h}) \, h_i \right) \\
+&= \sum_{i=1}^n \left( \sum_{j=1}^n \frac{\partial^2 f}{\partial x_j \partial x_i}(\mathbf{x}_0 + t\mathbf{h}) \, h_j \right) h_i \\
+&= \sum_{i=1}^n \sum_{j=1}^n \frac{\partial^2 f}{\partial x_i \partial x_j}(\mathbf{x}_0 + t\mathbf{h}) \, h_i \, h_j.
+\end{align*}
+
+Παρατηρούμε ότι η \(\varphi''(t)\) είναι μια τετραγωνική μορφή στον \(\mathbf{h}\) με πίνακα τον Εσσιανό \(H_f(\mathbf{x}_0 + t\mathbf{h}) = \left[ \frac{\partial^2 f}{\partial x_i \partial x_j} \right]_{i,j=1}^n\):
+\[
+\varphi''(t) = \mathbf{h}^T \, H_f(\mathbf{x}_0 + t\mathbf{h}) \, \mathbf{h}.
+\]
+
+Το ανάπτυγμα Taylor της \(\varphi\) γύρω από το \(t=0\) με ολοκληρωτικό υπόλοιπο πρώτης τάξης δίνει:
+\[
+\varphi(1) = \varphi(0) + \varphi'(0) + \int_0^1 (1-t) \, \varphi''(t) \, dt.
+\]
+
+Αντικαθιστούμε:
+\begin{align*}
+\varphi(0) &= f(\mathbf{x}_0), \\
+\varphi'(0) &= \sum_{i=1}^n \frac{\partial f}{\partial x_i}(\mathbf{x}_0) \, h_i, \\
+\varphi(1) &= f(\mathbf{x}_0 + \mathbf{h}).
+\end{align*}
+
+Συνεπώς:
+\[
+f(\mathbf{x}_0 + \mathbf{h}) = f(\mathbf{x}_0) + \sum_{i=1}^n \frac{\partial f}{\partial x_i}(\mathbf{x}_0) \, h_i + \int_0^1 (1-t) \, \varphi''(t) \, dt.
+\]
+
+Άρα το υπόλοιπο πρώτης τάξης ταυτίζεται με το ολοκλήρωμα:
+\[
+R_1(\mathbf{h}) = \int_0^1 (1-t) \, \varphi''(t) \, dt = \int_0^1 (1-t) \left( \sum_{i=1}^n \sum_{j=1}^n \frac{\partial^2 f}{\partial x_i \partial x_j}(\mathbf{x}_0 + t\mathbf{h}) \, h_i \, h_j \right) dt.
+\]
+
+\textbf{Εκτίμηση του υπολοίπου:}
+
+Αφού η \(f\) είναι \(C^2\) στο \(D\), όλες οι δεύτερες μερικές παράγωγοι \(\frac{\partial^2 f}{\partial x_i \partial x_j}\) είναι συνεχείς στο \(D\). Επομένως, είναι φραγμένες στο συμπαγές σύνολο \(K\). Για κάθε \(i, j \in \{1, \dots, n\}\), ορίζουμε:
+\[
+M_{ij} = \max_{\mathbf{x} \in K} \left| \frac{\partial^2 f}{\partial x_i \partial x_j}(\mathbf{x}) \right| < \infty.
+\]
+
+Για κάθε \(t \in [0,1]\), το σημείο \(\mathbf{x}_0 + t\mathbf{h}\) ανήκει στο ευθύγραμμο τμήμα μεταξύ \(\mathbf{x}_0\) και \(\mathbf{x}_0 + \mathbf{h}\). Εφόσον το τμήμα αυτό περιέχεται εξ υποθέσεως στο \(K\), έχουμε \(\mathbf{x}_0 + t\mathbf{h} \in K\) για όλα τα \(t\).
+
+Συνεπώς, για κάθε \(t \in [0,1]\):
+\begin{align*}
+|\varphi''(t)| &= \left| \sum_{i=1}^n \sum_{j=1}^n \frac{\partial^2 f}{\partial x_i \partial x_j}(\mathbf{x}_0 + t\mathbf{h}) \, h_i \, h_j \right| \\
+&\le \sum_{i=1}^n \sum_{j=1}^n \left| \frac{\partial^2 f}{\partial x_i \partial x_j}(\mathbf{x}_0 + t\mathbf{h}) \right| \, |h_i| \, |h_j| \\
+&\le \sum_{i=1}^n \sum_{j=1}^n M_{ij} \, |h_i| \, |h_j|.
+\end{align*}
+
+Θέτουμε \(M_{\max} = \max_{1 \le i,j \le n} M_{ij}\). Τότε:
+\begin{align*}
+|\varphi''(t)| &\le M_{\max} \sum_{i=1}^n \sum_{j=1}^n |h_i| \, |h_j| \\
+&= M_{\max} \left( \sum_{i=1}^n |h_i| \right)^2.
+\end{align*}
+
+Χρησιμοποιούμε την ανισότητα Cauchy–Schwarz ή την ισοδυναμία νορμών στον \(\mathbb{R}^n\):
+\[
+\sum_{i=1}^n |h_i| \le \sqrt{n} \, \|\mathbf{h}\|.
+\]
+(Αυτό προκύπτει από το γεγονός ότι \(\sum |h_i| = \langle (|h_1|,\dots,|h_n|), (1,\dots,1) \rangle \le \|\mathbf{h}\| \cdot \|\mathbf{1}\| = \sqrt{n} \|\mathbf{h}\|\).)
+
+Άρα:
+\[
+\left( \sum_{i=1}^n |h_i| \right)^2 \le n \|\mathbf{h}\|^2,
+\]
+και συνεπώς:
+\[
+|\varphi''(t)| \le M_{\max} \cdot n \cdot \|\mathbf{h}\|^2.
+\]
+
+Θέτουμε \(M_K' = n \cdot M_{\max}\). Τότε \(|\varphi''(t)| \le M_K' \|\mathbf{h}\|^2\) για όλα τα \(t \in [0,1]\).
+
+Το υπόλοιπο φράσσεται τώρα ως εξής:
+\begin{align*}
+|R_1(\mathbf{h})| &= \left| \int_0^1 (1-t) \, \varphi''(t) \, dt \right| \\
+&\le \int_0^1 (1-t) \, |\varphi''(t)| \, dt \\
+&\le M_K' \|\mathbf{h}\|^2 \int_0^1 (1-t) \, dt \\
+&= M_K' \|\mathbf{h}\|^2 \cdot \left[ t - \frac{t^2}{2} \right]_0^1 \\
+&= M_K' \|\mathbf{h}\|^2 \cdot \frac{1}{2}.
+\end{align*}
+
+Ορίζοντας \(M_K = M_K' / 2 = \frac{n}{2} M_{\max}\), λαμβάνουμε το ζητούμενο φράγμα:
+\[
+|R_1(\mathbf{h})| \le M_K \cdot \|\mathbf{h}\|^2.
+\]
+
+Αυτό ολοκληρώνει την απόδειξη.
+\end{proof}
+
+\begin{remark}[Ύπαρξη του μεγίστου \(M_{ij}\)]
+Η ύπαρξη των μεγίστων \(M_{ij}\) είναι εγγυημένη διότι κάθε \(\frac{\partial^2 f}{\partial x_i \partial x_j}\) είναι συνεχής συνάρτηση στο συμπαγές σύνολο \(K\). Από το θεώρημα ακροτάτων τιμών του Weierstrass, μια συνεχής συνάρτηση σε συμπαγές σύνολο επιτυγχάνει μέγιστη και ελάχιστη τιμή. Επομένως τα \(M_{ij}\) είναι πεπερασμένα και καλά ορισμένα.
+\end{remark}
+
+\begin{remark}[Εναλλακτική σταθερά μέσω νόρμας Εσσιανού]
+Μια πιο κομψή διατύπωση χρησιμοποιεί τη φασματική νόρμα του Εσσιανού πίνακα. Αν ορίσουμε
+\[
+\|H_f(\mathbf{x})\|_2 = \sup_{\|\mathbf{v}\|=1} |\mathbf{v}^T H_f(\mathbf{x}) \mathbf{v}|,
+\]
+και θέσουμε \(M_K' = \max_{\mathbf{x} \in K} \|H_f(\mathbf{x})\|_2\), τότε:
+\[
+|\varphi''(t)| = |\mathbf{h}^T H_f(\mathbf{x}_0 + t\mathbf{h}) \mathbf{h}| \le M_K' \|\mathbf{h}\|^2,
+\]
+και η απόδειξη ολοκληρώνεται με \(M_K = M_K' / 2\). Αυτή η προσέγγιση αποφεύγει τον παράγοντα \(n\) και είναι βέλτιστη ως προς τη σταθερά.
+\end{remark}
+
+\begin{corollary}[Μετάφραση σε συμβολισμό \(O\)]
+\label{cor:O_translation_Rn}
+Στο πλαίσιο διαμέρισης όπου \(h = \max_i |h_i|\) (ή \(h = \operatorname{diam}(Q)\)), έχουμε \(\|\mathbf{h}\| \le \sqrt{n} \, h\). Το Λήμμα \ref{lem:C2_Taylor_bound_Rn} δίνει:
+\[
+|R_1(\mathbf{h})| \le M_K \|\mathbf{h}\|^2 \le M_K \cdot n \cdot h^2 = C_K \cdot h^2,
+\]
+όπου \(C_K = n M_K\). Συνεπώς:
+\[
+R_1(\mathbf{h}) = O(\|\mathbf{h}\|^2) \quad \text{και} \quad R_1(\mathbf{h}) = O(h^2).
+\]
+\end{corollary}
+
+\begin{remark}[Γενίκευση σε \(C^k\) συναρτήσεις]
+Το Λήμμα γενικεύεται άμεσα για \(C^{k+1}\) συναρτήσεις: το υπόλοιπο \(k\)-τάξης ικανοποιεί \(R_k(\mathbf{h}) = O(\|\mathbf{h}\|^{k+1})\). Η απόδειξη χρησιμοποιεί το ολοκληρωτικό υπόλοιπο \(k\)-τάξης:
+\[
+R_k(\mathbf{h}) = \int_0^1 \frac{(1-t)^k}{k!} \varphi^{(k+1)}(t) \, dt,
+\]
+και φράσσεται με τον ίδιο τρόπο από τα μέγιστα των παραγώγων τάξης \(k+1\) στο \(K\).
+\end{remark}
+
+\begin{remark}[Πρακτική εφαρμογή στα επιφανειακά ολοκληρώματα]
+Στο Παράρτημα Α, η συνάρτηση \(f(u,v) = \|\mathbf{r}_u \times \mathbf{r}_v\|\) είναι \(C^2\) (εφόσον η \(\mathbf{r}\) είναι \(C^2\) και κανονική). Το Λήμμα \ref{lem:C2_Taylor_bound_Rn} με \(n=2\) εφαρμόζεται απευθείας για να δώσει \(R_1(\delta u, \delta v) = O(\delta u^2 + \delta v^2) = O(h^2)\), το οποίο είναι κρίσιμο για την τοπική εκτίμηση σφάλματος.
+\end{remark}
+
+
+\section{Θεώρημα μεταφοράς Reynolds}
+
 TODO
 
 \backmatter
