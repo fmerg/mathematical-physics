@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper,twoside,openright]{book}
+
+% ── Γραμματοσειρές & κωδικοποίηση ────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[greek,english]{babel}   % κύρια γλώσσα: ελληνικά
+\usepackage{alphabeta}             % ενεργοποιεί \alpha, \beta κ.λπ. με babel
+
+% ── Μαθηματικά ──────────────────────────────────────────────
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+% ── Γεωμετρία σελίδας ───────────────────────────────────────
+\usepackage[a4paper,inner=3cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% ── Ορισμός θεωρηματικών περιβαλλόντων (εργονομική αρίθμηση) ─
+\newtheorem{lemma}{Λήμμα}[section]          % αρίθμηση ανά section
+\newtheorem{proposition}[lemma]{Πρόταση}    % μοιράζεται μετρητή με το lemma
+\newtheorem{theorem}[lemma]{Θεώρημα}        % μοιράζεται μετρητή με το lemma
+\newtheorem{observation}[lemma]{Παρατήρηση} % μοιράζεται μετρητή με το lemma
+
+% Τα «proof» περιβάλλοντα μένουν χωρίς αρίθμηση
+\renewcommand{\proofname}{\textnormal{Απόδειξη}}
+
+% ── Ενδεικτικές εντολές φυσικής ─────────────────────────────
+\newcommand{\dd}[1]{\,\mathrm{d}#1}         % διαφορικό
+\newcommand{\R}{\mathbb{R}}                 % πραγματικοί αριθμοί
+
+% ═════════════════════════════════════════════════════════════
+\begin{document}
+
+\title{Μαθηματικές Μέθοδοι Φυσικής}
+\author{Συγγραφέας}
+\date{\today}
+\maketitle
+
+\chapter{Στοιχεία Διαφορικής Γεωμετρίας}
+
+\section{Λείες Πολλαπλότητες --- Βασικές Έννοιες}
+
+\begin{lemma}[Θεώρημα αντίστροφης απεικόνισης]
+  Έστω $f: \R^n \to \R^n$ λεία συνάρτηση και $p\in\R^n$ με
+  $\det Df(p) \neq 0$. Τότε υπάρχουν ανοικτές περιοχές $U\ni p$, $V\ni f(p)$
+  ώστε η $f|_U : U\to V$ να είναι αμφιδιαφόριση.
+\end{lemma}
+
+\begin{proposition}[Θεώρημα Nash]
+  Κάθε λεία πολλαπλότητα $M$ εμφυτεύεται ισομετρικά σε κάποιον
+  Ευκλείδειο χώρο $\R^N$.
+\end{proposition}
+
+\begin{theorem}[Stokes]\label{thm:stokes}
+  Για κάθε προσανατολισμένη $n$-διάστατη πολλαπλότητα $M$ με σύνορο
+  $\partial M$ και κάθε $(n-1)$-μορφή $\omega$ συμπαγούς φορέα ισχύει
+  \begin{equation}\label{eq:stokes}
+    \int_M \dd{\omega} = \int_{\partial M} \omega.
+  \end{equation}
+\end{theorem}
+
+\begin{observation}
+  \label{obs:stokes-sign}
+  Στη φυσική βιβλιογραφία το θεώρημα Stokes εμφανίζεται συχνά με αντίθετο
+  πρόσημο, ανάλογα με τη σύμβαση προσανατολισμού.  Στο εξής θα υιοθετήσουμε
+  τη μαθηματική σύμβαση της εξίσωσης \eqref{eq:stokes}.
+\end{observation}
+
+\end{document}
