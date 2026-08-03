@@ -20,6 +20,7 @@
 % ── Ορισμός θεωρηματικών περιβαλλόντων ──────────────────────
 \newtheorem{lemma}{Λήμμα}[section]
 \newtheorem{proposition}[lemma]{Πρόταση}
+\newtheorem{corollary}[lemma]{Πόρισμα}
 \newtheorem{theorem}[lemma]{Θεώρημα}
 \newtheorem{observation}[lemma]{Παρατήρηση}
 \newtheorem{definition}[lemma]{Ορισμός}
@@ -265,7 +266,7 @@ $x$ και $y$.
 Υπό το πρίσμα των συναρτήσεων συντεταγμένων $y^1, \dots, y^m$
 ως συνιστωστών της $y^{-1}$,
 η τοπική αναπράσταση $y^{-1} \circ \phi \circ x$ γράφεται ως
-\begin{equation}
+\begin{equation}\label{eq:local-representation-map}
 (x^1, \dots, x^n) \mapsto
 (\phi_1(x^1, \dots, x^n),
 \dots,
@@ -277,56 +278,360 @@ $x$ και $y$.
 ισοδυναμεί με την διαφορισιμότητα
 των συνιστωστών $\phi_1, \dots, \phi_m$ αυτής
 ως προς τα επιλεγμένα συστήματα συντεταγμένων.
-Πράγματι, εάν $\lambda \le k$, μπορεί να δειχθεί
+Πράγματι, μπορεί να δειχθεί
 με χρήση του κανόνα της αλυσίδας
-ότι η ύπαρξη και συνέχεια οποιασδήποτε μικτής παραγώγου
-για κάποια $\phi_i$ ισοδυναμεί με την ύπαρξη και συνέχεια της
-αντίστοιχης μικτής παραγώγου για την αντίστοιχη συνιστώσα
-της $\phi$ ως προς οποιαδήποτε συστήματα συντεταγμένων.
+ότι η ύπαρξη και συνέχεια των μερικών παραγώγων
+οποιασδήποτε τάξης για τις συνιστώσες $\phi_i$
+ισοδυναμεί με την ύπαρξη και συνέχεια της
+των μερικών παραγώγων της ίδιας τάξης
+για τις συνιστώσες της $\phi$ ως προς αυθαίρετο σύστημα συντεταγμένων.
 
-Η περίπτωση $N = \mathbb{R}$ και $\lambda=2$
-χρήζει ίσως ειδικής διερεύνησης.
-Θεωρούμε συγκεκριμένα την $C^\infty$-πολλαπλότητα
-$N$ που προκύπτει μέσω της ταυτοτικής απεικόνισης
-$\mathrm{id}: \mathbb{R} \to N$
-ως καθολικού συστήματος συντεταγμένων, οπότε
-$C^\lambda(M, \mathbb{R})$ είναι ο χώρος των
-βαθμωτών $C^\lambda$-συναρτήσεων επί της
-$M$ για οποιοδήποτε επιθυμητό $\lambda \le k$,
-όπου $k = 1, 2, \dots$ ή $\infty$.
+\subsection{Τοπικές μερικές παράγωγοι -- Θεώρημα Clairout-Schwarz}
 
-\begin{definition}[Τοπικές μερικές παράγωγοι πρώτης και δεύτερης τάξης]\label{def:local-partial-derivatives}
-Δοθείσης $C^k$-πολλαπλότητας $Μ$ με $k \ge 1$, συνάρτησης $f \in C^\lambda(M, \mathbb{R})$ με $\lambda \ge 1$ και τοπικού χάρτη $x: U \to M$ που εισάγει συντεταγμένες $x^1, \dots, x^n$, ορίζεται για κάθε $1 \le i \le n$ η συνάρτηση
+Γίνεται σαφές από την \eqref{eq:local-representation-map} ότι η περίπτωση $N = \mathbb{R}$ είναι θεμελιώδης και χρήζει ειδικής μνείας.
+Θεωρούμε συγκεκριμένα την
+$C^\infty$-πολλαπλότητα διάστασης $m=1$
+που προκύπτει μέσω της ταυτοτικής απεικόνισης
+$\mathrm{id}: \mathbb{R} \to \mathbb{R}$
+ως καθολικού συστήματος συντεταγμένων,
+οπότε ο χώρος
 \begin{equation}
-\frac{\partial f}{\partial x^i}: x(U) \to \mathbb{R},
-\quad
-\frac{\partial f}{\partial x^i}(p) = 
-\frac{\partial (f \circ x)}{\partial x^i}(x^{-1}(p)).
+C^\lambda(M) \equiv C^\lambda(M, \mathbb{R})
 \end{equation}
-Εάν επιπλέον $k \ge \lambda \ge 2$,
-ορίζεται για κάθε ζεύγος $(i, j),\ 1 \le i, j, \le n,$ η συνάρτηση
+των διαφορίσιμων βαθμωτών μεγεθών πάνω στη $Μ$
+ορίζεται καλώς για οποιαδήποτε τάξη $\lambda \le k$.
+
+\begin{definition}[Τοπικές μερικές παράγωγοι βαθμωτής απεικόνισης]\label{def:local-partial-derivative}
+Έστω
+$f \in C^\lambda(M, \mathbb{R})$,
+όπου $Μ$ μία $C^k$-πολλαπλότητα με $1 \le \lambda \le k$.
+Δοθέντος τοπικού χάρτη $x: U \to M$ που εισάγει συντεταγμένες $x^1, \dots, x^n$ και
+για κάθε επιλογή δεικτών $1 \le i_1, \dots, i_m \le \lambda$
+με $1 \le \mu \le \lambda$,
+η βαθμωτή απεικόνηση
 \begin{equation}
-\frac{\partial f}{\partial x^i}: x(U) \to \mathbb{R},
-\quad
-\frac{\partial f}{\partial x^i \partial x^j}(p) = 
-\frac{\partial (f \circ x)}{\partial x^i \partial x^j}(x^{-1}(p)).
+\frac{\partial ^ \mu f}{\partial x^{i_1} \dots \partial x^{i_\mu}}
+\equiv
+\frac{\partial ^ \mu}{\partial x^{i_1} \dots \partial x^{i_\mu}} (f \circ x)
+: x(U) \to \mathbb{R}
 \end{equation}
+καλείται \textbf{μερική παράγωγος της}
+$f$ \textbf{ως προς την ακολουθία μεταβλητών}
+$x^{i_1}, \dots, x^{i_\mu}$.
 \end{definition}
 
-TODO
-
-\begin{proposition}[Clairout-Schwarz -- Αναλλοιότητα της συμμετρίας των μικτών παραγώγων]\label{prop:clairout-schwarz-invariance}
-Δοθείσης $f \in C^2(M, \mathbb{R})$,
-όπου $Μ$ $C^k$-διαφορίσιμη πολλαπλότητα με $k \ge 2$,
-τότε σε οποιοδήποτε τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$ της $M$ ισχύει
-\begin{equation}\label{eq:clairout-schwarz}
-\frac{\partial f}{\partial x^i \partial x^j}
+\noindent
+Η $C^\lambda$-διαφορισιμότητα της βαθμωτής απεικόνισης $f$
+(βλ. ορισμό \ref{def:differentiability})
+ισοδυναμεί επομένως με την ύπαρξη και συνέχεια όλων των μερικών παραγώγων της ως προς οποιαδήποτε ακολουθία μεταβλητών μήκους $\le \lambda$ σε τοπικό οποιοδήποτε σύστημα συντεταγμένων της $Μ$.
+Ελέγχεται επίσης άμεσα ότι, υπό τις προϋποθέσεις του παραπάνω ορισμού, ισχύει
+\begin{equation}
+\frac{\partial ^ \mu f}{\partial x^{i_1} \dots \partial x^{i_\mu}}
 =
-\frac{\partial f}{\partial x^j \partial x^i},
+\frac{\partial}{\partial x ^ {i_1}}
+\left(
+\frac{\partial ^ \mu f}{\partial x^{i_2} \dots \partial x^{i_\mu}}
+\right)
+\end{equation}
+όπου η ποσότητα που εμφανίζεται στο δεξύ μέρος υπό
+το σύμβολο της μερικής διαφόρισης είναι
+είναι $C^{\lambda + 1}$-διαφορίσιμη στην περιοχή $x(U)$.
+Ακόμη σημαντικότερο, ο κανόνας της αλυσίδας
+και το Θεώρημα Clairout-Schwarz περί της συμμετρίας των μικτών παραγώγων μεταφέρονται μέσω του παραπάνω ορισμού ως έχουν
+στις πολλαπλότητες.
+
+\begin{proposition}[Κανόνας της αλυσίδας σε πολλαπλότητες]\label{prop:chain-rule-scalar}
+Έστω
+$f \in C^\lambda(M, \mathbb{R})$,
+όπου $Μ$ μία $C^k$-πολλαπλότητα με $1 \le \lambda \le k$.
+Για οποιονδήποτε ζέυγος τοπικών χαρτών
+$x: U \to M$ και $y: V \to M$
+που εισάγουν συντεταγμένες
+$x^1, \dots, x^n$ και $y^1, \dots, y^n$ αντιστοίχως, ισχύει
+\begin{equation}\label{eq:chain-rule-scalar}
+\frac{\partial f}{\partial y^i}
+=
+\frac{\partial f}{\partial x^k}
+\frac{\partial x^k}{\partial y^i},
 \quad
-1 \le i, j, \le n
+1 \le i \le n.
 \end{equation}
 \end{proposition}
+
+\begin{proof}
+Άμεση μεταφορά του κανόνα της αλυσίδας από τον $R^n$ στην πολλαπλότητα $Μ$ μέσω του ορισμού \ref{def:local-partial-derivative} για $\mu = \lambda = 1$.
+\end{proof}
+
+\begin{theorem}[Clairout-Schwarz για πολλαπλότητες]\label{theorem:clairout-schwarz}
+Έστω
+$f \in C^\lambda(M, \mathbb{R})$,
+όπου $Μ$ μία $C^k$-πολλαπλότητα με $1 \le \lambda \le k$.
+Για οποιονδήποτε τοπικό χάρτη $x: U \to M$ που εισάγει συντεταγμένες $x^1, \dots, x^n$ και κάθε $1 \le \mu \le \lambda$, ισχύει
+\begin{equation}
+\frac{\partial ^ \mu f}{\partial x^{i_1} \dots \partial x^{i_\mu}}
+=
+\frac{\partial ^ \mu f}{\partial x^{i_{\sigma(1)}} \dots \partial x^{i_{\sigma(\mu)}}},
+\quad
+\textup{για κάθε μετάθεση}
+\ \sigma \in \mathcal{S}_\mu.´
+\end{equation}
+Ειδικότερα, για οποιαδήποτε $C^2$-διαφορίσιμη συνάρτηση
+$f: M \to \mathbb{R}$ ισχύει
+\begin{equation}\label{eq:symmetry-second-partial-derivatives}
+\frac{\partial ^ 2 f}{\partial x^i \partial x^j}
+=
+\frac{\partial ^ 2 f}{\partial x^j \partial x^i},
+\quad
+1 \le i, j \le n
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Άμεση μεταφορά του Θεωρήματος Clairout-Schwarz από τον $R^n$ στην πολλαπλότητα $Μ$ μέσω του ορισμού \ref{def:local-partial-derivative}.
+\end{proof}
+
+\noindent
+Η συμμετρία των μερικών παραγώγων,
+και ειδικότερα η σχέση \eqref{eq:symmetry-second-partial-derivatives},
+επιδέχεται σημαντικής φυσικογεωμετρικής ερμηνείας
+που είναι ανεξάρτητη από την επιλογή τοπικών συντεταγμένων.
+
+TODO: Η φυσικογεωμετρική ερμηνεία της συμμετρίας των μικτών παραγώγων μπορεί να διατυπωθεί εξ ολοκλήρου μέσω της έννοιας της αθροιστικής απειροστής μεταβολής κατά μήκος ενός κλειστού βρόχου. Ας αναπτύξουμε αυτή την οπτική βήμα προς βήμα.
+
+\textbf{1. Το θεμελιώδες ερώτημα: Έχει σημασία η σειρά των μεταβολών;}
+
+Θεωρήστε μια βαθμωτή ποσότητα \(f\) που εξαρτάται από δύο μεταβλητές, ας πούμε \(x\) και \(y\). Θέλουμε να εξετάσουμε πώς μεταβάλλεται η \(f\) όταν υποστούμε δύο διαδοχικές μικρές μεταβολές: μία κατά \(x\) και μία κατά \(y\). Υπάρχουν δύο διαφορετικές διαδρομές για να φτάσουμε από το σημείο \((x, y)\) στο σημείο \((x + \delta x, y + \delta y)\):
+\begin{itemize}
+    \item Διαδρομή Α: Πρώτα μεταβάλλουμε το \(x\) κατά \(\delta x\) και ύστερα το \(y\) κατά \(\delta y\).
+    \item Διαδρομή Β: Πρώτα μεταβάλλουμε το \(y\) κατά \(\delta y\) και ύστερα το \(x\) κατά \(\delta x\).
+\end{itemize}
+Το ερώτημα είναι αν η συνολική μεταβολή της \(f\) εξαρτάται από τη διαδρομή που ακολουθήσαμε. Αν η \(f\) είναι αρκούντως ομαλή, η απάντηση είναι όχι --- και αυτό ακριβώς εκφράζει η συμμετρία των μικτών παραγώγων.
+
+\textbf{2. Υπολογισμός της μεταβολής κατά μήκος κάθε διαδρομής με χρήση του συμβολισμού Landau.}
+
+Θεωρούμε τις απειροστές μεταβολές \(\delta x\) και \(\delta y\). Υποθέτουμε ότι η \(f\) είναι κλάσης \(C^2\), οπότε επιδέχεται ανάπτυγμα Taylor δεύτερης τάξης με υπόλοιπο Peano. Για τη Διαδρομή Α, υπολογίζουμε τη μεταβολή ως εξής.
+
+Ξεκινώντας από το \((x, y)\), η μεταβολή κατά \(x\) δίνει τη νέα τιμή
+\begin{equation}
+f(x + \delta x, y) = f(x, y) + \frac{\partial f}{\partial x}(x, y) \, \delta x + o(\delta x).
+\end{equation}
+Στη συνέχεια, από το \((x + \delta x, y)\) μεταβάλλουμε το \(y\) κατά \(\delta y\). Αναπτύσσουμε την \(f\) ως προς το δεύτερο όρισμα γύρω από το \(y\), αλλά τώρα η πρώτη παράγωγος ως προς \(y\) έχει υποστεί μεταβολή λόγω της προηγούμενης αλλαγής του \(x\). Συγκεκριμένα, έχουμε
+\begin{equation}
+f(x + \delta x, y + \delta y) = f(x + \delta x, y) + \frac{\partial f}{\partial y}(x + \delta x, y) \, \delta y + o(\delta y).
+\end{equation}
+Όμως, από το ανάπτυγμα Taylor πρώτης τάξης της \(\frac{\partial f}{\partial y}\) ως προς το πρώτο όρισμα,
+\begin{equation}
+\frac{\partial f}{\partial y}(x + \delta x, y) = \frac{\partial f}{\partial y}(x, y) + \frac{\partial^2 f}{\partial x \partial y}(x, y) \, \delta x + o(\delta x).
+\end{equation}
+Αντικαθιστώντας, λαμβάνουμε
+\begin{equation}
+\begin{aligned}
+f(x + \delta x, y + \delta y) &= f(x, y) + \frac{\partial f}{\partial x}(x, y) \, \delta x + o(\delta x) \\
+&\quad + \left[ \frac{\partial f}{\partial y}(x, y) + \frac{\partial^2 f}{\partial x \partial y}(x, y) \, \delta x + o(\delta x) \right] \delta y + o(\delta y).
+\end{aligned}
+\end{equation}
+Αναπτύσσοντας και συλλέγοντας όρους, η συνολική μεταβολή κατά τη Διαδρομή Α είναι
+\begin{equation}
+\Delta_A f = f(x + \delta x, y + \delta y) - f(x, y) = \frac{\partial f}{\partial x} \, \delta x + \frac{\partial f}{\partial y} \, \delta y + \frac{\partial^2 f}{\partial x \partial y} \, \delta x \, \delta y + o(\delta x) \, \delta y + o(\delta x) + o(\delta y).
+\end{equation}
+Δεδομένου ότι \(\delta x \, \delta y\) είναι απειροστό δεύτερης τάξης, και \(o(\delta x) \, \delta y = o(\delta x \, \delta y)\), \(o(\delta x) = o(\sqrt{\delta x^2 + \delta y^2})\), \(o(\delta y) = o(\sqrt{\delta x^2 + \delta y^2})\), μπορούμε να γράψουμε
+\begin{equation}
+\Delta_A f = \frac{\partial f}{\partial x} \, \delta x + \frac{\partial f}{\partial y} \, \delta y + \frac{\partial^2 f}{\partial x \partial y} \, \delta x \, \delta y + o(\delta x \, \delta y) + o(\sqrt{\delta x^2 + \delta y^2}).
+\end{equation}
+Συνήθως, επειδή μας ενδιαφέρει το υπόλοιπο δεύτερης τάξης μετά την αφαίρεση, κρατάμε τους όρους μέχρι τάξης \(\delta x \, \delta y\) και σημειώνουμε το υπόλοιπο ως \(o(\delta x \, \delta y + \delta x^2 + \delta y^2)\). Ωστόσο, για την αφαίρεση που θα ακολουθήσει, το κρίσιμο είναι ότι όλοι οι όροι πέραν των γραμμένων είναι είτε πρώτης τάξης (που θα απαλειφθούν) είτε ανώτερης τάξης. Αρκεί να γράψουμε, με σαφήνεια,
+\begin{equation}
+\Delta_A f = \frac{\partial f}{\partial x} \, \delta x + \frac{\partial f}{\partial y} \, \delta y + \frac{\partial^2 f}{\partial x \partial y} \, \delta x \, \delta y + R_A,
+\end{equation}
+όπου το υπόλοιπο \(R_A\) ικανοποιεί \(R_A = o(\delta x \, \delta y + \delta x^2 + \delta y^2)\).
+
+Ας υπολογίσουμε τώρα τη Διαδρομή Β με τον ίδιο ακριβώς τρόπο. Ξεκινώντας πάλι από το \((x, y)\), πρώτα μεταβάλλουμε το \(y\):
+\begin{equation}
+f(x, y + \delta y) = f(x, y) + \frac{\partial f}{\partial y}(x, y) \, \delta y + o(\delta y).
+\end{equation}
+Στη συνέχεια, μεταβάλλουμε το \(x\) κατά \(\delta x\) από το νέο σημείο. Αναπτύσσοντας την \(f\) ως προς το πρώτο όρισμα γύρω από το \(x\) στο σημείο όπου το δεύτερο όρισμα είναι \(y + \delta y\), έχουμε
+\begin{equation}
+f(x + \delta x, y + \delta y) = f(x, y + \delta y) + \frac{\partial f}{\partial x}(x, y + \delta y) \, \delta x + o(\delta x).
+\end{equation}
+Από το ανάπτυγμα Taylor πρώτης τάξης της \(\frac{\partial f}{\partial x}\) ως προς το δεύτερο όρισμα,
+\begin{equation}
+\frac{\partial f}{\partial x}(x, y + \delta y) = \frac{\partial f}{\partial x}(x, y) + \frac{\partial^2 f}{\partial y \partial x}(x, y) \, \delta y + o(\delta y).
+\end{equation}
+Αντικαθιστώντας, λαμβάνουμε
+\begin{equation}
+\begin{aligned}
+f(x + \delta x, y + \delta y) &= f(x, y) + \frac{\partial f}{\partial y}(x, y) \, \delta y + o(\delta y) \\
+&\quad + \left[ \frac{\partial f}{\partial x}(x, y) + \frac{\partial^2 f}{\partial y \partial x}(x, y) \, \delta y + o(\delta y) \right] \delta x + o(\delta x).
+\end{aligned}
+\end{equation}
+Η συνολική μεταβολή κατά τη Διαδρομή Β είναι
+\begin{equation}
+\Delta_B f = f(x + \delta x, y + \delta y) - f(x, y) = \frac{\partial f}{\partial x} \, \delta x + \frac{\partial f}{\partial y} \, \delta y + \frac{\partial^2 f}{\partial y \partial x} \, \delta x \, \delta y + R_B,
+\end{equation}
+όπου το υπόλοιπο \(R_B\) ικανοποιεί \(R_B = o(\delta x \, \delta y + \delta x^2 + \delta y^2)\).
+
+\textbf{3. Το υπόλοιπο του κλειστού βρόχου και η έννοια της στροβιλότητας χωρίς διανυσματικά πεδία.}
+
+Αφαιρώντας τις δύο συνολικές μεταβολές, οι όροι πρώτης τάξης αλληλοαναιρούνται και μένει
+\begin{equation}
+\Delta_A f - \Delta_B f = \left( \frac{\partial^2 f}{\partial x \partial y} - \frac{\partial^2 f}{\partial y \partial x} \right) \delta x \, \delta y + (R_A - R_B).
+\end{equation}
+Επειδή \(R_A = o(\delta x \, \delta y + \delta x^2 + \delta y^2)\) και \(R_B = o(\delta x \, \delta y + \delta x^2 + \delta y^2)\), η διαφορά τους είναι επίσης \(o(\delta x \, \delta y + \delta x^2 + \delta y^2)\). Συνεπώς,
+\begin{equation}
+\Delta_A f - \Delta_B f = \left( \frac{\partial^2 f}{\partial x \partial y} - \frac{\partial^2 f}{\partial y \partial x} \right) \delta x \, \delta y + o(\delta x \, \delta y + \delta x^2 + \delta y^2).
+\end{equation}
+
+Τι εκφράζει αυτή η διαφορά; Το μέγεθος \(\Delta_A f - \Delta_B f\) είναι η συνολική μεταβολή της \(f\) όταν εκτελέσουμε έναν απειροστό κλειστό βρόχο: πηγαίνουμε από το \((x, y)\) στο \((x + \delta x, y + \delta y)\) μέσω της Διαδρομής Α, και επιστρέφουμε μέσω της αντίστροφης Διαδρομής Β. Αν η \(f\) ήταν ένα μέγεθος που θα μπορούσε να συσσωρεύει μεταβολή απλώς και μόνο επειδή περιηγηθήκαμε έναν κλειστό βρόχο, τότε ο κυρίαρχος όρος δεύτερης τάξης θα ήταν μη μηδενικός. Αυτό θα σήμαινε ότι η \(f\) παρουσιάζει ένα είδος εγγενούς "περιστροφικής ασυνέπειας": οι απειροστές μεταβολές της δεν ολοκληρώνονται σε μια συνεπή συνολική εικόνα, αλλά αφήνουν ένα ανεξίτηλο ίχνος που εξαρτάται από την ακολουθία των βημάτων.
+
+Η ποσότητα
+\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} - \frac{\partial^2 f}{\partial y \partial x}
+\end{equation}
+εκφράζει ακριβώς αυτή την "απειροστή στροβιλότητα" της βαθμωτής συνάρτησης \(f\), χωρίς να αναφερόμαστε σε διανυσματικά πεδία. Είναι ο ρυθμός με τον οποίο η \(f\) συσσωρεύει υπόλοιπο ανά μονάδα απειροστού εμβαδού \(\delta x \, \delta y\) όταν την περιηγούμαστε σε έναν απειροστό βρόχο, δηλαδή
+\begin{equation}
+\lim_{\delta x, \delta y \to 0} \frac{\Delta_A f - \Delta_B f}{\delta x \, \delta y} = \frac{\partial^2 f}{\partial x \partial y} - \frac{\partial^2 f}{\partial y \partial x}.
+\end{equation}
+Αν αυτή η ποσότητα είναι μη μηδενική, η \(f\) δεν μπορεί να έχει ένα καλώς ορισμένο, ανεξάρτητο από τη διαδρομή ολικό διαφορικό: η έννοια της "τιμής" της \(f\) θα εξαρτάται από το πώς φτάσαμε εκεί.
+
+\textbf{4. Η συμμετρία ως συνθήκη ολοκληρωσιμότητας: Οι απειροστές μεταβολές "κλείνουν".}
+
+Η συμμετρία των μικτών παραγώγων,
+\begin{equation}
+\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x},
+\end{equation}
+σημαίνει ακριβώς ότι ο κυρίαρχος όρος δεύτερης τάξης του υπολοίπου του απειροστού βρόχου μηδενίζεται:
+\begin{equation}
+\Delta_A f - \Delta_B f = o(\delta x \, \delta y + \delta x^2 + \delta y^2).
+\end{equation}
+Με άλλα λόγια, η διαφορά μεταξύ των δύο διαδρομών φθίνει ταχύτερα από κάθε όρο δεύτερης τάξης. Οι μεταβολές πρώτης τάξης οργανώνονται με τέτοιον τρόπο ώστε οι διορθώσεις δεύτερης τάξης να αλληλοσυμπληρώνονται τέλεια, αφήνοντας μόνο όρους ανώτερης τάξης. Η \(f\) είναι ολοκληρώσιμη με την έννοια ότι οι τοπικές της κλίσεις μπορούν να "υφανθούν" σε μια συνεπή συνολική συνάρτηση χωρίς εσωτερικές αντιφάσεις: το άθροισμα όλων των απειροστών μεταβολών κατά μήκος οποιασδήποτε κλειστής καμπύλης τείνει στο μηδέν καθώς η καμπύλη συρρικνώνεται σε σημείο, με ρυθμό ταχύτερο από το εμβαδόν που περικλείει.
+
+Αντιστρόφως, αν οι μικτές παράγωγοι δεν ήταν συμμετρικές, μια απειροστή περιήγηση θα παρήγαγε ένα μη μηδενικό πλεόνασμα δεύτερης τάξης, σαν η \(f\) να είχε μια εσωτερική "δίνη" σε κάθε σημείο. Η \(f\) δεν θα μπορούσε να ανακατασκευαστεί από τις τοπικές της μεταβολές με μονοσήμαντο τρόπο --- θα ήμασταν υποχρεωμένοι να κρατάμε λογαριασμό του ιστορικού των διαδρομών, όπως ακριβώς συμβαίνει σε μη συντηρητικά συστήματα όπου το έργο εξαρτάται από τον δρόμο.
+
+\textbf{5. Συμπέρασμα.}
+
+Φυσικογεωμετρικά, η συμμετρία των μικτών παραγώγων εκφράζει το γεγονός ότι μια ομαλή βαθμωτή συνάρτηση δεν παρουσιάζει απειροστή "στροβιλότητα" δεύτερης τάξης. Οι διαδοχικές μεταβολές κατά μήκος διαφορετικών κατευθύνσεων αντιμετατίθενται ως προς το τελικό αποτέλεσμα, με τη διαφορά μεταξύ των δύο διαδρομών να είναι απειροστό ανώτερης τάξης από το γινόμενο των μεταβολών. Αυτή η αντιμεταθετικότητα των απειροστών μεταβολών είναι η βάση για να υπάρχει ένα καλώς ορισμένο ολικό διαφορικό και, τελικά, μια συνεπής έννοια βαθμωτού δυναμικού του οποίου οι τοπικές κλίσεις ολοκληρώνονται ανεξάρτητα από τη διαδρομή.
+
+==========================================
+
+\begin{corollary}[Θεώρημα Clairout-Schwarz για πολλαπλότητες]\label{cor:clairout-schwarz}
+\end{corollary}
+
+\begin{proof}
+TODO
+\end{proof}
+
+-------------------------------
+
+\begin{proof}
+Θεωρούμε δύο τοπικούς χάρτες \((U, \varphi)\) και \((V, \psi)\) με συντεταγμένες \(x^i\) και \(y^i\) αντίστοιχα, έτσι ώστε \(p \in U \cap V\). Η αλλαγή συντεταγμένων \(\psi \circ \varphi^{-1}\) ορίζει διαφορίσιμες συναρτήσεις \(x^i = x^i(y^1, \dots, y^n)\). Χρησιμοποιούμε τον συμβολισμό άθροισης του Einstein, όπου επαναλαμβανόμενοι δείκτες σε μία πάνω και μία κάτω θέση υποδηλώνουν άθροιση.
+
+Στον χάρτη \((V, \psi)\), η συνάρτηση \(f\) εκφράζεται ως \(f(x(y))\). Παραγωγίζοντας μία φορά ως προς \(y^i\) με τον κανόνα της αλυσίδας, λαμβάνουμε
+\begin{equation}
+\frac{\partial f}{\partial y^i} = \frac{\partial f}{\partial x^k} \frac{\partial x^k}{\partial y^i}.
+\end{equation}
+Παραγωγίζουμε εκ νέου ως προς \(y^j\):
+\begin{equation}
+\frac{\partial^2 f}{\partial y^j \partial y^i} = \frac{\partial}{\partial y^j}\left( \frac{\partial f}{\partial x^k} \frac{\partial x^k}{\partial y^i} \right).
+\end{equation}
+Εφαρμόζοντας τον κανόνα του Leibniz και έπειτα πάλι τον κανόνα της αλυσίδας στον όρο \(\frac{\partial}{\partial y^j}\left( \frac{\partial f}{\partial x^k} \right)\), έχουμε
+\begin{equation}
+\frac{\partial}{\partial y^j}\left( \frac{\partial f}{\partial x^k} \right) = \frac{\partial^2 f}{\partial x^\ell \partial x^k} \frac{\partial x^\ell}{\partial y^j}.
+\end{equation}
+Συνεπώς,
+\begin{equation}
+\frac{\partial^2 f}{\partial y^j \partial y^i} = \frac{\partial f}{\partial x^k} \frac{\partial^2 x^k}{\partial y^j \partial y^i} + \frac{\partial^2 f}{\partial x^\ell \partial x^k} \frac{\partial x^\ell}{\partial y^j} \frac{\partial x^k}{\partial y^i}.
+\end{equation}
+Με εναλλαγή των ρόλων των \(i\) και \(j\), προκύπτει η έκφραση
+\begin{equation}
+\frac{\partial^2 f}{\partial y^i \partial y^j} = \frac{\partial f}{\partial x^k} \frac{\partial^2 x^k}{\partial y^i \partial y^j} + \frac{\partial^2 f}{\partial x^\ell \partial x^k} \frac{\partial x^\ell}{\partial y^i} \frac{\partial x^k}{\partial y^j}.
+\end{equation}
+Αφαιρώντας τις δύο σχέσεις, λαμβάνουμε
+\begin{equation}
+\frac{\partial^2 f}{\partial y^j \partial y^i} - \frac{\partial^2 f}{\partial y^i \partial y^j} = \frac{\partial f}{\partial x^k} \left( \frac{\partial^2 x^k}{\partial y^j \partial y^i} - \frac{\partial^2 x^k}{\partial y^i \partial y^j} \right) + \frac{\partial x^\ell}{\partial y^j} \frac{\partial x^k}{\partial y^i} \left( \frac{\partial^2 f}{\partial x^\ell \partial x^k} - \frac{\partial^2 f}{\partial x^k \partial x^\ell} \right).
+\end{equation}
+Στο σημείο \(p\), ο δεύτερος όρος μηδενίζεται εξ υποθέσεως, διότι η \(f\) έχει συμμετρικές δεύτερες παραγώγους ως προς τις συντεταγμένες \(x^i\). Ο πρώτος όρος μηδενίζεται ταυτοτικά στο \(p\), καθώς οι συναρτήσεις μετάβασης \(x^k(y)\) είναι κλάσης \(C^\infty\) και επομένως ικανοποιούν το θεώρημα του Schwarz:
+\begin{equation}
+\frac{\partial^2 x^k}{\partial y^j \partial y^i} = \frac{\partial^2 x^k}{\partial y^i \partial y^j}.
+\end{equation}
+Άρα, στο \(p\) ισχύει
+\begin{equation}
+\frac{\partial^2 f}{\partial y^j \partial y^i}(p) = \frac{\partial^2 f}{\partial y^i \partial y^j}(p),
+\end{equation}
+που ολοκληρώνει την απόδειξη.
+\end{proof}
+
+\begin{observation}
+Έστω \(M\) διαφορίσιμη πολλαπλότητα και \(f \in C^2(M)\). Το διαφορικό
+\begin{equation}
+df = \frac{\partial f}{\partial x^i} dx^i
+\end{equation}
+είναι μια καλώς ορισμένη 1-μορφή, δηλαδή τανυστής τύπου \((0,1)\), διότι οι συνιστώσες του μετασχηματίζονται ομογενώς μέσω του κανόνα της αλυσίδας. Το ερώτημα είναι τι τανυστικά αντικείμενα μπορούν να κατασκευαστούν από τις δεύτερες παραγώγους.
+
+Ο νόμος μετασχηματισμού των δεύτερων παραγώγων υπό αλλαγή συντεταγμένων \(x^i \to y^i\) είναι
+\begin{equation}
+\frac{\partial^2 f}{\partial y^j \partial y^i} = \frac{\partial f}{\partial x^k} \frac{\partial^2 x^k}{\partial y^j \partial y^i} + \frac{\partial^2 f}{\partial x^\ell \partial x^k} \frac{\partial x^\ell}{\partial y^j} \frac{\partial x^k}{\partial y^i}.
+\end{equation}
+Ο πρώτος όρος,
+\begin{equation}
+\frac{\partial f}{\partial x^k} \frac{\partial^2 x^k}{\partial y^j \partial y^i},
+\end{equation}
+είναι μη ομογενής και καταστρέφει τον τανυστικό χαρακτήρα των
+\begin{equation}
+\frac{\partial^2 f}{\partial x^i \partial x^j}.
+\end{equation}
+Παρατηρούμε όμως ότι ο όρος αυτός είναι συμμετρικός ως προς \(i\) και \(j\), διότι οι συναρτήσεις μετάβασης είναι \(C^\infty\) και ικανοποιούν
+\begin{equation}
+\frac{\partial^2 x^k}{\partial y^j \partial y^i} = \frac{\partial^2 x^k}{\partial y^i \partial y^j}.
+\end{equation}
+Αυτή η συμμετρία είναι το κλειδί για τα εξής δύο φαινόμενα.
+
+\textbf{1. Ο αντισυμμετρικός τανυστής \(d^2f\).} Λόγω της συμμετρίας του μη ομογενούς όρου, η αντισυμμετρικοποίηση των δεύτερων παραγώγων τον εξαλείφει. Πράγματι, ορίζοντας την εξωτερική παράγωγο της \(df\) μέσω του σφηνοειδούς γινομένου,
+\begin{equation}
+d(df) = d\left( \frac{\partial f}{\partial x^i} dx^i \right) = \frac{\partial^2 f}{\partial x^j \partial x^i} dx^j \wedge dx^i = \frac{1}{2} \left( \frac{\partial^2 f}{\partial x^j \partial x^i} - \frac{\partial^2 f}{\partial x^i \partial x^j} \right) dx^j \wedge dx^i,
+\end{equation}
+οι συνιστώσες
+\begin{equation}
+(d^2f)_{ij} = \frac{\partial^2 f}{\partial x^i \partial x^j} - \frac{\partial^2 f}{\partial x^j \partial x^i}
+\end{equation}
+μετασχηματίζονται ομογενώς,
+\begin{equation}
+\frac{\partial^2 f}{\partial y^j \partial y^i} - \frac{\partial^2 f}{\partial y^i \partial y^j} = \left( \frac{\partial^2 f}{\partial x^\ell \partial x^k} - \frac{\partial^2 f}{\partial x^k \partial x^\ell} \right) \frac{\partial x^\ell}{\partial y^j} \frac{\partial x^k}{\partial y^i},
+\end{equation}
+και συγκροτούν έναν καλώς ορισμένο αντισυμμετρικό τανυστή τύπου \((0,2)\), δηλαδή μια 2-μορφή. Το θεώρημα Schwarz για την \(f\) εξασφαλίζει \(d^2f = 0\) ταυτοτικά. Έτσι, χωρίς καμία επιπλέον γεωμετρική δομή, οι δεύτερες παράγωγοι δίνουν πάντα τον μηδενικό αντισυμμετρικό τανυστή --- αποτέλεσμα ανεξάρτητο συντεταγμένων και θεμέλιο της συνομολογίας de Rham.
+
+\textbf{2. Αποτυχία ορισμού συμμετρικού τανυστή και η Εσσιανή μέσω συνοχής.} Το συμμετρικό μέρος των δεύτερων παραγώγων,
+\begin{equation}
+\frac{\partial^2 f}{\partial x^i \partial x^j} + \frac{\partial^2 f}{\partial x^j \partial x^i},
+\end{equation}
+διατηρεί τον μη ομογενή όρο και επομένως δεν ορίζει τανυστή. Για να κατασκευαστεί ένας συμμετρικός τανυστής από τις δεύτερες παραγώγους, απαιτείται επιπλέον δομή: μια συνοχή \(\nabla\) (π.χ. η Levi-Civita μιας μετρικής \(g\)). Η Εσσιανή ορίζεται τότε ως
+\begin{equation}
+\operatorname{Hess} f = \nabla df,
+\end{equation}
+με συνιστώσες
+\begin{equation}
+(\operatorname{Hess} f)_{ij} = \frac{\partial^2 f}{\partial x^i \partial x^j} - \Gamma^k_{ij} \frac{\partial f}{\partial x^k},
+\end{equation}
+όπου τα σύμβολα Christoffel \(\Gamma^k_{ij}\) μετασχηματίζονται ακριβώς έτσι ώστε ο μη ομογενής όρος από τις
+\begin{equation}
+\frac{\partial^2 f}{\partial x^i \partial x^j}
+\end{equation}
+να ακυρώνεται από τον μετασχηματισμό του όρου
+\begin{equation}
+\Gamma^k_{ij} \frac{\partial f}{\partial x^k}.
+\end{equation}
+Το αποτέλεσμα είναι ένας καλώς ορισμένος συμμετρικός τανυστής τύπου \((0,2)\). Η συμμετρία του έπεται από τη συμμετρία των \(\Gamma^k_{ij} = \Gamma^k_{ji}\) (έλλειψη στρέψης) και το θεώρημα Schwarz.
+
+\textbf{3. Κρίσιμα σημεία και εγγενής Εσσιανή.} Στα κρίσιμα σημεία \(p\) της \(f\), όπου \(df_p = 0\), ο μη ομογενής όρος
+\begin{equation}
+\frac{\partial f}{\partial x^k} \frac{\partial^2 x^k}{\partial y^j \partial y^i}
+\end{equation}
+μηδενίζεται ανεξάρτητα από την ύπαρξη συνοχής. Συνεπώς, στο \(p\) οι δεύτερες μερικές παράγωγοι μετασχηματίζονται ομογενώς,
+\begin{equation}
+\frac{\partial^2 f}{\partial y^j \partial y^i}(p) = \frac{\partial^2 f}{\partial x^\ell \partial x^k}(p) \frac{\partial x^\ell}{\partial y^j} \frac{\partial x^k}{\partial y^i},
+\end{equation}
+και ορίζουν έναν εγγενή συμμετρικό τανυστή, την Εσσιανή στο κρίσιμο σημείο. Ο τανυστής αυτός είναι ανεξάρτητος από την επιλογή συνοχής (ο όρος \(\Gamma^k_{ij} \frac{\partial f}{\partial x^k}\) μηδενίζεται) και αποτελεί τη βάση της θεωρίας Morse: ο δείκτης του κρίσιμου σημείου, δηλαδή το πλήθος των αρνητικών ιδιοτιμών της Εσσιανής, είναι καλώς ορισμένος και αναλλοίωτος υπό αλλαγές συντεταγμένων.
+
+Συνοψίζοντας: χωρίς επιπλέον δομή, οι δεύτερες παράγωγοι δίνουν εγγενώς μόνο το αντισυμμετρικό μέρος \(d^2f = 0\). Για να αποκτηθεί συμμετρικός τανυστής, απαιτείται συνοχή --- εκτός από τα κρίσιμα σημεία, όπου ο συμμετρικός τανυστής των δεύτερων παραγώγων είναι εγγενής και ανεξάρτητος από κάθε επιπλέον γεωμετρική δομή.
+\end{observation}
 
 -------------------------------
 
@@ -342,9 +647,9 @@ TODO
 
 Αξίζει να σημειωθεί ότι η δομή διαφορισιμότητας συμπαρασύρει και μια τοπική τοπολογική δομή. Κάθε περιοχή της $M$ που καλύπτεται από ένα σύστημα συντεταγμένων κληρονομεί, μέσω της αμφιμονοσήμαντης αντιστοιχίας με ένα ανοιχτό υποσύνολο του $\mathbb{R}^n$, την τοπολογία του $\mathbb{R}^n$: έννοιες όπως το ανοιχτό σύνολο, η συνεκτικότητα και η σύγκλιση ακολουθιών έχουν νόημα τοπικά. Ωστόσο, αυτή η τοπολογική δομή είναι εξασφαλισμένη μόνο τοπικά. Καθολικά, μια πολλαπλότητα μπορεί να έχει εντελώς διαφορετική τοπολογία από τον $\mathbb{R}^n$ --- μπορεί να είναι συμπαγής, να έχει οπές, ή να μην είναι καν προσανατολίσιμη. Αυτή η διάκριση ανάμεσα στην τοπική ομοιότητα με τον $\mathbb{R}^n$ και την καθολική τοπολογική πολυπλοκότητα είναι ουσιώδης για τη φυσική: τα τοπικά πειράματα δεν μπορούν να ανιχνεύσουν την καθολική τοπολογία του χωροχρόνου, αλλά η ύπαρξη καθολικών φαινομένων (όπως η βαρύτητα) μπορεί να εξαρτάται από αυτήν.
 
-\subsection{Απειροστές μεταβολές βαθμωτών ποσοτήτων}
-
 \subsection{Πολλαπλότητες με σύνορα και γωνίες}
+
+\subsection{Απειροστές μεταβολές βαθμωτών συναρτήσεων}
 
 \subsection{Έννοιες αναλλοιότητας -- Ανεξαρτησία από τις συντεταγμένες}
 
