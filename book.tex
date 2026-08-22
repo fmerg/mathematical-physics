@@ -164,43 +164,98 @@ x^i(y^1, \dots, y^n),
 
 Για λόγους που θα φανούν αργότερα,
 ενδιαφέρουν συναρτήσεις μετάβασης
-που είναι αμφιδιαφορίσεις μεταξύ ανοικτών χωρίων του $\mathbb{R}^n$.
+που είναι αμφιδιαφορίσεις μεταξύ ανοικτών χωρίων του $\mathbb{R}^n$. Τέτοιες απεικονίσεις δεν εισάγουν ``τσακίσεις'' ούτε προς τα μπρος ούτε προς τα πίσω, και άρα διατηρούν τη δομή διαφορισιμότητας πάνω από ``ομαλή'' παραμόρφωση των χωρίων.
 Υπενθυμίζουμε ορισμένα στοιχειώδη
-από τον απειροστικό λογισμό.
-Εάν η $\psi$ είναι διαφορίσιμη,
-υπάρχει σε κάθε $q \in x(W)$ το διαφορικό
+από τον απειροστικό λογισμό του $\mathbb{R}^n$.
+Εάν η $\psi$ είναι διαφορίσιμη, τότε υπάρχει σε κάθε $q \in x(W)$ το διαφορικό
 \begin{equation}
 \psi_*: T_q \mathbb{R}^n \to T_r \mathbb{R}^n,
 \quad
 r \equiv \psi(q),
 \end{equation}
-που δίνει τη βέλτιστη γραμμική προσέγγιση της τοπικής παραμόρφωσης του χωρίου $x(W)$ υπό τη δράση της \eqref{eq:coordinates-change-x-to-y}·
-εάν η $\psi$ είναι επιπλέον αμφιδιαφόριση, το διαφορικό της
-είναι σε κάθε σημείο γραμμικός ισομορφισμός, με το διαφορικό της $\chi$ να αποτελεί την αντιστροφή του,
+που δίνει τη βέλτιστη γραμμική προσέγγιση της τοπικής παραμόρφωσης του χωρίου $x(W)$ υπό τη δράση της \eqref{eq:coordinates-change-x-to-y}· επιπλέον, υφίσταται αυτόματα το συζυγές διαφορικό
+\begin{equation}
+\psi^*: T_r^* \mathbb{R}^n \to T_q^* \mathbb{R}^n,
+\quad
+\omega \mapsto \psi^* \hspace{0pt} \omega,
+\end{equation}
+που μας επιτρέπει να ``δούμε'' εντός του $T_q \mathbb{R}^n$
+τη δράση των γραμμικών συναρτησοειδών
+(ή 1-μορφών)
+του $T_r \mathbb{R}^n$ υπό το πρίσμα του διαφορικού της $\psi$ ως
+\begin{equation}
+\psi^* \omega (\xi) = \omega(\psi_* \xi).
+\end{equation}
+Εάν η $\psi$ είναι ειδικότερα αμφιδιαφόριση, το διαφορικό της
+είναι σε κάθε σημείο γραμμικός ισομορφισμός μεταξύ εφαπτόμενων χώρων, με το διαφορικό της $\chi$ να αποτελεί την αντιστροφή του,
 \begin{equation}\label{eq:inverse-differential}
 \chi_* = \left(\psi_*\right)^{-1}.
 \end{equation}
+Σε αυτήν την περίπτωση, το συζυγές διαφορικό $\psi^*$
+είναι επίσης ισομορφισμός μεταξύ συνεφαπτόμενων χώρων
+(οπότε η αντιστοιχία μεταξύ γραμμικών δράσεων είναι αμφιμονοσήμαντη υπό το πρίσμα του διαφορικού $\psi_*$) και αντιστρέφεται
+από το συζυγές διαφορικό της $\chi$,
+\begin{equation}
+\chi^* = \left(\psi^*\right)^{-1}.
+\end{equation}
+Συγκεκριμένα, το συζυγές διαφορικό της $\chi$ μας επιτρέπει να
+``δούμε'' εντός του $T_r \mathbb{R}^n$
+τη δράση των 1-μορφών
+του $T_q \mathbb{R}^n$ υπό το πρίσμα του αντίστροφου διαφορικού της $\psi$,
+\begin{equation}
+\chi^* \omega (\xi) = \omega(\chi_* \xi) = \omega((\psi^*)^{-1} \xi).
+\end{equation}
+
 Προκειμένου να συναγάγουμε χρηστικούς τύπους,
-θεωρούμε κάθε εφαπτόμενο χώρο
-$Τ_q \mathbb{R}^n$ πρωταρχικά εφοδιασμένο με την καρτεσιανή κανονική βάση
-\begin{equation*}\label{eq:base-canonical-x}
+θεωρούμε τον εφαπτόμενο χώρο
+$Τ_q \mathbb{R}^n$ εφοδιασμένο με την καρτεσιανή βάση
+\begin{equation}\label{eq:base-canonical-x}
 \frac{\partial}{\hspace{1pt} \partial x^i \hspace{1pt}},
 \quad
 1 \le i \le n,
-\end{equation*}
-που επισυνάπεταται στο τυχόν $q \in \mathbb{R}^n$
+\end{equation}
+που επισυνάπεταται στο τυχόν σημείο $q \in x(U)$
 μέσω μεταφοράς κατά μήκος του αντίστοιχου διανύσματος θέσης
-από την αρχή των αξόνων.
-Γνωρίζουμε τότε ότι τα διαφορικά $\psi_*$ και $\chi_*$
-αναπαρίσταται ως προς τις κανονικές βάσεις
-των $T_q \mathbb{R}^n$ και $T_r \mathbb{R}^n$
-από τους ιακωβιανούς πίνακες
+από την αρχή των αξόνων·
+παρομοίως, ο συνεφαπτόμενος χώρος
+$Τ_q^* \mathbb{R}^n$
+θεωρείται εφοδιασμένος με τη δυϊκή βάση
+\begin{equation}\label{eq:cobase-canonical-x}
+dx^i,
+\quad
+1 \le i \le n,
+\end{equation}
+των 1-μορφών που ορίζονται μέσω των σχέσεων
+\begin{equation}\label{eq:dual-action-x}
+dx^i \left(\frac{\partial}{\partial x^j}\right)
+=
+\delta_{ij},
+\quad
+1 \le i, j \le n.
+\end{equation}
+Για το τυχόν σημείο $r \in y(U)$ συμβολίζουμε την ίδια καρτεσιανή βάση του $T_r \mathbb{R}^n$ ως
+\begin{equation}\label{eq:base-canonical-y}
+\frac{\partial}{\hspace{1pt} \partial y^i \hspace{1pt}},
+\quad
+1 \le i \le n,
+\end{equation}
+ενώ η δυϊκή αυτής στον συνεφαπτόμενο χώρο $Τ_r^* \mathbb{R}^n$
+θα συμβολίζεται ως
+\begin{equation}\label{eq:cobase-canonical-y}
+dy^i,
+\quad
+1 \le i \le n.
+\end{equation}
+
+---------------
+
+Γνωρίζουμε τότε ότι το διαφορικό $\psi_*$ αναπαρίσταται ως προς τις βάσεις $\partial/\partial x^i$ και $\partial/\partial y^i$
 \begin{equation*}
 \left(\frac{\partial y^i}{\partial x^j}\right)_{i, j},
 \quad
 \left(\frac{\partial x^i}{\partial y^j}\right)_{i, j}
 \end{equation*}
-αντιστοίχως (υπολογισμένους στα αντίστοιχα σημεία),
+αντιστοίχως (υπολογισμένους στα κατάλληλα σημεία),
 οπότε η σχέση \eqref{eq:inverse-differential}
 εκφράζεται ως
 \begin{equation}\label{eq:partial-derivatives-annihilation}
@@ -211,10 +266,209 @@ $Τ_q \mathbb{R}^n$ πρωταρχικά εφοδιασμένο με την κα
 \quad
 1 \le i, j \le n.
 \end{equation}
+
+---------------
+
+Γνωρίζουμε τότε ότι τα διαφορικά $\psi_*$ και $\chi_*$
+αναπαρίσταται ως προς τις κανονικές βάσεις \eqref{eq:base-canonical-x}
+των $T_q \mathbb{R}^n$ και $T_r \mathbb{R}^n$
+από τους ιακωβιανούς πίνακες
+\begin{equation*}
+\left(\frac{\partial y^i}{\partial x^j}\right)_{i, j},
+\quad
+\left(\frac{\partial x^i}{\partial y^j}\right)_{i, j}
+\end{equation*}
+αντιστοίχως (υπολογισμένους στα κατάλληλα σημεία),
+οπότε η σχέση \eqref{eq:inverse-differential}
+εκφράζεται ως
+\begin{equation}\label{eq:partial-derivatives-annihilation}
+\frac{\partial y^i}{\partial x^k}
+\frac{\partial x^k}{\partial y^j}
+=
+δ_{ij},
+\quad
+1 \le i, j \le n.
+\end{equation}
+
+-----------
+
+Υπ' αυτόν τον συμβολισμό, ισχύει
+\begin{equation}
+\frac{\partial}{\partial y ^ i}
+=
+\frac{\partial x^j}{\partial y^i} \, \psi_* \frac{\partial}{\partial x^j},
+\quad
+1 \le i \le n,
+\end{equation}
+
+\begin{equation}
+dy^i
+=
+\frac{\partial y^j}{\partial x^i} \, \chi^* dx^j,
+\quad
+1 \le i \le n.
+\end{equation}
+
+
+---------------
+
+\begin{equation}
+ΤΟΔΟ
+\end{equation}
+
+---------------
+
+
+Αυτή η σχέση επιδέχεται πολλαπλών ερμηνειών.
+Θεωρώντας τη βάση
+\begin{equation}\label{eq:base-canonical-y}
+\frac{\partial}{\partial y^i} \equiv \psi_* \frac{\partial}{\partial x^i},
+\quad
+1 \le i \le n
+\end{equation}
+που ανακύπτει στον $T_r \mathbb{R}^n$ 
+μέσω της δράσης του διαφορικού της $\psi$
+στην κανονική βάση του $T_q \mathbb{R}^n$,
+θεωρούμε τον συνεφαπτόμενο χώρο $T_r^* \mathbb{R}^n$
+εφοδιασμένο με τη βάση
+\begin{equation}\label{eq:cobase-canonical-y}
+dy^i \equiv \chi^* dx^i,
+\quad
+1 \le i \le n
+\end{equation}
+που ανακύπτει μέσω της δράσης του συζυγούς διαφορικού της $\chi$·
+γνωρίζουμε τότε ότι
+\begin{equation}\label{eq:dual-action-y}
+dy^i \left(\frac{\partial}{\partial y^j}\right)
+=
+\delta_{ij},
+\quad
+1 \le i, j \le n,
+\end{equation}
+εφόσον η συζυγία σέβεται τη δυϊκή δράση εξ ορισμού.
+Από τα στοιχειώδη της γραμμικής άλγεβρας,
+οι βάσεις \eqref{eq:base-canonical-x} και \eqref{eq:base-canonical-y}
+συνδέονται μέσω των σχέσεων
+\begin{equation}\label{eq:base-change}
+\frac{\partial}{\partial y ^ i}
+=
+\frac{\partial y^j}{\partial x^i}
+\frac{\partial}{\partial x^j},
+\quad
+1 \le i \le n,
+\end{equation}
+ενώ οι βάσεις \eqref{eq:cobase-canonical-x} και \eqref{eq:cobase-canonical-y}
+συνδέονται μέσω των σχέσεων
+\begin{equation}\label{eq:cobase-change}
+\quad
+dy^i
+=
+\frac{\partial y^i}{\partial x^j}
+dx^j
+\quad
+1 \le i \le n.
+\end{equation}
+Θα δούμε ότι, εφόσον η αναπαράσταση ενός γεωμετρικού αντικειμένου μετασχηματίζεται βάσει των πρώτων μερικών παραγώγων
+των συναρτήσεων μετάβασης,
+τότε οι σχέσεις \eqref{eq:base-change} και \eqref{eq:cobase-change}
+ενδεχομένως εγγυώνται την αναλλοιότητα αυτού κάτω από αλλαγή συντεταγμένων δυνάμει της \eqref{eq:partial-derivatives-annihilation}.
+
+-----------
+
 Θα δούμε γενικά ότι, εφόσον η αναπαράσταση ενός γεωμετρικού αντικειμένου μετασχηματίζεται βάσει των πρώτων μερικών παραγώγων
 των συναρτήσεων μετάβασης,
 τότε η σχέση \eqref{eq:partial-derivatives-annihilation}
 ενδεχομένως εγγυάται την αναλλοιότητα αυτού υπό την αλλαγή συντεταγμένων.
+
+-----------
+
+Το απλούστερο στιγμιότυπο είναι η αναλλοιότητα της δράσης των γραμμικών συναρτησοειδών πάνω σε εφαπτόμενα διανύσματα, όπως υποδηλώνεται από την παρακάτω πρόταση.
+\begin{proposition}[Φυσικότητα της δράσης των γραμμικών συναρτησοειδών κάτω από αλλαγή συστήματος συντεταγμένων]
+	\label{prop:elementary-contravariance-covariance}
+Έστω τοπικοί $n$-χάρτες $x:U \to M$ και $y: V \to M$
+που εισάγουν συστήματα συντεταγμένων
+$x^1, \dots, x^n$ και $y^1, \dots, y^n$,
+τέτοιοι ώστε η συνάρτηση μετάβασης
+$\psi \equiv y^{-1} \circ x$ που αντιστοιχεί στην αλλαγή συντεταγμένων
+\begin{equation*}
+y^i(x^1, \dots, x^n),
+\quad
+1 \le i \le n,
+\end{equation*}
+να είναι αμφιδιαφόριση μεταξύ ανοικτών χωρίων του $\mathbb{R}^n$.
+Συμβολίζουμε επίσης ως $\chi \equiv x^{-1} \circ y$
+την συνάρτηση μετάβασης που αντιστοιχεί στην αντίστροφη
+αλλαγή συντεταγμένων
+\begin{equation*}
+x^i(y^1, \dots, y^n),
+\quad
+1 \le i \le n.
+\end{equation*}
+\begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
+    \item[\textup{(i)}]
+    	Οι συνιστώσες των εφαπτόμενων διανυσμάτων μετασχηματίζονται
+    	ανταλλοίωτα υπό την αλλαγή συντεταγμένων.
+    	Ακριβέστερα, δοθέντος $\xi = \xi^i \hspace{1pt} \partial/\partial x^i$ με $\psi_* \xi = \eta^i \hspace{1pt} \partial/\partial x^i$, τότε
+    	\begin{equation}
+    	\eta^i =
+    	\frac{\partial x^j}{\partial y^i} \hspace{1pt} \xi^i,
+    	\quad
+    	1 \le i \le n.
+    	\end{equation}
+    \item[\textup{(ii)}]
+    	Οι συνιστώσες των γραμμικών συναρτησοειδών μετασχηματίζονται συναλλοίωτα υπό την αλλαγή συντεταγμένων. Ακριβέστερα, δοθέντος $\omega = \omega_i \hspace{1pt} dx^i$ με
+    	$\chi^* \omega = \theta_i \hspace{1pt} dx^i$, τότε
+		\begin{equation}
+			\theta_i = \frac{\partial y^j}{\partial x^i}\omega_j,
+			\quad
+			1 \le i \le n.
+		\end{equation}
+	\item[\textup{(iii)}]
+		Η δράση γραμμικού συναρτησοειδούς πάνω σε εφαπτόμενο διάνυσμα μένει αναλλοίωτη υπό την αλλαγή συντεταγμένων.
+		Ακριβέστερα, δοθέντων $\omega \in T_q^* \mathbb{R}^n$ και $\xi \in T_q \mathbb{R}^n$, τότε
+		\begin{equation}
+			\omega\, (\xi)
+			=
+			\chi^* \omega \, (\psi_* \xi).
+		\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Για το (i) παρατηρούμε απλά ότι
+\begin{equation*}
+\psi_* \xi
+=
+\psi_* \left( \xi^i \frac{\partial}{\partial x^i} \right)
+=
+\xi^i \, \psi_* \frac{\partial}{\partial x^i}
+=
+\xi^i \frac{\partial}{\partial y^i}
+=
+\xi^i \frac{\partial x^j}{\partial y^i} \frac{\partial}{\partial x^j},
+\end{equation*}
+όπου κάνουμε χρήση των \eqref{eq:base-canonical-y} και \eqref{eq:base-change}.
+Παρομοίως, για το (ii) παρατηρούμε ότι
+\begin{equation*}
+\chi^* \omega
+=
+\chi^* \left( \omega_i \, dx^i \right)
+=
+\omega_i \, \chi^* dx^i
+=
+\omega_i \, dy^i
+=
+\omega_i \frac{\partial y^i}{\partial x^j} dx^j
+\end{equation*}
+όπου κάνουμε χρήση των \eqref{eq:cobase-canonical-y} και \eqref{eq:cobase-change}.
+Για το (iii),
+\begin{equation*}
+TODO
+\end{equation*}
+όπου κάναμε διαδοχική χρήση των
+\eqref{eq:TODO}, \eqref{eq:TODO} και \eqref{eq:TODO}. 
+\end{proof}
+
+-------------
 
 \subsection{Δομή διαφορισιμότητας και μερικές παράγωγοι}
 	\label{sec:differentiability-structure}
@@ -571,238 +825,6 @@ K_\xi = \{ v \in \mathbb{R}^n : v^1 \ge 0, \dots, v^\zeta \ge 0 \}.
 Με άλλα λόγια, η γεωμετρία είναι η μελέτη των αντικειμένων που είναι ανεξάρτητα από την επιλογή συντεταγμένων, και η φυσική --- όταν διατυπώνεται γεωμετρικά --- κληρονομεί αυτή την ανεξαρτησία στο επίπεδο της διατύπωσης. Κάθε φορά που ορίζουμε ένα νέο αντικείμενο, το πρώτο πράγμα που κάνουμε είναι να γράψουμε τις συνιστώσες του σε ένα σύστημα συντεταγμένων και μετά να ελέγξουμε πώς μετασχηματίζονται κάτω από μια αλλαγή συντεταγμένων. Αν ο νόμος μετασχηματισμού είναι ο σωστός, τότε το αντικείμενο έχει γεωμετρική --- και, κατ' επέκταση, φυσική --- υπόσταση· αν όχι, τότε πρόκειται για ένα αντικείμενο που εξαρτάται από την επιλογή συντεταγμένων και δεν έχει ανεξάρτητο γεωμετρικό νόημα. Αυτή η ιδέα διατρέχει ολόκληρο το κείμενο και αποτελεί τον εννοιολογικό πυρήνα γύρω από τον οποίο οργανώνεται η ύλη του. Η δομή διαφορισιμότητας που ορίζεται από τις $C^\infty$ συναρτήσεις μετάβασης είναι ο μαθηματικός μηχανισμός που καθιστά αυτή την ανεξαρτησία δυνατή: εξασφαλίζει ότι οι χώροι $C^k(M, N)$ είναι καλώς ορισμένοι, και συνεπώς ότι οι απεικονίσεις που απαρτίζουν τους φυσικούς νόμους έχουν νόημα ανεξάρτητο από την ανθρώπινη επιλογή συντεταγμένων.
 
 \section{Ο χώρος των ταχυτήτων και των βαθμίδων}
-
-----------------------
-
-Για λόγους που θα φανούν αργότερα,
-ενδιαφέρουν συναρτήσεις μετάβασης
-που είναι αμφιδιαφορίσεις μεταξύ ανοικτών χωρίων.
-Υπενθυμίζουμε ορισμένα στοιχειώδη
-από τον απειροστικό λογισμό στον $\mathbb{R}^n$.
-Ένεκα διαφορισιμότητας, υπάρχει σε κάθε $q \in x^{-1}(W)$ το διαφορικό
-\begin{equation}
-\psi_*: T_q \mathbb{R}^n \to T_r \mathbb{R}^n,
-\quad
-r \equiv \psi(q),
-\end{equation}
-που παρέχει τη βέλτιστη γραμμική προσέγγιση της τοπικής παραμόρφωσης του χωρίου $x^{-1}(W)$ υπό τη δράση της \eqref{eq:coordinates-change-x-to-y}·
-επιπλέον, υφίσταται αυτομάτως το συζυγές διαφορικό
-\begin{equation}
-\psi^*: T_r^* \mathbb{R}^n \to T_q^* \mathbb{R}^n,
-\quad
-\omega \mapsto \psi^* \hspace{0pt} \omega,
-\end{equation}
-που μας επιτρέπει να ``δούμε'' εντός του $T_q \mathbb{R}^n$
-τη δράση των γραμμικών συναρτησοειδών
-του $T_r \mathbb{R}^n$ υπό το πρίσμα του διαφορικού της $\psi$ ως
-\begin{equation}
-\psi^* \omega (\xi) = \omega(\psi_* \xi).
-\end{equation}
-Εάν η $\psi$ είναι επιπλέον αμφιδιαφόριση, το διαφορικό της
-είναι σε κάθε σημείο γραμμικός ισομορφισμός μεταξύ εφαπτόμενων χώρων
-(πράγμα που αποτελεί επίσης ικανή συνθήκη βάσει του Θεωρήματος Αντίστροφης Απεικόνισης), με το διαφορικό της $\chi$ να αποτελεί την αντιστροφή του,
-\begin{equation}\label{eq:inverse-differential}
-\chi_* = \left(\psi_*\right)^{-1}.
-\end{equation}
-Σε αυτήν την περίπτωση, το συζυγές διαφορικό $\psi^*$
-είναι επίσης ισομορφισμός μεταξύ συνεφαπτόμενων χώρων
-(οπότε η αντιστοιχία μεταξύ γραμμικών δράσεων είναι αμφιμονοσήμαντη υπό το πρίσμα του διαφορικού $\psi_*$) και αντιστρέφεται
-από το συζυγές διαφορικό της $\chi$,
-\begin{equation}
-\chi^* = \left(\psi^*\right)^{-1}.
-\end{equation}
-Συγκεκριμένα, το συζυγές διαφορικό της $\chi$ μας επιτρέπει να
-``δούμε'' εντός του $T_r \mathbb{R}^n$
-τη δράση των γραμμικών συναρτησοειδών
-του $T_q \mathbb{R}^n$ υπό το πρίσμα του αντίστροφου διαφορικού της $\psi$.
-
-Προκειμένου να συναγάγουμε χρηστικούς τύπους,
-θεωρούμε κάθε εφαπτόμενο χώρο
-$Τ_q \mathbb{R}^n$ πρωταρχικά εφοδιασμένο με την καρτεσιανή κανονική βάση
-\begin{equation}\label{eq:base-canonical-x}
-\frac{\partial}{\hspace{1pt} \partial x^i \hspace{1pt}},
-\quad
-1 \le i \le n,
-\end{equation}
-που επισυνάπεταται στο τυχόν σημείο $q \in \mathbb{R}^n$
-μέσω μεταφοράς κατά μήκος του αντίστοιχου διανύσματος θέσης
-από την αρχή των αξόνων·
-σε αυτήν την περίπτωση, ο τυχών συνεφαπτόμενος χώρος
-$Τ_q^* \mathbb{R}^n$
-θεωρείται πρωταρχικά εφοδιασμένος με τη δυϊκή βάση
-\begin{equation}\label{eq:cobase-canonical-x}
-dx^i,
-\quad
-1 \le i \le n,
-\end{equation}
-των γραμμικών συναρτησοειδών που ορίζονται μέσω των σχέσεων
-\begin{equation}\label{eq:dual-action-x}
-dx^i \left(\frac{\partial}{\partial x^j}\right)
-=
-\delta_{ij},
-\quad
-1 \le i, j \le n.
-\end{equation}
-Γνωρίζουμε τότε ότι τα διαφορικά $\psi_*$ και $\chi_*$
-αναπαρίσταται ως προς τις κανονικές βάσεις \eqref{eq:base-canonical-x}
-των $T_q \mathbb{R}^n$ και $T_r \mathbb{R}^n$
-από τους ιακωβιανούς πίνακες
-\begin{equation*}
-\left(\frac{\partial y^i}{\partial x^j}\right)_{i, j},
-\quad
-\left(\frac{\partial x^i}{\partial y^j}\right)_{i, j}
-\end{equation*}
-αντιστοίχως (υπολογισμένους στα κατάλληλα σημεία),
-οπότε η σχέση \eqref{eq:inverse-differential}
-εκφράζεται ως
-\begin{equation}\label{eq:partial-derivatives-annihilation}
-\frac{\partial y^i}{\partial x^k}
-\frac{\partial x^k}{\partial y^j}
-=
-δ_{ij},
-\quad
-1 \le i, j \le n.
-\end{equation}
-Αυτή η σχέση επιδέχεται πολλαπλών ερμηνειών.
-Θεωρώντας τη βάση
-\begin{equation}\label{eq:base-canonical-y}
-\frac{\partial}{\partial y^i} \equiv \psi_* \frac{\partial}{\partial x^i},
-\quad
-1 \le i \le n
-\end{equation}
-που ανακύπτει στον $T_r \mathbb{R}^n$ 
-μέσω της δράσης του διαφορικού της $\psi$
-στην κανονική βάση του $T_q \mathbb{R}^n$,
-θεωρούμε τον συνεφαπτόμενο χώρο $T_r^* \mathbb{R}^n$
-εφοδιασμένο με τη βάση
-\begin{equation}\label{eq:cobase-canonical-y}
-dy^i \equiv \chi^* dx^i,
-\quad
-1 \le i \le n
-\end{equation}
-που ανακύπτει μέσω της δράσης του συζυγούς διαφορικού της $\chi$·
-γνωρίζουμε τότε ότι
-\begin{equation}\label{eq:dual-action-y}
-dy^i \left(\frac{\partial}{\partial y^j}\right)
-=
-\delta_{ij},
-\quad
-1 \le i, j \le n,
-\end{equation}
-εφόσον η συζυγία σέβεται τη δυϊκή δράση εξ ορισμού.
-Από τα στοιχειώδη της γραμμικής άλγεβρας,
-οι βάσεις \eqref{eq:base-canonical-x} και \eqref{eq:base-canonical-y}
-συνδέονται μέσω των σχέσεων
-\begin{equation}\label{eq:base-change}
-\frac{\partial}{\partial y ^ i}
-=
-\frac{\partial y^j}{\partial x^i}
-\frac{\partial}{\partial x^j},
-\quad
-1 \le i \le n,
-\end{equation}
-ενώ οι βάσεις \eqref{eq:cobase-canonical-x} και \eqref{eq:cobase-canonical-y}
-συνδέονται μέσω των σχέσεων
-\begin{equation}\label{eq:cobase-change}
-\quad
-dy^i
-=
-\frac{\partial y^i}{\partial x^j}
-dx^j
-\quad
-1 \le i \le n.
-\end{equation}
-Θα δούμε ότι, εφόσον η αναπαράσταση ενός γεωμετρικού αντικειμένου μετασχηματίζεται βάσει των πρώτων μερικών παραγώγων
-των συναρτήσεων μετάβασης,
-τότε οι σχέσεις \eqref{eq:base-change} και \eqref{eq:cobase-change}
-ενδεχομένως εγγυώνται την αναλλοιότητα αυτού κάτω από αλλαγή συντεταγμένων δυνάμει της \eqref{eq:partial-derivatives-annihilation}.
-Το απλούστερο στιγμιότυπο είναι η αναλλοιότητα της δράσης των γραμμικών συναρτησοειδών πάνω σε εφαπτόμενα διανύσματα, όπως υποδηλώνεται από την παρακάτω πρόταση.
-\begin{proposition}[Φυσικότητα της δράσης των γραμμικών συναρτησοειδών κάτω από αλλαγή συστήματος συντεταγμένων]
-	\label{prop:elementary-contravariance-covariance}
-Έστω τοπικοί $n$-χάρτες $x:U \to M$ και $y: V \to M$
-που εισάγουν συστήματα συντεταγμένων
-$x^1, \dots, x^n$ και $y^1, \dots, y^n$,
-τέτοιοι ώστε η συνάρτηση μετάβασης
-$\psi \equiv y^{-1} \circ x$ που αντιστοιχεί στην αλλαγή συντεταγμένων
-\begin{equation*}
-y^i(x^1, \dots, x^n),
-\quad
-1 \le i \le n,
-\end{equation*}
-να είναι αμφιδιαφόριση μεταξύ ανοικτών χωρίων του $\mathbb{R}^n$.
-Συμβολίζουμε επίσης ως $\chi \equiv x^{-1} \circ y$
-την συνάρτηση μετάβασης που αντιστοιχεί στην αντίστροφη
-αλλαγή συντεταγμένων
-\begin{equation*}
-x^i(y^1, \dots, y^n),
-\quad
-1 \le i \le n.
-\end{equation*}
-\begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
-    \item[\textup{(i)}]
-    	Οι συνιστώσες των εφαπτόμενων διανυσμάτων μετασχηματίζονται
-    	ανταλλοίωτα υπό την αλλαγή συντεταγμένων.
-    	Ακριβέστερα, δοθέντος $\xi = \xi^i \hspace{1pt} \partial/\partial x^i$ με $\psi_* \xi = \eta^i \hspace{1pt} \partial/\partial x^i$, τότε
-    	\begin{equation}
-    	\eta^i =
-    	\frac{\partial x^j}{\partial y^i} \hspace{1pt} \xi^i,
-    	\quad
-    	1 \le i \le n.
-    	\end{equation}
-    \item[\textup{(ii)}]
-    	Οι συνιστώσες των γραμμικών συναρτησοειδών μετασχηματίζονται συναλλοίωτα υπό την αλλαγή συντεταγμένων. Ακριβέστερα, δοθέντος $\omega = \omega_i \hspace{1pt} dx^i$ με
-    	$\chi^* \omega = \theta_i \hspace{1pt} dx^i$, τότε
-		\begin{equation}
-			\theta_i = \frac{\partial y^j}{\partial x^i}\omega_j,
-			\quad
-			1 \le i \le n.
-		\end{equation}
-	\item[\textup{(iii)}]
-		Η δράση γραμμικού συναρτησοειδούς πάνω σε εφαπτόμενο διάνυσμα μένει αναλλοίωτη υπό την αλλαγή συντεταγμένων.
-		Ακριβέστερα, δοθέντων $\omega \in T_q^* \mathbb{R}^n$ και $\xi \in T_q \mathbb{R}^n$, τότε
-		\begin{equation}
-			\omega\, (\xi)
-			=
-			\chi^* \omega \, (\psi_* \xi).
-		\end{equation}
-\end{enumerate}
-\end{proposition}
-\begin{proof}
-Για το (i) παρατηρούμε απλά ότι
-\begin{equation*}
-\psi_* \xi
-=
-\psi_* \left( \xi^i \frac{\partial}{\partial x^i} \right)
-=
-\xi^i \, \psi_* \frac{\partial}{\partial x^i}
-=
-\xi^i \frac{\partial}{\partial y^i}
-=
-\xi^i \frac{\partial x^j}{\partial y^i} \frac{\partial}{\partial x^j},
-\end{equation*}
-όπου κάνουμε χρήση των \eqref{eq:base-canonical-y} και \eqref{eq:base-change}.
-Παρομοίως, για το (ii) παρατηρούμε ότι
-\begin{equation*}
-\chi^* \omega
-=
-\chi^* \left( \omega_i \, dx^i \right)
-=
-\omega_i \, \chi^* dx^i
-=
-\omega_i \, dy^i
-=
-\omega_i \frac{\partial y^i}{\partial x^j} dx^j
-\end{equation*}
-όπου κάνουμε χρήση των \eqref{eq:cobase-canonical-y} και \eqref{eq:cobase-change}.
-Για το (iii),
-\begin{equation*}
-TODO
-\end{equation*}
-όπου κάναμε διαδοχική χρήση των
-\eqref{eq:TODO}, \eqref{eq:TODO} και \eqref{eq:TODO}. 
-\end{proof}
-
--------------
 
 Πέρα από τη μεταβολή της θέση, η περιγραφή ενός συστήματος απαιτεί την έννοια της ταχύτητας --- ενός μεγέθους με μέτρο και κατεύθυνση που εκφράζει τον ρυθμό μεταβολής της θέσης κατά μήκος της τροχιάς του συστήματος. Σε έναν γραμμικό χώρο, η ταχύτητα είναι το διάνυσμα που προκύπτει παραγωγίζοντας την καμπύλη που διαγράφει το σύστημα ως προς τον χρόνο. Σε μια γενική πολλαπλότητα, όμως, δεν διαθέτουμε την έννοια του διανύσματος θέσης ούτε κάποιο καθολικό σύστημα αναφοράς που να επιτρέπει τη σύγκριση διανυσμάτων σε διαφορετικά σημεία. Χρειαζόμαστε έναν ορισμό της ταχύτητας --- και γενικότερα του εφαπτόμενου διανύσματος --- που να είναι ανεξάρτητος από την επιλογή συντεταγμένων και να συλλαμβάνει με αναλλοίωτο τρόπο την απειροστή μετατόπιση κατά μήκος της τροχιάς του συστήματος.
 
