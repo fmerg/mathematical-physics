@@ -2498,6 +2498,21 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 
 \section{Γενικός τανυστικός λογισμός}
 
+\begin{definition}[Τανυστικό γινόμενο]
+	\label{def:tensor-product}
+TODO
+\end{definition}
+
+\begin{definition}[Συναίρεση δεικτών]
+	\label{def:contraction-of-index}
+TODO
+\end{definition}
+
+\begin{definition}[Ανέβασμα και κατέβασμα δείκτη]
+	\label{def:raising-and-lowering-index}
+TODO
+\end{definition}
+
 \section{Συμμετρία και αντισυμμετρία}
 
 \begin{equation}\label{eq:permutation-tensor-action}
@@ -2506,25 +2521,24 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 T(\xi_{\sigma 1}, \dots, \xi_{\sigma k})
 \end{equation}
 
-\subsubsection{Συμμετρικοί τανυστές}
+\subsection{Συμμετρικοί τανυστές}
 
 \begin{definition}[Συμμετρικοί τανυστές]\label{def:symmetric-tensor}
-Ένας $k$-συναλλοίωτος τανυστής $Τ$ καλείται \textbf{συμμετρικός}
+Ένας συναλλοίωτος $k$-τανυστής $Τ$ καλείται \textbf{συμμετρικός}
 εάν ${}^\sigma\hspace{.5pt}{T}=T$ για κάθε μετάθεση $\sigma \in S_k$ ή, αναλυτικότερα,
 \begin{equation}\label{eq:symmetric-tensor}
 {T}(\xi_1, \dots, \xi_k)
 =
 T(\xi_{\sigma 1}, \dots, \xi_{\sigma k}),
 \quad
-\forall
 \sigma \in S_k,
 \end{equation}
 δηλαδή όταν μένει αναλλοίωτος υπό τη δράση της συμμετρικής ομάδας.
-Συμβολίζουμε $\mathcal{S}_k(V)$ το σύνολο των συμμετρικών $k$-συναλλοίωτων τανυστών ενός γραμμικού χώρου $V$.
+Συμβολίζουμε $\mathcal{S}_k(V)$ το σύνολο των συμμετρικών συναλλοίωτων $k$-τανυστών ενός γραμμικού χώρου $V$.
 \end{definition}
 
 \begin{definition}[Συμμετροποίηση]\label{def:symmetrization}
-Ως \textbf{συμμετροποίηση} εννοείται ο τελεστής \textup{\textsf{Sym}} που σε δοθέντα $k$-συναλλοίωτο τανυστή $Τ$ αντιστοιχίζει τον $k$-συναλλοίωτο τανυστή
+Ως \textbf{συμμετροποίηση} εννοείται ο τελεστής \textup{\textsf{Sym}} που σε δοθέντα συναλλοίωτο $k$-τανυστή $Τ$ αντιστοιχίζει τον συναλλοίωτο $k$-τανυστή
 \begin{equation}
 \textup{\textsf{Sym}}\hspace{.5pt}T
 =
@@ -2541,7 +2555,7 @@ T(\xi_{\sigma 1}, \dots, \xi_{\sigma k}),
 \end{definition}
 
 \begin{definition}[Συμμετρικό γινόμενο]\label{def:symmetric-product}
-Ως \textbf{συμμετρικό γινόμενο} ενός $k$-συναλλοίωτου τανυστή $T$ κι ενός $l$-συναλλοίωτου τανυστή $S$ εννοείται ο $(k + l)$-συναλλοίωτος τανυστής
+Ως \textbf{συμμετρικό γινόμενο} ενός συναλλοίωτου $k$-τανυστή $T$ κι ενός συναλλοίωτου $l$-τανυστή $S$ εννοείται ο συναλλοίωτος $(k + l)$-τανυστής
 \begin{equation}
 S\,T \equiv \textup{\textsf{Sym}}\hspace{.5pt}(T \otimes S),
 \end{equation}
@@ -2562,10 +2576,10 @@ S\,T \,(\xi_1, \dots, \xi_{k+l})
 Αυτή η ταυτότητα μας επιτρέπει να αναπαριστούμε σε πιο συμπεπτυγμένη μορφή τις συμμετρικές 2-μορφές (π.χ., μια ψευδορημάννεια μετρική, βλ. Κεφάλαιο \ref{chapter:pseudoriemannian-metrics}).
 \end{observation}
 
-\subsubsection{Αντισυμμετρικοί τανυστές}
+\subsection{Αντισυμμετρικοί τανυστές}
 
 \begin{definition}[Αντισυμμετρικοί τανυστές]\label{def:symmetric-tensor}
-Ένας $k$-συναλλοίωτος τανυστής $Τ$ καλείται \textbf{αντισυμμετρικός}, ή \textbf{εναλλάσσων},
+Ένας συναλλοίωτος $k$-τανυστής $Τ$ καλείται \textbf{αντισυμμετρικός}, ή \textbf{εναλλάσσων},
 εάν ${}^\sigma\hspace{.5pt}{T}=\operatorname{sgn}(\sigma)\hspace{.5pt}T$ για κάθε $\sigma \in S_k$ ή, αναλυτικότερα,
 \begin{equation}\label{eq:alternating-tensor}
 T(\xi_{\sigma 1}, \dots, \xi_{\sigma k})
@@ -2577,11 +2591,11 @@ T(\xi_{\sigma 1}, \dots, \xi_{\sigma k})
 \end{equation}
 δηλαδή όταν μένει αναλλοίωτος κατά μέτρο υπό τη δράση της συμμετρικής ομάδας αλλά το πρόσημο της τιμής του εναλλάσσει
 βάσει του προσήμου της δράσης.
-Συμβολίζουμε $\mathcal{Α}_k(V)$ το σύνολο των αντισυμμετρικών $k$-συναλλοίωτων τανυστών ενός γραμμικού χώρου $V$.
+Συμβολίζουμε $\mathcal{Α}_k(V)$ το σύνολο των αντισυμμετρικών συναλλοίωτων $k$-τανυστών ενός γραμμικού χώρου $V$.
 \end{definition}
 
 \begin{definition}[Αντισυμμετροποίηση]\label{def:antisymmetrization}
-Ως \textbf{αντισυμμετροποίηση} εννοείται ο τελεστής \textup{\textsf{Alt}} που σε δοθέντα $k$-συναλλοίωτο τανυστή $Τ$ αντιστοιχίζει τον $k$-συναλλοίωτο τανυστή
+Ως \textbf{αντισυμμετροποίηση} εννοείται ο τελεστής \textup{\textsf{Alt}} που σε δοθέντα συναλλοίωτο $k$-τανυστή $Τ$ αντιστοιχίζει τον συναλλοίωτο $k$-τανυστή
 \begin{equation}
 \textup{\textsf{Alt}}\hspace{.5pt}T
 =
@@ -2597,17 +2611,25 @@ T(\xi_{\sigma 1}, \dots, \xi_{\sigma k})
 \end{equation}
 \end{definition}
 
-\subsubsection{Συμμετρική και αντισυμμετρική συνιστώσα}
+\subsection{Συμμετρική και αντισυμμετρική συνιστώσα}
 
 TODO
 
-\subsubsection{Εναλλάσσουσες μορφές -- Σφηνοειδές γινόμενο}
+\subsection{Εναλλάσσουσες μορφές -- Σφηνοειδές γινόμενο}
 
 TODO
 
-\section{Διαφορικές μορφές}
+\section{Τανυστικά πεδία}
+	\subsection{(1,0)-πεδία}
+	\subsection{(0,1)-πεδία}
+	\subsection{(1,1)-πεδία}
+	\subsection{(0,2)-πεδία}
+	\subsection{(2,0)-πεδία}
+	\subsection{Διαφορικές μορφές}
+
 \section{Παράγωγος Lie}
-\section{Το γενικό συναλλοίωτο}
+	\label{sec:lie-derivative}
+\subsection{Το γενικό συναλλοίωτο}
 
 \chapter{Ψευδορημάννειες μετρικές}
 	\label{chapter:pseudoriemannian-metrics}
@@ -2615,35 +2637,35 @@ TODO
 \section{Τυπική θεωρία}
 	
 Δοθέντος τοπικού συστήματος συντεταγμένων $x^1, \dots, x^n$
-γύρω από δοθέν σημείο $p \in M$ μιας $n$-διάστατης πολλαπλότητας,
+γύρω σημείο $p \in M$ μιας $n$-διάστατης πολλαπλότητας,
 θεωρούμε την τοπική αναπαράσταση
 \begin{equation}\label{eq:pseudorieamannian-representation-primitive}
 g_{ij}\, dx^i \otimes dx^{\,j}
 \end{equation}
-ενός 2-συναλλοίωτου τανυστικού πεδίου $g$·
+ενός συναλλοίωτου 2-τανυστικού πεδίου $g$·
 ισχύει ειδικότερα ο συναλλοίωτος μετασχηματισμός
 \begin{equation}\label{eq:pseudorieamannian-covariance}
-\tilde{g}_{ij} = \frac{\partial x^k}{\partial y^j}\,g_{kl}\,\frac{\partial x^l}{\partial y^i},
+\tilde{g}_{ij} = \frac{\partial x^\mu}{\partial y^i}\,g_{\mu \nu}\,\frac{\partial x^\nu}{\partial y^j},
 \end{equation}
 όπου $\tilde{g}_{ij}\, dy^i \otimes dy^{\,j}$
-η αναπαράσταση του $g$ σε κάποιο άλλο σύστημα συντεταγμένων $y^1, \dots, y^n$.
+η αναπαράσταση του $g$ σε κάποιο άλλο σύστημα συντεταγμένων.
 Η μορφή
 \eqref{eq:pseudorieamannian-representation-primitive}
-σημαίνει ειδικότερα ότι δοθέντων $\xi = \xi^i \partial/\partial x^i$ και $\eta = \eta^i \partial/\partial x^i$ στον $Τ_pM$ ισχύει
+σημαίνει ειδικότερα ότι δοθέντων $\xi = \xi^i \partial/\partial x^i$ και $\eta = \eta^i \partial/\partial x^i$ ισχύει
 \begin{equation}
 g(\hspace{.5pt}p\hspace{.5pt}; \xi, \eta)
 =
-g_{ij} \hspace{.5pt} \xi^i \hspace{.5pt} \eta^i,
+g_{ij} \hspace{.5pt} \xi^i \hspace{.5pt} \eta^{\hspace{.5pt}j},
 \end{equation}
-πράγμα που στη γλώσσα της γραμμικής άλγεβρας σημαίνει ότι η διγραμμική απεικόνιση $g(p)$ αναπαρίσταται από τον πίνακα $(g_{ij})_{i,j}$ (υπολογισμένο στο σημείο $p$) ως προς τη βάση
+πράγμα που στη γλώσσα της γραμμικής άλγεβρας σημαίνει ότι η διγραμμική απεικόνιση $g(p)$ αναπαρίσταται από τον πίνακα $(g_{ij})_{i,j}$ ---υπολογισμένο στο σημείο $p$--- ως προς τη βάση
 $\partial/\partial x^i$ του εφαπτόμενου χώρου $T_pM$.
 Εάν επιπλέον το τανυστικό πεδίο $g$ είναι συμμετρικό, τότε ισχύει
 \begin{equation}
 g_{ij} = g_{ji}\,,
 \end{equation}
-οπότε κάνοντας χρήση της ταυτότητας
-\eqref{eq:symmetric-product-1-forms},
-λαμβάνουμε την πιο συμπαγή μορφή
+οπότε κάνοντας χρήση της
+\eqref{eq:symmetric-product-1-forms}
+λαμβάνουμε τη μορφή
 \begin{equation}
 g_{ij}\, dx^i \otimes dx^{\,j}
 =
@@ -2651,12 +2673,26 @@ g_{ij}\, dx^i \otimes dx^{\,j}
 =
 g_{ij}\, dx^i \hspace{.5pt} dx^{\,j}.
 \end{equation}
-Το συμμετρικό πεδίο $g$ αποκτά ιδιαίτερη φυσική σημασία όταν
+Το τανυστικό πεδίο $g$ αποκτά ιδιαίτερη φυσική σημασία όταν
 ο πίνακας $(g_{ij})_{i,j}$
-είναι παντού αντιστρέψιμος, πράγμα που ισοδυναμεί με τον ακόλουθο ορισμό.
+είναι παντού αντιστρέψιμος. Σημειώνεται για κατοπινή χρήση ότι, σε αυτήν την περίπτωση, οι συνιστώσες του αντίστροφου πίνακα $(g^{ij})_{i,j}$ προσδιορίζονται μέσω των σχέσεων
+\begin{equation}
+g^{ik}g_{kj} = \delta^i_j,
+\end{equation}
+ενώ ελέγχεται βάσει των \eqref{eq:partial-derivatives-annihilation}
+και \eqref{eq:pseudorieamannian-covariance}
+ότι υπακούν στον μετασχηματισμό
+\begin{equation}\label{eq:pseudorieamannian-contravariance}
+\tilde{g}^{ij} = \frac{\partial y^i}{\partial x^\mu}\,g^{\mu \nu}\,\frac{\partial y^j}{\partial x^\nu},
+\end{equation}
+και άρα συγκροτούν συμμετρικό ανταλλοίωτο 2-τανυστή
+\begin{equation}\label{eq:inverse-pseudoriemannian}
+g^{ij}\,\frac{\partial}{\partial x^i} \otimes \frac{\partial}{\partial x^j}\,.
+\end{equation}
+Η αντιστρεψιμότητα του πίνακα $(g_{ij})_{i,j}$ ισοδυναμεί με τον ακόλουθο ορισμό.
 \begin{definition}[Ψευδορημάννεια μετρική]\label{def:pseudo-riemannian-metrics}
 Ως \textbf{ψευδορημάννεια μετρική} σε μια πολλαπλότητα $Μ$ εννοείται
-ένα συμμετρικό 2-συναλλοίωτο τανυστικό πεδίο $g$ τέτοιο ώστε
+ένα συμμετρικό συναλλοίωτο 2-τανυστικό πεδίο $g$ τέτοιο ώστε
 \begin{equation}\label{eq:definition-pseudoriemannian-metric}
 g(\hspace{.5pt}p\hspace{.5pt}; \xi, \eta) = 0,
 \,\,
@@ -2673,23 +2709,7 @@ $g(p)$ να είναι μη ιδιάζουσα
 \end{definition}
 
 \noindent
-TODO
-
-%$
-%\begin{pmatrix}
-%+1 & & & & & \\
-%& \ddots & & & & \\
-%& & +1 & & & \\
-%& & & -1 & & \\
-%& & & & \ddots & \\
-%& & & & & -1
-%\end{pmatrix}
-%\quad
-%\begin{aligned}
-%&\left.\rule{0pt}{2.5em}\right\} \,k \\
-%&\left.\rule{0pt}{2.5em}\right\} \,n-k
-%\end{aligned}
-%$
+TODO: Νόμος του Sylvester
 
 \noindent
 Η ειδική περίπτωση $k=0$ ισοδυναμεί με το γεγονός ότι η διγραμμική απεικόνιση που επάγεται από την $g$ σε κάθε εφαπτόμενο χώρο
@@ -2697,11 +2717,11 @@ TODO
 
 \begin{definition}[Ρημάννεια μετρική]\label{def:riemannian-metrics}
 Ως \textbf{ρημάννεια μετρική} σε μια πολλαπλότητα $Μ$ εννοείται
-ένα συμμετρικό 2-συναλλοίωτο τανυστικό πεδίο $g$ τέτοιο ώστε
+ένα συμμετρικό συναλλοίωτο 2-τανυστικό πεδίο $g$ τέτοιο ώστε
 \begin{equation}\label{eq:definition-riemannian-metric}
 g(\hspace{.5pt}p\hspace{.5pt}; \xi, \xi) > 0,
 \quad
-\forall \xi \in T_pM,
+\forall \xi \in T_pM \setminus \{0\},
 \quad
 \forall p \in M,
 \end{equation}
@@ -2715,7 +2735,174 @@ $g(p)$ είναι θετικά ορισμένη
 
 \subsection{Μουσικοί ισομορφισμοί}
 
+Ο μη ιδιάζων χαρακτήρας μιας ψευδορημάννειας μετρικής επιτρέπει
+την ισομορφική ταύτιση εφαπτόμενης και συνεφαπτόμενης δέσμης·
+συγκεκριμένα, επάγεται αμφιμονοσήμαντη αντιστοιχία
+ανάμεσα σε διανυσματικά πεδία και διαφορικές 1-μορφές που
+επιδέχεται φυσικογεωμετρικής ερμηνείας
+υπό το πρίσμα της μετρικής (τουλάχιστον στη ρημάννεια περίπτωση).
+Αναπτύσσουμε εδώ μόνο την αλγεβρική θεωρία,
+με τη γεωμετρική θεώρηση αυτού του ισομορφισμού
+να ανακύπτει σε πολλά από τα κεφάλαια που ακολουθούν.
+
+Δοθείσης ψευδορημάννειας πολλαπλότητας $(Μ, g)$, θεωρούμε σε κάθε
+$p \in M$ την απεικόνιση
+\begin{equation}\label{eq:flat-isomoprhism-schema}
+\left(\cdot\right)^\flat: T_pM \to T_p^*M,
+\quad
+\xi \mapsto \xi^\flat = g(\xi, \cdot\,),
+\end{equation}
+που αντιστοιχίζει εφαπτόμενα διανύσματα σε γραμμικά συναρτησοειδή
+μέσω της σχέσης
+\begin{equation}\label{eq:flat-isomoprhism}
+\xi^\flat (\eta) = g(\xi, \eta),
+\quad
+\eta \in T_pM.
+\end{equation}
+Με άλλα λόγια, $\xi^\flat$ είναι επαγόμενη γραμμική δράση
+του διανύσματος $\xi$ υπό τη διγραμμική μορφή $g(p)$.
+Παρατηρούμε ότι σε τοπικό σύστημα συντεταγμένων
+$x^1, \dots, x^n$ εκφράζεται ως
+\begin{equation}\label{eq:flat-isomoprhism-coordinates}
+\xi^\flat = g_{ij}\,\xi^j dx^{i},
+\quad
+\textup{όπου}
+\quad
+\xi = \xi^i \frac{\partial}{\partial x^i}\,,
+\end{equation}
+δηλαδή η $\left(\cdot\right)^\flat$ ισοδυναμεί με το κατέβασμα δείκτη ανταλλοίωτου διανύσματος υπό τη δράση της $g$,
+ενώ είναι σαφές ότι αποτελεί γραμμική απεικόνιση και αναπαρίσταται
+από τον πίνακα $(g_{ij})_{ij}$ ως προς τις βάσεις
+$\partial/\partial x^i$ και $dx^i$.
+Η αντιστρεψιμότητα αυτού ---ή, ισοδύναμα,
+η συνθήκη \eqref{eq:definition-pseudoriemannian-metric}---
+σημαίνει ειδικότερα ότι η \eqref{eq:flat-isomoprhism-schema}
+αποτελεί ισομορφισμό,
+και άρα αντιστρέφεται ως
+\begin{equation}\label{eq:sharp-isomoprhism-schema}
+\left(\cdot\right)^\sharp: T_p^*M \to T_pM,
+\quad
+\omega \mapsto \omega^\sharp,
+\end{equation}
+όπου $\omega^\sharp$ είναι το μοναδικό εφαπτόμενο διάνυσμα
+που ορίζεται μέσω της σχέσης
+\begin{equation}\label{eq:sharp-isomoprhism}
+\omega(\eta) = g(\omega^\sharp, \eta),
+\quad
+\eta \in T_pM.
+\end{equation}
+Ισοδύναμα, σε τοπικό σύστημα συντεταγμένων ισχύει
+\begin{equation}
+\omega^\sharp = g^{ij} \omega_j\,\frac{\partial}{\partial x^i},
+\quad
+\textup{όπου}
+\quad
+\omega = \omega_i\,dx^i,
+\end{equation}
+δηλαδή η $\left(\cdot\right)^\sharp$ αποτελεί το ανέβασμα δείκτη 1-μορφής
+υπό τη δράση του 2-ανταλλοίωτου τανυστή \eqref{eq:inverse-pseudoriemannian}.
+Σημειώνεται τέλος ότι οι παραπάνω ισομορφισμοί δρουν στα στοιχεία βάσης ως
+\begin{equation}
+\left(\frac{\partial}{\partial x^i}\right)^\flat =\, g_{ij}\,dx^{\,j},
+\quad
+\textup{και}
+\quad
+\left(\hspace{.5pt}dx^i\hspace{.5pt}\right)^\sharp = g^{ij}\frac{\partial}{\partial x^j}\,.
+\end{equation}
+Παρακάτω επεκτείνουμε τον μουσικό ισομορφισμό μεταξύ εφαπτόμενων και συνεφαπτόμενων χώρων αφ' ενός σε αμφιδιαφόριση μεταξύ εφαπτόμενης και συνεφαπτόμενης δέσμης, αφ' ετέρου σε αμφιμονοσήμαντη αντιστοιχία ανάμεσα σε διανυσματικά πεδία και διαφορικές 1-μορφές.
+
+\subsubsection{Ισομορφισμός μεταξύ διανυσματικών πεδίων και 1-μορφών}
+
+Δοθείσης ψευδορημάννειας πολλαπλότητας $(Μ, g)$,
+θεωρούμε την απεικόνιση
+\begin{equation}\label{eq:flat-isomoprhism-fields}
+\left(\cdot\right)^\flat: \mathfrak{X}(M) \to \Omega_1(M),
+\quad
+\xi \mapsto \xi^\flat,
+\end{equation}
+που ορίζεται μέσω της σημειακής σχέσης
+\begin{equation}
+\xi^\flat(p) = \left(\xi(p)\right)^\flat,
+\quad
+p \in M\,.
+\end{equation}
+Η απεικόνιση αυτή αντιστρέφεται προφανώς μέσω της
+\begin{equation}\label{eq:sharp-isomoprhism-fields}
+\left(\cdot\right)^\sharp: \Omega_1(M) \to \mathfrak{X}(M),
+\quad
+\omega \mapsto \omega^\sharp,
+\end{equation}
+που ορίζεται σημειακά μέσω της σχέσης
+\begin{equation}\label{eq:sharp-isomoprhism-fields}
+\omega^\sharp(p) = \left(\omega(p)\right)^\sharp\,
+\quad
+p \in M\,.
+\end{equation}
+Κάνοντας κατάλληλες υποθέσεις διαφορισιμότητας για την ψευδορημάννεια μετρική,
+συνάγεται άμεσα βάσει των τοπικών αναπαραστάσεων
+\eqref{eq:flat-isomoprhism}
+(αντ. \eqref{eq:sharp-isomoprhism})
+ότι τα τανυστικά πεδία $\xi$ και $\xi^\flat$
+(αντ. $\omega$ και $\omega^\sharp$)
+έχουν κοινή ίδια τάξη διαφορισιμότητας.
+
 \subsubsection{Ισομορφισμός εφαπτόμενης και συνεφαπτόμενης δέσμης}
+
+Δοθείσης ψευδορημάννειας πολλαπλότητας $(Μ, g)$,
+θεωρούμε την απεικόνιση
+\begin{equation}\label{eq:flat-isomoprhism-bundle}
+\left(\cdot\right)^\flat: TM \to T^*M,
+\quad
+(\hspace{.5pt}p, \xi\hspace{.5pt}) \mapsto (\hspace{.5pt}p, \xi^\flat),
+\end{equation}
+η οποία αντιστρέφεται προφανώς ως
+\begin{equation}\label{eq:sharp-isomoprhism-bundle}
+\left(\cdot\right)^\sharp: T^*M \to TM,
+\quad
+(\hspace{.5pt}p, \omega\hspace{.5pt}) \mapsto (\hspace{.5pt}p, \omega^\sharp)\,.
+\end{equation}
+Θα δείξουμε ότι η απεικόνιση
+$\phi \equiv \left(\cdot\right)^\flat$
+είναι αμφιδιαφόριση εξετάζοντας την αναπαράσταση
+καθώς και το διαφορικό $\phi^*$ αυτής σε τυχόν τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$ της $M$,
+όπου $g$ αναπαρίσταται ως $g_{ij}\,dx^idx^j$.
+Έστω
+\begin{equation}
+x^1, \dots, x^n, \xi^1, \dots, \xi^n
+\quad
+\textup{και}
+\quad
+x^1, \dots, x^n, \omega_1, \dots, \omega_n
+\end{equation}
+τα επαγόμενα συστήματα συντεταγμένων στην $TM$ και $T^*M$ αντιστοίχως.
+Εξ ορισμού του μουσικού ισομορφισμού μεταξύ εφαπτόμενων χώρων
+(βλ. \eqref{eq:flat-isomoprhism-coordinates}), ισχύει
+\begin{equation}
+\phi(x^1, \dots, x^n, \xi^1, \dots, \xi^n)
+=
+(x^1, \dots, x^n, \omega_1, \dots, \omega_n),
+\quad
+\omega_i = g_{ij}(x^1, \dots, x^n)\,\xi^j,
+\end{equation}
+απ' όπου έπεται ότι οι συνιστώσες της $\phi$
+είναι διαφορίσιμες εφόσον οι συνιστώσες $g_{ij}$
+της μετρικής είναι διαφορίσιμες.
+Συνακόλουθα, η $\phi$ είναι διαφορίσιμη και ορίζεται σε κάθε σημείο το διαφορικό $\phi^*$,
+που στο επιλεγμένο σύστημα συντεταγμένων αναπαρίσταται προφανώς από τον πίνακα
+\begin{equation}
+\begin{pmatrix}
+I_n & 0 \\
+* & g_{ij}
+\end{pmatrix}.
+\end{equation}
+Η ορίζουσα αυτού του πίνακα είναι
+$\det(g_{ij})$, η οποία είναι παντού μη μηδενική
+ακριβώς επειδή η μετρική $g$ είναι μη ιδιάζουσα.
+Από το Θεώρημα Αντίστροφης Απεικόνισης έπεται ότι
+η $\phi$ είναι τοπική αμφιδιαφόριση, συνεπώς επίσης
+αμφιδιαφόριση καθότι αμφιμονοσήμαντη.
+
+
 
 \subsection{Επαγόμενες μετρικές}
 	\label{sec:induced-metrics}
@@ -2746,12 +2933,15 @@ $g(p)$ είναι θετικά ορισμένη
 \lvert g(\xi, \eta) \rvert \le \lvert \xi \rvert \lvert \eta \rvert
 \end{equation}
 
-\subsection{Ορθοκανονικά πλαίσια}
+\subsection{Η βαθμίδα}
 
-\subsection{Βαθμίδα και εσσιανή}
+\subsection{Ορθοκανονικά πλαίσια}
 
 \subsection{Συνάρτηση απόστασης}
 	\label{sec:distance-function}
+	
+\subsection{Επιφάνειες στον ευκλείδιο χώρο}
+	\label{sec:surfaces-in-euclidean-space}
 
 \subsection{Πρότυπες δομές}
 	\label{sec:model-structures}
