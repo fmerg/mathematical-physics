@@ -2494,8 +2494,11 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 
 \subsection{Οι εξισώσεις Euler-Lagrange ως μοτίβο φυσικού νόμου}
 
-\chapter{Τανυστικός λογισμός}
-	\label{chapter:tensor-fields}
+\chapter{Τανυστική άλγεβρα}
+	\label{chapter:tensor-algebra}
+	
+\section{Γενικός τανυστικός λογισμός}
+	\label{sec:general-tensor-calculus}
 
 \begin{definition}[Τανυστικό γινόμενο]
 	\label{def:tensor-product}
@@ -2519,8 +2522,6 @@ TODO
 =
 T(\xi_{\sigma 1}, \dots, \xi_{\sigma k})
 \end{equation}
-
-\subsection{Συμμετρικοί τανυστές}
 
 \begin{definition}[Συμμετρικοί τανυστές]\label{def:symmetric-tensor}
 Ένας συναλλοίωτος $k$-τανυστής $Τ$ καλείται \textbf{συμμετρικός}
@@ -2575,8 +2576,6 @@ S\,T \,(\xi_1, \dots, \xi_{k+l})
 Αυτή η ταυτότητα μας επιτρέπει να αναπαριστούμε σε πιο συμπεπτυγμένη μορφή τις συμμετρικές 2-μορφές (π.χ., μια ψευδορημάννεια μετρική, βλ. Κεφάλαιο \ref{chapter:pseudoriemannian-metrics}).
 \end{observation}
 
-\subsection{Αντισυμμετρικοί τανυστές}
-
 \begin{definition}[Αντισυμμετρικοί τανυστές]\label{def:symmetric-tensor}
 Ένας συναλλοίωτος $k$-τανυστής $Τ$ καλείται \textbf{αντισυμμετρικός}, ή \textbf{εναλλάσσων},
 εάν ${}^\sigma\hspace{.5pt}{T}=\operatorname{sgn}(\sigma)\hspace{.5pt}T$ για κάθε $\sigma \in S_k$ ή, αναλυτικότερα,
@@ -2616,9 +2615,13 @@ T(\xi_{\sigma 1}, \dots, \xi_{\sigma k})
 
 TODO
 
-\section{Συμμετρικοί τανυστές τάξεως 2}
+\subsection{Συμμετρικοί 2-τανυστές}
+	\label{sec:symmetric-2-tensors}
+	
+\subsection{Αντισυμμετρικοί 2-τανυστές}
+	\label{sec:antisymmetric-2-tensors}
 
-\section{Εξωτερική άλγεβρα}
+\section{Αντισυμμετρικοί τανυστές --- Εξωτερική άλγεβρα}
 	\label{sec:exterior-algebra}
 	
 \begin{equation}\label{eq:primitive-expansion}
@@ -2664,15 +2667,6 @@ dx^{i_1} \wedge \dots \wedge dx^{i_k} \hspace{.7pt}
 \operatorname{det}\left(\delta^{\,i_\mu}_{\,j_\nu}\right)_{1 \le \,\mu,\,\nu\, \le k}
 \end{equation}
 
-\begin{equation}\label{eq:kronecker-expansion-elementary}
-dx^{i_1} \wedge \dots \wedge dx^{i_k} \hspace{.5pt}
-\left(\frac{\partial}{\partial x^{\hspace{.5pt}j_1}}, \dots, \frac{\partial}{\partial x^{\hspace{.5pt}j_k}}\right)
-\,
-=
-\,
-\delta^{\,i_1 \dots i_k}_{\,j_1 \dots j_k} 
-\end{equation}
-
 \noindent
 Η ουσιώδης χρησιμότητα του γενικευμένου δέλτα του Kronecker είναι ότι μας επιτρέπει να εκφράζουμε οποιαδήποτε $k$-υποορίζουσα, $1 \le k \le n$, σε συμβολισμό Einstein χωρίς ρητή αναφορά στο εύρος της άθροισης ή το πρόσημο των εμπλεκόμενων μεταθέσεων,
 
@@ -2697,7 +2691,16 @@ dx^{i_1} \wedge \dots \wedge dx^{i_k} \hspace{.7pt}
 \eta_1^{\,j_1} \dots \eta_k^{\,j_k}
 \end{equation}
 
-\subsubsection{Εναλλάσσουσες μορφές}
+\begin{equation}\label{eq:kronecker-expansion-elementary}
+dx^{i_1} \wedge \dots \wedge dx^{i_k} \hspace{.5pt}
+\left(\frac{\partial}{\partial x^{\hspace{.5pt}j_1}}, \dots, \frac{\partial}{\partial x^{\hspace{.5pt}j_k}}\right)
+\,
+=
+\,
+\delta^{\,i_1 \dots i_k}_{\,j_1 \dots j_k} 
+\end{equation}
+
+\subsubsection{Εναλλάσσουσες μορφές --- Σύμβολο Levi-Civita}
 	\label{sec:alternators}
 
 \begin{definition}
@@ -2725,11 +2728,11 @@ $\{\varepsilon_{i_1 \dots i_k}\}$, $1 \le i_1, \dots, i_k \le n$,
 \end{equation}
 
 \begin{equation}\label{eq:alternator-permutation}
-\operatorname{sgn}(\sigma)
+\varepsilon_{\sigma 1 \dots \hspace{.5pt}\sigma k}
 \,
 =
 \,
-\varepsilon_{\sigma 1 \dots \hspace{.5pt}\sigma k},
+\operatorname{sgn}(\sigma),
 \quad
 \sigma \in S_k
 \end{equation}
@@ -2759,6 +2762,13 @@ dx^1 \wedge \dots \wedge dx^k \hspace{.5pt}
 (\eta_1, \dots, \eta_k)
 =
 \varepsilon_{i_1 \dots i_k}\,\eta_1^{i_1} \dots \eta_k^{i_k}
+\end{equation}
+
+\begin{equation}\label{eq:alternator-expansion-elementary}
+dx^1 \wedge \dots \wedge dx^k \hspace{.5pt}
+\left(\frac{\partial}{\partial x^{\hspace{.5pt}i_1}}, \dots, \frac{\partial}{\partial x^{\hspace{.5pt}i_k}}\right)
+=
+\,\,\varepsilon_{i_1 \dots i_k}
 \end{equation}
 
 \begin{definition}\label{def:levi-civita-symbol}
@@ -2794,13 +2804,9 @@ dx^1 \wedge \dots \wedge dx^n \hspace{.5pt}
 
 \chapter{Τανυστικά πεδία}
 	\label{chapter:tensor-fields}
-	\subsection{(1,0)-πεδία}
-	\subsection{(0,1)-πεδία}
-	\subsection{(1,1)-πεδία}
-	\subsection{(0,2)-πεδία}
-	\subsection{(2,0)-πεδία}
-	\subsection{Διαφορικές μορφές}
-	\subsection{Στοιχεία όγκου}
+
+\subsection{Διαφορικές μορφές}
+\subsection{Στοιχεία όγκου}
 
 \section{Παράγωγος Lie}
 	\label{sec:lie-derivative}
@@ -3104,7 +3110,7 @@ $\det(g_{ij})$ και είναι παντού μη μηδενική
 \pm 1
 \end{equation}
 ακριβώς στην περίπτωση που είναι
-είναι ορθοκανονική και διατηρεί ή αντιστρέφει τον προσανατολισμό.
+ορθοκανονική και διατηρεί ή αντιστρέφει τον προσανατολισμό.
 Γίνεται σαφές πως
 η $\omega$ πρέπει να είναι αντισυμμετρική
 και, ειδικότερα, να λαμβάνει ως τιμή το σύμβολο Levi-Civita
@@ -3114,81 +3120,44 @@ $\det(g_{ij})$ και είναι παντού μη μηδενική
 \begin{equation}
 \omega
 \left(
-\frac{\partial}{\partial x^{ι_1}}\,,
+\frac{\partial}{\partial x^{i_1}}\,,
 \dots,
 \frac{\partial}{\partial x^{i_n}}
 \right)
 =
 \,
-\varepsilon_{i_1, \dots, i_k}
+\varepsilon_{i_1, \dots, i_n}
 \end{equation}
-για την αρχικά επιλεγμένη βάση,
+για την αρχική βάση,
 όπου $\{\varepsilon_{i_1 \dots i_n}\}$
 το σύμβολο Levi-Civita. 
-Βάσει της \eqref{eq:new-base-levi-civita}, έχουμε
+Εφαρμόζοντας την \eqref{eq:new-base-levi-civita}, έχουμε
 λόγω πολυγραμμικότητας
-\begin{equation}
+\begin{equation*}
 \omega
 \left(
 \frac{\partial}{\partial y^1}\,,
 \dots,
 \frac{\partial}{\partial y^n}
 \right)
-= TODO
-\end{equation}
-
-\begin{equation*}
-\omega\left(\frac{\partial}{\partial y^1}, \dots, \frac{\partial}{\partial y^n}\right)
-=
-\omega\left(
-\frac{\partial x^{j_1}}{\partial y^1} \frac{\partial}{\partial x^{j_1}},
-\dots,
-\frac{\partial x^{j_n}}{\partial y^n} \frac{\partial}{\partial x^{j_n}}
-\right).
-\end{equation*}
-
-Λόγω πολυγραμμικότητας, οι συντελεστές $\partial x^{j_\mu} / \partial y^\mu$ εξάγονται από την $\omega$:
-\begin{equation*}
-\omega\left(\frac{\partial}{\partial y^1}, \dots, \frac{\partial}{\partial y^n}\right)
-=
-\frac{\partial x^{j_1}}{\partial y^1} \dots \frac{\partial x^{j_n}}{\partial y^n}
 \,
-\omega\left(\frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_n}}\right).
-\end{equation*}
-
-Χρησιμοποιώντας την αρχική απαίτηση, έχουμε:
-\begin{equation*}
-\omega\left(\frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_n}}\right)
-=
-\varepsilon_{j_1 \dots j_n}.
-\end{equation*}
-
-Συνεπώς:
-\begin{equation*}
-\omega\left(\frac{\partial}{\partial y^1}, \dots, \frac{\partial}{\partial y^n}\right)
-=
-\varepsilon_{j_1 \dots j_n}
 \,
-\frac{\partial x^{j_1}}{\partial y^1} \dots \frac{\partial x^{j_n}}{\partial y^n}.
-\end{equation*}
-
-Από τον ορισμό της ορίζουσας μέσω μεταθέσεων, το δεξί μέλος είναι ακριβώς η ορίζουσα του Ιακωβιανού πίνακα $\partial x^j / \partial y^i$:
-\begin{equation*}
+=
+\,
+\,
 \varepsilon_{j_1 \dots j_n}
 \,
 \frac{\partial x^{j_1}}{\partial y^1} \dots \frac{\partial x^{j_n}}{\partial y^n}
-=
-\det\left( \frac{\partial x^j}{\partial y^i} \right)_{i,j}.
 \end{equation*}
-
-Επομένως, ο πλήρης τύπος είναι:
+ή, ισοδύναμα (βλ. \eqref{eq:levi-civita-essential}),
 \begin{equation}
-\boxed{
 \omega\left(\frac{\partial}{\partial y^1}, \dots, \frac{\partial}{\partial y^n}\right)
+\,
 =
+\,
 \det\left( \frac{\partial x^j}{\partial y^i} \right)_{i,j}
-}
 \end{equation}
+
 
 \noindent
 \textbf{Έλεγχος της καλής ορισμένης απαίτησης:}
@@ -3437,6 +3406,9 @@ $(1, \dots, n) \mapsto (i_1, \dots, i_n)$, δηλαδή
 \subsubsection{Σφαίρα}
 
 \subsubsection{Υπερβολοειδές}
+
+\chapter{Συμπλεκτικές μορφές}
+	\label{chap:symplecti-forms}
 	
 \chapter{TODO: Ψευδορημάννειες μετρικές}
 	
