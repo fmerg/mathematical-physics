@@ -2609,14 +2609,19 @@ dx^i \left( \frac{\partial}{\partial x^{\hspace{.5pt}j}} \right)
 \end{equation*}
 τον πίνακα που αναπαριστά ως προς αυτήν
 τον γραμμικό αυτομορφισμό που απεικονίζει τη
-βάση $\{\partial/\partial x^i\}_i$ στη βάση $\{\partial/\partial y^i\}_i$. Yπ' αυτόν τον συμβολισμό, ο πίνακας
+βάση $\{\partial/\partial x^i\}_i$ στη βάση $\{\partial/\partial y^i\}_i$. Yπ' αυτόν τον συμβολισμό, ο αντίστροφος πίνακας
 \begin{equation*}
-\left(\frac{\partial x^i}{\partial y^j} \right)_{ij}
-\,=\,
-\left(\frac{\partial y^i}{\partial x^j} \right)_{ij}^{-1}
+\left(\frac{\partial x^i}{\partial y^j} \right)_{ij},
 \end{equation*}
-αναπαριστά τον αντίστροφο αυτομορφισμό ως προς την καρτεσιανή βάση,
-οπότε η αλλαγή βάσης εκφράζεται μέσω της ``ανταλλοίωτης'' σχέσης
+που προσδιορίζεται ισοδύναμα μέσω των σχέσεων
+\begin{equation}\label{eq:index-annihilation}
+\frac{\partial y^i}{\partial x^\mu}
+\frac{\partial x^\mu}{\partial y^j}
+\,=\,
+\delta^{\,i}_j\,,
+\end{equation}
+αναπαριστά τον αντίστροφο αυτομορφισμό ως προς την ιδια καρτεσιανή βάση,
+οπότε η αλλαγή βάσης στον $V$ εκφράζεται μέσω της ``ανταλλοίωτης'' σχέσης
 \begin{equation}\label{eq:contravariance-elementary}
 \frac{\partial}{\partial y^i}
 \,=\,
@@ -2823,7 +2828,7 @@ S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}
 \end{equation}
 όπου
 $1 \le i_1,\dots,i_{p+r} \le p+r$ και
-$1 \le j_1,\dots,i_{q+s} \le q+s$,
+$1 \le j_1,\dots,j_{q+s} \le q+s$,
 ως προς την ίδια βάση του $V$.
 \begin{proposition}[Μετασχηματισμός τανυστικών ποσοτήτων]
 	\label{prop:tensor-transform}
@@ -2899,11 +2904,6 @@ dx^{\mu_1}, \dots, dx^{\mu_r},
 
 \begin{definition}[Συναίρεση δεικτών]
 	\label{def:contraction-of-index}
-TODO
-\end{definition}
-
-\begin{definition}[Ανύψωση και καθίζηση δείκτη]
-	\label{def:raising-and-lowering-index}
 TODO
 \end{definition}
 
@@ -3039,6 +3039,11 @@ TODO
 
 \subsection{Συμμετρικοί 2-τανυστές}
 	\label{sec:symmetric-2-tensors}
+	
+\begin{definition}[Ανύψωση και καθίζηση δείκτη]
+	\label{def:raising-and-lowering-index}
+TODO
+\end{definition}
 	
 \subsection{Αντισυμμετρικοί 2-τανυστές}
 	\label{sec:antisymmetric-2-tensors}
