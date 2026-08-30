@@ -2578,25 +2578,362 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 	
 \section{Γενικός τανυστικός λογισμός}
 	\label{sec:general-tensor-calculus}
-	
-\subsection{Ζητήματα συμβολισμού}
+
+\subsection{Προαπαιτούμενα και συμβάσεις}
+
+\noindent
+Δοθέντος γραμμικού χώρου $V$ διάστασης $n \ge 1$,
+συμβολίζουμε την τυχούσα βάση αυτού ως
+\begin{equation*}
+\frac{\partial}{\partial x^i},
+\quad
+1 \le i \le n\,.
+\end{equation*}
+Ως δυϊκή βάση αυτής εννοείται η διατεταγμένη συλλογή των γραμμικών συναρτησοειδών
+$dx^i$, $1 \le i \le n$,
+που ορίζονται μέσω των σχέσεων
+\begin{equation*}
+dx^i \left( \frac{\partial}{\partial x^{\hspace{.5pt}j}} \right)
+\,=
+\,
+\delta^{\,i}_j
+\end{equation*}
+και συγκροτούν βάση του δυϊκού χώρου $V^*$.
+
+\subsubsection{Ανταλλοίωτος και συναλλοίωτος μετασχηματισμός βάσης}
+
+Σταθεροποιοώντας αυθαίρετη βάση του $V$ ως ``καρτεσιανή'',
+συμβολίζουμε ως
+\begin{equation*}
+\left(\frac{\partial y^i}{\partial x^j} \right)_{ij}
+\end{equation*}
+τον πίνακα που αναπαριστά ως προς αυτήν
+τον γραμμικό αυτομορφισμό που απεικονίζει τη
+βάση $\{\partial/\partial x^i\}_i$ στη βάση $\{\partial/\partial y^i\}_i$. Yπ' αυτόν τον συμβολισμό, ο πίνακας
+\begin{equation*}
+\left(\frac{\partial x^i}{\partial y^j} \right)_{ij}
+\,=\,
+\left(\frac{\partial y^i}{\partial x^j} \right)_{ij}^{-1}
+\end{equation*}
+αναπαριστά τον αντίστροφο αυτομορφισμό ως προς την καρτεσιανή βάση,
+οπότε η αλλαγή βάσης εκφράζεται μέσω της ``ανταλλοίωτης'' σχέσης
+\begin{equation}\label{eq:contravariance-elementary}
+\frac{\partial}{\partial y^i}
+\,=\,
+\frac{\partial x^{\hspace{.5pt}j}}{\partial y^i}
+\,
+\frac{\partial}{\partial x^{\hspace{.5pt}j}}\,.
+\end{equation}
+Iσοδύναμα, η αλλαγή της δυϊκής βάσης στον $V^*$
+εκφράζεται μέσω της ``συναλλοίωτης'' σχέσης
+\begin{equation}\label{eq:covariance-elementary}
+dy^{i}
+\,=\,
+\frac{\partial y^i}{\partial x^{\hspace{.5pt}j}}
+\,
+dx^{\hspace{.5pt}j}\,.
+\end{equation}
+
+\subsubsection{O κανoνικός ισομορφισμός $V \simeq V^{**}$}
+
+Εφόσον ο γραμμικός χώρος $V$ είναι πεπερασμένης διάστασης,
+γνωρίζουμε ότι είναι ισομορφικός με τον διπλό δυϊκό
+$V^{**} \equiv \left(V^*\right)^*$
+μέσω της γραμμικής απεικόνισης
+\begin{equation}\label{eq:double-dual-canonical-isomorphism}
+\hat{(\hspace{1pt}\cdot\hspace{1pt})}: V \to V^{**},
+\quad
+\xi \mapsto \hat{\xi},
+\quad
+\hat{\xi}(\theta)
+\,\equiv\,
+\theta(\xi),
+\end{equation}
+που επιπλέον χαρακτηρίζεται από τη συνθήκη
+ότι απεικονίζει κάποια ---και τότε κάθε--- βάση του $V$
+στην δυϊκή βάση της δυϊκής της.
+Αυτό σημαίνει ειδικότερα πως ο ισομορφισμός \eqref{eq:double-dual-canonical-isomorphism} είναι φυσικός,
+οπότε κάνουμε εφ' εξής την κανονική ταύτιση
+\begin{equation}\label{eq:double-dual-canonical-identification}
+V = V^{**}
+\end{equation}
+εννοώντας ακριβέστερα
+ότι η δράση διανύσματος σε γραμμικό συναρτησοειδές ισούται
+με τη δράση του συναρτησοειδούς πάνω στο εν λόγω διάνυσμα.
+
+\subsection{Τανυστικός μετασχηματισμός και στοιχειώδεις πράξεις}
+
+\begin{definition}[Τανυστές]
+	\label{def:(k,l)-tensor}
+Ως \textbf{$(r, s)$-τανυστής} στον γραμμικό χώρο $V$, όπου $r, s \ge 0$, εννοείται μια πολυγραμμική απεικόνιση της μορφής
+\begin{equation*}\label{eq:general-tensor-schema}
+T: \underbrace{V^* \times \dots \times V^*}_{\textstyle r \textup{ φορές}}
+\,\times\,
+\underbrace{V \times \dots \times V}_{\textstyle s \textup{ φορές}} \to \mathbb{R}\,.
+\end{equation*}
+Συμβολίζουμε ως $\mathfrak{T}^{\,r}_{\,s}(V)$ τον γραμμικό χώρο των $(r, s)$-τανυστών στον $V$.
+\end{definition}
+\noindent
+Ορίζουμε κατά σύμβαση ότι $\mathfrak{T}^{\,0}_{\,0}(V) = \mathbb{R}$.
+Είναι σαφές ότι
+\begin{equation}\label{eq:covectors-as-tensors}
+\,\,\mathfrak{T}^{\,0}_{\,1}(V)\, =\, V^*,
+\end{equation}
+δηλαδή οι $(0, 1)$-τανυστές στον $V$ είναι τα γραμμικά συναρτησοειδή του·
+παρομοίως, υπό το πρίσμα της κανονικής ταύτισης
+\eqref{eq:double-dual-canonical-isomorphism} ισχύει
+\begin{equation}\label{eq:vectors-as-tensors}
+\mathfrak{T}^{\,1}_{\,0}(V)\, =\, V,
+\end{equation}
+δηλαδή οι $(1,0)$-τανυστές στον $V$ είναι τα διανύσματα του ίδιου του χώρου.
+%begin{equation}
+%\,\,\,\,\,\,\,\mathfrak{T}^{\,1}_{\,1}(V)\, \simeq\, L(V)
+%\end{equation}
 
 \begin{definition}[Τανυστικό γινόμενο]
 	\label{def:tensor-product}
-TODO
+Ως \textbf{τανυστικό γινόμενο} εννοείται η πράξη $\otimes$
+που δοθέντων $S \in \mathfrak{T}^{\,p}_{\,q}(V)$, $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ επιστρέφει τον τανυστή
+$S \otimes T \in \mathfrak{T}^{\,p+r}_{\,q+s}(V)$
+που ορίζεται ως
+\begin{equation*}
+S \otimes T
+\,(\theta^1, \dots, \xi_{\hspace{.5pt}q + s})
+\,
+=
+\,
+S\,(\theta^1, \dots, \theta^{\hspace{.5pt}p}, \xi_1, \dots, \xi_{\hspace{.5pt}q})
+\cdot
+T\,(\theta^{\hspace{.5pt}p+1}, \dots, \theta^{\hspace{.5pt}p+r}, \xi_{\hspace{.5pt}q+1}, \dots, \xi_{\hspace{.5pt}q+s})
+\end{equation*}
 \end{definition}
+\noindent
+Ελέγχεται άμεσα ότι το τανυστικό γινόμενο είναι προσαιτεριστικό και διγραμμικό, ενώ η ουσιώδης χρησιμότητά του έγκειται στο εξής.
+\begin{proposition}[Δομή του χώρου $\mathfrak{T}^{\,r}_{\,s}(V)$]
+	\label{prop:general-tensor-space-structure}
+Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$
+διάστασης $n \ge 1$, η διατεταγμένη συλλογή
+\begin{equation}\label{eq:general-tensor-space-base}
+\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
+\otimes
+dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s},
+\quad
+1 \le i_1, \dots, i_r \le n\,,
+\quad
+1 \le j_1, \dots, j_s \le n\,,
+\end{equation}\label{eq:general-tensor-base}
+συγκροτεί βάση του γραμμικού χώρου $\mathfrak{T}^{\,r}_{\,s}(V)$,
+που επομένως έχει διάσταση $n^{r+s}$. Ειδικότερα,
+\begin{equation}\label{eq:general-tensor-space-structure}
+\mathfrak{T}^{\,r}_{\,s}(V)
+\,=\,
+\underbrace{V \otimes \dots \otimes V}_{\textstyle r \textup{ φορές}}
+\,\otimes\,
+\underbrace{V^* \otimes \dots \otimes V^* }_{\textstyle s \textup{ φορές}}
+\end{equation}
+υπό το πρίσμα της \eqref{eq:covectors-as-tensors} και της κανονικής ταύτισης \eqref{eq:vectors-as-tensors}.
+\end{proposition}
+\begin{proof}
+Δοθέντος $T \in \mathfrak{T}^{\,r}_{\,s}(V)$,
+θεωρούμε τις ποσότητες
+\begin{equation*}
+T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
+\,
+\equiv
+\,
+T\left(
+dx^{i_1}, \dots, dx^{i_r},
+\frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_s}}
+\right).
+\end{equation*}
+Εφαρμόζοντάς τον σε τυχούσα $(r+s)$-άδα ορισμάτων,
+συνάγεται ευθέως λόγω πολυγραμμικότητας και εξ ορισμού του τανυστικού γινομένου ότι ο τανυστής $Τ$ είναι της μορφής
+\begin{equation*}
+T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
+\,\,
+\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
+\otimes
+\,dx^{j_1} \otimes \dots \otimes dx^{j_s}\,.
+\end{equation*}
+Απομένει να δειχθεί ότι η συλλογή \eqref{eq:general-tensor-base}
+είναι γραμμικώς ανεξάρτητη. Έστω
+\begin{equation*}
+\lambda^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
+\,\,
+\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
+\otimes
+\,dx^{j_1} \otimes \dots \otimes dx^{j_s}
+\,
+=
+\,
+0
+\,,
+\end{equation*}
+οπότε εφαρμόζοντας αμφότερα τα μέλη στην $(r+s)$-άδα ορισμάτων
+\begin{equation*}
+dx^{\mu_1}, \dots, dx^{\mu_r},
+\frac{\partial}{\partial x^{\hspace{.5pt}\nu_1}}\,, \dots\,, \frac{\partial}{\partial x^{\hspace{.5pt}\nu_s}}\,,
+\end{equation*}
+λαμβάνουμε $\lambda^{\hspace{1.5pt}\mu_1 \dots \mu_r}_{\hspace{1.5pt}\nu_1 \dots \nu_s}
+=
+0$.
+Εφόσον οι δείκτες $\mu_1, \dots, \mu_r, \nu_1, \dots, \nu_s$ είναι αυθαίρετοι, όλοι οι συντελεστές μηδενίζονται, και άρα η συλλογή είναι γραμμικώς ανεξάρτητη.
+\end{proof}
+
+\begin{definition}[Αναπαράσταση τανυστή]
+	\label{def:tensor-representation}
+Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$ διάστασης $n \ge 1$, θεωρούμε το ανάπτυγμα
+\begin{equation}\label{eq:tensor-representation}
+T
+\,=\,
+T^{\,i_1 \dots i_r}_{\,\,j_1 \dots j_s}
+\,
+\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
+\otimes
+dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s}
+\end{equation}
+ενός $(r,s)$-τανυστή $Τ$ ως προς την επαγόμενη βάση του
+$\mathfrak{T}^{\,r}_{\,s}(V)$ (βλ. Πρόταση \ref{prop:general-tensor-space-structure}).
+Οι $n^{r+s}$ βαθμωτές ποσότητες
+$\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$,
+όπου συγκεκριμένα
+\begin{equation}\label{eq:tensor-quantities}
+T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
+\,
+=
+\,
+T\left(
+dx^{i_1}, \dots, dx^{i_r},
+\frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_s}}
+\right),
+\end{equation}
+λέγεται ότι \textbf{αναπαριστούν τον $Τ$ ως προς τη βάση $\{\partial/\partial x^i\}_i$} του $V$.
+\end{definition}
+\noindent
+Ελέγχεται ευθέως ότι εάν οι τανυστές $S$ και $T$ αναπαρίστανται από τις
+ποσότητες $\{S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}\}$ και
+$\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ αντιστοίχως,
+τότε το τανυστικό τους γινόμενο αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:tensotr-product-quantities}
+(S \otimes Τ)^{\,i_1 \dots i_{\hspace{.5pt}p+r}}_{\,j_1 \dots j_{\hspace{.5pt}q+s}}
+\,=\,
+S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}
+\cdot
+Τ^{\,i_{\hspace{.5pt}p+1} \dots i_{\hspace{.5pt}p+r}}_{\,j_{\hspace{.5pt}q+1} \dots j_{\hspace{.5pt}q+s}}\,,
+\end{equation}
+όπου
+$1 \le i_1,\dots,i_{p+r} \le p+r$ και
+$1 \le j_1,\dots,i_{q+s} \le q+s$,
+ως προς την ίδια βάση του $V$.
+\begin{proposition}[Μετασχηματισμός τανυστικών ποσοτήτων]
+	\label{prop:tensor-transform}
+Έστω βάσεις $\{\partial/\partial x^i\}_i$, $\{\partial/\partial y^i\}_i$ σε γραμμικό χώρο $V$ διάστασης $n \ge 1$.
+Δοθέντος τανυστή
+$Τ \in \mathfrak{T}^{\,r}_{\,s}(V)$ που
+αναπαρίσταται από τις βαθμωτές ποσότητες
+\begin{equation*}
+\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_r}\}\,,
+\quad
+\{\widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}
+\end{equation*}
+αντιστοίχως (βλ. Ορισμό \ref{def:tensor-representation}), ισχύει
+\begin{equation}\label{eq:tensor-transform}
+\widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}
+\,=\,
+\frac{\partial y^{\hspace{.5pt}i_1}}{\partial x^{\hspace{.5pt}\mu_1}}
+\dots
+\frac{\partial y^{\hspace{.5pt}i_r}}{\partial x^{\hspace{.5pt}\mu_r}}
+\,
+T^{\,\mu_1 \dots \mu_r}_{\,\,\nu_1 \dots \nu_s}
+\,
+\frac{\partial x^{\hspace{.5pt}\nu_1}}{\partial y^{\hspace{.5pt}j_1}}
+\dots
+\frac{\partial x^{\hspace{.5pt}\nu_s}}{\partial y^{\hspace{.5pt}j_s}}
+\,,
+\end{equation}
+για κάθε $1 \le i_1, \dots i_r \le n$ και $1 \le j_1, \dots, j_s \le n$.
+\end{proposition}
+\begin{proof}
+Εφαρμόζοντας τους μετασχηματισμούς \eqref{eq:contravariance-elementary}, \eqref{eq:covariance-elementary} και
+ένεκα πολυγραμμικότητας,
+\begin{equation*}
+\begin{aligned}
+\widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}
+\,
+&=
+\,
+T\left(
+dy^{i_1}, \dots, dy^{i_r},
+\frac{\partial}{\partial y^{j_1}}, \dots, \frac{\partial}{\partial y^{j_s}}
+\right)
+\\
+&=
+\,
+T\left(
+\frac{\partial y^{i_1}}{\partial x^{\mu_1}} dx^{\mu_1},
+\dots,
+\frac{\partial y^{i_r}}{\partial x^{\mu_r}} dx^{\mu_r},
+\frac{\partial x^{\nu_1}}{\partial y^{j_1}} \frac{\partial}{\partial x^{\nu_1}},
+\dots,
+\frac{\partial x^{\nu_s}}{\partial y^{j_s}} \frac{\partial}{\partial x^{\nu_s}}
+\right)
+\\
+&=
+\,
+\frac{\partial y^{i_1}}{\partial x^{\mu_1}}
+\dots
+\frac{\partial y^{i_r}}{\partial x^{\mu_r}}
+\,
+\frac{\partial x^{\nu_1}}{\partial y^{j_1}}
+\dots
+\frac{\partial x^{\nu_s}}{\partial y^{j_s}}
+\,\,
+T\left(
+dx^{\mu_1}, \dots, dx^{\mu_r},
+\frac{\partial}{\partial x^{\nu_1}}, \dots, \frac{\partial}{\partial x^{\nu_s}}
+\right),
+\end{aligned}
+\end{equation*}
+που είναι το ζητούμενο.
+\end{proof}
 
 \begin{definition}[Συναίρεση δεικτών]
 	\label{def:contraction-of-index}
 TODO
 \end{definition}
 
-\begin{definition}[Ανέβασμα και κατέβασμα δείκτη]
+\begin{definition}[Ανύψωση και καθίζηση δείκτη]
 	\label{def:raising-and-lowering-index}
 TODO
 \end{definition}
 
+\begin{definition}[Εσωτερική συστολή δείκτη]
+	\label{def:interior-product}
+TODO
+\end{definition}
+
 \subsection{ Ανταλλοίωτοι και συναλλοίωτοι τανυστές}
+
+\begin{definition}[Ανταλλοίωτοι και συναλλοίωτοι τανυστές]
+	\label{def:covarian-contravariant-tensor}
+Ως \textbf{$k$-ανταλλοίωτος}, αντ. \textbf{$k$-συναλλοίωτος} τανυστής
+εννοείται ένας $(k, 0)$-, αντ. $(0,k)$-τανυστής.
+Συμβολίζουμε ως
+\begin{equation*}
+\mathfrak{T}^{\,k}(V)
+\,
+\equiv
+\,
+\mathfrak{T}_{\,0}^{\,k}(V)\,,
+\quad
+\mathfrak{T}_{k}(V)
+\,
+\equiv
+\,
+\mathfrak{T}_{\,k}^{\,0}(V)\,,
+\end{equation*}
+τον γραμμικό υπόχωρο των $k$-ανταλλοίωτων και $k$-συναλλοίωτων τανυστών αντιστοίχως.
+\end{definition}
 
 TODO: ισομορφισμός
 
@@ -2722,9 +3059,6 @@ dx^{i_1} \wedge \dots \wedge dx^{i_k} \hspace{.7pt}
 \,\,
 \det ( \eta^{i_\nu}_{\,\mu} )_{\mu, \nu}
 \end{equation}
-
-\subsection{Στοιχεία όγκου}
-	\label{sec:volume-form}
 
 \subsection{Υπολογιστικά ζητήματα}
 
@@ -2984,7 +3318,7 @@ $g(p)$ να είναι μη ιδιάζουσα
 Σε αυτήν την περίπτωση, το ζεύγος $(Μ, g)$ αναφέρεται ως \textbf{ψευδορημάννεια πολλαπλότητα}.
 \end{definition}
 
-\begin{proposition}\label{prop:psr-arbitratry-to-arbitrary}
+\begin{proposition}\label{prop:psr-arbitrary-to-arbitrary}
 Δοθείσης ψευδορημάννειας πολλαπλότητας $(M, g)$,
 για οποιοδήποτε ζεύγος τοπικών συστημάτων συντεταγμένων
 $x^1, \dots, x^n$ και $y^1, \dots, y^n$ ισχύει
@@ -3000,7 +3334,7 @@ $x^1, \dots, x^n$ και $y^1, \dots, y^n$ ισχύει
 όπου $\hspace{.5pt}g_{ij}\hspace{.75pt}dx^i\hspace{.25pt}dx^{\hspace{.5pt}j}$ και
 $\hspace{.5pt}\tilde{g}_{ij}\hspace{.75pt}dy^i\hspace{.25pt}dy^{\hspace{.5pt}j}$
 οι αντίστοιχες τοπικές αναπαραστάσεις της $g$, συνεπώς επίσης
-\begin{equation}
+\begin{equation}\label{eq:psr-arbitrary-to-arbitrary-quadratic-absolute}
 \sqrt{\lvert\hspace{.75pt} \det \left(\tilde{g}_{ij}\right) \hspace{.75pt}\rvert}
 \,
 =
@@ -3019,7 +3353,7 @@ $\hspace{.5pt}\tilde{g}_{ij}\hspace{.75pt}dy^i\hspace{.25pt}dy^{\hspace{.5pt}j}$
 \end{proof}
 
 \noindent
-TODO: Νόμος του Sylvester
+TODO: Διατύπωση και επεξήγηση του νόμου του Sylvster στο πλαίσιο των ψευδορυμάννειων μετρικών· γιατί η μετρική υπογραφή $(r, s)$ ορίζεται καλά και ομοιόμορφα (αν ορίζεται);
 
 \begin{equation}\label{(r, s)-matrix}
 1_{r,s}
@@ -3053,6 +3387,68 @@ $g(p)$ είναι θετικά ορισμένη
 σε κάθε σημείο $p \in M$.
 Σε αυτήν την περίπτωση, το ζεύγος $(Μ, g)$ αναφέρεται ως \textbf{ρημάννεια πολλαπλότητα}.
 \end{definition}
+
+\subsection{Ισομετρίες και πεδία Killing}
+	\label{sec:isometries-and-killing-fields}
+
+\subsection{Σημειακώς ορθοκανονικά πλαίσια}
+	\label{sec:orthonormal-frames}
+
+\begin{proposition}
+\label{prop:orthonormal-base-to-frame}
+Δοθείσης ψευδορημάννειας πολλαπλότητας $(M, g)$ και τυχόντος $p \in M$,
+για οποιαδήποτε ορθοκανονική βάση $e_1, \dots, e_n$ του εφαπτόμενου χώρου $Τ_pM$
+υπάρχει τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$ τέτοιο ώστε
+\begin{equation}
+e_i
+\,
+=
+\,
+\frac{\partial}{\partial x^i}\,\Big|_p\,,
+\quad
+1 \le i \le n\,,
+\end{equation}
+δηλαδή το πλάισιο $\{\partial/\partial x^i\}_i$ να είναι ορθοκονονικό στο σημείο $p$. Συνεπώς, γύρω από οποιοδήποτε σημείο της πολλαπλότητας εντοπίζεται τοπικό πλαίσιο που είναι ορθοκανονικό στο σημείο αυτό
+(και επάγεται από κάποιο τοπικό σύστημα συντεταγμένων).
+\end{proposition}
+\begin{proof}
+Το γεγονός ότι οποιαδήποτε ορθοκονονική βάση επεκτείνεται σε τοπικό πλαίσιο που επάγεται από σύστημα συντεταγμένων είναι άμεση συνέπεια της Πρότασης \eqref{prop:base-to-frame}. Ο ισχυρισμός περί της ύπαρξης σημειακώς ορθοκανονικού
+πλαισίου έπεται τότε από τον νόμο του Sylvester.
+\end{proof}
+	
+\begin{proposition}\label{prop:orthonormal-to-arbitrary}
+Δοθείσης ψευδορημάννειας πολλαπλότητας $(M, g)$ με υπογραφή $(r,s)$,
+επιλέγουμε τοπικό σύστημα συντεταγμένων $z^1, \dots, z^n$
+τέτοιο ώστε το πλαίσιο $\{\partial/\partial z^i\}_i$
+να είναι ορθοκανονικό στον $Τ_pM$.
+(βλ. Πρόταση \ref{prop:orthonormal-base-to-frame}).
+Για οποιοδήποτε τοπικό σύστημα συνταταγμένων $x^1, \dots, x^n$
+γύρω από το $p$ ισχύει
+\begin{equation}\label{eq:orthonormal-to-arbitrary-quadratic}
+\det \left(g_{ij}(p)\right)
+\,
+=
+\,
+(-1)^s
+\,
+\left(\det\left(\frac{\partial z^i}{\partial x^j}(p)\right)\right)^2,
+\end{equation}
+όπου $\hspace{.5pt}g_{ij}\hspace{.75pt}dx^i\hspace{.25pt}dx^{\hspace{.5pt}j}$
+η τοπική αναπαράσταση της $g$, συνεπώς επίσης
+\begin{equation}\label{eq:orthonormal-to-arbitrary-absolute}
+\sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}(p)\right) \hspace{.75pt}\rvert}
+\,
+=
+\,
+\lvert\hspace{1pt} \det\left(\frac{\partial z^i}{\partial x^j}(p)\right) \hspace{.5pt}\rvert\,.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Έπεται άμεσα από την Πρόταση \ref{prop:psr-arbitrary-to-arbitrary},
+εφόσον η διγραμμική απεικόνιση $g(p)$
+αναπαρίσταται ως $\operatorname{diag}(+1_r, -1_s)$
+λόγω ορθοκανονικότητας του επιλεγμένου πλαισίου στο σημείο $p$.
+\end{proof}
 
 \subsection{Μουσικοί ισομορφισμοί}
 
@@ -3132,33 +3528,6 @@ $\partial/\partial x^i$ και $dx^i$.
 \end{equation}
 Παρακάτω επεκτείνουμε τον μουσικό ισομορφισμό μεταξύ εφαπτόμενων και συνεφαπτόμενων χώρων αφ' ενός σε αμφιδιαφόριση μεταξύ εφαπτόμενης και συνεφαπτόμενης δέσμης, αφ' ετέρου σε αμφιμονοσήμαντη αντιστοιχία ανάμεσα σε διανυσματικά πεδία και διαφορικές 1-μορφές.
 
-\subsubsection{Ισομορφισμός μεταξύ διανυσματικών πεδίων και 1-μορφών}
-
-Δοθείσης ψευδορημάννειας πολλαπλότητας $(Μ, g)$,
-θεωρούμε την απεικόνιση
-\begin{equation}\label{eq:flat-isomoprhism-fields}
-\left(\cdot\right)^\flat: \mathfrak{X}(M) \to \Omega_1(M),
-\quad
-\xi \mapsto \xi^\flat,
-\end{equation}
-που ορίζεται κατά σημείο ως
-$\xi^\flat(p) = \left(\xi(p)\right)^\flat$.
-Η απεικόνιση αυτή αντιστρέφεται μέσω της
-\begin{equation}\label{eq:sharp-isomoprhism-fields}
-\left(\cdot\right)^\sharp: \Omega_1(M) \to \mathfrak{X}(M),
-\quad
-\omega \mapsto \omega^\sharp,
-\end{equation}
-που ορίζεται κατά σημείο ως
-$\omega^\sharp(p) = \left(\omega(p)\right)^\sharp$.
-Κάνοντας κατάλληλες υποθέσεις διαφορισιμότητας για την $g$,
-συνάγεται βάσει των τοπικών αναπαραστάσεων
-\eqref{eq:flat-isomoprhism}
-(αντ. \eqref{eq:sharp-isomoprhism})
-ότι τα τανυστικά πεδία $\xi$ και $\xi^\flat$
-(αντ. $\omega$ και $\omega^\sharp$)
-έχουν ίδια τάξη διαφορισιμότητας.
-
 \subsubsection{Ισομορφισμός εφαπτόμενης και συνεφαπτόμενης δέσμης}
 
 Δοθείσης ψευδορημάννειας πολλαπλότητας $(Μ, g)$,
@@ -3219,79 +3588,185 @@ $\det(g_{ij})$ και είναι παντού μη μηδενική
 η $\phi$ είναι τοπική αμφιδιαφόριση, συνεπώς επίσης
 αμφιδιαφόριση καθότι αμφιμονοσήμαντη.
 
-\subsection{Ισομετρίες και πεδία Killing}
-	\label{sec:isometries-and-killing-fields}
+\subsubsection{Ισομορφισμός μεταξύ διανυσματικών πεδίων και 1-μορφών}
 
-\subsection{Σημειακώς ορθοκανονικά πλαίσια}
-	\label{sec:orthonormal-frames}
-
-\begin{proposition}
-\label{prop:orthonormal-base-to-frame}
-Δοθείσης ψευδορημάννειας πολλαπλότητας $(M, g)$ και τυχόντος $p \in M$,
-για οποιαδήποτε ορθοκανονική βάση $e_1, \dots, e_n$ του εφαπτόμενου χώρου $Τ_pM$
-υπάρχει τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$ τέτοιο ώστε
-\begin{equation}
-e_i
-\,
-=
-\,
-\frac{\partial}{\partial x^i}\,\Big|_p\,,
+Δοθείσης ψευδορημάννειας πολλαπλότητας $(Μ, g)$,
+θεωρούμε την απεικόνιση
+\begin{equation}\label{eq:flat-isomoprhism-fields}
+\left(\cdot\right)^\flat: \mathfrak{X}(M) \to \Omega_1(M),
 \quad
-1 \le i \le n\,,
+\xi \mapsto \xi^\flat,
 \end{equation}
-δηλαδή το πλάισιο $\{\partial/\partial x^i\}_i$ να είναι ορθοκονονικό στο σημείο $p$. Συνεπώς, γύρω από οποιοδήποτε σημείο της πολλαπλότητας εντοπίζεται τοπικό πλαίσιο που είναι ορθοκανονικό στο σημείο αυτό
-(και επάγεται από κάποιο τοπικό σύστημα συντεταγμένων).
+που ορίζεται κατά σημείο ως
+$\xi^\flat(p) = \left(\xi(p)\right)^\flat$.
+Η απεικόνιση αυτή αντιστρέφεται μέσω της
+\begin{equation}\label{eq:sharp-isomoprhism-fields}
+\left(\cdot\right)^\sharp: \Omega_1(M) \to \mathfrak{X}(M),
+\quad
+\omega \mapsto \omega^\sharp,
+\end{equation}
+που ορίζεται κατά σημείο ως
+$\omega^\sharp(p) = \left(\omega(p)\right)^\sharp$.
+Κάνοντας κατάλληλες υποθέσεις διαφορισιμότητας για την $g$,
+συνάγεται βάσει των τοπικών αναπαραστάσεων
+\eqref{eq:flat-isomoprhism}
+(αντ. \eqref{eq:sharp-isomoprhism})
+ότι τα τανυστικά πεδία $\xi$ και $\xi^\flat$
+(αντ. $\omega$ και $\omega^\sharp$)
+έχουν ίδια τάξη διαφορισιμότητας.
+
+\subsubsection{Γενίκευση --- Ισομορφισμός μεταξύ ανταλλοίωτων και συναλλοίωτων $k$-τανυστικών πεδίων, $1 \le k \le n$}
+
+TODO
+
+\subsection{Φυσικότητα των μουσικών ισμορφισμών ως προς τις ισομετρίες}
+
+\begin{proposition}[Αναλλοιότητα των μουσικών ισομορφισμών κάτω από ισομετρίες]
+	\label{prop:musical-isomorphisms-invariance-under-isometries}
+Έστω $(M, g)$ και $(N, h)$ δύο ψευδορημάννειες πολλαπλότητες και
+$\phi: M \to N$ μια ισομετρία, δηλαδή $\phi^* h = g$.
+Τότε για κάθε σημείο $p \in M$ ισχύουν οι σχέσεις
+\begin{equation}\label{eq:flat-invariance-under-isometry}
+\phi_* \circ \flat = \flat \circ \phi_*,
+\end{equation}
+και
+\begin{equation}\label{eq:sharp-invariance-under-isometry}
+\phi^* \circ \sharp = \sharp \circ \phi^*,
+\end{equation}
+όπου $\flat, \sharp$ είναι οι μουσικοί ισομορφισμοί που επάγονται από τις μετρικές στις αντίστοιχες πολλαπλότητες.
 \end{proposition}
+
 \begin{proof}
-Το γεγονός ότι οποιαδήποτε ορθοκονονική βάση επεκτείνεται σε τοπικό πλαίσιο που επάγεται από σύστημα συντεταγμένων είναι άμεση συνέπεια της Πρότασης \eqref{prop:base-to-frame}. Ο ισχυρισμός περί της ύπαρξης σημειακώς ορθοκανονικού
-πλαισίου έπεται τότε από τον νόμο του Sylvester.
+Θεωρούμε $\xi \in T_pM$ και $\eta \in T_pM$. Εξ ορισμού του μουσικού ισομορφισμού $\flat$, ισχύει
+\begin{equation*}
+(\flat \xi)(\eta) = g(\xi, \eta).
+\end{equation*}
+Εφαρμόζοντας την εφελκυσμένη $\phi_*$ και τη συνεφελκυσμένη $\phi^*$, έχουμε
+\begin{equation*}
+(\phi_* \circ \flat \xi)(\phi_* \eta)
+=
+(\flat \xi)(\eta)
+=
+g(\xi, \eta).
+\end{equation*}
+Από την άλλη, εφόσον η $\phi$ είναι ισομετρία, ισχύει
+\begin{equation*}
+g(\xi, \eta)
+=
+(\phi^* h)(\xi, \eta)
+=
+h(\phi_* \xi, \phi_* \eta).
+\end{equation*}
+Συνεπώς,
+\begin{equation*}
+(\phi_* \circ \flat \xi)(\phi_* \eta)
+=
+h(\phi_* \xi, \phi_* \eta).
+\end{equation*}
+Το δεξί μέλος είναι ακριβώς η δράση του $\flat (\phi_* \xi)$ στο $\phi_* \eta$, δηλαδή
+\begin{equation*}
+(\flat \circ \phi_* \xi)(\phi_* \eta)
+=
+h(\phi_* \xi, \phi_* \eta).
+\end{equation*}
+Εφόσον η $\phi_*$ είναι ισομορφισμός μεταξύ εφαπτόμενων χώρων, τα $\phi_* \eta$ διατρέχουν ολόκληρο τον $T_{\phi(p)}N$, και άρα
+\begin{equation*}
+\phi_* \circ \flat \xi = \flat \circ \phi_* \xi,
+\end{equation*}
+που δίνει την πρώτη σχέση.
+
+Για τη δεύτερη σχέση, θεωρούμε $\omega \in T_{\phi(p)}^* N$ και $\xi \in T_pM$. Εξ ορισμού της $\sharp$, το $\sharp \omega$ είναι το μοναδικό διάνυσμα του $T_{\phi(p)}N$ που ικανοποιεί
+\begin{equation*}
+h(\sharp \omega, \phi_* \xi)
+=
+\omega(\phi_* \xi).
+\end{equation*}
+Από την άλλη, εξ ορισμού της $\sharp$, το $\sharp (\phi^* \omega)$ είναι το μοναδικό διάνυσμα του $T_pM$ που ικανοποιεί
+\begin{equation*}
+g(\sharp (\phi^* \omega), \xi)
+=
+(\phi^* \omega)(\xi)
+=
+\omega(\phi_* \xi).
+\end{equation*}
+Εφόσον η $\phi$ είναι ισομετρία,
+\begin{equation*}
+g(\sharp (\phi^* \omega), \xi)
+=
+h(\phi_* \sharp (\phi^* \omega), \phi_* \xi).
+\end{equation*}
+Συνεπώς,
+\begin{equation*}
+h(\phi_* \sharp (\phi^* \omega), \phi_* \xi)
+=
+\omega(\phi_* \xi).
+\end{equation*}
+Αλλά αυτό είναι ακριβώς η ιδιότητα που χαρακτηρίζει το $\sharp \omega$, δηλαδή
+\begin{equation*}
+h(\sharp \omega, \phi_* \xi)
+=
+\omega(\phi_* \xi).
+\end{equation*}
+Από τη μοναδικότητα του διανύσματος $\sharp \omega$, έπεται
+\begin{equation*}
+\phi_* \sharp (\phi^* \omega) = \sharp \omega,
+\end{equation*}
+που είναι ισοδύναμο με
+\begin{equation*}
+\phi^* \circ \sharp \omega = \sharp \circ \phi^* \omega.
+\end{equation*}
+Αυτό ολοκληρώνει την απόδειξη.
 \end{proof}
-	
-\begin{proposition}\label{prop:orthonormal-to-arbitrary}
-Δοθείσης ψευδορημάννειας πολλαπλότητας $(M, g)$ με υπογραφή $(r,s)$,
-επιλέγουμε τοπικό σύστημα συντεταγμένων $z^1, \dots, z^n$
-τέτοιο ώστε το πλαίσιο $\{\partial/\partial z^i\}_i$
-να είναι ορθοκανονικό στον $Τ_pM$.
-(βλ. Πρόταση \ref{prop:orthonormal-base-to-frame}).
-Για οποιοδήποτε τοπικό σύστημα συνταταγμένων $x^1, \dots, x^n$
-γύρω από το $p$ ισχύει
-\begin{equation}\label{eq:orthonormal-to-arbitrary-quadratic}
-\det \left(g_{ij}(p)\right)
-\,
-=
-\,
-(-1)^s
-\,
-\left(\det\left(\frac{\partial z^i}{\partial x^j}(p)\right)\right)^2,
-\end{equation}
-όπου $\hspace{.5pt}g_{ij}\hspace{.75pt}dx^i\hspace{.25pt}dx^{\hspace{.5pt}j}$
-η τοπική αναπαράσταση της $g$, συνεπώς επίσης
-\begin{equation}\label{eq:orthonormal-to-arbitrary-absolute}
-\sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}(p)\right) \hspace{.75pt}\rvert}
-\,
-=
-\,
-\lvert\hspace{1pt} \det\left(\frac{\partial z^i}{\partial x^j}(p)\right) \hspace{.5pt}\rvert\,.
+
+\begin{proposition}[Αναλλοιότητα του ανταλλοίωτου τανυστή Levi-Civita κάτω από ισομετρίες]
+	\label{prop:contravariant-levi-civita-invariance-under-isometries}
+Υπό τις προϋποθέσεις της Πρότασης \ref{prop:musical-isomorphisms-invariance-under-isometries},
+εάν $\omega^\sharp$ και $\widetilde{\omega}^\sharp$ είναι οι ανταλλοίωτοι τανυστές Levi-Civita των $(M, g)$ και $(N, h)$ αντιστοίχως, τότε
+\begin{equation}\label{eq:contravariant-levi-civita-invariance-under-isometry}
+\phi_* \omega^\sharp = \widetilde{\omega}^\sharp.
 \end{equation}
 \end{proposition}
+
 \begin{proof}
-Έπεται άμεσα από την Πρόταση \ref{prop:psr-arbitratry-to-arbitrary},
-εφόσον η διγραμμική απεικόνιση $g(p)$
-αναπαρίσταται ως $\operatorname{diag}(+1_r, -1_r)$
-λόγω ορθοκανονικότητας του επιλεγμένου πλαισίου στο σημείο $p$.
+Ο ανταλλοίωτος τανυστής Levi-Civita προκύπτει από τον συναλλοίωτο μέσω του μουσικού ισομορφισμού:
+\begin{equation*}
+\omega^\sharp = \sharp(\omega),
+\quad
+\widetilde{\omega}^\sharp = \sharp(\widetilde{\omega}).
+\end{equation*}
+Από την αναλλοιότητα του συναλλοίωτου τανυστή κάτω από ισομετρίες,
+\begin{equation*}
+\phi^* \widetilde{\omega} = \omega.
+\end{equation*}
+Εφαρμόζοντας τη δεύτερη σχέση της Πρότασης \ref{prop:musical-isomorphisms-invariance-under-isometries},
+\begin{equation*}
+\phi^* \circ \sharp \widetilde{\omega} = \sharp \circ \phi^* \widetilde{\omega} = \sharp \omega.
+\end{equation*}
+Το αριστερό μέλος ισούται με $\phi^* \widetilde{\omega}^\sharp$, και το δεξί με $\omega^\sharp$. Συνεπώς,
+\begin{equation*}
+\phi^* \widetilde{\omega}^\sharp = \omega^\sharp,
+\end{equation*}
+ή ισοδύναμα, εφόσον η $\phi$ είναι αμφιδιαφόριση,
+\begin{equation*}
+\phi_* \omega^\sharp = \widetilde{\omega}^\sharp,
+\end{equation*}
+που ολοκληρώνει την απόδειξη.
 \end{proof}
+
+\noindent
+Η αναλλοιότητα του ανταλλοίωτου τανυστή Levi-Civita κάτω από ισομετρίες έπεται επομένως από τη γενική αρχή αναλλοιότητας των μουσικών ισομορφισμών κάτω από ισομετρίες, σε συνδυασμό με την ήδη αποδειχθείσα αναλλοιότητα του συναλλοίωτου τανυστή.
 
 \subsection{Τανυστής Levi-Civita}
 	\label{sec:levi-civita-tensor}
 	
-Έστω $(Μ, g)$ ψευδορημάννεια πολλαπλότητα διάστασης $n \ge 1$
-και τυχόν σημείο $p \in M$.
-Επί του συνόλου των ορθοκανονικών βάσεων του $T_pM$,
-θεωρούμε την βαθμωτή απεικόνιση $\omega$
+Δοθείσης ψευδορημάννειας $n$-διάστατης πολλαπλότητας $(Μ, g)$,
+επιλέγουμε τοπικό προσανατολισμό γύρω από το τυχόν σημείο $p \in M$.
+Θεωρούμε επί του συνόλου των ορθοκανονικών βάσεων του $T_pM$
+την βαθμωτή απεικόνιση $\omega$
 που υπολογίζει τον προσανατολισμένο ψευδο-``όγκο'' ως προς τη μετρική $g$,
-εννοώντας ότι λαμβάνει τιμή $\pm 1$
-αναλόγως εάν η δοθείσα βάση είναι θετικά ή αρνητικά προσανατολισμένη. Συγκεκριμένα,
-επιτρέποντας επαναλαμβανόμενα ορίσματα,
+εννοώντας ότι λαμβάνει την τιμή $\pm 1$
+αναλόγως εάν η δοθείσα βάση είναι θετικά ή αρνητικά προσανατολισμένη. Συγκεκριμένα, υπό το πρίσμα της Πρότασης \ref{prop:orthonormal-base-to-frame},
+και επιτρέποντας επαναλαμβανόμενα ορίσματα,
 ορίζουμε την $\omega$ μέσω της συνθήκης
 \begin{equation}\label{eq:levi-civita-primary-definition}
 \omega
@@ -3303,28 +3778,16 @@ e_i
 \,
 =
 \,
-\varepsilon_{i_1 \dots i_n}
+\epsilon_{i_1 \dots i_n}
 \end{equation}
-για κάθε πλαίσιο $\{\partial/\partial z^i\}_i$ γύρω από το $p$
-που είναι ορθοκανονικό στoν $Τ_pM$
-και συμφωνεί με τον επιλεγμένο προσανατολισμό,
-όπου $\{\varepsilon_{i_1 \dots i_n}\}$, $1 \le i_1, \dots, i_n \le n$,
+για κάθε θετικά προσανατολισμένο τοπικό πλαίσιο $\{\partial/\partial z^i\}_i$
+που είναι ορθοκανονικό στoν $Τ_pM$,
+όπου $\{\epsilon_{i_1 \dots i_n}\}$, $1 \le i_1, \dots, i_n \le n$,
 το σύμβολο Levi-Civita (βλ. Ενότητα \ref{sec:alternators}).
 Σημειωτέον ότι η $\omega$ μηδενίζεται σε περίπτωση επαναλαμβανόμενου ορίσματος, πράγμα που συνάδει με την φυσική απαίτηση ότι παραλληλεπίπεδα διάστασης $< n$ οφείλουν να έχουν μηδενικό ψευδο-``όγκο''.
-
-Ο παραπάνω μετρητής επεκτείνεται πολυγραμμικά σε ολόκληρο τον εφαπτόμενο χώρο.
-Δοθέντος αυθαίρετου συστήματος συντεταγμένων $x^1, \dots, x^n$ γύρω από τo $p$
-που συμφωνεί με τον επιλεγμένο προσανατολισμό,
-οπότε
-\begin{equation*}\label{eq:levi-civita-new-base}
-\frac{\partial}{\partial x^i}
-=
-\frac{\partial z^j}{\partial x^i}(p)
-\frac{\partial}{\partial z^j},
-\quad
-1 \le i \le n,
-\end{equation*}
-τυχούσα θετικά προσανατολισμένη βάση του $Τ_pM$, ισχύει ένεκα πολυγραμμικότητας
+Ο μετρητής αυτός επεκτείνεται πολυγραμμικά σε ολόκληρο τον $Τ_pM$.
+Δοθέντος αυθαίρετου συστήματος τοπικών συντεταγμένων $x^1, \dots, x^n$
+γύρω από το $p$, ισχύει ένεκα πολυγραμμικότητας
 \begin{equation*}
 \omega
 \left(
@@ -3336,15 +3799,15 @@ e_i
 =
 \,
 \,
-\varepsilon_{j_1 \dots j_n}
+\epsilon_{j_1 \dots j_n}
 \,
 \frac{\partial z^{j_1}}{\partial x^1}(p) \dots \frac{\partial z^{j_n}}{\partial x^n}(p)
 \,
 =
 \,
-\det\left( \frac{\partial z^j}{\partial x^i}(p) \right) > 0
+\det\left( \frac{\partial z^j}{\partial x^i}(p) \right)
 \end{equation*}
-(βλ. \eqref{eq:levi-civita-essential})· από την Πρόταση \ref{prop:orthonormal-to-arbitrary} έπεται ότι
+(βλ. \eqref{eq:levi-civita-essential})· από την Πρόταση \ref{prop:orthonormal-to-arbitrary} έπεται τότε ότι
 \begin{equation*}
 \omega
 \left(
@@ -3355,61 +3818,19 @@ e_i
 \,
 =
 \,
+\pm
+\,
 \sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}(p)\right) \hspace{.75pt}\rvert}\,\,,
 \end{equation*}
 όπου $g_{ij}\hspace{.5pt}dx^i dx^{\hspace{.5pt}j}$
-η τοπική αναπαράσταση της μετρικής.
+η τοπική αναπαράσταση της μετρικής,
+αναλόγως εάν το $x^1, \dots, x^n$ συμφωνεί με τον επιλεγμένο προσανατολισμό.
 Εφόσον αυτή η σχέση είναι ανεξάρτητη
 του αρχικά επιλεγμένου πλαισίου $\{\partial/\partial z^i\}_i$,
-έπεται ότι $\omega$ ορίζεται καλώς ως συναλλοίωτος $n$-τανυστής
-σε ολόκληρο τον εφαπτόμενο χώρο $T_pM$. Εφόσον η ποσότητα
-αυτή μεταβάλλεται λεία ως προς το $p$, γίνεται εφικτός ο ακόλουθος καθολικός ορισμός στην περίπτωση που η $M$ είναι προσανατολίσιμη.
-
-TODO: τανυστικός χαρακτήρας
-
-\begin{equation}
-\begin{split}
-\omega
-\left(
-\frac{\partial}{\partial y^1}\,,
-\dots,
-\frac{\partial}{\partial y^n}
-\right)
-\,
-&=
-\,
-\frac{\partial x^{i_1}}{\partial y^1} \dots \frac{\partial x^{i_n}}{\partial y^n}
-\,\,
-\omega
-\left(
-\frac{\partial}{\partial x^{i_1}}\,,
-\dots,
-\frac{\partial}{\partial x^{i_n}}
-\right)\\
-&=
-\,\,
-\varepsilon_{i_1 \dots i_n}
-\,
-\frac{\partial x^{i_1}}{\partial y^1} \dots \frac{\partial x^{i_n}}{\partial y^n}
-\,\,
-\sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}\right) \hspace{.75pt}\rvert}\\
-&=
-\,\,
-\det \left( \frac{\partial x^i}{\partial y^j} \right)
-\,
-\sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}\right) \hspace{.75pt}\rvert}\\
-&=
-\,\,
-\pm
-\,
-\sqrt{\lvert\hspace{.75pt} \det \left( \frac{\partial x^i}{\partial y^j} \right) \hspace{.75pt}\rvert ^2 \, \lvert\hspace{.75pt} \det \left(g_{ij}\right) \hspace{.75pt}\rvert}\\
-&=
-\,\,
-\pm
-\,
-\sqrt{\lvert\hspace{.75pt} \det \left(\tilde{g}_{ij}\right) \hspace{.75pt}\rvert}
-\end{split}
-\end{equation}
+έπεται ότι $\omega$ ορίζεται καλώς ως τανυστής τάξεως $n$
+σε ολόκληρο τον $T_pM$. Εφόσον επιπλέον η ποσότητα
+στο δεξύ μέλος μεταβάλλεται λεία,
+γίνεται εφικτός ο ακόλουθος καθολικός ορισμός στην περίπτωση που η $M$ είναι προσανατολίσιμη.
 
 \begin{definition}[Συναλλοίωτος τανυστής Levi-Civita]
 	\label{def:covariant-levi-civita}
@@ -3420,13 +3841,12 @@ $x^1, \dots, x^n$ αναπαρίσταται ως
 \begin{equation}\label{eq:covariant-levi-civita}
 \pm \,\,\sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}\right) \hspace{.75pt}\rvert}
 \,\,\,
-dx^1 \wedge \dots dx^1\,,
+dx^1 \wedge \dots dx^n\,,
 \end{equation}
 αναλόγως εάν το δεδομένο σύστημα συμφωνεί ή όχι με τον επιλεγμένο προσανατολισμό,
 όπου $g_{ij}\hspace{.5pt}dx^i dx^{\hspace{.5pt}j}$
 η τοπική αναπαράσταση της μετρικής $g$.
-Ισοδύναμα, εάν το σύστημα $x^1, \dots, x^n$
-είναι θετικά προσανατολισμένο, τότε
+Ισοδύναμα,
 \begin{equation}\label{eq:eq:covariant-levi-civita-evaluation}
 \omega
 \left(
@@ -3437,12 +3857,15 @@ dx^1 \wedge \dots dx^1\,,
 \,
 =
 \,
+\pm
+,\
 \sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}\right) \hspace{.75pt}\rvert}
 \,\,\,
-\varepsilon_{i_1 \dots i_n}\,
+\epsilon_{i_1 \dots i_n}\,
 \end{equation}
-όπου $\{\varepsilon_{i_1 \dots i_n}\}$, $1 \le i_1, \dots, i_n \le n$,
-το σύμβολο Levi-Civita.
+όπου $\{\epsilon_{i_1 \dots i_n}\}$, $1 \le i_1, \dots, i_n \le n$,
+το σύμβολο Levi-Civita, αναλόγως εάν το σύστημα $x^1, \dots, x^n$
+είναι θετικά ή αρνητικά προσανατολισμένο.
 \end{definition}
 
 \begin{definition}[Συναλλοίωτο σύμβολο Levi-Civita ως προς μετρική]
@@ -3451,194 +3874,426 @@ dx^1 \wedge \dots dx^1\,,
 ως \textbf{συναλλοίωτο σύμβολο Levi-Civita στο τοπικό σύστημα συντεταγμένων
 $x^1, \dots, x^n$} εννοείται η συλλογή των ποσοτήτων
 \begin{equation}\label{eq:eq:covariant-levi-civita-symbol}
+\varepsilon_{i_1 \dots i_n}
+\,
+\equiv
+\,
 \pm \,\,
 \sqrt{\lvert\hspace{.75pt} \det \left(g_{ij}\right) \hspace{.75pt}\rvert}
 \,\,\,
-\varepsilon_{i_1 \dots i_n}\,,
+\epsilon_{i_1 \dots i_n}\,,
 \quad
 1 \le i_1, \dots, i_n \le n\,,
 \end{equation}
 αναλόγως εάν το σύστημα συμφωνεί ή όχι με τον επιλεγμένο προσανατολισμό,
 όπου $g_{ij}\hspace{.5pt}dx^i dx^{\hspace{.5pt}j}$
 η τοπική αναπαράσταση της μετρικής και
-$\{\varepsilon_{i_1 \dots i_n}\}$, $1 \le i_1, \dots, i_n \le n$,
+$\{\epsilon_{i_1 \dots i_n}\}$, $1 \le i_1, \dots, i_n \le n$,
 το σύμβολο Levi-Civita.
 \end{definition}
 
 \noindent
 Με άλλα λόγια, το συναλλοίωτο σύμβολο Levi-Civita ως προς μετρική $g$ στο τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$ είναι το σύνολο των τιμών του συναλλοίωτου τανυστή Levi-Civita αυτής πάνω στο σύνολο των γενικευμένων μεταθέσεων του πλαισίου $\{\partial/\partial x^i\}_i$.
-
-TODO: δεν συγκροτούν τανυστή, μετασχηματίζονται ως εξής:
-
-\begin{equation}
-\tilde{\epsilon}_{i_1 \dots i_n}
+Σημειωτέον ότι οι ποσότητες αυτές δεν συγκροτούν τανυστή καθότι μετασχηματίζονται ως
+\begin{equation}\label{eq:covariant-levi-civita-symbol-transform}
+\tilde{\varepsilon}_{i_1 \dots i_n}
 \,
 =
 \,
-\det \left( \frac{\partial x^\nu}{\partial y^\mu} \right)
+\det \left( \frac{\partial x^j}{\partial y^i} \right)
 \,
-\epsilon_{i_1 \dots i_n}
+\varepsilon_{i_1 \dots i_n}\,,
+\quad
+1 \le i_1, \dots, i_n \le n\,,
 \end{equation}
+όπου
+$\tilde{\varepsilon}_{i_1, \dots, i_n}$
+το συναλλοίωτο σύμβολο Levi-Civita ως προς το σύστημα συντεταγμένων
+$y^1, \dots, y^n$·
+βλ. Πρόταση \ref{prop:psr-arbitrary-to-arbitrary},
+σχέση \eqref{eq:psr-arbitrary-to-arbitrary-quadratic-absolute}.
 
-====================
+Ο τανυστής Levi-Civita επιδέχεται γεωμετρικής ερμηνείας
+ως στοιχείο όγκου στη ρημάννεια περίπτωση (βλ. Ενότητα \ref{sec:volume-form}).
+Εδώ εμμένουμε σε ζητήματα φορμαλισμού
+που αναδεικνύουν τη σημασία του συμβόλου Levi-Civita
+για τον τανυστικό λογισμό όταν εμπλέκεται μετρική.
 
-\subsubsection{Ανταλλοίωτη εναλλάσσουσα σε ψευδορημάννειο χώρο}
-	\label{sec:contravariant-alternator}
+\subsubsection{Ανταλλοίωτος τανυστής Levi-Civita}
+	\label{sec:contravariant-levi-civita-tensor}
 
-Έστω $(M, g)$ μια ψευδορημάννεια πολλαπλότητα διάστασης $n \ge 1$, και έστω $1 \le k \le n$. Ως \textbf{ανταλλοίωτη $(n, k)$-εναλλάσσουσα} εννοείται η συλλογή ακεραίων
+Δοθείσης προσανατολισμένης ψευδορημάννειας πολλαπλότητας $(M, g)$, ο συναλλοίωτος τανυστής Levi-Civita $\omega$ επάγει μέσω της μετρικής έναν ανταλλοίωτο $n$-τανυστή, τον οποίο συμβολίζουμε με $\omega^\sharp$. Η κατασκευή βασίζεται στον μουσικό ισομορφισμό: σε κάθε σημείο $p \in M$, η μετρική $g(p)$ επάγει ισομορφισμό ανάμεσα σε συναλλοίωτους και ανταλλοίωτους τανυστές μέσω της ανύψωσης δεικτών.
+
+Σε τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$, όπου η μετρική αναπαρίσταται ως $g_{ij}\,dx^i dx^j$ με αντίστροφη $g^{ij}$, οι συνιστώσες του ανταλλοίωτου τανυστή Levi-Civita ορίζονται ως
 \begin{equation*}
-\{\varepsilon^{i_1 \dots i_k}\}, \qquad 1 \le i_1, \dots, i_k \le n,
+\omega^{i_1 \dots i_n}
+=
+g^{i_1 j_1} \dots g^{i_n j_n}
+\,
+\omega_{j_1 \dots j_n}.
 \end{equation*}
-που ορίζεται μέσω ανύψωσης δεικτών της $(n, k)$-εναλλάσσουσας $\varepsilon_{j_1 \dots j_k}$ με χρήση του αντίστροφου μετρικού τανυστή $g^{ij}$:
-\begin{equation}\label{eq:contravariant-alternator-definition}
-\varepsilon^{i_1 \dots i_k}
+Χρησιμοποιώντας τον τύπο
+\begin{equation*}
+\omega_{j_1 \dots j_n}
 =
-g^{i_1 j_1} \dots g^{i_k j_k} \, \varepsilon_{j_1 \dots j_k}.
-\end{equation}
-
-Οι συνιστώσες $\varepsilon^{i_1 \dots i_k}$ είναι πλήρως αντισυμμετρικές ως προς τους δείκτες $i_1, \dots, i_k$, δηλαδή για κάθε μετάθεση $\sigma \in S_k$ ισχύει
-\begin{equation}\label{eq:contravariant-alternator-antisymmetry}
-\varepsilon^{i_{\sigma 1} \dots i_{\sigma k}}
+\pm \sqrt{\lvert \det(g_{kl}) \rvert}
+\,
+\epsilon_{j_1 \dots j_n},
+\end{equation*}
+και την ταυτότητα
+\begin{equation*}
+g^{i_1 j_1} \dots g^{i_n j_n}
+\,
+\epsilon_{j_1 \dots j_n}
 =
-\operatorname{sgn}(\sigma) \, \varepsilon^{i_1 \dots i_k}.
-\end{equation}
-
-Η θεμελιώδης σχέση συστολής ανάμεσα στην ανταλλοίωτη και τη συναλλοίωτη εναλλάσσουσα δίνεται από τον τύπο
-\begin{equation}\label{eq:contravariant-alternator-contraction}
-\varepsilon^{i_1 \dots i_k \, i_{k+1} \dots i_n} \,
-\varepsilon_{j_1 \dots j_k \, i_{k+1} \dots i_n}
+\det(g^{ij})
+\,
+\epsilon^{i_1 \dots i_n}
 =
-k! \ (n-k)! \ \delta^{\,i_1 \dots i_k}_{\,j_1 \dots j_k},
-\end{equation}
-όπου $\delta^{\,i_1 \dots i_k}_{\,j_1 \dots j_k}$ είναι το γενικευμένο δέλτα του Kronecker, και η σύμβαση άθροισης του Einstein εφαρμόζεται στους επαναλαμβανόμενους δείκτες $i_{k+1}, \dots, i_n$.
-
-\subsubsection{Θεμελιώδεις σχέσεις μεταξύ ανταλλοίωτης και συναλλοίωτης εναλλάσσουσας}
-	\label{sec:fundamental-relations-alternators}
-
-Οι θεμελιώδεις σχέσεις που συνδέουν την ανταλλοίωτη $\varepsilon^{i_1 \dots i_k}$ με τη συναλλοίωτη $\varepsilon_{i_1 \dots i_k}$ εναλλάσσουσα είναι οι εξής.
-
-\textbf{Σχέση ανύψωσης δεικτών:}
-\begin{equation}\label{eq:raising-indices-alternator}
-\varepsilon^{i_1 \dots i_k}
+\frac{1}{\det(g_{ij})}
+\,
+\epsilon^{i_1 \dots i_n},
+\end{equation*}
+λαμβάνουμε
+\begin{equation*}
+\omega^{i_1 \dots i_n}
 =
-g^{i_1 j_1} \dots g^{i_k j_k} \, \varepsilon_{j_1 \dots j_k}.
-\end{equation}
+\pm
+\,
+\frac{1}{\sqrt{\lvert \det(g_{kl}) \rvert}}
+\,
+\epsilon^{i_1 \dots i_n}.
+\end{equation*}
 
-\textbf{Σχέση καταβίβασης δεικτών:}
-\begin{equation}\label{eq:lowering-indices-alternator}
-\varepsilon_{i_1 \dots i_k}
+\begin{definition}[Ανταλλοίωτος τανυστής Levi-Civita]
+	\label{def:contravariant-levi-civita}
+Δοθείσης προσανατολισμένης ψευδορημάννειας πολλαπλότητας $(M, g)$,
+ως \textbf{ανταλλοίωτος τανυστής Levi-Civita της $g$ (ως προς τον επιλεγμένο προσανατολισμό)} εννοείται το ανταλλοίωτο $n$-τανυστικό πεδίο $\omega^\sharp$
+που σε τυχόν σύστημα τοπικών συντεταγμένων
+$x^1, \dots, x^n$ αναπαρίσταται ως
+\begin{equation}\label{eq:contravariant-levi-civita}
+\omega^\sharp
 =
-g_{i_1 j_1} \dots g_{i_k j_k} \, \varepsilon^{j_1 \dots j_k}.
+\pm
+\,
+\frac{1}{\sqrt{\lvert \det(g_{ij}) \rvert}}
+\,
+\frac{\partial}{\partial x^1} \wedge \dots \wedge \frac{\partial}{\partial x^n},
 \end{equation}
+αναλόγως εάν το σύστημα συμφωνεί ή όχι με τον επιλεγμένο προσανατολισμό,
+όπου $g_{ij}\,dx^i dx^{\hspace{.5pt}j}$ η τοπική αναπαράσταση της μετρικής $g$.
+\end{definition}
 
-\textbf{Πλήρης συστολή (περίπτωση $k = n$):}
-\begin{equation}\label{eq:full-contraction-alternator}
-\varepsilon^{i_1 \dots i_n} \, \varepsilon_{j_1 \dots j_n}
-=
-n! \ \delta^{\,i_1 \dots i_n}_{\,j_1 \dots j_n}.
-\end{equation}
+\subsubsection{Ανταλλοίωτο σύμβολο Levi-Civita ως προς μετρική}
+	\label{sec:contravariant-levi-civita-symbol}
 
-\textbf{Γενική συστολή (περίπτωση $1 \le k \le n$):}
-\begin{equation}\label{eq:general-contraction-alternator}
-\varepsilon^{i_1 \dots i_k \, i_{k+1} \dots i_n} \,
-\varepsilon_{j_1 \dots j_k \, i_{k+1} \dots i_n}
-=
-k! \ (n-k)! \ \delta^{\,i_1 \dots i_k}_{\,j_1 \dots j_k}.
-\end{equation}
-
-\textbf{Σχέση αριθμητικής ταύτισης σε ορθοκανονικά συστήματα:}
-
-Σε ένα τοπικό ορθοκανονικό σύστημα συντεταγμένων, όπου $g_{ij} = \pm \delta_{ij}$ και $g^{ij} = \pm \delta^{ij}$, ισχύει
-\begin{equation}\label{eq:numerical-identification-alternator}
-\varepsilon^{i_1 \dots i_k} = \varepsilon_{i_1 \dots i_k},
-\end{equation}
-δηλαδή οι άνω και κάτω δείκτες δίνουν τις ίδιες αριθμητικές τιμές. Σε τυχόν σύστημα συντεταγμένων, οι τιμές διαφέρουν λόγω της επίδρασης του μετρικού τανυστή.
-
-\textbf{Σχέση με το γενικευμένο δέλτα του Kronecker:}
-
-Η ανταλλοίωτη εναλλάσσουσα για $k = n$ μπορεί να εκφραστεί μέσω του γενικευμένου δέλτα ως
-\begin{equation}\label{eq:contravariant-alternator-kronecker}
+\begin{definition}[Ανταλλοίωτο σύμβολο Levi-Civita ως προς μετρική]
+	\label{def:contravariant-levi-civita-symbol}
+Δοθείσης προσανατολισμένης ψευδορημάννειας πολλαπλότητας $(M, g)$,
+ως \textbf{ανταλλοίωτο σύμβολο Levi-Civita στο τοπικό σύστημα συντεταγμένων
+$x^1, \dots, x^n$} εννοείται η συλλογή των ποσοτήτων
+\begin{equation}\label{eq:contravariant-levi-civita-symbol}
 \varepsilon^{i_1 \dots i_n}
-=
-\delta^{\,i_1 \dots i_n}_{\,1 \dots n},
+\,
+\equiv
+\,
+\pm
+\,
+\frac{1}{\sqrt{\lvert \det(g_{ij}) \rvert}}
+\,
+\epsilon^{i_1 \dots i_n},
+\quad
+1 \le i_1, \dots, i_n \le n,
 \end{equation}
-όπου οι δείκτες $1, \dots, n$ υποδηλώνουν τη θεμελιώδη διάταξη. Αντίστοιχα, η συναλλοίωτη εναλλάσσουσα εκφράζεται ως
-\begin{equation}\label{eq:covariant-alternator-kronecker}
-\varepsilon_{i_1 \dots i_n}
-=
-\delta^{\,1 \dots n}_{\,i_1 \dots i_n}.
-\end{equation}
-
-\noindent
-Αυτές οι σχέσεις αποτελούν τη βάση για όλες τις υπολογιστικές ταυτότητες που εμπλέκουν πλήρως αντισυμμετρικούς τανυστές σε ψευδορημάννειους χώρους. Αξίζει να σημειωθεί ότι η συμμετρία της μετρικής $g$ δεν υπεισέρχεται σε κανέναν από τους παραπάνω τύπους· η μόνη απαίτηση είναι η αντιστρεψιμότητα του $g$, ώστε να μπορεί να οριστεί ο αντίστροφος $g^{ij}$ και να εκτελεστεί η ανύψωση δεικτών. Η συμμετρία της $g$ θα παίξει ρόλο αργότερα, όταν θα συνδέσουμε την εναλλάσσουσα με τον τανυστή Levi-Civita μέσω της ορίζουσας $\det(g_{ij})$, όπου η συμμετρία εξασφαλίζει ότι η ορίζουσα είναι καλώς ορισμένη και ότι το πρόσημό της είναι αναλλοίωτο υπό αλλαγή συντεταγμένων.
-
------
-
-Στη θεωρία των ψευδορημάννειων πολλαπλοτήτων, η έννοια του προσανατολισμού κωδικοποιείται από ένα πλήρως αντισυμμετρικό τανυστικό πεδίο τάξης $n$, τον τανυστή Levi-Civita. Η κατασκευή του προϋποθέτει την επιλογή προσανατολισμού στην πολλαπλότητα $M$ και βασίζεται στη δομή που παρέχει η ψευδορημάννεια μετρική $g$.
-
-Το θεμελιώδες γεωμετρικό περιεχόμενο του τανυστή Levi-Civita συλλαμβάνεται από την ακόλουθη αρχή: σε μια ψευδορημάννεια πολλαπλότητα $(M, g)$, επιθυμούμε να ορίσουμε ένα συναλλοίωτο $n$-τανυστικό πεδίο, αναλλοίωτο υπό αλλαγή συντεταγμένων, του οποίου η αναπαράσταση σε κατάλληλο τοπικό σύστημα συντεταγμένων να συμπίπτει με το σύμβολο Levi-Civita. ``Κατάλληλο'' σύστημα συντεταγμένων εννοείται εκείνο στο οποίο η βάση του εφαπτόμενου χώρου που επάγεται από τις συντεταγμένες είναι ορθοκανονική ως προς τη μετρική $g$ και συμβατή με τον επιλεγμένο προσανατολισμό της πολλαπλότητας.
-
-Η απαίτηση αυτή είναι γεωμετρικά εύλογη. Το σύμβολο Levi-Civita $\operatorname{sgn}(i_1, \dots, i_n)$ αποτελεί το αρχέτυπο της πλήρους αντισυμμετρίας στον $\mathbb{R}^n$: μηδενίζεται όταν δύο δείκτες συμπίπτουν, και αλλάζει πρόσημο υπό περιττή μετάθεση των δεικτών. Σε ένα ορθοκανονικό σύστημα συντεταγμένων, όπου η μετρική λαμβάνει τη διαγώνια μορφή με στοιχεία $\pm 1$, το σύμβολο Levi-Civita παρέχει ακριβώς την έννοια του προσανατολισμένου ``μοναδιαίου κύβου'' που παράγεται από τα διανύσματα βάσης. Το ζητούμενο λοιπόν είναι να μεταφερθεί αυτή η δομή με τρόπο συνεπή σε κάθε σημείο της πολλαπλότητας, ανεξαρτήτως του συστήματος συντεταγμένων που χρησιμοποιούμε.
-
-Έστω $(M, g)$ μια προσανατολισμένη ψευδορημάννεια πολλαπλότητα διάστασης $n \ge 1$. Σε κάθε σημείο $p \in M$, θεωρούμε τον εφαπτόμενο χώρο $T_pM$ εφοδιασμένο με τη μη ιδιάζουσα διγραμμική μορφή $g(p)$ και τον προσανατολισμό που επάγεται από εκείνον της $M$. Υπενθυμίζεται ότι η ορίζουσα της μετρικής σε τοπικό σύστημα συντεταγμένων,
-\begin{equation*}
-\det(g_{ij}) \equiv \det\left( g_{ij}(p) \right),
-\end{equation*}
-είναι παντού μη μηδενική, αλλά όχι κατ' ανάγκη θετική· το πρόσημό της είναι αναλλοίωτο υπό αλλαγή συντεταγμένων, καθότι υπό τον μετασχηματισμό
-\begin{equation*}
-\tilde{g}_{ij} = \frac{\partial x^\mu}{\partial y^i}\,g_{\mu \nu}\,\frac{\partial x^\nu}{\partial y^j}
-\end{equation*}
-ισχύει
-\begin{equation*}
-\det(\tilde{g}_{ij}) = \left( \det \left( \frac{\partial x^\mu}{\partial y^i} \right) \right)^2 \, \det(g_{\mu\nu}),
-\end{equation*}
-όπου $\det(\partial x^\mu / \partial y^i) \neq 0$ λόγω της αντιστρεψιμότητας της συνάρτησης μετάβασης.
-
-\begin{definition}[Τανυστής Levi-Civita]\label{def:levi-civita-tensor}
-Έστω $(M, g)$ μια προσανατολισμένη ψευδορημάννεια πολλαπλότητα διάστασης $n \ge 1$. Ως \textbf{τανυστής Levi-Civita} εννοείται το πλήρως αντισυμμετρικό συναλλοίωτο $n$-τανυστικό πεδίο $\epsilon$ του οποίου οι συνιστώσες σε οποιοδήποτε θετικά προσανατολισμένο τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$ δίνονται από τον τύπο
-\begin{equation}\label{eq:levi-civita-components}
-\epsilon_{i_1 \dots i_n} = \sqrt{\left| \det(g_{kl}) \right|} \ \operatorname{sgn}(i_1, \dots, i_n),
-\end{equation}
-όπου $\operatorname{sgn}(i_1, \dots, i_n)$ είναι το πρόσημο της μετάθεσης
-$(1, \dots, n) \mapsto (i_1, \dots, i_n)$, δηλαδή
-\begin{equation*}
-\operatorname{sgn}(i_1, \dots, i_n) =
-\begin{cases}
-+1, & \text{εάν } (i_1, \dots, i_n) \text{ είναι άρτια μετάθεση}, \\
--1, & \text{εάν } (i_1, \dots, i_n) \text{ είναι περιττή μετάθεση}, \\
-0, & \text{εάν δύο δείκτες συμπίπτουν}.
-\end{cases}
-\end{equation*}
-Σε αρνητικά προσανατολισμένο σύστημα συντεταγμένων, οι συνιστώσες αλλάζουν πρόσημο.
+αναλόγως εάν το σύστημα συμφωνεί ή όχι με τον επιλεγμένο προσανατολισμό,
+όπου $\epsilon^{i_1 \dots i_n}$ το ανταλλοίωτο σύμβολο Levi-Civita.
 \end{definition}
 
 \noindent
-Ο παραπάνω ορισμός είναι καλώς θεμελιωμένος, καθότι ελέγχεται άμεσα ότι υπό αλλαγή συντεταγμένων οι ποσότητες αυτές μετασχηματίζονται ακριβώς όπως οι συνιστώσες ενός πλήρως αντισυμμετρικού συναλλοίωτου $n$-τανυστή:
-\begin{equation*}
-\tilde{\epsilon}_{i_1 \dots i_n}
+Οι ποσότητες αυτές δεν συγκροτούν τανυστή: μετασχηματίζονται ως τανυστική πυκνότητα βάρους $-1$, δηλαδή με τον αντίστροφο παράγοντα $\det(\partial x^j / \partial y^i)$ σε σχέση με τη συναλλοίωτη περίπτωση.
+
+\subsubsection{Θεμελιώδεις σχέσεις μεταξύ συναλλοίωτου και ανταλλοίωτου συμβόλου}
+	\label{sec:fundamental-relations-levi-civita}
+
+\begin{proposition}[Σχέσεις ανύψωσης και καταβίβασης]
+	\label{prop:raising-lowering-levi-civita}
+Σε τυχόν τοπικό σύστημα συντεταγμένων $x^1, \dots, x^n$, ισχύουν
+\begin{equation}
+\varepsilon^{i_1 \dots i_n}
 =
-\frac{\partial x^{\mu_1}}{\partial y^{i_1}} \dots \frac{\partial x^{\mu_n}}{\partial y^{i_n}}
+g^{i_1 j_1} \dots g^{i_n j_n}
 \,
-\epsilon_{\mu_1 \dots \mu_n},
-\end{equation*}
-γεγονός που συνάγεται από τον κανόνα αλυσίδας και την πολυγραμμικότητα της ορίζουσας. Η πλήρης αντισυμμετρία σημαίνει ότι για κάθε μετάθεση $\sigma \in \mathcal{S}_n$ ισχύει
-\begin{equation*}
-\epsilon_{i_{\sigma(1)} \dots i_{\sigma(n)}} = \operatorname{sgn}(\sigma) \, \epsilon_{i_1 \dots i_n}.
-\end{equation*}
-
-Η γεωμετρική σημασία του ορισμού έγκειται στην ακόλουθη παρατήρηση. Σε ένα τοπικό σύστημα συντεταγμένων στο οποίο η βάση $\partial/\partial x^i$ είναι ορθοκανονική ως προς την $g$ --- δηλαδή $g_{ij} = \pm \delta_{ij}$ --- και συμβατή με τον επιλεγμένο προσανατολισμό, ισχύει $|\det(g_{ij})| = 1$, και συνεπώς
-\begin{equation*}
-\epsilon_{i_1 \dots i_n} = \operatorname{sgn}(i_1, \dots, i_n).
-\end{equation*}
-Με άλλα λόγια, σε τέτοιο σύστημα συντεταγμένων, ο τανυστής Levi-Civita αναπαρίσταται ακριβώς από το σύμβολο Levi-Civita. Σε τυχόν άλλο σύστημα συντεταγμένων, ο παράγοντας $\sqrt{|\det(g_{ij})|}$ αντισταθμίζει την παραμόρφωση της βάσης ώστε το τανυστικό πεδίο να παραμένει το ίδιο γεωμετρικό αντικείμενο, ανεξάρτητο από την επιλογή συντεταγμένων.
-
-Η αντισυμμετρία του τανυστή Levi-Civita επιτρέπει την αναπαράστασή του σε τοπικό σύστημα συντεταγμένων ως
-\begin{equation}\label{eq:levi-civita-local-representation}
-\epsilon = \sqrt{\left| \det(g_{kl}) \right|} \ dx^1 \wedge \dots \wedge dx^n,
+\varepsilon_{j_1 \dots j_n},
 \end{equation}
-όπου $\wedge$ συμβολίζει το εξωτερικό γινόμενο διαφορικών μορφών, έννοια που θα αναπτυχθεί συστηματικά σε επόμενο κεφάλαιο.
+και
+\begin{equation}
+\varepsilon_{i_1 \dots i_n}
+=
+g_{i_1 j_1} \dots g_{i_n j_n}
+\,
+\varepsilon^{j_1 \dots j_n}.
+\end{equation}
+\end{proposition}
 
-Αξίζει να τονιστεί ότι ο τανυστής Levi-Civita εξαρτάται από τη μετρική $g$ μόνο μέσω της απόλυτης τιμής της ορίζουσας $\left| \det(g_{kl}) \right|$, και όχι από το πρόσημό της. Κατά συνέπεια, δύο ψευδορημάννειες μετρικές με την ίδια απόλυτη ορίζουσα σε κάθε σημείο επάγουν τον ίδιο τανυστή Levi-Civita, γεγονός που αντανακλά τον ρόλο του ως θεμελιώδους αντικειμένου προσανατολισμού, ανεξάρτητου από το πρόσημο της μετρικής υπογραφής.
+\begin{proof}
+Άμεση από τους ορισμούς και την ταυτότητα
+\begin{equation*}
+g^{i_1 j_1} \dots g^{i_n j_n}
+\,
+\epsilon_{j_1 \dots j_n}
+=
+\det(g^{ij})
+\,
+\epsilon^{i_1 \dots i_n}.
+\end{equation*}
+\end{proof}
+
+\begin{proposition}[Πλήρης συστολή]
+	\label{prop:full-contraction-levi-civita}
+Σε τυχόν τοπικό σύστημα συντεταγμένων, ισχύει
+\begin{equation}
+\varepsilon^{i_1 \dots i_n}
+\,
+\varepsilon_{i_1 \dots i_n}
+=
+(-1)^s
+\,
+n!,
+\end{equation}
+όπου $(r, s)$ η υπογραφή της μετρικής $g$.
+\end{proposition}
+
+\begin{proof}
+Από τους ορισμούς,
+\begin{equation*}
+\varepsilon^{i_1 \dots i_n}
+\varepsilon_{i_1 \dots i_n}
+=
+\left(
+\pm \frac{1}{\sqrt{\lvert \det(g_{ij}) \rvert}}
+\epsilon^{i_1 \dots i_n}
+\right)
+\left(
+\pm \sqrt{\lvert \det(g_{ij}) \rvert}
+\epsilon_{i_1 \dots i_n}
+\right).
+\end{equation*}
+Τα πρόσημα αλληλοαναιρούνται, οι ριζικοί παράγοντες επίσης, και μένει
+\begin{equation*}
+\epsilon^{i_1 \dots i_n}
+\epsilon_{i_1 \dots i_n}
+=
+n!.
+\end{equation*}
+Το πρόσημο $(-1)^s$ προκύπτει αν ληφθεί υπόψη η ορίζουσα της μετρικής κατά την ανύψωση ή καταβίβαση: $\det(g^{ij}) = 1/\det(g_{ij}) = 1/((-1)^s \lvert \det(g_{ij}) \rvert)$.
+\end{proof}
+
+\begin{proposition}[Γενική συστολή]
+	\label{prop:general-contraction-levi-civita}
+Για κάθε $0 \le k \le n$, ισχύει
+\begin{equation}
+\varepsilon^{i_1 \dots i_k i_{k+1} \dots i_n}
+\,
+\varepsilon_{i_1 \dots i_k j_{k+1} \dots j_n}
+=
+(-1)^s
+\,
+k!
+\,
+\delta^{i_{k+1} \dots i_n}_{j_{k+1} \dots j_n},
+\end{equation}
+όπου $\delta^{i_{k+1} \dots i_n}_{j_{k+1} \dots j_n}$ είναι το γενικευμένο δέλτα του Kronecker.
+\end{proposition}
+
+\begin{proof}
+Έπεται από την αντίστοιχη ταυτότητα για το σύμβολο Levi-Civita και την αλληλοαναίρεση των ριζικών παραγόντων.
+\end{proof}
+
+\subsubsection{Αναλλοιότητα των τανυστών Levi-Civita κάτω από ισομετρίες}
+	\label{sec:invariance-levi-civita-isometries}
+
+\begin{proposition}[Αναλλοιότητα του συναλλοίωτου τανυστή Levi-Civita κάτω από ισομετρίες]
+	\label{prop:invariance-covariant-levi-civita-isometries}
+Έστω $(M, g)$ και $(N, h)$ δύο προσανατολισμένες ψευδορημάννειες πολλαπλότητες ίδιας διάστασης $n$, και $\phi: M \to N$ ισομετρία που διατηρεί τον προσανατολισμό, δηλαδή $\phi^* h = g$. Εάν $\omega_g$ και $\omega_h$ είναι οι αντίστοιχοι συναλλοίωτοι τανυστές Levi-Civita, τότε
+\begin{equation}
+\phi^* \omega_h = \omega_g.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Σε τοπικές συντεταγμένες $x^1, \dots, x^n$ της $M$ και $y^1, \dots, y^n$ της $N$, η συνθήκη ισομετρίας δίνει
+\begin{equation*}
+g_{ij}
+=
+\frac{\partial \phi^\mu}{\partial x^i}
+\,
+h_{\mu\nu}
+\,
+\frac{\partial \phi^\nu}{\partial x^j}.
+\end{equation*}
+Λαμβάνοντας ορίζουσες,
+\begin{equation*}
+\det(g_{ij})
+=
+\left( \det\left( \frac{\partial \phi^i}{\partial x^j} \right) \right)^2
+\,
+\det(h_{\mu\nu}).
+\end{equation*}
+Εφόσον η $\phi$ διατηρεί τον προσανατολισμό, $\det(\partial \phi^i/\partial x^j) > 0$, οπότε
+\begin{equation*}
+\sqrt{\lvert \det(g_{ij}) \rvert}
+=
+\det\left( \frac{\partial \phi^i}{\partial x^j} \right)
+\,
+\sqrt{\lvert \det(h_{\mu\nu}) \rvert}.
+\end{equation*}
+Οι συνιστώσες του $\omega_g$ είναι
+\begin{equation*}
+(\omega_g)_{i_1 \dots i_n}
+=
+\sqrt{\lvert \det(g_{ij}) \rvert}
+\,
+\epsilon_{i_1 \dots i_n},
+\end{equation*}
+ενώ του $\phi^* \omega_h$,
+\begin{equation*}
+(\phi^* \omega_h)_{i_1 \dots i_n}
+=
+\frac{\partial \phi^{j_1}}{\partial x^{i_1}}
+\dots
+\frac{\partial \phi^{j_n}}{\partial x^{i_n}}
+\,
+(\omega_h)_{j_1 \dots j_n}.
+\end{equation*}
+Αλλά
+\begin{equation*}
+(\omega_h)_{j_1 \dots j_n}
+=
+\sqrt{\lvert \det(h_{\mu\nu}) \rvert}
+\,
+\epsilon_{j_1 \dots j_n},
+\end{equation*}
+και άρα
+\begin{equation*}
+(\phi^* \omega_h)_{i_1 \dots i_n}
+=
+\sqrt{\lvert \det(h_{\mu\nu}) \rvert}
+\,
+\frac{\partial \phi^{j_1}}{\partial x^{i_1}}
+\dots
+\frac{\partial \phi^{j_n}}{\partial x^{i_n}}
+\,
+\epsilon_{j_1 \dots j_n}.
+\end{equation*}
+Χρησιμοποιώντας
+\begin{equation*}
+\frac{\partial \phi^{j_1}}{\partial x^{i_1}}
+\dots
+\frac{\partial \phi^{j_n}}{\partial x^{i_n}}
+\,
+\epsilon_{j_1 \dots j_n}
+=
+\det\left( \frac{\partial \phi^i}{\partial x^j} \right)
+\,
+\epsilon_{i_1 \dots i_n},
+\end{equation*}
+λαμβάνουμε
+\begin{equation*}
+(\phi^* \omega_h)_{i_1 \dots i_n}
+=
+\det\left( \frac{\partial \phi^i}{\partial x^j} \right)
+\,
+\sqrt{\lvert \det(h_{\mu\nu}) \rvert}
+\,
+\epsilon_{i_1 \dots i_n}
+=
+\sqrt{\lvert \det(g_{ij}) \rvert}
+\,
+\epsilon_{i_1 \dots i_n}
+=
+(\omega_g)_{i_1 \dots i_n}.
+\end{equation*}
+Συνεπώς, $\phi^* \omega_h = \omega_g$.
+\end{proof}
+
+\begin{proposition}[Αναλλοιότητα του ανταλλοίωτου τανυστή Levi-Civita κάτω από ισομετρίες]
+	\label{prop:invariance-contravariant-levi-civita-isometries}
+Υπό τις ίδιες προϋποθέσεις, εάν $\omega_g^\sharp$ και $\omega_h^\sharp$ είναι οι αντίστοιχοι ανταλλοίωτοι τανυστές Levi-Civita, τότε
+\begin{equation}
+\phi_* \omega_g^\sharp = \omega_h^\sharp.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Εφόσον η $\phi$ είναι ισομετρία, η εφελκυσμένη $\phi_*$ απεικονίζει τον ανταλλοίωτο τανυστή Levi-Civita της $g$ στον αντίστοιχο της $h$. Σε τοπικές συντεταγμένες, οι συνιστώσες του $\omega_g^\sharp$ είναι
+\begin{equation*}
+(\omega_g^\sharp)^{i_1 \dots i_n}
+=
+\frac{1}{\sqrt{\lvert \det(g_{ij}) \rvert}}
+\,
+\epsilon^{i_1 \dots i_n},
+\end{equation*}
+ενώ του $\omega_h^\sharp$,
+\begin{equation*}
+(\omega_h^\sharp)^{j_1 \dots j_n}
+=
+\frac{1}{\sqrt{\lvert \det(h_{\mu\nu}) \rvert}}
+\,
+\epsilon^{j_1 \dots j_n}.
+\end{equation*}
+Η εφελκυσμένη δρα ως
+\begin{equation*}
+(\phi_* \omega_g^\sharp)^{j_1 \dots j_n}
+=
+\frac{\partial \phi^{j_1}}{\partial x^{i_1}}
+\dots
+\frac{\partial \phi^{j_n}}{\partial x^{i_n}}
+\,
+(\omega_g^\sharp)^{i_1 \dots i_n}
+=
+\frac{1}{\sqrt{\lvert \det(g_{ij}) \rvert}}
+\,
+\frac{\partial \phi^{j_1}}{\partial x^{i_1}}
+\dots
+\frac{\partial \phi^{j_n}}{\partial x^{i_n}}
+\,
+\epsilon^{i_1 \dots i_n}.
+\end{equation*}
+Χρησιμοποιώντας
+\begin{equation*}
+\frac{\partial \phi^{j_1}}{\partial x^{i_1}}
+\dots
+\frac{\partial \phi^{j_n}}{\partial x^{i_n}}
+\,
+\epsilon^{i_1 \dots i_n}
+=
+\det\left( \frac{\partial \phi^i}{\partial x^j} \right)
+\,
+\epsilon^{j_1 \dots j_n},
+\end{equation*}
+και τη σχέση
+\begin{equation*}
+\sqrt{\lvert \det(g_{ij}) \rvert}
+=
+\det\left( \frac{\partial \phi^i}{\partial x^j} \right)
+\,
+\sqrt{\lvert \det(h_{\mu\nu}) \rvert},
+\end{equation*}
+λαμβάνουμε
+\begin{equation*}
+(\phi_* \omega_g^\sharp)^{j_1 \dots j_n}
+=
+\frac{1}{\sqrt{\lvert \det(h_{\mu\nu}) \rvert}}
+\,
+\epsilon^{j_1 \dots j_n}
+=
+(\omega_h^\sharp)^{j_1 \dots j_n}.
+\end{equation*}
+Συνεπώς, $\phi_* \omega_g^\sharp = \omega_h^\sharp$, που ολοκληρώνει την απόδειξη.
+\end{proof}
+
+\noindent
+Η αναλλοιότητα αμφοτέρων των τανυστών Levi-Civita κάτω από ισομετρίες είναι ακριβώς η αναμενόμενη γεωμετρική συμπεριφορά: πρόκειται για τα μοναδικά πλήρως αντισυμμετρικά $n$-τανυστικά πεδία που προσδιορίζονται πλήρως από τη μετρική και τον προσανατολισμό.
 
 \subsection{Επαγόμενες μετρικές}
 	\label{sec:induced-metrics}
@@ -3646,11 +4301,8 @@ $(1, \dots, n) \mapsto (i_1, \dots, i_n)$, δηλαδή
 \section{Ψευδο-ευκλείδιοι χώροι}
 	\label{sec:pseudo-euclidean-space}
 	
-\subsection{Χώρος Minkowski}
+\subsection{Χωροχρόνος Minkowski --- Mετασχηματισμοί Lorentz}
 	\label{sec:minkowski-spaces}
-	
-\subsubsection{Μετασχηματιμοί Lorentz}
-	\label{sec:lorentz-transformations}
 
 \section{Ρημάννειες μετρικές}
 	\label{sec:riemannian-metrics}
@@ -3671,7 +4323,8 @@ $(1, \dots, n) \mapsto (i_1, \dots, i_n)$, δηλαδή
 
 \subsection{Η επαγόμενη βαθμίδα}
 
-\subsection{Το ρημάννειο στοιχείο όγκου}
+\subsection{Το στοιχείο όγκου}
+	\label{sec:volume-form}
 
 \subsection{Συνάρτηση απόστασης}
 	\label{sec:distance-function}
