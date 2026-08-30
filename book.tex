@@ -2602,17 +2602,12 @@ dx^i \left( \frac{\partial}{\partial x^{\hspace{.5pt}j}} \right)
 
 \subsubsection{Ανταλλοίωτος και συναλλοίωτος μετασχηματισμός βάσης}
 
-Σταθεροποιοώντας αυθαίρετη βάση του $V$ ως ``καρτεσιανή'',
-συμβολίζουμε ως
-\begin{equation*}
-\left(\frac{\partial y^i}{\partial x^j} \right)_{ij}
-\end{equation*}
-τον πίνακα που αναπαριστά ως προς αυτήν
-τον γραμμικό αυτομορφισμό που απεικονίζει τη
-βάση $\{\partial/\partial x^i\}_i$ στη βάση $\{\partial/\partial y^i\}_i$. Yπ' αυτόν τον συμβολισμό, ο αντίστροφος πίνακας
-\begin{equation*}
-\left(\frac{\partial x^i}{\partial y^j} \right)_{ij},
-\end{equation*}
+Επιλέγοντας κάποια βάση του $V$ ως καρτεσιανή,
+συμβολίζουμε ως $(\partial y^i/\partial x^j)_{ij}$
+τον πίνακα αναπαράστασης του γραμμικού αυτομορφισμού
+που απεικονίζει τη
+βάση $\{\partial/\partial x^i\}_i$ στη βάση $\{\partial/\partial y^i\}_i$. Ο αντίστροφος πίνακας
+$(\partial x^i/\partial y^j)_{ij}$,
 που προσδιορίζεται ισοδύναμα μέσω των σχέσεων
 \begin{equation}\label{eq:index-annihilation}
 \frac{\partial y^i}{\partial x^\mu}
@@ -2620,7 +2615,8 @@ dx^i \left( \frac{\partial}{\partial x^{\hspace{.5pt}j}} \right)
 \,=\,
 \delta^{\,i}_j\,,
 \end{equation}
-αναπαριστά τον αντίστροφο αυτομορφισμό ως προς την ιδια καρτεσιανή βάση,
+αναπαριστά τον αντίστροφο αυτομορφισμό
+ως προς την ιδια καρτεσιανή βάση,
 οπότε η αλλαγή βάσης στον $V$ εκφράζεται μέσω της ``ανταλλοίωτης'' σχέσης
 \begin{equation}\label{eq:contravariance-elementary}
 \frac{\partial}{\partial y^i}
@@ -2686,7 +2682,7 @@ T: \underbrace{V^* \times \dots \times V^*}_{\textstyle r \textup{ φορές}}
 \end{equation}
 δηλαδή οι $(0, 1)$-τανυστές στον $V$ είναι τα γραμμικά συναρτησοειδή του·
 παρομοίως, υπό το πρίσμα της κανονικής ταύτισης
-\eqref{eq:double-dual-canonical-isomorphism} ισχύει
+\eqref{eq:double-dual-canonical-identification} ισχύει
 \begin{equation}\label{eq:vectors-as-tensors}
 \mathfrak{T}^{\,1}_{\,0}(V)\, =\, V,
 \end{equation}
@@ -2713,8 +2709,8 @@ T\,(\theta^{\hspace{.5pt}p+1}, \dots, \theta^{\hspace{.5pt}p+r}, \xi_{\hspace{.5
 \end{equation*}
 \end{definition}
 \noindent
-Ελέγχεται άμεσα ότι το τανυστικό γινόμενο είναι προσαιτεριστικό και διγραμμικό, ενώ η ουσιώδης χρησιμότητά του έγκειται στο εξής.
-\begin{proposition}[Δομή του χώρου $\mathfrak{T}^{\,r}_{\,s}(V)$]
+Ελέγχεται άμεσα ότι το τανυστικό γινόμενο είναι προσεταιριστικό και διγραμμικό, ενώ η ουσιώδης χρησιμότητά του έγκειται στο εξής.
+\begin{proposition}[Δομή του γραμμικού χώρου $\mathfrak{T}^{\,r}_{\,s}(V)$]
 	\label{prop:general-tensor-space-structure}
 Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$
 διάστασης $n \ge 1$, η διατεταγμένη συλλογή
@@ -2751,8 +2747,8 @@ dx^{i_1}, \dots, dx^{i_r},
 \frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_s}}
 \right).
 \end{equation*}
-Εφαρμόζοντάς τον σε τυχούσα $(r+s)$-άδα ορισμάτων,
-συνάγεται ευθέως λόγω πολυγραμμικότητας και εξ ορισμού του τανυστικού γινομένου ότι ο τανυστής $Τ$ είναι της μορφής
+Εφαρμόζοντάς τον τανυστή $Τ$ σε τυχούσα $(r+s)$-άδα ορισμάτων,
+συνάγεται ευθέως λόγω πολυγραμμικότητας και εξ ορισμού του τανυστικού γινομένου ότι είναι της μορφής
 \begin{equation*}
 T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
 \,\,
@@ -2819,7 +2815,7 @@ dx^{i_1}, \dots, dx^{i_r},
 ποσότητες $\{S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}\}$ και
 $\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ αντιστοίχως,
 τότε το τανυστικό τους γινόμενο αναπαρίσταται από τις ποσότητες
-\begin{equation}\label{eq:tensotr-product-quantities}
+\begin{equation}\label{eq:tensor-product-quantities}
 (S \otimes Τ)^{\,i_1 \dots i_{\hspace{.5pt}p+r}}_{\,j_1 \dots j_{\hspace{.5pt}q+s}}
 \,=\,
 S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}
@@ -2827,8 +2823,8 @@ S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}
 Τ^{\,i_{\hspace{.5pt}p+1} \dots i_{\hspace{.5pt}p+r}}_{\,j_{\hspace{.5pt}q+1} \dots j_{\hspace{.5pt}q+s}}\,,
 \end{equation}
 όπου
-$1 \le i_1,\dots,i_{p+r} \le p+r$ και
-$1 \le j_1,\dots,j_{q+s} \le q+s$,
+$1 \le i_1,\dots,i_{p+r} \le n$ και
+$1 \le j_1,\dots,j_{q+s} \le n$,
 ως προς την ίδια βάση του $V$.
 \begin{proposition}[Μετασχηματισμός τανυστικών ποσοτήτων]
 	\label{prop:tensor-transform}
@@ -2901,152 +2897,75 @@ dx^{\mu_1}, \dots, dx^{\mu_r},
 \end{equation*}
 που είναι το ζητούμενο.
 \end{proof}
-
 \begin{definition}[Συναίρεση δεικτών]
 	\label{def:contraction-of-index}
-Δοθέντος $(r,s)$-τανυστή $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ με $r, s \ge 1$, και επιλεγμένων δεικτών $1 \le \alpha \le r$, $1 \le \beta \le s$, ως \textbf{συναίρεση του $\alpha$-οστού ανταλλοίωτου δείκτη με τον $\beta$-οστό συναλλοίωτο δείκτη} εννοείται ο $(r-1, s-1)$-τανυστής $C^\alpha_\beta(T) \in \mathfrak{T}^{\,r-1}_{\,s-1}(V)$ που ορίζεται μέσω της σχέσης
-\begin{equation*}
-C^\alpha_\beta(T)
-\left(
-\theta^1, \dots, \theta^{r-1}, \xi_1, \dots, \xi_{s-1}
-\right)
-=
-T
-\left(
-\theta^1, \dots, \theta^{\alpha-1}, dx^i, \theta^{\alpha}, \dots, \theta^{r-1},
-\xi_1, \dots, \xi_{\beta-1}, \frac{\partial}{\partial x^i}, \xi_{\beta}, \dots, \xi_{s-1}
-\right),
-\end{equation*}
-όπου $dx^i$ και $\partial/\partial x^i$ είναι δυϊκά στοιχεία βάσης ως προς τυχούσα βάση του $V$, και η άθροιση εννοείται επί του $1 \le i \le n$.
-
-Εάν ο $T$ αναπαρίσταται ως προς βάση $\{\partial/\partial x^i\}_i$ από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$, τότε ο $C^\alpha_\beta(T)$ αναπαρίσταται από τις ποσότητες
-\begin{equation*}
+Δοθέντος $(r,s)$-τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες
+$\{T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}\}$
+σε τυχούσα βάση του $V$, ως \textbf{συναίρεση του ανταλλοίωτου δείκτη $1 \le \alpha \le r$ με τον συναλλοίωτο δείκτη $1 \le \beta \le s$} εννοείται ο $(r-1, s-1)$-τανυστής $C^\alpha_\beta(T)$ που αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:contraction-representation}
 \left(C^\alpha_\beta(T)\right)^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_{s-1}}
 =
 T^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha} \dots i_{r-1}}_{\,j_1 \dots j_{\beta-1} \mu j_{\beta} \dots j_{s-1}},
-\end{equation*}
-όπου η άθροιση εννοείται επί του $1 \le \mu \le n$.
-
-\textbf{Ανεξαρτησία από βάση.} Ο ορισμός φαίνεται να εξαρτάται από την επιλογή βάσης $\{\partial/\partial x^i\}$. Ωστόσο, η συναίρεση είναι ανεξάρτητη της βάσης: εάν $\{\partial/\partial y^i\}$ είναι άλλη βάση, τότε η σχέση
-\begin{equation*}
-dx^i \otimes \frac{\partial}{\partial x^i}
-=
-dy^i \otimes \frac{\partial}{\partial y^i}
-\end{equation*}
-ισχύει ως ταυτοτικό στοιχείο του $V^* \otimes V \simeq L(V)$, και η δράση της επί του $T$ μέσω της $(\alpha, \beta)$-θέσης είναι η ίδια ανεξαρτήτως βάσης. Τούτο έπεται από το γεγονός ότι η σύνθεση της αξιολόγησης $V^* \times V \to \mathbb{R}$ με τον $T$ στην επιλεγμένη θέση αποτελεί εγγενή κατασκευή, και η παραπάνω έκφραση με δυϊκές βάσεις είναι απλώς η αναπαράστασή της.
+\end{equation}
+ως προς την ίδια βάση.
 \end{definition}
-
-\begin{definition}[Εσωτερική συστολή δείκτη]
+\noindent
+Παρότι ο ορισμός της συναίρεσης δίνεται με αναφορά σε επιλεγμένη βάση του $V$, ελέγχεται ευθέως με χρήση της \eqref{eq:index-annihilation} ότι είναι ανεξάρτητος αυτής. Συγκεκριμένα, ελέγχεται ότι
+οι ποσότητες \eqref{eq:contraction-representation}
+υπακούν στον μετασχηματισμό \eqref{eq:tensor-transform}
+κάτω από αλλαγή βάσης και άρα συγκροτούν καλώς ορισμένο
+$(r-1, s-1)$-τανυστή.
+\begin{definition}[Συστολή διανύσματος με συναλλοίωτο δείκτη]
 	\label{def:interior-product}
-Δοθέντος $(r,s)$-τανυστή $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ με $s \ge 1$, διανύσματος $\xi \in V$, και επιλεγμένου δείκτη $1 \le \beta \le s$, ως \textbf{εσωτερική συστολή του $\xi$ με τον $\beta$-οστό συναλλοίωτο δείκτη} εννοείται ο $(r, s-1)$-τανυστής $\iota_\xi^\beta(T) \in \mathfrak{T}^{\,r}_{\,s-1}(V)$ που ορίζεται μέσω της σχέσης
-\begin{equation*}
+Δοθέντος $T \in \mathfrak{T}^{\,r}_{\,s}(V)$, ως \textbf{συστολή διανύσματος $\xi \in V$ με τον συναλλοίωτο δείκτη $1 \le \beta \le s$} εννοείται ο $(r, s-1)$-τανυστής $\iota_\xi^\beta(T)$ που ορίζεται μέσω της σχέσης
+\begin{equation}\label{eq:interior-product}
 \iota_\xi^\beta(T)
 \left(
 \theta^1, \dots, \theta^r, \xi_1, \dots, \xi_{s-1}
 \right)
-=
+\,=\,
 T
 \left(
-\theta^1, \dots, \theta^r,
+\theta^1, \dots, \theta^{\hspace{.5pt}r},
 \xi_1, \dots, \xi_{\beta-1}, \xi, \xi_{\beta}, \dots, \xi_{s-1}
 \right).
-\end{equation*}
-
-Εάν ο $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $\xi = \xi^\mu \partial/\partial x^\mu$, τότε ο $\iota_\xi^\beta(T)$ αναπαρίσταται από τις ποσότητες
-\begin{equation*}
-\left(\iota_\xi^\beta(T)\right)^{\,i_1 \dots i_r}_{\,j_1 \dots j_{s-1}}
+\end{equation}
+\end{definition}
+\noindent
+Εάν $\xi = \xi^\mu \partial/\partial x^\mu$ και ο τανυστής $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$, ελέγχεται ευθέως ότι η συστολή
+$\iota_\xi^\beta(T)$ αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:interior-product-representation}
+(\iota_\xi^\beta(T))^{\,i_1 \dots i_r}_{\,j_1 \dots j_{s-1}}
 =
 T^{\,i_1 \dots i_r}_{\,j_1 \dots j_{\beta-1} \mu j_{\beta} \dots j_{s-1}}
 \,
-\xi^\mu.
-\end{equation*}
-
-\textbf{Ανεξαρτησία από βάση.} Ο ορισμός δεν χρησιμοποιεί βάση: το $\xi$ εισάγεται απευθείας στη θέση $\beta$. Επομένως, ο $\iota_\xi^\beta(T)$ είναι εγγενώς ορισμένος, ανεξαρτήτως επιλογής βάσης.
-\end{definition}
-
-\begin{definition}[Εσωτερική συστολή δείκτη ως προς συναρτησοειδές]
+\xi^\mu\,.
+\end{equation}
+\begin{definition}[Συστολή 1-μορφής με ανταλλοίωτο δείκτη]
 	\label{def:interior-product-dual}
-Δοθέντος $(r,s)$-τανυστή $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ με $r \ge 1$, γραμμικού συναρτησοειδούς $\omega \in V^*$, και επιλεγμένου δείκτη $1 \le \alpha \le r$, ως \textbf{εσωτερική συστολή του $\omega$ με τον $\alpha$-οστό ανταλλοίωτο δείκτη} εννοείται ο $(r-1, s)$-τανυστής $\iota^\alpha_\omega(T) \in \mathfrak{T}^{\,r-1}_{\,s}(V)$ που ορίζεται μέσω της σχέσης
-\begin{equation*}
-\iota^\alpha_\omega(T)
+Δοθέντος $T \in \mathfrak{T}^{\,r}_{\,s}(V)$, ως \textbf{συστολή γραμμικού συναρτησοειδούς $\theta \in V^*$ με τον ανταλλοίωτο δείκτη $1 \le \alpha \le r$} εννοείται ο $(r-1, s)$-τανυστής $\iota^\alpha_\theta(T)$ που ορίζεται μέσω της σχέσης
+\begin{equation}\label{eq:interior-product-dual-representation}
+\iota^\alpha_\theta(T)
 \left(
-\theta^1, \dots, \theta^{r-1}, \xi_1, \dots, \xi_s
+\theta^1, \dots, \theta^{\hspace{.5pt}r-1}, \xi_1, \dots, \xi_s
 \right)
-=
+\,=\,
 T
 \left(
-\theta^1, \dots, \theta^{\alpha-1}, \omega, \theta^{\alpha}, \dots, \theta^{r-1},
+\theta^1, \dots, \theta^{\alpha-1}, \theta, \theta^{\alpha}, \dots, \theta^{r-1},
 \xi_1, \dots, \xi_s
 \right).
-\end{equation*}
-
-Εάν ο $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $\omega = \omega_\mu dx^\mu$, τότε ο $\iota^\alpha_\omega(T)$ αναπαρίσταται από τις ποσότητες
-\begin{equation*}
-\left(\iota^\alpha_\omega(T)\right)^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_s}
-=
+\end{equation}
+\end{definition}
+\noindent
+Εάν $\theta = \theta_\mu dx^\mu$ και ο τανυστής $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$, ελέγχεται ευθέως ότι η συστολή $\iota^\alpha_\theta(T)$ αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:interior-product-dual-representation}
+\left(\iota^\alpha_\theta(T)\right)^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_s}
+\,=\,
 T^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha} \dots i_{r-1}}_{\,j_1 \dots j_s}
 \,
-\omega_\mu.
-\end{equation*}
-
-\textbf{Ανεξαρτησία από βάση.} Ομοίως, ο ορισμός δεν χρησιμοποιεί βάση: το $\omega$ εισάγεται απευθείας στη θέση $\alpha$. Συνεπώς, ο $\iota^\alpha_\omega(T)$ είναι εγγενώς ορισμένος.
-\end{definition}
-
-\begin{definition}[Πλήρης εσωτερική συστολή ως προς συναρτησοειδή]
-	\label{def:full-interior-product-dual}
-Δοθέντος $(r,s)$-τανυστή $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ και $r$ γραμμικών συναρτησοειδών $\omega_1, \dots, \omega_r \in V^*$, ως \textbf{πλήρης εσωτερική συστολή των $\omega_1, \dots, \omega_r$ με τον $T$} εννοείται ο $(0, s)$-τανυστής $\iota_{\omega_1 \dots \omega_r}(T) \in \mathfrak{T}^{\,0}_{\,s}(V)$ που ορίζεται μέσω της σχέσης
-\begin{equation*}
-\iota_{\omega_1 \dots \omega_r}(T)
-\left(
-\xi_1, \dots, \xi_s
-\right)
-=
-T
-\left(
-\omega_1, \dots, \omega_r,
-\xi_1, \dots, \xi_s
-\right).
-\end{equation*}
-
-Εάν ο $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $\omega_\alpha = \omega_{\alpha \mu} dx^\mu$ για $1 \le \alpha \le r$, τότε ο $\iota_{\omega_1 \dots \omega_r}(T)$ αναπαρίσταται από τις ποσότητες
-\begin{equation*}
-\left(\iota_{\omega_1 \dots \omega_r}(T)\right)_{\,j_1 \dots j_s}
-=
-T^{\,\mu_1 \dots \mu_r}_{\,j_1 \dots j_s}
-\,
-\omega_{1 \mu_1} \dots \omega_{r \mu_r}.
-\end{equation*}
-
-\textbf{Ανεξαρτησία από βάση.} Ο ορισμός είναι εγγενής: δεν απαιτεί επιλογή βάσης, αφού τα $\omega_1, \dots, \omega_r$ εισάγονται απευθείας στις ανταλλοίωτες θέσεις.
-\end{definition}
-
-\begin{definition}[Πλήρης εσωτερική συστολή ως προς διανύσματα]
-	\label{def:full-interior-product}
-Δοθέντος $(r,s)$-τανυστή $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ και $s$ διανυσμάτων $\xi_1, \dots, \xi_s \in V$, ως \textbf{πλήρης εσωτερική συστολή των $\xi_1, \dots, \xi_s$ με τον $T$} εννοείται ο $(r, 0)$-τανυστής $\iota_{\xi_1 \dots \xi_s}(T) \in \mathfrak{T}^{\,r}_{\,0}(V)$ που ορίζεται μέσω της σχέσης
-\begin{equation*}
-\iota_{\xi_1 \dots \xi_s}(T)
-\left(
-\theta^1, \dots, \theta^r
-\right)
-=
-T
-\left(
-\theta^1, \dots, \theta^r,
-\xi_1, \dots, \xi_s
-\right).
-\end{equation*}
-
-Εάν ο $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $\xi_\beta = \xi_\beta^\mu \partial/\partial x^\mu$ για $1 \le \beta \le s$, τότε ο $\iota_{\xi_1 \dots \xi_s}(T)$ αναπαρίσταται από τις ποσότητες
-\begin{equation*}
-\left(\iota_{\xi_1 \dots \xi_s}(T)\right)^{\,i_1 \dots i_r}
-=
-T^{\,i_1 \dots i_r}_{\,\mu_1 \dots \mu_s}
-\,
-\xi_1^{\mu_1} \dots \xi_s^{\mu_s}.
-\end{equation*}
-
-\textbf{Ανεξαρτησία από βάση.} Ο ορισμός είναι εγγενής: τα $\xi_1, \dots, \xi_s$ εισάγονται απευθείας στις συναλλοίωτες θέσεις, χωρίς αναφορά σε βάση.
-\end{definition}
+\theta_\mu\,.
+\end{equation}
 
 \subsection{ Ανταλλοίωτοι και συναλλοίωτοι τανυστές}
 
