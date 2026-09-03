@@ -3022,7 +3022,10 @@ o γενικός τανυστικός μετασχηματισμός εξειδ�
 S_{\mu_1 \dots \mu_r}\,
 \frac{\partial x^{\mu_1}}{\partial y^{i_1}} \dots \frac{\partial x^{\mu_r}}{\partial y^{i_r}}\,.
 \end{equation}
-\noindent
+
+\subsubsection{Δράση συμμετρικής ομάδας}
+	\label{seq:symmetric-group-action}
+
 Η παρακατω δράση της συμμετρικής ομαδας μεταθέσεων στους ανταλλοίωτους και συναλλοίωτους τανυστές είναι θεμελιώδους σημασίας για τους σκοπούς της μαθηματικής φυσικής.
 \begin{definition}[Δράση μετάθεσης]
 	\label{def:permutation-action}
@@ -3060,6 +3063,112 @@ T^{\,i_{\sigma 1} \dots i_{\sigma r}}
 S_{\,i_{\sigma 1} \dots i_{\sigma r}}
 \end{equation}
 Οι βασικές κατασκευές που αφορούν στην παραπάνω δράση της συμμετρικής ομάδας σε ανταλλοίωτους και συναλλοίωτους τανυστές αναπτύσσονται στην ενότητα \ref{sec:symmetry-and-antisymmetry}.
+Δίνονται εδώ οι δύο έννοιες αναλλοιότητας υπό τη δράση της.
+
+\begin{definition}[Συμμετρικοί τανυστές]\label{def:symmetric-tensor}
+Ένας $r$-ανταλλοίωτος τανυστής $Τ$ καλείται \textbf{συμμετρικός}
+εάν ${}^\sigma\hspace{.25pt}{T}=T$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
+\begin{equation}\label{eq:symmetric-contravariant-tensor}
+{T}(\theta^1, \dots, \theta^r)
+\,=\,
+T(\theta^{\sigma 1}, \dots, \theta^{\sigma r}),
+\quad
+\sigma \in S_r,
+\end{equation}
+δηλαδή όταν μένει αναλλοίωτος υπό τη δράση της $S_r$.
+Συμβολίζουμε ως $\mathfrak{S}^{\,r}(V)$ το υπόχωρο των συμμετρικών $r$-ανταλλοίωτων τανυστών στον χώρο $V$.
+Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ καλείται \textbf{συμμετρικός}
+εάν ${}^\sigma\hspace{.0pt}{S}=S$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
+\begin{equation}\label{eq:symmetric-covariant-tensor}
+{S}(\xi_1, \dots, \xi_r)
+\,=\,
+S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
+\quad
+\sigma \in S_r\,.
+\end{equation}
+Συμβολίζουμε ως $\mathfrak{S}_{\,r}(V)$ τον υπόχωρο των συμμετρικών $r$-συναλλοίωτων τανυστών στον $V$.
+\end{definition}
+
+\noindent
+Ελέγχεται ευθέως ότι ένας $r$-ανταλλοίωτος τανυστής $Τ$ είναι συμμετρικός ακριβώς όταν, σε κάποια ---και τότε κάθε---
+βάση του $V$, οι ποσότητες που τον αναπαριστούν πληρούν την συνθήκη
+\begin{equation}\label{eq:symmetric-contravariant-tensor-quantities}
+Τ^{\,i_1 \dots i_r}
+\,=\,
+Τ^{\,i_{\sigma 1} \dots i_{\sigma r}},
+\quad
+\sigma \in S_r\,.
+\end{equation}
+Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ είναι συμμετρικός εάν
+οι ποσότητες που τον αναπαριστούν πληρούν σε τυχούσα βάση του $V$ την συνθήκη
+\begin{equation}\label{eq:symmetric-covariant-tensor-quantities}
+S_{\,i_1 \dots i_r}
+\,=\,
+S_{\,i_{\sigma 1} \dots i_{\sigma r}},
+\quad
+\sigma \in S_r\,.
+\end{equation}
+
+\begin{definition}[Αντισυμμετρικοί τανυστές]\label{def:antisymmetric-tensor}
+Ένας $r$-ανταλλοίωτος τανυστής $Τ$ καλείται \textbf{αντισυμμετρικός}
+(ή \textbf{εναλλάσσων})
+εάν ${}^\sigma\hspace{.25pt}{T}=\operatorname{sgn}(\sigma)\,T$ για κάθε $\sigma \in S_r$ ή, αναλυτικότερα,
+\begin{equation}\label{eq:antisymmetric-contravariant-tensor}
+{T}(\theta^1, \dots, \theta^r)
+\,=\,
+\operatorname{sgn}(\sigma)
+\,
+T(\theta^{\sigma 1}, \dots, \theta^{\sigma r}),
+\quad
+\theta^i \in V^*,
+\quad
+\sigma \in S_r,
+\end{equation}
+δηλαδή όταν μένει κατά μέτρο αναλλοίωτος υπό τη δράση της $S_r$ αλλά το πρόσημο της τιμής του εναλλάσσει βάσει του προσήμου της δράσης.
+Συμβολίζουμε ως $\mathfrak{A}^{\,r}(V)$ τον υπόχωρο των αντισυμμετρικών $r$-ανταλλοίωτων τανυστών στον χώρο $V$.
+Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ καλείται \textbf{αντισυμμετρικός} (ή \textbf{εναλλάσσων})
+εάν ${}^\sigma\hspace{.0pt}{S}=\operatorname{sgn}(\sigma)\,S$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
+\begin{equation}\label{eq:antisymmetric-covariant-tensor}
+{S}(\xi_1, \dots, \xi_r)
+\,=\,
+\operatorname{sgn}(\sigma)
+\,
+S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
+\quad
+\xi_i \in V\,,
+\quad
+\sigma \in S_r\,.
+\end{equation}
+Συμβολίζουμε $\mathfrak{A}_{\,r}(V)$ τον υπόχωρο των αντισυμμετρικών $r$-συναλλοίωτων τανυστών στον $V$.
+\end{definition}
+
+\noindent
+Ελέγχεται ευθέως ότι ένας τανυστής είναι αντισυμμετρικός ακριβώς όταν μηδενίζεται για τυχόν ζεύγος επαναλαμβανόμενων ορισμάτων
+ή, ισοδύναμα,
+η τιμή του αλλάζει πρόσημο κατά την εναλλαγή οποιωνδήποτε δύο ορισμάτων ή, ισοδύναμα,
+μηδενίζεται οποτεδήποτε κάποιο όρισμα είναι γραμμικός συνδυασμός κάποιων άλλων.
+Ελέγχεται επίσης ότι ένας $r$-ανταλλοίωτος τανυστής $Τ$ είναι αντισυμμετρικός ακριβώς όταν, σε κάποια ---και τότε κάθε---
+βάση του $V$, οι ποσότητες που τον αναπαριστούν πληρούν την συνθήκη
+\begin{equation}\label{eq:antisymmetric-contravariant-tensor-quantities}
+Τ^{\,i_1 \dots i_r}
+\,=\,
+\operatorname{sgn}(\sigma)
+\,
+Τ^{\,i_{\sigma 1} \dots i_{\sigma r}},
+\quad
+\sigma \in S_r\,.
+\end{equation}
+Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ είναι αντισυμμετρικός εάν
+οι ποσότητες που τον αναπαριστούν πληρούν σε τυχούσα βάση του $V$ την συνθήκη
+\begin{equation}\label{eq:antisymmetric-covariant-tensor-quantities}
+S_{\,i_1 \dots i_r}
+\,=\,
+\operatorname{sgn}(\sigma)
+\,
+S_{\,i_{\sigma 1} \dots i_{\sigma r}},
+\quad
+\sigma \in S_r\,.
+\end{equation}
 
 \subsection{Στοιχειώδεις τανυστικές πράξεις με δείκτες}
 
@@ -3209,7 +3318,7 @@ H τελευταία σχέση δείχνει ότι το $\hat{T}$ είναι 
 \begin{equation}\label{eq:lowering-index}
 S^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_{s+1}}
 \,=\
-g_{j_\alpha \mu}\hspace{.5pt}Τ^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha+1} \dots i_{r-1}}_{\,j_1 \dots j_{\alpha-1} j_{\alpha + 1} \dots j_{s+1}}
+g_{\mu j_\alpha }\hspace{.5pt}Τ^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha+1} \dots i_{r-1}}_{\,j_1 \dots j_{\alpha-1} j_{\alpha + 1} \dots j_{s+1}}
 \end{equation}
 \end{definition}
 \begin{definition}[Ανύψωση συναλλοίωτου δείκτη υπό $2$-ανταλλοίωτο τανυστή]
@@ -3218,7 +3327,7 @@ g_{j_\alpha \mu}\hspace{.5pt}Τ^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha+1} \dots
 \begin{equation}\label{eq:raising-index}
 S^{\,i_1 \dots i_{r+1}}_{\,j_1 \dots j_{s-1}}
 \,=\
-g^{\hspace{.5pt}i_\alpha \mu}\hspace{.5pt}Τ^{\,i_1 \dots
+g^{\hspace{.5pt}\mu \hspace{.5pt} i_\alpha}\hspace{.5pt}Τ^{\,i_1 \dots
 i_{\alpha-1} i_{\alpha+1} \dots i_{r+1}}_{\,j_1 \dots j_{\alpha-1} \mu j_\alpha \dots j_{s-1}}
 \end{equation}
 \end{definition}
@@ -3227,6 +3336,8 @@ i_{\alpha-1} i_{\alpha+1} \dots i_{r+1}}_{\,j_1 \dots j_{\alpha-1} \mu j_\alpha 
 υπακούν στον μετασχηματισμό \eqref{eq:tensor-transform}
 κάτω από αλλαγή βάσης και άρα συγκροτούν πράγματι
 τανυστή τάξεως $(r-1, s+1)$, αντ. $(r+1, s-1)$.
+Σημειώνεται τέλος ότι οι παραπάνω εκφράσεις είναι γενικά ευαίσθητες στη θέση του πρώτου βωβού δείκτη $\mu$, ο οποίος καταλαμβάνει την αριστερή θέση· αμφότεροι οι ορισμοί θα μπορούσαν να δωθούν με τον $\mu$ να εμφανίζεται στην δεξιά θέση, χωρίς αυτό να επηρεάζει τη αλγεβρική χρησιμότητά τους (βλ. Ενότητα \ref{seq:induced-isomorphism-contravariance-covariance}) ---το σημαντικό είναι να συμφωνούν.
+Η διάκριση αυτή εκπίπτει εάν ο τανυστής $g$ είναι συμμετρικός και ενδιαφέρει μόνο ως προς το πρόσημο εάν είναι εναλλάσσων.
 
 \subsubsection{Πλήρης ανύψωση και καθίζηση δείκτη}
 	\label{seq:full-raising-and-lowering}
@@ -3240,7 +3351,7 @@ i_{\alpha-1} i_{\alpha+1} \dots i_{r+1}}_{\,j_1 \dots j_{\alpha-1} \mu j_\alpha 
 \begin{equation}\label{eq:full-lowering}
 S_{i_1 \dots i_r}
 \,=\,
-g_{i_1 \mu_1} \dots g_{i_r \mu_r} T^{\mu_1 \dots \mu_r}
+g_{\mu_1 i_1} \dots g_{\mu_r i_r} T^{\mu_1 \dots \mu_r}
 \end{equation}
 \end{definition}
 \begin{definition}[Πλήρης ανύψωση συναλλοίωτου τανυστή υπό $2$-ανταλλοίωτο τανυστή]
@@ -3249,119 +3360,14 @@ g_{i_1 \mu_1} \dots g_{i_r \mu_r} T^{\mu_1 \dots \mu_r}
 \begin{equation}\label{eq:full-raising}
 S^{\,i_1 \dots i_r}
 \,=\,
-g^{\hspace{.5pt}i_1 \mu_1} \dots g^{\hspace{.5pt}i_r \mu_r} T_{\mu_1 \dots \mu_r}
+g^{\hspace{.5pt}\mu_1 i_1} \dots g^{\hspace{.5pt}\mu_r i_r} T_{\mu_1 \dots \mu_r}
 \end{equation}
 \end{definition}
 \noindent
-Μια θεμελιώδης εφαρμογή των παραπάνω παρουσιάζεται στην Eνότητα \ref{seq:induced-isomorphism-contravariance-covariance}. Συγκεκριμένα, υπό την προϋπόθεση ότι ο τανυστής $g$ είναι μη ιδιάζων, η παραπάνω αντιστοίχιση μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών στοιχειοθετεί ισομορφισμό που επιδέχεται γεωμετρικής ερμηνείας δοθείσης ορισμένης γεωμετρικής ερμηνείας του $g$.
+Η θεμελιώδης εφαρμογή αυτών για τους σκοπούς της φυσικής και της γεωμετρίας παρουσιάζεται στην Eνότητα \ref{seq:induced-isomorphism-contravariance-covariance}. Συγκεκριμένα, υπό φυσιολογικές παραδοχές για τον τανυστή $g$, η παραπάνω συσχέτιση μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών στοιχειοθετεί ισομορφισμό που επιδέχεται γεωμετρικής ερμηνείας υπό το πρίσμα του $g$.
 
 \section{Συμμετρία και αντισυμμετρία}
 	\label{sec:symmetry-and-antisymmetry}
-
-\begin{definition}[Συμμετρικοί τανυστές]\label{def:symmetric-tensor}
-Ένας $r$-ανταλλοίωτος τανυστής $Τ$ καλείται \textbf{συμμετρικός}
-εάν ${}^\sigma\hspace{.25pt}{T}=T$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
-\begin{equation}\label{eq:symmetric-contravariant-tensor}
-{T}(\theta^1, \dots, \theta^r)
-\,=\,
-T(\theta^{\sigma 1}, \dots, \theta^{\sigma r}),
-\quad
-\sigma \in S_r,
-\end{equation}
-δηλαδή όταν μένει αναλλοίωτος υπό τη δράση της $S_r$.
-Συμβολίζουμε ως $\mathfrak{S}^{\,r}(V)$ το υπόχωρο των συμμετρικών $r$-ανταλλοίωτων τανυστών στον χώρο $V$.
-Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ καλείται \textbf{συμμετρικός}
-εάν ${}^\sigma\hspace{.0pt}{S}=S$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
-\begin{equation}\label{eq:symmetric-covariant-tensor}
-{S}(\xi_1, \dots, \xi_r)
-\,=\,
-S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
-\quad
-\sigma \in S_r\,.
-\end{equation}
-Συμβολίζουμε ως $\mathfrak{S}_{\,r}(V)$ τον υπόχωρο των συμμετρικών $r$-συναλλοίωτων τανυστών στον $V$.
-\end{definition}
-
-\noindent
-Ελέγχεται ευθέως ότι ένας $r$-ανταλλοίωτος τανυστής $Τ$ είναι συμμετρικός ακριβώς όταν, σε κάποια ---και τότε κάθε---
-βάση του $V$, οι ποσότητες που τον αναπαριστούν πληρούν την συνθήκη
-\begin{equation}\label{eq:symmetric-contravariant-tensor-quantities}
-Τ^{\,i_1 \dots i_r}
-\,=\,
-Τ^{\,i_{\sigma 1} \dots i_{\sigma r}},
-\quad
-\sigma \in S_r\,.
-\end{equation}
-Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ είναι συμμετρικός εάν
-οι ποσότητες που τον αναπαριστούν πληρούν σε τυχούσα βάση του $V$ την συνθήκη
-\begin{equation}\label{eq:symmetric-covariant-tensor-quantities}
-S_{\,i_1 \dots i_r}
-\,=\,
-S_{\,i_{\sigma 1} \dots i_{\sigma r}},
-\quad
-\sigma \in S_r\,.
-\end{equation}
-
-\begin{definition}[Αντισυμμετρικοί τανυστές]\label{def:antisymmetric-tensor}
-Ένας $r$-ανταλλοίωτος τανυστής $Τ$ καλείται \textbf{αντισυμμετρικός}
-(ή \textbf{εναλλάσσων})
-εάν ${}^\sigma\hspace{.25pt}{T}=\operatorname{sgn}(\sigma)\,T$ για κάθε $\sigma \in S_r$ ή, αναλυτικότερα,
-\begin{equation}\label{eq:antisymmetric-contravariant-tensor}
-{T}(\theta^1, \dots, \theta^r)
-\,=\,
-\operatorname{sgn}(\sigma)
-\,
-T(\theta^{\sigma 1}, \dots, \theta^{\sigma r}),
-\quad
-\theta^i \in V^*,
-\quad
-\sigma \in S_r,
-\end{equation}
-δηλαδή όταν μένει κατά μέτρο αναλλοίωτος υπό τη δράση της $S_r$ αλλά το πρόσημο της τιμής του εναλλάσσει βάσει του προσήμου της δράσης.
-Συμβολίζουμε ως $\mathfrak{A}^{\,r}(V)$ τον υπόχωρο των αντισυμμετρικών $r$-ανταλλοίωτων τανυστών στον χώρο $V$.
-Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ καλείται \textbf{αντισυμμετρικός} (ή \textbf{εναλλάσσων})
-εάν ${}^\sigma\hspace{.0pt}{S}=\operatorname{sgn}(\sigma)\,S$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
-\begin{equation}\label{eq:antisymmetric-covariant-tensor}
-{S}(\xi_1, \dots, \xi_r)
-\,=\,
-\operatorname{sgn}(\sigma)
-\,
-S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
-\quad
-\xi_i \in V\,,
-\quad
-\sigma \in S_r\,.
-\end{equation}
-Συμβολίζουμε $\mathfrak{A}_{\,r}(V)$ τον υπόχωρο των αντισυμμετρικών $r$-συναλλοίωτων τανυστών στον $V$.
-\end{definition}
-
-\noindent
-Ελέγχεται ευθέως ότι ένας τανυστής είναι αντισυμμετρικός ακριβώς όταν μηδενίζεται για τυχόν ζεύγος επαναλαμβανόμενων ορισμάτων
-ή, ισοδύναμα,
-η τιμή του αλλάζει πρόσημο κατά την εναλλαγή οποιωνδήποτε δύο ορισμάτων ή, ισοδύναμα,
-μηδενίζεται οποτεδήποτε κάποιο όρισμα είναι γραμμικός συνδυασμός κάποιων άλλων.
-Ελέγχεται επίσης ότι ένας $r$-ανταλλοίωτος τανυστής $Τ$ είναι αντισυμμετρικός ακριβώς όταν, σε κάποια ---και τότε κάθε---
-βάση του $V$, οι ποσότητες που τον αναπαριστούν πληρούν την συνθήκη
-\begin{equation}\label{eq:antisymmetric-contravariant-tensor-quantities}
-Τ^{\,i_1 \dots i_r}
-\,=\,
-\operatorname{sgn}(\sigma)
-\,
-Τ^{\,i_{\sigma 1} \dots i_{\sigma r}},
-\quad
-\sigma \in S_r\,.
-\end{equation}
-Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ είναι αντισυμμετρικός εάν
-οι ποσότητες που τον αναπαριστούν πληρούν σε τυχούσα βάση του $V$ την συνθήκη
-\begin{equation}\label{eq:antisymmetric-covariant-tensor-quantities}
-S_{\,i_1 \dots i_r}
-\,=\,
-\operatorname{sgn}(\sigma)
-\,
-S_{\,i_{\sigma 1} \dots i_{\sigma r}},
-\quad
-\sigma \in S_r\,.
-\end{equation}
 
 \subsection{Συμμετροποίηση --- Συμμετρικό γινόμενο}
 	\label{sec:symmetric-tensors}
@@ -3509,7 +3515,7 @@ dx^{i_1} \odot \dots \odot dx^{i_r}
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Αποδεικνύουμε το (i), με το (ii) να ισχύει mutatis mutandis.
+Αποδεικνύουμε το (i), με το (ii) να ισχύει \textit{mutatis mutandis}.
 Εφαρμόζοντας τον τελεστή συμμετροποίησης σε τυχόντα τανυστή
 \begin{equation*}
 T \,=\, T^{\,i_1 \dots i_r} \, \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}\,,
@@ -3600,7 +3606,7 @@ Eφόσον οι δείκτες είναι αυθαίρετοι, όλο οι σ�
 %\end{proposition}
 
 %\begin{proof}
-%Αποδεικνύουμε το (i), με το (ii) να ισχύει mutatis mutandis.
+%Αποδεικνύουμε το (i), με το (ii) να ισχύει \textit{mutatis mutandis}.
 %Υπολογίζουμε τους συντελεστές
 %του αναπτύγματος \eqref{eq:tensor-symmetric-expansion-intermediate} από την απόδειξη της Πρότασης \ref{prop:symmetric-tensor-space-structure}.
 %Εκ κατασκευής αυτού,
@@ -3784,7 +3790,7 @@ dx^{i_1} \wedge \dots \wedge dx^{i_r},
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Αποδεικνύουμε το (i), με το (ii) να ισχύει mutatis mutandis.
+Αποδεικνύουμε το (i), με το (ii) να ισχύει \textit{mutatis mutandis}.
 Εφαρμόζοντας τον τελεστή αντισυμμετροποίησης σε τυχόντα τανυστή
 \begin{equation*}
 T \,=\, T^{\,i_1 \dots i_r} \, \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}\,,
@@ -3872,7 +3878,30 @@ g_{\mu\hspace{.5pt}i}\hspace{.5pt}\xi^\mu\hspace{.5pt}dx^i,
 \left(\frac{\partial}{\partial x^i}\right)^\flat =\, g_{ij}\,dx^{\,j}\,.
 \end{equation}
 
------------
+Οι παραπάνω θεωρήσεις αναδιατυπώνονται \textit{mutatis mutandis} ως προς ανταλλοίωτο τανυστή. Συγκεκριμένα, δοθέντος $h \in \mathfrak{T}^{\,2}(V)$, θεωρούμε την απεικόνιση
+\begin{equation}\label{eq:sharp-elementary}
+(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp: V^* \to V,
+\quad
+\theta \mapsto \theta^\sharp,
+\quad
+\theta^\sharp(\zeta) = h\hspace{.5pt}(\hspace{.5pt}\theta,\hspace{.5pt}\zeta\hspace{.7pt})\,.
+\end{equation}
+Εάν
+$\theta = \theta_i dx^i$ και ο $h$ αναπαρίσταται
+ως προς την ίδια βάση από τις ποσότητες $\{g^{ij}\}$, τότε
+\begin{equation}\label{eq:sharp-elementary-as-raising}
+\theta^\sharp
+\,=\,
+h^{\mu\hspace{.5pt}i}\hspace{.5pt}\theta_\mu\hspace{.5pt}\frac{\partial}{\partial x^i},
+\end{equation}
+δηλαδή το $\theta^\sharp$ προκύπτει ανεβάζοντας τον μοναδικό δείκτη του συναλλοίωτου διανύσματος $\theta$ ως προς τον ανταλλοίωτο τανυστή $h$ (βλ. \eqref{eq:raising-index})· εναλλακτικά,
+\begin{equation}\label{eq:sharp-as-interior-product}
+\theta^\sharp\,=\,\iota_1^{\hspace{.5pt}\theta}(h)\,
+\end{equation}
+(βλ. \eqref{eq:interior-product-dual-representation}). Τέλος, η γραμμική απεικόνιση $\,(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp: V^* \to V$ αναπαρίσταται από τον πίνακα $(h^{ij})_{i,j}$ ως προς τις βάσεις $\{dx^i\}_i$ και $\{\partial/\partial x^i\}_i$, καθότι
+\begin{equation}\label{eq:sharp-elementary-base-mapping}
+\left(dx^i\right)^\sharp =\, h^{ij}\frac{\partial}{\partial x^j}\,.
+\end{equation}
 
 \subsection{Μη εκφυλισμένοι $(0,2)$-τανυστές --- Μουσικός ισομορφισμός}
 
