@@ -2576,10 +2576,50 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 \chapter{Τανυστική άλγεβρα}
 	\label{chapter:tensor-algebra}
 
-\section{Γενικός τανυστικός λογισμός}
+\section{Προαπαιτούμενα και συμβάσεις}
 	\label{sec:general-tensor-calculus}
 
-\subsection{Προαπαιτούμενα και συμβάσεις}
+\subsection{Συμβολισμός Einstein}
+	\label{sec:einstein-notation}
+
+Πρόκειται για σύμβαση που διευκολύνει την διατύπωση και τον χειρισμό πολυγραμμικών εκφράσεων. Δείκτης που εμφανίζεται δύο φορές σε έναν όρο, μία ως άνω (``ανταλλοίωτος'') και μία ως κάτω (``συναλλοίωτος''), θωρείται βωβός και ως αθροιζόμενος σε όλο το εύρος του χωρίς ρητό σύμβολο άθροισης. Δείκτης που εμφανίζεται μία φορά, δηλαδή είτε ως ``ανταλλοίωτος'' είτε ως ``συναλλοίωτος'', θεωρείται ελεύθερος και η σχέση ισχύει για κάθε τιμή στο εύρος του.
+Ενδεικτικά, η πολυγραμμική έκφραση
+\begin{equation*}
+T^{\,i_1 \dots i_r}_{\hspace{1.5pt}\mu_1 \dots \mu_s}
+\,
+A^{\,\mu_1}_{\hspace{1.5pt}\nu_1}
+\cdots
+A^{\,\mu_s}_{\hspace{1.5pt}\nu_s}
+\,
+S^{\,\nu_1 \dots \nu_s}
+\end{equation*}
+σημαίνει πολλαπλή άθροιση επί των βωβών δεικτών $\mu_1, \dots, \mu_s, \nu_1, \dots, \nu_s$ για κάθε επιλογή των ελεύθερων δεικτών $i_1, \dots, i_r$.
+Εάν ένας δείκτης εμφανίζεται στον παρονομαστή ενός τυπικού κλάσματος, όπως $\partial y^i/\partial x^j$ ή $\partial/\partial x^i$, τότε θεωρείται συναλλοίωτος,
+εναρμονιζόμενος με τη μνημοτεχνική χρήση των τυπικών μερικών παραγώγων κατά την αλλαγή βάσης (βλ. Eνότητα \ref{sec:change-of-basis}).
+
+Η απλούστερη εφαρμογή του συμβολισμού Einstein είναι στην έκφαση της γραμμικής αντιστρεψιμότητας. Συγκεκριμένα,
+βάσει της παραπάνω σύμβασης,
+\begin{equation*}\label{eq:linear-inversion-tensor-form}
+\alpha^i_{\mu} \hspace{1pt} \eta^{\hspace{.5pt}\mu}_j
+\,=\,
+\zeta^{\,i}_{\hspace{.5pt}j}
+\,\iff\,
+\eta^{\,i}_{\hspace{.5pt}j}
+\,=\,
+\beta^{\hspace{.5pt}i}_{\mu} \hspace{1pt} \zeta^{\hspace{.5pt}\mu}_j
+\end{equation*}
+υπό την προϋπόθεση ότι ο πίνακας $(\alpha^i_j)_{i,j}$
+αντιστρέφεται ως $(\beta^{\hspace{.5pt}i}_j)_{i,j}$, ή, ισοδύναμα,
+\begin{equation*}\label{eq:inverse-matrix-tensor-form}
+\alpha^i_{\mu} \hspace{1pt} \beta^{\hspace{.5pt}\mu}_j
+\,=\,
+\delta^{\,i}_{\hspace{.5pt}j}.
+\end{equation*}
+Η παραπάνω ισοδυναμία μεταξύ γραμμικών συστημάτων, που ανιστοιχεί σε πολλαπλασιασμό με τον αντίστροφο πίνακα των συντελεστών,
+θα εφαρμόζεται εφ' εξής χωρίς ιδιαίτερη μνεία.
+
+\subsection{Ανταλλοίωτος και συναλλοίωτος μετασχηματισμός βάσης}
+	\label{sec:change-of-basis}
 
 \noindent
 Δοθέντος γραμμικού χώρου $V$ διάστασης $n \ge 1$,
@@ -2589,20 +2629,20 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 \quad
 1 \le i \le n\,.
 \end{equation*}
-Ως δυϊκή βάση αυτής εννοείται η διατεταγμένη συλλογή των γραμμικών συναρτησοειδών
+Ως δυϊκή βάση αυτής στον δυϊκό χώρο $V^*$
+εννοείται η διατεταγμένη συλλογή των γραμμικών συναρτησοειδών
 $dx^i$, $1 \le i \le n$,
 που ορίζονται μέσω των σχέσεων
 \begin{equation*}
 dx^i \left( \frac{\partial}{\partial x^{\hspace{.5pt}j}} \right)
 \,=
 \,
-\delta^{\,i}_j
+\delta^{\,i}_j\,.
 \end{equation*}
-και συγκροτούν βάση του δυϊκού χώρου $V^*$.
+Ο παραπάνω συμβολισμός έχει μνημοτεχνική χρησιμότητα
+(βλ. παρακάτω) και η εισαγωγή του δικαιολογείται από το γεγονός ότι, εάν ο $V$ είναι εφαπτόμενος χώρος στο σημείο μιας πολλαπλότητας, τότε κάθε βάση του επάγεται από κάποιο τοπικό σύστημα συντεταγμένων γύρω από αυτό (βλ. Πρόταση \ref{prop:base-to-frame}).
 
-\subsubsection{Ανταλλοίωτος και συναλλοίωτος μετασχηματισμός βάσης}
-
-Επιλέγοντας κάποια βάση του $V$ ως καρτεσιανή,
+Επιλέγοντας ορισμένη βάση του $V$ ως καρτεσιανή,
 συμβολίζουμε ως $(\partial y^i/\partial x^j)_{ij}$
 τον πίνακα αναπαράστασης του γραμμικού αυτομορφισμού
 που απεικονίζει τη
@@ -2616,7 +2656,7 @@ $(\partial x^i/\partial y^j)_{ij}$,
 \delta^{\,i}_j\,,
 \end{equation}
 αναπαριστά τον αντίστροφο αυτομορφισμό
-ως προς την ιδια καρτεσιανή βάση,
+ως προς την ιδια καρτεσιανή βάση αναφοράς,
 οπότε η αλλαγή βάσης στον $V$ εκφράζεται μέσω της ``ανταλλοίωτης'' σχέσης
 \begin{equation}\label{eq:contravariance-elementary}
 \frac{\partial}{\partial y^i}
@@ -2634,13 +2674,13 @@ dy^{i}
 \,
 dx^{\hspace{.5pt}j}\,.
 \end{equation}
-
 \noindent
-Επισημαίνεται πως οι συντελεστές που εμφανίζονται στις παραπάνω γραμμικές εκφράσεις είναι απλώς τυπικά σύμβολα, τα οποία αναπαράγουν μνημοτεχνικά την ανταλλοίωτη και συναλλοίωτη αλλαγή βάσης μέσω ενός τυπικού ``κανόνα της αλυσίδας'', χωρίς να έχουν ακόμα έννοια μερικής παραγώγου. Η εισαγωγή τους δικαιολογείται από το γεγονός ότι, εάν ο $V$ είναι εφαπτόμενος χώρος στο σημείο μιας πολλαπλότητας, τότε κάθε αλλαγή βάσης υλοποιείται μέσω της δράσης του ιακωβιανού πίνακα κατάλληλης αλλαγής τοπικών συντεταγμένων γύρω από το σημείο αυτό.
+Οι γραμμικοί συντελεστές που εμφανίζονται στις παραπάνω εκφράσεις είναι απλώς σύμβολα, τα οποία αναπαράγουν μνημοτεχνικά την ανταλλοίωτη και συναλλοίωτη αλλαγή βάσης μέσω ενός τυπικού ``κανόνα της αλυσίδας'', χωρίς να έχουν ακόμα έννοια μερικής παραγώγου. Η εισαγωγή τους δικαιολογείται από το γεγονός ότι, εάν ο $V$ είναι εφαπτόμενος χώρος στο σημείο μιας πολλαπλότητας, τότε κάθε αλλαγή βάσης συντελείται μέσω του ιακωβιανού πίνακα κατάλληλης αλλαγής συντεταγμένων γύρω από το σημείο αυτό
+(άμεσο πόρισμα της Πρότασης \ref{prop:base-to-frame}).
 
-\subsubsection{O κανoνικός ισομορφισμός $V \simeq V^{**}$}
+\subsection{O κανoνικός ισομορφισμός $V \simeq V^{**}$}
 
-Εφόσον ο γραμμικός χώρος $V$ είναι πεπερασμένης διάστασης,
+Εφόσον ένας γραμμικός χώρος $V$ είναι πεπερασμένης διάστασης,
 γνωρίζουμε ότι είναι ισομορφικός με τον διπλό δυϊκό
 $V^{**} \equiv \left(V^*\right)^*$
 μέσω της γραμμικής απεικόνισης
@@ -2656,22 +2696,23 @@ $V^{**} \equiv \left(V^*\right)^*$
 που επιπλέον χαρακτηρίζεται από τη συνθήκη
 ότι απεικονίζει κάποια ---και τότε κάθε--- βάση του $V$
 στην δυϊκή βάση της δυϊκής της.
-Αυτό σημαίνει ειδικότερα πως ο ισομορφισμός \eqref{eq:double-dual-canonical-isomorphism} είναι φυσικός,
+Αυτό σημαίνει ειδικότερα πως ο εν λόγω ισομορφισμός
+είναι φυσικός,
 οπότε κάνουμε εφ' εξής την κανονική ταύτιση
 \begin{equation}\label{eq:double-dual-canonical-identification}
-V = V^{**}
+V = V^{**}.
 \end{equation}
-εννοώντας ακριβέστερα
-ότι η δράση διανύσματος σε γραμμικό συναρτησοειδές ισούται
-με τη δράση του συναρτησοειδούς πάνω στο εν λόγω διάνυσμα.
+Υπό το πρίσμα του \eqref{eq:double-dual-canonical-isomorphism},
+αυτό δηλώνει ότι  η δράση διανύσματος
+σε γραμμικό συναρτησοειδές ταυτίζεται
+με τη δράση του υποκείμενου συναρτησοειδούς
+πάνω στο εν λόγω διάνυσμα.
 
-\subsection{Έννοια του τανυστή --- Μετασχηματισμός τανυστικών ποσοτήτων}
+\section{Έννοια του τανυστή --- Μετασχηματισμός τανυστικών συνιστωσών}
 
-Εισερχόμαστε τώρα στον πυρήνα του φορμαλισμού: τον ορισμό των τανυστών ως πολυγραμμικών απεικονίσεων και τις θεμελιώδεις πράξεις επί αυτών. Η έννοια του τανυστή γενικεύει τα διανύσματα και τα γραμμικά συναρτησοειδή σε αντικείμενα με πολλαπλούς δείκτες, και η δύναμή της έγκειται στο ότι όλες οι πράξεις ορίζονται με τρόπο ανεξάρτητο από βάση, παρότι οι υπολογισμοί γίνονται πάντοτε σε επιλεγμένη βάση.
-
-\begin{definition}[Τανυστές]
+\begin{definition}[Τανυστής]
 	\label{def:(k,l)-tensor}
-Ως \textbf{$(r, s)$-τανυστής} στον γραμμικό χώρο $V$, όπου $r, s \ge 0$, εννοείται μια πολυγραμμική απεικόνιση της μορφής
+Ως \textbf{$(r, s)$-τανυστής} στον γραμμικό χώρο $V$, όπου $r, s \ge 0$, ή \textbf{τανυστής τύπου $(r,s)$}, εννοείται μια βαθμωτή πολυγραμμική απεικόνιση της μορφής
 \begin{equation*}\label{eq:general-tensor-schema}
 T: \underbrace{V^* \times \dots \times V^*}_{\textstyle r \textup{ φορές}}
 \,\times\,
@@ -2685,33 +2726,33 @@ T: \underbrace{V^* \times \dots \times V^*}_{\textstyle r \textup{ φορές}}
 \begin{equation}\label{eq:covectors-as-tensors}
 \,\,\mathfrak{T}^{\,0}_{\,1}(V)\, =\, V^*,
 \end{equation}
-δηλαδή οι $(0, 1)$-τανυστές στον $V$ είναι τα γραμμικά συναρτησοειδή του·
-παρομοίως, υπό το πρίσμα της κανονικής ταύτισης
+ενώ υπό το πρίσμα της κανονικής ταύτισης
 \eqref{eq:double-dual-canonical-identification} ισχύει
 \begin{equation}\label{eq:vectors-as-tensors}
-\mathfrak{T}^{\,1}_{\,0}(V)\, =\, V,
+\mathfrak{T}^{\,1}_{\,0}(V)\, =\, V\,.
 \end{equation}
-δηλαδή οι $(1,0)$-τανυστές στον $V$ είναι τα διανύσματα του ίδιου του χώρου.
-%begin{equation}
-%\,\,\,\,\,\,\,\mathfrak{T}^{\,1}_{\,1}(V)\, \simeq\, L(V)
-%\end{equation}
 
 \begin{definition}[Τανυστικό γινόμενο]
 	\label{def:tensor-product}
-Ως \textbf{τανυστικό γινόμενο} εννοείται η πράξη $\otimes$
-που δοθέντων $S \in \mathfrak{T}^{\,p}_{\,q}(V)$, $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ επιστρέφει τον τανυστή
+Ως \textbf{τανυστικό γινόμενο} εννοείται η δυαδική πράξη
+$\otimes$
+που δοθέντων τανυστών
+$S \in \mathfrak{T}^{\,p}_{\,q}(V)$, $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ επιστρέφει τον τανυστή
 $S \otimes T \in \mathfrak{T}^{\,p+r}_{\,q+s}(V)$
-που ορίζεται ως
-\begin{equation*}
+που ορίζεται μέσω της σχέσης
+\setlength{\jot}{12pt}
+\begin{equation}\label{eq:tensor-product}
+\begin{split}
 S \otimes T
 \,(\theta^1, \dots, \theta^{\hspace{.5pt}p+r}, \xi_1, \dots, \xi_{\hspace{.5pt}q+s})
 \,
-=
-\,
+&=
+\,\\
 S\,(\theta^1, \dots, \theta^{\hspace{.5pt}p}, \xi_1, \dots, \xi_{\hspace{.5pt}q})
-\cdot
+\,&\cdot\,
 T\,(\theta^{\hspace{.5pt}p+1}, \dots, \theta^{\hspace{.5pt}p+r}, \xi_{\hspace{.5pt}q+1}, \dots, \xi_{\hspace{.5pt}q+s})
-\end{equation*}
+\end{split}
+\end{equation}
 \end{definition}
 \noindent
 Ελέγχεται ευθέως ότι το τανυστικό γινόμενο είναι προσεταιριστικό και διγραμμικό, ενώ επίσης ικανοποιεί κατά προφανή τρόπο τη θεμελιώδη ταυτότητα
@@ -2731,15 +2772,13 @@ dx^{\hspace{.5pt}\mu_r},
 \right)
 \,=\,\\
 &\,\delta_{\hspace{.5pt}i_1}^{\hspace{.5pt}\mu_1} \dots \delta_{\hspace{.5pt}i_r}^{\hspace{.5pt}\mu_r}\,
-\delta_{\hspace{.5pt}\nu_1}^{\hspace{.5pt}j_1} \dots \delta_{\hspace{.5pt}\nu_s}^{\hspace{.5pt}j_s}\,,
+\delta_{\hspace{.5pt}\nu_1}^{\hspace{.5pt}j_1} \dots \delta_{\hspace{.5pt}\nu_s}^{\hspace{.5pt}j_s}\,.
 \end{split}
 \end{equation}
-με την ουσιώδη χρησιμότητά του να έγκειται στην ακόλουθη πρόταση.
-
 \begin{proposition}[Δομή του γραμμικού χώρου $\mathfrak{T}^{\,r}_{\,s}(V)$]
 	\label{prop:general-tensor-space-structure}
 Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$
-διάστασης $n \ge 1$, η διατεταγμένη συλλογή
+διάστασης $n \ge 1$, η συλλογή
 \begin{equation}\label{eq:general-tensor-space-base}
 \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
 \otimes
@@ -2748,17 +2787,18 @@ dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s},
 1 \le i_1, \dots, i_r \le n\,,
 \quad
 1 \le j_1, \dots, j_s \le n\,,
+\vspace{5pt}
 \end{equation}\label{eq:general-tensor-base}
-συγκροτεί βάση του γραμμικού χώρου $\mathfrak{T}^{\,r}_{\,s}(V)$,
-που επομένως έχει διάσταση $n^{r+s}$. Ειδικότερα,
+συγκροτεί βάση του $\mathfrak{T}^{\,r}_{\,s}(V)$,
+που επομένως έχει διάσταση $n^{r+s}$. Ειδικότερα, ισχύει
 \begin{equation}\label{eq:general-tensor-space-structure}
 \mathfrak{T}^{\,r}_{\,s}(V)
 \,=\,
 \underbrace{V \otimes \dots \otimes V}_{\textstyle r \textup{ φορές}}
 \,\otimes\,
-\underbrace{V^* \otimes \dots \otimes V^* }_{\textstyle s \textup{ φορές}}
+\underbrace{V^* \otimes \dots \otimes V^* }_{\textstyle s \textup{ φορές}}\,\,.
+\vspace{-15pt}
 \end{equation}\label{eq:general-tensor-space}
-υπό το πρίσμα της \eqref{eq:covectors-as-tensors} και της κανονικής ταύτισης \eqref{eq:vectors-as-tensors}.
 \end{proposition}
 \begin{proof}
 Δοθέντος $T \in \mathfrak{T}^{\,r}_{\,s}(V)$,
@@ -2796,22 +2836,22 @@ T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
 0
 \,,
 \end{equation*}
-οπότε εφαρμόζοντας αμφότερα τα μέλη στην $(r+s)$-άδα ορισμάτων
-\begin{equation*}
+οπότε εφαρμόζοντας τα ορίσματα
+$
 dx^{\hspace{.5pt}\mu_1}
 \dots,
 dx^{\hspace{.5pt}\mu_r},
-\frac{\partial}{\partial x^{\nu_1}}\,,
+\partial/\partial x^{\nu_1}\,,
 \dots,\,
-\frac{\partial}{\partial x^{\nu_s}}\,,
-\end{equation*}
+\partial/\partial x^{\nu_s}\,,
+$
 λαμβάνουμε $\lambda^{\hspace{1.5pt}\mu_1 \dots \mu_r}_{\hspace{1.5pt}\nu_1 \dots \nu_s}
 =
 0$ (βλ. \eqref{eq:tensor-product-kronecker}).
-Εφόσον οι δείκτες $\mu_1, \dots, \mu_r, \nu_1, \dots, \nu_s$ είναι αυθαίρετοι, όλοι οι συντελεστές μηδενίζονται, και άρα η συλλογή είναι γραμμικώς ανεξάρτητη.
+Εφόσον οι δείκτες είναι αυθαίρετοι, όλοι οι συντελεστές μηδενίζονται.
 \end{proof}
 
-\begin{definition}[Αναπαράσταση τανυστή]
+\begin{definition}[Αναπαράσταση τανυστή -- Συνιστώσες]
 	\label{def:tensor-representation}
 Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$ διάστασης $n \ge 1$, θεωρούμε το ανάπτυγμα
 \begin{equation}\label{eq:tensor-representation}
@@ -2824,8 +2864,8 @@ T^{\,i_1 \dots i_r}_{\,\,j_1 \dots j_s}
 dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s}
 \end{equation}
 ενός $(r,s)$-τανυστή $Τ$ ως προς την επαγόμενη βάση του
-$\mathfrak{T}^{\,r}_{\,s}(V)$ (βλ. Πρόταση \ref{prop:general-tensor-space-structure}).
-Οι $n^{r+s}$ βαθμωτές ποσότητες
+$\mathfrak{T}^{\,r}_{\,s}(V)$, βλ. Πρόταση \ref{prop:general-tensor-space-structure}.
+Η συλλογή των βαθμωτών ποσοτήτων
 $\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$,
 όπου συγκεκριμένα
 \begin{equation}\label{eq:tensor-quantities}
@@ -2838,37 +2878,26 @@ dx^{i_1}, \dots, dx^{i_r},
 \frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_s}}
 \right),
 \end{equation}
-λέγεται ότι \textbf{αναπαριστούν τον $Τ$ ως προς τη βάση $\{\partial/\partial x^i\}_i$} του $V$.
+λέγεται ότι \textbf{αναπαριστούν τον $Τ$ ως προς τη βάση $\{\partial/\partial x^i\}_i$}
+και καλούνται \textbf{συνιστώσες} αυτού ως προς την εν λόγω βάση.
 \end{definition}
 \noindent
 Ελέγχεται ευθέως ότι εάν οι τανυστές $S$ και $T$ αναπαρίστανται από τις
 ποσότητες $\{S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}\}$ και
 $\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ αντιστοίχως,
-τότε το τανυστικό τους γινόμενο αναπαρίσταται από τις ποσότητες
+τότε το τανυστικό τους γινόμενο αναπαρίσταται ως
 \begin{equation}\label{eq:tensor-product-quantities}
 (S \otimes Τ)^{\,i_1 \dots i_{\hspace{.5pt}p+r}}_{\,j_1 \dots j_{\hspace{.5pt}q+s}}
 \,=\,
 S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}
 \cdot
-Τ^{\,i_{\hspace{.5pt}p+1} \dots i_{\hspace{.5pt}p+r}}_{\,j_{\hspace{.5pt}q+1} \dots j_{\hspace{.5pt}q+s}}\,,
+Τ^{\,i_{\hspace{.5pt}p+1} \dots i_{\hspace{.5pt}p+r}}_{\,j_{\hspace{.5pt}q+1} \dots j_{\hspace{.5pt}q+s}}\,.
 \end{equation}
-όπου
-$1 \le i_1,\dots,i_{p+r} \le n$ και
-$1 \le j_1,\dots,j_{q+s} \le n$,
-ως προς την ίδια βάση του $V$.
-
-\begin{proposition}[Μετασχηματισμός τανυστικών ποσοτήτων]
+\begin{proposition}[Μετασχηματισμός τανυστικών συνιστωσών]
 	\label{prop:tensor-transform}
-Έστω βάσεις $\{\partial/\partial x^i\}_i$, $\{\partial/\partial y^i\}_i$ σε γραμμικό χώρο $V$ διάστασης $n \ge 1$.
-Δοθέντος τανυστή
-$Τ \in \mathfrak{T}^{\,r}_{\,s}(V)$ που
-αναπαρίσταται από τις βαθμωτές ποσότητες
-\begin{equation*}
-\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}\,,
-\quad
-\{\widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}
-\end{equation*}
-αντιστοίχως (βλ. Ορισμό \ref{def:tensor-representation}), ισχύει
+Δοθέντος τανυστή $Τ \in \mathfrak{T}^{\,r}_{\,s}(V)$ με συνιστώσες
+$\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$,
+$\{\widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τις βάσεις $\{\partial/\partial x^i\}_i$, $\{\partial/\partial y^i\}_i$ αντιστοίχως, ισχύει
 \begin{equation}\label{eq:tensor-transform}
 \widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}
 \,=\,
@@ -2881,9 +2910,8 @@ T^{\,\mu_1 \dots \mu_r}_{\,\,\nu_1 \dots \nu_s}
 \frac{\partial x^{\hspace{.5pt}\nu_1}}{\partial y^{\hspace{.5pt}j_1}}
 \dots
 \frac{\partial x^{\hspace{.5pt}\nu_s}}{\partial y^{\hspace{.5pt}j_s}}
-\,,
+\,.
 \end{equation}
-για κάθε $1 \le i_1, \dots i_r \le n$ και $1 \le j_1, \dots, j_s \le n$.
 \end{proposition}
 \begin{proof}
 Εφαρμόζοντας τους μετασχηματισμούς \eqref{eq:contravariance-elementary}, \eqref{eq:covariance-elementary} και
@@ -2927,17 +2955,17 @@ T\left(
 T\left(
 dx^{\mu_1}, \dots, dx^{\mu_r},
 \frac{\partial}{\partial x^{\nu_1}}, \dots, \frac{\partial}{\partial x^{\nu_s}}
-\right),
+\right)\,.
 \end{aligned}
 \end{equation*}
-που είναι το ζητούμενο.
 \end{proof}
 
-\subsection{Ανταλλοίωτοι και συναλλοίωτοι τανυστές}
+\section{Ανταλλοίωτοι και συναλλοίωτοι τανυστές}
 
 \begin{definition}[Ανταλλοίωτοι και συναλλοίωτοι τανυστές]
 	\label{def:covariant-contravariant-tensor}
-Ως \textbf{$r$-ανταλλοίωτος} (αντ. \textbf{$r$-συναλλοίωτος}) τανυστής τύπου $(r, 0)$ (αντ. $(0,r)$).
+Ως \textbf{$r$-ανταλλοίωτος}, αντ. \textbf{$r$-συναλλοίωτος}
+εννοείται ένας τανυστής τύπου $(r, 0)$, αντ. $(0,r)$.
 Συμβολίζουμε ως
 \begin{equation*}
 \mathfrak{T}^{\,r}(V)
@@ -2953,17 +2981,17 @@ dx^{\mu_1}, \dots, dx^{\mu_r},
 \mathfrak{T}^{\,0}_{\,r}(V)\,,
 \end{equation*}
 τον γραμμικό χώρο των $r$-ανταλλοίωτων και $r$-συναλλοίωτων τανυστών αντιστοίχως.
-Ως \textbf{ανταλλοίωτο}, αντ. \textbf{συναλλοίωτο διάνυσμα} αναφέρεται ενίοτε για λόγους εκφραστικής συμμετρίας ένα στοιχείο του $V$, αντ. $V^*$.
+Ως \textbf{ανταλλοίωτο}, αντ. \textbf{συναλλοίωτο διάνυσμα} αναφέρεται για λόγους εκφραστικής συμμετρίας ένα στοιχείο του $V$, αντ. $V^*$.
 \end{definition}
 
 \noindent
-Από την Πρόταση \ref{prop:general-tensor-space-structure} για $s=0$, έπεται ότι η διατεταγμένη συλλογή
+Από την Πρόταση \ref{prop:general-tensor-space-structure} για $s=0$, έπεται ότι η συλλογή
 \begin{equation}\label{eq:contravariant-tensor-space-base}
 \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}},
 \quad
 1 \le i_1, \dots, i_r \le n,
 \end{equation}
-συγκροτεί βάση του $\mathfrak{T}^{\,r}(V)$, που άρα έχει διάσταση $n^r$ και επιδέχεται της κανονικής ταύτισης
+συγκροτεί βάση του $\mathfrak{T}^{\,r}(V)$, που άρα έχει διάσταση $n^r$ και επιδέχεται κανονικής ταύτισης
 \begin{equation}\label{eq:contravariant-space-canonical-isomorphism}
 \mathfrak{T}^{\,r}(V)
 \,=\,
@@ -2977,9 +3005,9 @@ T^{\,i_1 \dots i_r} \, \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \
 \quad
 T^{\,i_1 \dots i_r} \,\equiv\, T\left(dx^{i_1}, \dots, dx^{i_r}\right).
 \end{equation}
-Τέλος εάν ο τανυστής $Τ$ αναπαρίσταται από τις ποσότητες
+Εάν ο $Τ$ αναπαρίσταται από τις ποσότητες
 $\{\widetilde{T}^{\,i_1 \dots i_r}\}$ ως προς κάποια άλλη
-βάση $\{\partial/\partial y^i\}_i$ του $V$,
+βάση $\{\partial/\partial y^i\}_i$,
 o τανυστικός μετασχηματισμός \eqref{eq:tensor-transform}
 εξειδικεύεται στην ανταλλοίωτη μορφή
 \begin{equation}\label{eq:contravariant-tensor-transfor}
@@ -2989,7 +3017,7 @@ o τανυστικός μετασχηματισμός \eqref{eq:tensor-transform
 \,
 T^{\mu_1 \dots \mu_r}\,.
 \end{equation}
-Παρομοίως, η διατεταγμένη συλλογή
+Παρομοίως, η συλλογή
 \begin{equation}\label{eq:covariant-tensor-space-base}
 dx^{i_1} \otimes \dots \otimes dx^{i_r},
 \quad
@@ -2997,33 +3025,67 @@ dx^{i_1} \otimes \dots \otimes dx^{i_r},
 \end{equation}
 συγκροτεί βάση του $\mathfrak{T}_{\,r}(V)$,
 που επομένως έχει διάσταση $n^r$ και επιδέχεται κανονικής ταύτισης 
-\begin{equation}\label{eq:covariant-tensor-space-canonical-isomorphism}
+\begin{equation}\label{eq:covariant-space-canonical-isomorphism}
 \mathfrak{T}_{\,r}(V)
 \,=\,
 \underbrace{V^* \otimes \dots \otimes V^*}_{r \text{ φορές}}\,,
 \end{equation}
 με την αναπαράσταση τυχόντος $(0,r)$-τανυστή ως προς την ίδια βάση να είναι
 \begin{equation}\label{eq:covariant-tensor-representation}
-S
+Τ
 \,=\,
-S_{i_1 \dots i_r} \, dx^{i_1} \otimes \dots \otimes dx^{i_r},
+T_{i_1 \dots i_r} \, dx^{i_1} \otimes \dots \otimes dx^{i_r},
 \quad
-S_{i_1 \dots i_r}
+T_{i_1 \dots i_r}
 \,\equiv\,
-S\left(\frac{\partial}{\partial x^{i_1}}, \dots, \frac{\partial}{\partial x^{i_r}}\right).
+T\left(\frac{\partial}{\partial x^{i_1}}, \dots, \frac{\partial}{\partial x^{i_r}}\right).
 \end{equation}
-Τέλος εάν ο τανυστής $S$ αναπαρίσταται από τις ποσότητες
-$\{\widetilde{S}_{\,i_1 \dots i_r}\}$ ως προς κάποια άλλη
-βάση $\{\partial/\partial y^i\}_i$ του $V$,
-o γενικός τανυστικός μετασχηματισμός εξειδικεύεται στην συναλλοίωτη μορφή
+Τέλος, εάν ο $Τ$ αναπαρίσταται από τις ποσότητες
+$\{\widetilde{T}_{\,i_1 \dots i_r}\}$ ως προς κάποια άλλη
+βάση $\{\partial/\partial y^i\}_i$,
+o γενικός τανυστικός μετασχηματισμός εξειδικεύεται στη συναλλοίωτη μορφή
 \begin{equation}\label{eq:covariant-tensor-transfor}
-\widetilde{S}_{i_1 \dots i_r}
+\widetilde{T}_{i_1 \dots i_r}
 \,=\,
-S_{\mu_1 \dots \mu_r}\,
+T_{\mu_1 \dots \mu_r}\,
 \frac{\partial x^{\mu_1}}{\partial y^{i_1}} \dots \frac{\partial x^{\mu_r}}{\partial y^{i_r}}\,.
 \end{equation}
 
-\subsubsection{Δράση συμμετρικής ομάδας}
+\subsection{Τανυστικά μονώνυμα}
+	\label{sec:tensor-mononyms}
+	
+Ο κανονικός ισομορφισμός \eqref{eq:contravariant-space-canonical-isomorphism} δηλώνει ότι
+ο χώρος $\mathfrak{T}^{\,r}(V)$ παράγεται από τα μονώνυμα
+\begin{equation*}
+\xi_1 \otimes \dots \otimes \xi_r,
+\quad
+\xi_i \in V\,,
+\end{equation*}
+και αντιστοίχως για τον $\mathfrak{T}_{\,r}(V)$, βλ. \eqref{eq:covariant-space-canonical-isomorphism}. Aποτελεί χαρακτηριστική ιδιότητα
+των μονωνύμων ότι η τιμή τους παραγοντοποιείται σε γινόμενο βαθμωτών δράσεων, και συγκεκριμένα
+\begin{equation}\label{eq:tensor-mononyms-property}
+\begin{split}
+(\xi_1 \otimes \dots \otimes \xi_r)\hspace{.5pt}(\theta^1, \dots, \theta^r)
+\,&=\,
+(\theta^1 \otimes \dots \otimes \theta^r)\hspace{.5pt}(\xi_1, \dots, \xi_r)\\
+\,&=\,
+\theta^1(\xi_1)\hspace{.5pt} \cdots \hspace{.5pt}\theta^r(\xi_r)\,.
+\end{split}
+\end{equation}
+Τέλος, ελέγχεται ευθέως ότι η συλλογή
+\begin{equation}
+\xi_{i_1} \otimes \cdots \otimes \xi_{i_r},
+\quad
+1 \le i_1, \dots, i_r \le n\,,
+\end{equation}
+συγκροτεί βάση του $\mathfrak{T}^{\,r}(V)$
+εάν και μόνον εάν τα ανταλλοίωτα διανύσματα $\xi_1, \dots, \xi_n$
+αποτελούν βάση του $V$ (και αντιστοίχως για τους $\mathfrak{T}_{\,r}(V)$ και $V^*$). Είναι σαφές πως οι περισσότεροι τανυστές δεν συνιστούν μονώνυμα, όπως π.χ. ο τανυστής
+\begin{equation*}
+\frac{\partial}{\partial x^1} \otimes \frac{\partial}{\partial x^1} + \frac{\partial}{\partial x^2} \otimes \frac{\partial}{\partial x^2}\,.
+\end{equation*}
+
+\subsection{Δράση συμμετρικής ομάδας}
 	\label{seq:symmetric-group-action}
 
 Η παρακατω δράση της συμμετρικής ομαδας μεταθέσεων στους ανταλλοίωτους και συναλλοίωτους τανυστές είναι θεμελιώδους σημασίας για τους σκοπούς της μαθηματικής φυσικής.
@@ -3037,16 +3099,15 @@ T(\theta^{\sigma 1}, \dots, \theta^{\sigma r})\,,
 \quad
 \theta^i \in V^*.
 \end{equation}
-Παρομοίως, η \textbf{δράση της $\sigma$ σε $r$-συναλλοίωτο τανυστή} $S$ είναι ο $r$-συναλλοίωτος τανυστής ${}^\sigma\hspace{0pt}{S}$ που ορίζεται μέσω της σχέσης
+Παρομοίως, η \textbf{δράση της $\sigma$ σε $r$-συναλλοίωτο τανυστή} $Τ$ είναι ο $r$-συναλλοίωτος τανυστής ${}^\sigma\hspace{0pt}{Τ}$ που ορίζεται μέσω της σχέσης
 \begin{equation}\label{eq:permutation-action-covariant-tensor}
-{}^\sigma\hspace{0pt}{S}(\xi_1, \dots, \xi_r)
+{}^\sigma\hspace{0pt}{Τ}(\xi_1, \dots, \xi_r)
 \,=\,
-S(\xi_{\sigma 1}, \dots, \xi_{\sigma r})\,,
+Τ(\xi_{\sigma 1}, \dots, \xi_{\sigma r})\,,
 \quad
 \xi_i \in V\,.
 \end{equation}
 \end{definition}
-
 \noindent
 Ελέγχεται ευθέως ότι εάν ο $r$-ανταλλοίωτος τανυστής $Τ$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}\}$, τότε o ${}^\sigma\hspace{.25pt}{T}$ αναπαρίσταται από τις ποσότητες
 \begin{equation}\label{eq:permutation-action-contravariant-representation}
@@ -3056,14 +3117,14 @@ T^{\,i_{\sigma 1} \dots i_{\sigma r}}
 \end{equation}
 ως προς την ίδια βάση.
 Παρομοίως, εάν ο $r$-συναλλοίωτος τανυστής $S$
-αναπαρίσταται από τις ποσότητες $\{S_{\,i_1 \dots i_r}\}$, τότε o ${}^\sigma\hspace{.0pt}{S}$ αναπαρίσταται στην ίδια βάση από τις ποσότητες
+αναπαρίσταται από τις ποσότητες $\{Τ_{\,i_1 \dots i_r}\}$, τότε o ${}^\sigma\hspace{.0pt}{Τ}$ αναπαρίσταται στην ίδια βάση από τις ποσότητες
 \begin{equation}\label{eq:permutation-action-covariant-representation}
-{}^\sigma\hspace{.0pt}S_{\,i_1 \dots i_r}
+{}^\sigma\hspace{.0pt}Τ_{\,i_1 \dots i_r}
 \,=\,
-S_{\,i_{\sigma 1} \dots i_{\sigma r}}
+Τ_{\,i_{\sigma 1} \dots i_{\sigma r}}
 \end{equation}
-Οι βασικές κατασκευές που αφορούν στην παραπάνω δράση της συμμετρικής ομάδας σε ανταλλοίωτους και συναλλοίωτους τανυστές αναπτύσσονται στην ενότητα \ref{sec:symmetry-and-antisymmetry}.
-Δίνονται εδώ οι δύο έννοιες αναλλοιότητας υπό τη δράση της.
+Οι βασικές κατασκευές που αφορούν στη δράση της συμμετρικής ομάδας τανυστές αναπτύσσονται στις Ενότητες \ref{sec:symmetric-tensors} και \ref{sec:antisymmetric-tensors}.
+Δίνονται εδώ οι σχετικές έννοιες αναλλοιότητας.
 
 \begin{definition}[Συμμετρικοί τανυστές]\label{def:symmetric-tensor}
 Ένας $r$-ανταλλοίωτος τανυστής $Τ$ καλείται \textbf{συμμετρικός}
@@ -3077,18 +3138,17 @@ T(\theta^{\sigma 1}, \dots, \theta^{\sigma r}),
 \end{equation}
 δηλαδή όταν μένει αναλλοίωτος υπό τη δράση της $S_r$.
 Συμβολίζουμε ως $\mathfrak{S}^{\,r}(V)$ το υπόχωρο των συμμετρικών $r$-ανταλλοίωτων τανυστών στον χώρο $V$.
-Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ καλείται \textbf{συμμετρικός}
-εάν ${}^\sigma\hspace{.0pt}{S}=S$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
+Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $Τ$ καλείται \textbf{συμμετρικός}
+εάν ${}^\sigma\hspace{.0pt}{Τ}=Τ$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
 \begin{equation}\label{eq:symmetric-covariant-tensor}
-{S}(\xi_1, \dots, \xi_r)
+{Τ}(\xi_1, \dots, \xi_r)
 \,=\,
-S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
+Τ(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
 \quad
 \sigma \in S_r\,.
 \end{equation}
 Συμβολίζουμε ως $\mathfrak{S}_{\,r}(V)$ τον υπόχωρο των συμμετρικών $r$-συναλλοίωτων τανυστών στον $V$.
 \end{definition}
-
 \noindent
 Ελέγχεται ευθέως ότι ένας $r$-ανταλλοίωτος τανυστής $Τ$ είναι συμμετρικός ακριβώς όταν, σε κάποια ---και τότε κάθε---
 βάση του $V$, οι ποσότητες που τον αναπαριστούν πληρούν την συνθήκη
@@ -3102,9 +3162,9 @@ S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
 Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ είναι συμμετρικός εάν
 οι ποσότητες που τον αναπαριστούν πληρούν σε τυχούσα βάση του $V$ την συνθήκη
 \begin{equation}\label{eq:symmetric-covariant-tensor-quantities}
-S_{\,i_1 \dots i_r}
+Τ_{\,i_1 \dots i_r}
 \,=\,
-S_{\,i_{\sigma 1} \dots i_{\sigma r}},
+Τ_{\,i_{\sigma 1} \dots i_{\sigma r}},
 \quad
 \sigma \in S_r\,.
 \end{equation}
@@ -3126,14 +3186,14 @@ T(\theta^{\sigma 1}, \dots, \theta^{\sigma r}),
 \end{equation}
 δηλαδή όταν μένει κατά μέτρο αναλλοίωτος υπό τη δράση της $S_r$ αλλά το πρόσημο της τιμής του εναλλάσσει βάσει του προσήμου της δράσης.
 Συμβολίζουμε ως $\mathfrak{A}^{\,r}(V)$ τον υπόχωρο των αντισυμμετρικών $r$-ανταλλοίωτων τανυστών στον χώρο $V$.
-Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ καλείται \textbf{αντισυμμετρικός} (ή \textbf{εναλλάσσων})
-εάν ${}^\sigma\hspace{.0pt}{S}=\operatorname{sgn}(\sigma)\,S$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
+Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $Τ$ καλείται \textbf{αντισυμμετρικός} (ή \textbf{εναλλάσσων})
+εάν ${}^\sigma\hspace{.0pt}{Τ}=\operatorname{sgn}(\sigma)\,Τ$ για κάθε μετάθεση $\sigma \in S_r$ ή, αναλυτικότερα,
 \begin{equation}\label{eq:antisymmetric-covariant-tensor}
-{S}(\xi_1, \dots, \xi_r)
+{Τ}(\xi_1, \dots, \xi_r)
 \,=\,
 \operatorname{sgn}(\sigma)
 \,
-S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
+Τ(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
 \quad
 \xi_i \in V\,,
 \quad
@@ -3158,19 +3218,21 @@ S(\xi_{\sigma 1}, \dots, \xi_{\sigma r}),
 \quad
 \sigma \in S_r\,.
 \end{equation}
-Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $S$ είναι αντισυμμετρικός εάν
+Παρομοίως, ένας $r$-συναλλοίωτος τανυστής $Τ$ είναι αντισυμμετρικός εάν
 οι ποσότητες που τον αναπαριστούν πληρούν σε τυχούσα βάση του $V$ την συνθήκη
 \begin{equation}\label{eq:antisymmetric-covariant-tensor-quantities}
-S_{\,i_1 \dots i_r}
+Τ_{\,i_1 \dots i_r}
 \,=\,
 \operatorname{sgn}(\sigma)
 \,
-S_{\,i_{\sigma 1} \dots i_{\sigma r}},
+Τ_{\,i_{\sigma 1} \dots i_{\sigma r}},
 \quad
 \sigma \in S_r\,.
 \end{equation}
 
-\subsection{Στοιχειώδεις τανυστικές πράξεις με δείκτες}
+\section{Στοιχειώδεις τανυστικές πράξεις με δείκτες}
+
+\subsection{Συναίρεση και συστολή}
 
 \begin{definition}[Συναίρεση δεικτών]
 	\label{def:contraction-of-index}
@@ -3300,12 +3362,12 @@ H τελευταία σχέση δείχνει ότι το $\hat{T}$ είναι 
 Ελέγχεται τότε ότι η γραμμική απεικόνιση
 \eqref{eq:(1,1)-tensor-space-canonical-isomorphism}
 είναι αμφιμονοσήμαντη, στοιχειοθετώντας ισομορφισμό ανάμεσα στον χώρο των $(1,1)$-τανυστών και τον χώρο των γραμμικών ενδομορφισμών του $V$.
-Αυτό αντανακλάται στον αναδιατυπωμένο νόμο μετασχηματισμού \eqref{eq:(1,1)-tensor-transform-matrix} των τανυστικών ποσοτήτων του $T$,
-που είναι ο γνωστός μετασχηματισμός πίνακα γραμμικού ενδομορφισμού κάτω από αλλαγή βάσης. Σημειώνουμε τέλος πως το ίχνος ενός γραμμικού ενδομορφισμού ισούται με την συναίρεση των δεικτών του αντίστοιχου $(1,1)$-τανυστή, δηλαδή
-
+Αυτό αντανακλάται στον αναδιατυπωμένο νόμο μετασχηματισμού \eqref{eq:(1,1)-tensor-transform-matrix} των τανυστικών συνιστωσών του $T$,
+που είναι ο γνώριμος μετασχηματισμός πίνακα γραμμικού ενδομορφισμού κάτω από αλλαγή βάσης. Σημειώνεται τέλος ότι το ίχνος ενός γραμμικού ενδομορφισμού ισούται με την συναίρεση των δεικτών του αντίστοιχου $(1,1)$-τανυστή, δηλαδή
 \begin{equation*}
-\operatorname{tr} \hat{T} = c^{\,1}_{\,1}(T) = T^{\,i}_{\,i}\,.
+\operatorname{tr} \hat{T}\,=\,c^{\,1}_{\,1}(T)\,=\,T^{\,i}_{\,i}\,.
 \end{equation*}
+TODO: Γενίκευση (αναφορά χωρίς απόδειξη)
 
 \subsection{Ανύψωση και καθίζηση δείκτη}
 	\label{sec:raising-and-lowering-index}
@@ -3339,7 +3401,7 @@ i_{\alpha-1} i_{\alpha+1} \dots i_{r+1}}_{\,j_1 \dots j_{\alpha-1} \mu j_\alpha 
 Σημειώνεται τέλος ότι οι παραπάνω εκφράσεις είναι γενικά ευαίσθητες στη θέση του πρώτου βωβού δείκτη $\mu$, ο οποίος καταλαμβάνει την αριστερή θέση· αμφότεροι οι ορισμοί θα μπορούσαν να δωθούν με τον $\mu$ να εμφανίζεται στην δεξιά θέση, χωρίς αυτό να επηρεάζει τη αλγεβρική χρησιμότητά τους (βλ. Ενότητα \ref{seq:induced-isomorphism-contravariance-covariance}) ---το σημαντικό είναι να συμφωνούν.
 Η διάκριση αυτή εκπίπτει εάν ο τανυστής $g$ είναι συμμετρικός και ενδιαφέρει μόνο ως προς το πρόσημο εάν είναι εναλλάσσων.
 
-\subsubsection{Πλήρης ανύψωση και καθίζηση δείκτη}
+\subsubsection{Πλήρης ανύψωση και καθίζηση}
 	\label{seq:full-raising-and-lowering}
 	
 Είναι σαφές ότι με διαδοχική εφαρμογή των παραπάνω πράξεων
@@ -3349,7 +3411,7 @@ i_{\alpha-1} i_{\alpha+1} \dots i_{r+1}}_{\,j_1 \dots j_{\alpha-1} \mu j_\alpha 
 	\label{def:full-lowering-index}
 Δοθέντος $r$-ανταλλοίωτου τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ^{\,i_1 \dots i_r}\}$ και $(0,2)$-τανυστή $g$ που αναπαρίσταται ως $\{g_{ij}\}$ ως προς την ίδια βάση, ως \textbf{πλήρης καθίζηση του $Τ$ υπό τον $g$} εννοείται ο $r$-συναλλοίωτος τανυστής που αναπαρίσταται από τις ποσότητες
 \begin{equation}\label{eq:full-lowering}
-S_{i_1 \dots i_r}
+Τ_{i_1 \dots i_r}
 \,=\,
 g_{\mu_1 i_1} \dots g_{\mu_r i_r} T^{\mu_1 \dots \mu_r}
 \end{equation}
@@ -3358,7 +3420,7 @@ g_{\mu_1 i_1} \dots g_{\mu_r i_r} T^{\mu_1 \dots \mu_r}
 	\label{def:full-raising-index}
 Δοθέντος $r$-συναλλοίωτου τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ_{\,i_1 \dots i_r}\}$ και $(2,0)$-τανυστή $g$ που αναπαρίσταται ως $\{g^{\hspace{.5pt}ij}\}$ ως προς την ίδια βάση, ως \textbf{πλήρης ανύψωση του $Τ$ υπό τον $g$} εννοείται ο $r$-ανταλλοίωτος τανυστής που αναπαρίσταται από τις ποσότητες
 \begin{equation}\label{eq:full-raising}
-S^{\,i_1 \dots i_r}
+Τ^{\,i_1 \dots i_r}
 \,=\,
 g^{\hspace{.5pt}\mu_1 i_1} \dots g^{\hspace{.5pt}\mu_r i_r} T_{\mu_1 \dots \mu_r}
 \end{equation}
@@ -3366,10 +3428,7 @@ g^{\hspace{.5pt}\mu_1 i_1} \dots g^{\hspace{.5pt}\mu_r i_r} T_{\mu_1 \dots \mu_r
 \noindent
 Η θεμελιώδης εφαρμογή αυτών για τους σκοπούς της φυσικής και της γεωμετρίας παρουσιάζεται στην Eνότητα \ref{seq:induced-isomorphism-contravariance-covariance}. Συγκεκριμένα, υπό φυσιολογικές παραδοχές για τον τανυστή $g$, η παραπάνω συσχέτιση μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών στοιχειοθετεί ισομορφισμό που επιδέχεται γεωμετρικής ερμηνείας υπό το πρίσμα του $g$.
 
-\section{Συμμετρία και αντισυμμετρία}
-	\label{sec:symmetry-and-antisymmetry}
-
-\subsection{Συμμετροποίηση --- Συμμετρικό γινόμενο}
+\section{Συμμετροποίηση --- Συμμετρικό γινόμενο}
 	\label{sec:symmetric-tensors}
 
 \begin{definition}[Συμμετροποίηση]\label{def:symmetrization}
@@ -3415,14 +3474,20 @@ $\mathfrak{T}^{\,r}(V)$, αντ. $\mathfrak{T}_{\,r}(V)$
 Ως \textbf{συμμετρικό γινόμενο} εννοείται η πράξη $\odot$ που δοθέντων $p$-ανταλλοίωτου (αντ. συναλλοίωτου) τανυστή $S$ και $r$-ανταλλοίωτου (αντ. συναλλοίωτου) τανυστή $Τ$ επιστρέφει την συμμετροποίηση του τανυστικού γινομένου τους, δηλαδή τον $(p+r)$-ανταλλοίωτο (αντ. συναλλοίωτο) τανυστή
 \begin{equation}\label{eq:symmetric-product}
 S \odot T
-\,\equiv\,
-\textup{\textsf{Sym}}\hspace{.5pt}(S \otimes T)\,.
+\,\,\equiv\,\,
+\textup{\textsf{Sym}}\hspace{.5pt}(S \otimes T)
+\,=\,
+\frac{1}{\,(p+r)\hspace{.5pt}!\,}
+\hspace{-8pt}
+\sum_{\,\,\,\,\,\,\sigma \in S_{p+r}}
+\hspace{-5pt}
+{}^\sigma\hspace{.2pt}(S \otimes T)\,.
 \end{equation}
 Αναλυτικότερα, εάν οι τανυστές είναι ανταλλοίωτοι, ισχύει
 \begin{equation}\label{eq:symmetric-product-analytic}
 S \odot T \,(\theta^1, \dots, \theta^{p+r})
 \,=\,
-\frac{1}{\,(p+r)\hspace{.5pt}!\,}\sum_{\sigma \in S_{p+r}}S(\theta^{\sigma 1}, \dots \theta^{\sigma p}) \cdot T(\theta^{\sigma (p+1)}, \dots, \theta^{\sigma (p+r)})
+\frac{1}{\,(p+r)\hspace{.5pt}!\,}\sum_{\,\,\,\,\,\,\sigma \in S_{p+r}}S(\theta^{\sigma 1}, \dots \theta^{\sigma p}) \cdot T(\theta^{\sigma (p+1)}, \dots, \theta^{\sigma (p+r)})
 \end{equation}
 και αντιστοίχως για την περίπτωση που είναι συναλλοίωτοι.
 \end{definition}
@@ -3433,7 +3498,7 @@ S \odot T \,(\theta^1, \dots, \theta^{p+r})
 \begin{equation}\label{eq:symmetric-contravariant-quantities}
 (S \odot T)^{\,i_1 \dots i_{p+r}}
 \,=\,
-\frac{1}{\,(p+r)\hspace{.5pt}!\,}\sum_{\sigma \in S_{p+r}}
+\frac{1}{\,(p+r)\hspace{.5pt}!\,}\sum_{\,\,\,\,\,\,\sigma \in S_{p+r}}
 S^{\,i_{\sigma 1} \dots i_{\sigma p}}
 \cdot
 T^{\,i_{\sigma (p+1)} \dots i_{\sigma (p+r)}}
@@ -3442,7 +3507,7 @@ T^{\,i_{\sigma (p+1)} \dots i_{\sigma (p+r)}}
 \begin{equation}\label{eq:symmetric-covariant-quantities}
 (S \odot T)_{\,i_1 \dots i_{p+r}}
 \,=\,
-\frac{1}{\,(p+r)\hspace{.5pt}!\,}\sum_{\sigma \in S_{p+r}}
+\frac{1}{\,(p+r)\hspace{.5pt}!\,}\sum_{\,\,\,\,\,\,\sigma \in S_{p+r}}
 S_{\,i_{\sigma 1} \dots i_{\sigma p}}
 \cdot
 T_{\,i_{\sigma (p+1)} \dots i_{\sigma (p+r)}}\,.
@@ -3479,7 +3544,7 @@ dx^{\hspace{.5pt}j_r}
 
 \begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
     \item[\textup{(i)}]
-    	η διατεταγμένη συλλογή
+    	η συλλογή
 \begin{equation}\label{eq:symmetric-contravariant-space-base}
 \frac{\partial}{\partial x^{i_1}} \odot \dots \odot \frac{\partial}{\partial x^{i_r}},
 \quad
@@ -3496,7 +3561,7 @@ dx^{\hspace{.5pt}j_r}
 \binom{n+r-1}{r}\,.
 \end{equation}
     \item[\textup{(ii)}]
-    	η διατεταγμένη συλλογή
+    	η συλλογή
 \begin{equation}\label{eq:symmetric-covariant-space-base}
 dx^{i_1} \odot \dots \odot dx^{i_r}
 \quad
@@ -3560,64 +3625,42 @@ dx^{\hspace{.5pt}j_1}, \dots, dx^{\hspace{.5pt}j_r}
 Eφόσον οι δείκτες είναι αυθαίρετοι, όλο οι συντελεστές μηδενίζονται, και άρα η συλλογή είναι γραμμικώς ανεξάρτητη.
 \end{proof}
 
-%\begin{proposition}[Αναπαράσταση συμμετρικού τανυστή ]
-%	\label{prop:symmetric-tensor-representation}
-%Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ του $V$,
-%\begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
-%    \item[\textup{(i)}]
-%κάθε συμμετρικός $r$-ανταλλοίωτος τανυστής
-%\begin{equation*}
-%T
-%\,=\,
-%T^{i_1 \dots i_r}
-%\,
-%\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes %\frac{\partial}{\partial x^{i_r}}
-%\end{equation*}
-%αναπαρίσταται ως προς την επαγόμενη βάση του
-%$\mathfrak{S}^{\,r}(V)$ ως
-%\begin{equation*}
-%T
-%\,=
-%\sum_{1 \le i_1 \le \dots \le i_r \le n}
-%T^{i_1 \dots i_r}
-%\,
-%\frac{\partial}{\partial x^{i_1}} \odot \dots \odot %\frac{\partial}{\partial x^{i_r}},
-%\end{equation*}
-%    \item[\textup{(ii)}]
-%κάθε συμμετρικός $r$-συναλλοίωτος τανυστής
-%\begin{equation*}
-%S
-%\,=\,
-%S_{i_1 \dots i_r}
-%\,\,
-%dx^{i_1} \otimes \dots \otimes dx^{i_r}
-%\end{equation*}
-%αναπαρίσταται ως προς την επαγόμενη βάση του
-%$\mathfrak{S}_{\,r}(V)$ ως
-%\begin{equation*}
-%S
-%\,=
-%\sum_{1 \le i_1 \le \dots \le i_r \le n}
-%S_{i_1 \dots i_r}
-%\,\,
-%dx^{i_1} \odot \dots \odot dx^{i_r}
-%\end{equation*}
-%\end{enumerate}
-%\end{proposition}
+\subsection{Συμμετρικά μονώνυμα}
+	\label{sec:symmetric-mononyms}
 
-%\begin{proof}
-%Αποδεικνύουμε το (i), με το (ii) να ισχύει \textit{mutatis mutandis}.
-%Υπολογίζουμε τους συντελεστές
-%του αναπτύγματος \eqref{eq:tensor-symmetric-expansion-intermediate} από την απόδειξη της Πρότασης \ref{prop:symmetric-tensor-space-structure}.
-%Εκ κατασκευής αυτού,
-%\begin{equation*}
-%\lambda_{\,i_1 \dots i_r}
-%\,=\,
-%TODO
-%\end{equation*}
-%\end{proof}
+Ο κανονικός ισομορφισμός \eqref{eq:symmetric-contravariant-space-canonical-isomorphism} δηλώνει ότι
+ο χώρος $\mathfrak{S}^{\,r}(V)$ παράγεται από τα μονώνυμα
+\begin{equation*}
+\xi_1 \odot \dots \odot \xi_r,
+\quad
+\xi_i \in V\,,
+\end{equation*}
+και αντιστοίχως για τον $\mathfrak{S}_{\,r}(V)$, βλ. \eqref{eq:symmetric-covariant-space-canonical-isomorphism}. Αποτελεί χαρακτηριστική ιδιότητα των συμμετρικών μονωνύμων ότι η τιμή τους προκύπτει ως ο μέσος όρος των παραγοντοποιημένων δράσεων επί όλων των μεταθέσεων, και συγκεκριμένα
+\begin{equation}\label{eq:symmetric-mononyms-property}
+\begin{split}
+(\xi_1 \odot \dots \odot \xi_r)\hspace{.5pt}(\theta^1, \dots, \theta^r)
+\,&=\,
+(\theta^1 \odot \dots \odot \theta^r)\hspace{.5pt}(\xi_1, \dots, \xi_r)\\
+\,&=\,
+\frac{1}{\,r\hspace{.5pt}!\,}
+\sum_{\sigma \in S_r}
+\theta^1(\xi_{\sigma 1}) \cdots \theta^r(\xi_{\sigma r})\,.
+\end{split}
+\end{equation}
+Τέλος, ελέγχεται ευθέως ότι η συλλογή
+\begin{equation*}
+\xi_{i_1} \odot \cdots \odot \xi_{i_r},
+\quad
+1 \le i_1 \le \dots \le i_r \le n\,,
+\end{equation*}
+συγκροτεί βάση του $\mathfrak{S}^{\,r}(V)$
+εάν και μόνον εάν τα ανταλλοίωτα διανύσματα $\xi_1, \dots, \xi_n$
+αποτελούν βάση του $V$ (και αντιστοίχως για τους $\mathfrak{S}_{\,r}(V)$ και $V^*$). Είναι σαφές πως οι περισσότεροι συμμετρικοί τανυστές δεν συνιστούν συμμετρικά μονώνυμα, όπως π.χ. ο τανυστής
+\begin{equation*}
+\frac{\partial}{\partial x^1} \odot \frac{\partial}{\partial x^1} + \frac{\partial}{\partial x^2} \odot \frac{\partial}{\partial x^2}\,.
+\end{equation*}
 
-\subsection{Αντισυμμετροποίηση --- Σφηνοειδές γινόμενο}
+\section{Αντισυμμετροποίηση --- Σφηνοειδές γινόμενο}
 	\label{sec:antisymmetric-tensors}
 
 \begin{definition}[Αντισυμμετροποίηση]\label{def:antisymmetrization}
@@ -3671,11 +3714,19 @@ $r\hspace{.5pt}! = \lvert S_r \rvert$
 Ως \textbf{σφηνοειδές γινόμενο} εννοείται η πράξη $\wedge$ που δοθέντων $p$-ανταλλοίωτου (αντ. συναλλοίωτου) τανυστή $S$ και $r$-ανταλλοίωτου (αντ. συναλλοίωτου) τανυστή $Τ$ επιστρέφει τον $(p+r)$-ανταλλοίωτο (αντ. συναλλοίωτο) τανυστή
 \begin{equation}\label{eq:wedge-product}
 S \wedge T
-\,\equiv\,
+\,\,\equiv\,\,
 \frac{(p+r)!}{\,p\hspace{.5pt}!\hspace{.5pt}r\hspace{.5pt}!\,}
 \,
-\textup{\textsf{Alt}}\hspace{.5pt}(S \otimes T)\,.
+\textup{\textsf{Alt}}\hspace{.5pt}(S \otimes T)\,=\,
+\frac{1}{\,p\hspace{.5pt}!\hspace{.5pt}r\hspace{.5pt}!\,}
+\hspace{-8pt}
+\sum_{\,\,\,\,\,\,\sigma \in S_{p+r}}
+\hspace{-5pt}
+\operatorname{sgn}(\sigma)
+\,
+{}^\sigma\hspace{.2pt}(S \otimes T)\,.
 \end{equation}
+\noindent
 Αναλυτικότερα, εάν οι τανυστές είναι ανταλλοίωτοι, ισχύει
 \begin{equation}\label{eq:wedge-product-analytic}
 S \wedge T \,(\theta^1, \dots, \theta^{p+r})
@@ -3754,7 +3805,7 @@ dx^{\hspace{.5pt}j_r}
 
 \begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
     \item[\textup{(i)}]
-    	η διατεταγμένη συλλογή
+    	η συλλογή
 \begin{equation}\label{eq:antisymmetric-contravariant-space-base}
 \frac{\partial}{\partial x^{i_1}} \wedge \dots \wedge \frac{\partial}{\partial x^{i_r}},
 \quad
@@ -3771,7 +3822,7 @@ dx^{\hspace{.5pt}j_r}
 \binom{n}{r}\,.
 \end{equation}
     \item[\textup{(ii)}]
-    	η διατεταγμένη συλλογή
+    	η συλλογή
 \begin{equation}\label{eq:antisymmetric-covariant-space-base}
 dx^{i_1} \wedge \dots \wedge dx^{i_r},
 \quad
@@ -3848,10 +3899,55 @@ $\lambda_{\,j_1 \dots j_r} = 0$.
 Eφόσον οι δείκτες είναι αυθαίρετοι, όλοι οι συντελεστές μηδενίζονται, και άρα η συλλογή είναι γραμμικώς ανεξάρτητη.
 \end{proof}
 
+TODO: Σχόλιο για βάσεις: για $r ge n$ ο χώρος εκφυλίζεται, πράγμα που αντιστοιχε´
+
+\subsection{Αντισυμμετρικά μονώνυμα}
+	\label{sec:antisymmetric-mononyms}
+
+Ο κανονικός ισομορφισμός \eqref{eq:antisymmetric-contravariant-space-canonical-isomorphism} δηλώνει ότι
+ο χώρος $\mathfrak{A}^{\,r}(V)$ παράγεται από τα μονώνυμα
+\begin{equation*}
+\xi_1 \wedge \dots \wedge \xi_r,
+\quad
+\xi_i \in V\,,
+\end{equation*}
+και αντιστοίχως για τον $\mathfrak{A}_{\,r}(V)$, βλ. \eqref{eq:antisymmetric-covariant-space-canonical-isomorphism}. Αποτελεί χαρακτηριστική ιδιότητα των αντισυμμετρικών μονωνύμων ότι η τιμή τους προκύπτει ως ο προσημασμένος μέσος όρος των παραγοντοποιημένων δράσεων επί όλων των μεταθέσεων, και συγκεκριμένα
+\begin{equation}\label{eq:antisymmetric-mononyms-property}
+\begin{split}
+(\xi_1 \wedge \dots \wedge \xi_r)\hspace{.5pt}(\theta^1, \dots, \theta^r)
+\,&=\,
+(\theta^1 \wedge \dots \wedge \theta^r)\hspace{.5pt}(\xi_1, \dots, \xi_r)\\
+\,&=\,
+\frac{1}{\,r\hspace{.5pt}!\,}
+\sum_{\sigma \in S_r}
+\operatorname{sgn}(\sigma)
+\,
+\theta^1(\xi_{\sigma 1}) \cdots \theta^r(\xi_{\sigma r})\,.
+\end{split}
+\end{equation}
+Επιπλέον, το μονώνυμο είναι αντισυμμετρικό υπό μετάθεση των παραγόντων του, με αποτέλεσμα να μηδενίζεται όταν δύο παράγοντες συμπίπτουν. Τέλος, ελέγχεται ευθέως ότι η συλλογή
+\begin{equation*}
+\xi_{i_1} \wedge \cdots \wedge \xi_{i_r},
+\quad
+1 \le i_1 < \dots < i_r \le n\,,
+\end{equation*}
+συγκροτεί βάση του $\mathfrak{A}^{\,r}(V)$
+εάν και μόνον εάν τα ανταλλοίωτα διανύσματα $\xi_1, \dots, \xi_n$
+αποτελούν βάση του $V$ (και αντιστοίχως για τους $\mathfrak{A}_{\,r}(V)$ και $V^*$). Είναι σαφές πως οι περισσότεροι αντισυμμετρικοί τανυστές δεν συνιστούν αντισυμμετρικά μονώνυμα, όπως π.χ. ο τανυστής
+\begin{equation*}
+\frac{\partial}{\partial x^1} \wedge \frac{\partial}{\partial x^2} + \frac{\partial}{\partial x^3} \wedge \frac{\partial}{\partial x^4}\,.
+\end{equation*}
+Στην περίπτωση $r = n$, ο χώρος $\mathfrak{A}_{\,n}(V)$ έχει διάσταση $1$, οπότε κάθε $n$-αντισυμμετρικός τανυστής είναι βαθμωτό πολλαπλάσιο ενός μοναδικού μονωνύμου. Αυτό θεμελιώνει την έννοια του στοιχείου όγκου, που εξετάζεται στην Ενότητα \ref{sec:volume-elemenets}.
+
+\subsection{Ο χώρος $\mathfrak{A}_{\,n}(V)$ --- Στοιχεία όγκου}
+	\label{sec:volume-elemenets}
+
+TODO
+
 \section{Επαγόμενος ισομορφισμός μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών ίσης τάξης}
 	\label{seq:induced-isomorphism-contravariance-covariance}
 
-Δοθέντος $g \in \mathfrak{T}_{\,2}(V)$, θεωρούμε την απεικόνιση
+Δοθέντος $g \in \mathfrak{T}_{\,2}(V)$, θεωρούμε την γραμμική απεικόνιση
 \begin{equation}\label{eq:flat-elementary}
 (\hspace{.5pt}\cdot\hspace{.5pt})^\flat: V \to V^*,
 \quad
@@ -3872,59 +3968,151 @@ g_{\mu\hspace{.5pt}i}\hspace{.5pt}\xi^\mu\hspace{.5pt}dx^i,
 \begin{equation}\label{eq:flat-as-interior-product}
 \xi^\flat\,=\,\iota_{1,\hspace{.5pt}\xi}(g)\,,
 \end{equation}
-δηλαδή το συναλλοίωτο διάνυσμα $\xi^\flat$
-προκύπτει συστέλλοντας τον πρώτο δείκτη του συναλλοίωτου τανυστή $g$ με το ανταλλοίωτο διάνυσμα $\xi$ (βλ. \eqref{eq:interior-product}). Τέλος, η απεικόνιση $\,(\hspace{.5pt}\cdot\hspace{.5pt})^\flat: V \to V^*$ είναι γραμμική καθ' εαυτήν και αναπαρίσταται από τον πίνακα $(g_{ij})_{i,j}$ ως προς τις βάσεις $\{\partial/\partial x^i\}_i$ και $\{dx^i\}_i$, καθότι
+δηλαδή το συναρτησοειδές $\xi^\flat$
+προκύπτει συστέλλοντας τον πρώτο δείκτη του συναλλοίωτου τανυστή $g$ με το ανταλλοίωτο διάνυσμα $\xi$ (βλ. \eqref{eq:interior-product}). Τέλος, η απεικόνιση \eqref{eq:flat-elementary} αναπαρίσταται καθ' εαυτήν από τον πίνακα $(g_{ij})_{i,j}$ ως προς τις βάσεις $\{\partial/\partial x^i\}_i$ και $\{dx^i\}_i$, καθότι
 \begin{equation}\label{eq:flat-elementary-base-mapping}
 \left(\frac{\partial}{\partial x^i}\right)^\flat =\, g_{ij}\,dx^{\,j}\,.
 \end{equation}
 
-Οι παραπάνω θεωρήσεις αναδιατυπώνονται \textit{mutatis mutandis} ως προς ανταλλοίωτο τανυστή. Συγκεκριμένα, δοθέντος $h \in \mathfrak{T}^{\,2}(V)$, θεωρούμε την απεικόνιση
-\begin{equation}\label{eq:sharp-elementary}
-(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp: V^* \to V,
+Επεκτείνουμε τώρα την $(\hspace{.5pt}\cdot\hspace{.5pt})^\flat$ μεταξύ τανυστικών χώρων οποιασδήποτε τάξης.
+Συγκεκριμένα, δοθέντος αυθαίρετου $r \ge 0$, θεωρούμε τη γραμμική απεικόνιση
+\begin{equation}\label{eq:flat-extended}
+(\hspace{.5pt}\cdot\hspace{.5pt})^\flat: \mathfrak{T}^{\,r}(V) \to \mathfrak{T}_{\,r}(V),
 \quad
-\theta \mapsto \theta^\sharp,
-\quad
-\theta^\sharp(\zeta) = h\hspace{.5pt}(\hspace{.5pt}\theta,\hspace{.5pt}\zeta\hspace{.7pt})\,.
+T^\flat(\xi_1, \dots, \xi_r)\,=\,T(\xi_1^\flat, \dots, \xi_r^\flat)\,.
 \end{equation}
-Εάν
-$\theta = \theta_i dx^i$ και ο $h$ αναπαρίσταται
-ως προς την ίδια βάση από τις ποσότητες $\{g^{ij}\}$, τότε
-\begin{equation}\label{eq:sharp-elementary-as-raising}
-\theta^\sharp
+Κάνοντας χρήση της έκφρασης \eqref{eq:flat-elementary-as-lowering} σε συνδυασμό με την πολυγραμμικότητα,
+ελέγχεται ευθέως ότι ο συναλλοίωτος τανυστής $Τ^\flat$ προκύπτει με πλήρη καθίζηση των δεικτών του $Τ$ ως προς τον $g$
+(βλ. Ορισμό \ref{def:full-lowering-index})·
+συγκεκριμένα, εάν
+$Τ = Τ^{\,i_1 \dots i_r} \partial/\partial  x^{i_1} \otimes \dots \otimes \partial/\partial x^{i_r}$
+και ο τανυστής $g$ αναπαρίσταται από τις ποσότητες $\{g_{ij}\}$ ως προς την ίδια βάση, τότε
+\begin{equation}\label{eq:flat-extended-as-lowering}
+Τ^{\hspace{.5pt}\flat}
+\,=\,\,
+g_{\mu_1 i_1} \dots g_{\mu_r i_r} T^{\hspace{.5pt}\mu_1 \dots \mu_r}
+\,dx^{i_1} \otimes \dots \otimes dx^{i_r}.
+\end{equation}
+\noindent
+Η αφηρημένη κατασκευή \eqref{eq:flat-extended} μας επιτρέπει να συμπεράνουμε την φυσικότητα της πλήρους καθίζησης έναντι όλων των γινομένων. Παρατηρούμε κατ' αρχάς, εξ ορισμού του $\otimes$ (βλ. \eqref{eq:tensor-product}), ότι η επεκτεταμένη $(\hspace{.5pt}\cdot\hspace{.5pt})^\flat$ συμπεριφέρεται φυσικά ως προς το τανυστικό γινόμενο, δηλαδή
+\begin{equation}\label{eq:flat-extended-tensor-product-naturality}
+(S \otimes T)^{\hspace{.75pt}\flat}\,=\,S^{\hspace{1pt}\flat} \otimes \hspace{.5pt} T^{\,\flat}.
+\end{equation}
+Εξίσου προφανές είναι ότι μετατίθεται με τη δράση της συμμετρικής ομάδας,
+δηλαδή
+\begin{equation}\label{eq:flat-extended-symmetric-action-naturality}
+({}^\sigma\hspace{.0pt}S)^\flat
 \,=\,
-h^{\mu\hspace{.5pt}i}\hspace{.5pt}\theta_\mu\hspace{.5pt}\frac{\partial}{\partial x^i},
+{}^\sigma\hspace{.0pt}(S^\flat)
 \end{equation}
-δηλαδή το $\theta^\sharp$ προκύπτει ανεβάζοντας τον μοναδικό δείκτη του συναλλοίωτου διανύσματος $\theta$ ως προς τον ανταλλοίωτο τανυστή $h$ (βλ. \eqref{eq:raising-index})· εναλλακτικά,
-\begin{equation}\label{eq:sharp-as-interior-product}
-\theta^\sharp\,=\,\iota_1^{\hspace{.5pt}\theta}(h)\,
+για κάθε μετάθεση $\sigma$ που δρα σε κατάλληλο πλήθος δεικτών.
+Έπεται τότε, εξ ορισμού του $\odot$ (βλ. \eqref{eq:symmetric-product}), ότι η πλήρης καθίζηση συμπεριφέρεται φυσικά ως προς το συμμετρικό γινόμενο,
+\begin{equation}\label{eq:flat-extended-symmetric-product-naturality}
+(S \odot T)^{\hspace{.75pt}\flat}\,=\,S^{\hspace{1pt}\flat} \odot \hspace{.5pt} T^{\,\flat}.
 \end{equation}
-(βλ. \eqref{eq:interior-product-dual-representation}). Τέλος, η γραμμική απεικόνιση $\,(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp: V^* \to V$ αναπαρίσταται από τον πίνακα $(h^{ij})_{i,j}$ ως προς τις βάσεις $\{dx^i\}_i$ και $\{\partial/\partial x^i\}_i$, καθότι
-\begin{equation}\label{eq:sharp-elementary-base-mapping}
-\left(dx^i\right)^\sharp =\, h^{ij}\frac{\partial}{\partial x^j}\,.
+και παρομοίως για το σφηνοειδές γινόμενο
+(βλ. \eqref{eq:wedge-product}),
+\begin{equation}\label{eq:flat-extended-wedge-product-naturality}
+(S \wedge T)^{\hspace{.75pt}\flat}\,=\,S^{\hspace{1pt}\flat} \wedge\hspace{.5pt} T^{\,\flat}.
 \end{equation}
-
-\subsection{Μη εκφυλισμένοι $(0,2)$-τανυστές --- Μουσικός ισομορφισμός}
-
+Με άλλα λόγια, η γραμμική απεικόνιση \eqref{eq:flat-extended}
+σέβεται ολόκληρη την τανυστική δομή, επεικονίζοντας λόγου χάρη συμμετρικούς (αντ. αντισυμμετρκούς) τανυστές σε συμμεντρικούς (αντ. αντισυμμετρικούς) ίσης τάξης. Παρακάτω επικεντρώνουμε στην περίπτωση όπου η πλήρης καθίζηση αντιστρέφεται από κάποια πλήρη ανύψωση, επάγοντας φυσικό ισομορφισμό μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών υπό το πρίσμα του $g$.
 \begin{definition}[Μη ιδιάζουσα διγραμμική απεικόνιση]
 	\label{def:non-singular-bilinear-map}
-Μια διγραμμική απεικόνιση $g \in \mathfrak{T}_{\,2}(V)$
-καλείται \textbf{μη ιδιάζουσα}, ή \textbf{μη εκφυλισμένος $(0,2)$-τανυστής}, εάν πληροί τη συνθήκη
+Ένας τανυστής $g \in \mathfrak{T}_{\,2}(V)$
+καλείται \textbf{μη εκφυλισμένος}, ή \textbf{μη ιδιάζουσα διγραμμική απεικόνιση}, εάν πληροί τη συνθήκη
 \begin{equation}\label{eq:non-singular-bilinear-map}
 g\hspace{.5pt}(\xi, \eta) = 0,
 \,\,
 \forall \eta \in V
 \iff
-\xi = 0
+\xi = 0\,,
 \end{equation}
+δηλαδή εάν η επαγόμενη γραμμική απεικόνιση $\hspace{.5pt}(\hspace{.5pt}\cdot\hspace{.5pt})^\flat: V \to V^*$ είναι ισομορφισμός.
 \end{definition}
 \noindent
-Ελέγχεται ευθέως ότι η διγραμμική απεικόνιση $g$ είναι μη ιδιάζουσα
-εάν η αναπαράσταση $(g_{ij})$ αυτής σε κάποια ---και τότε κάθε-- βάση του $V$ είναι αντιστρέψιμος πίνακας.
+Ισοδύναμα, εάν $\{g_{ij}\}$ οι ποσότητες που την αναπαριστούν ως τανυστή ως προς τυχούσα βάση του $V$, η διγραμμική απεικόνιση $g$ είναι μη ιδιάζουσα εάν ο πίνακας $(g_{ij})_{i,j}$  είναι αντιστρέψιμος. Σε αυτήν την περίπτωση, συμβολίζουμε καταχρηστικά ως
+\begin{equation}
+g^{-1}
+\,\equiv\,
+g^{\hspace{.5pt}ij}\hspace{.5pt}\frac{\partial}{\partial x^{\hspace{.5pt}i}} \otimes \frac{\partial}{\partial x^{\hspace{.5pt}j}}
+\end{equation}
+τον $(2,0)$-τανυστή που ορίζεται μέσω την σχέσεων
+\begin{equation}
+g^{i \mu} g_{\mu j} = \delta^{\,i}_{j}
+\end{equation}
+και θεωρούμε την γραμμική απεικόνιση
+\begin{equation}\label{eq:sharp-elementary}
+(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp: V^* \to V,
+\quad
+\theta \mapsto \theta^{\hspace{.5pt}\sharp}(\zeta),
+\quad
+\theta^{\hspace{.5pt}\sharp}(\zeta) = g^{-1}\hspace{.5pt}(\hspace{.5pt}\theta,\hspace{.5pt}\zeta\hspace{.7pt})\,.
+\end{equation}
+Οι παραπάνω θεωρήσεις περί της $(\hspace{.5pt}\cdot\hspace{.5pt})^\flat$ αναδιατυπώνονται \textit{mutatis mutandis} και για την $(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp$. Συγκεκριμένα,
+εάν $\theta = \theta_i dx^i$, τότε
+\begin{equation}\label{eq:sharp-elementary-as-raising}
+\theta^{\hspace{.5pt}\sharp}
+\,=\,
+g^{\mu\hspace{.5pt}i}\hspace{.5pt}\theta_\mu\hspace{.5pt}\frac{\partial}{\partial x^i},
+\end{equation}
+δηλαδή το $\theta^{\hspace{.5pt}\sharp}$ προκύπτει ανεβάζοντας τον μοναδικό δείκτη του συναλλοίωτου διανύσματος $\theta$ ως προς τον ανταλλοίωτο τανυστή $g^{-1}$ (βλ. \eqref{eq:raising-index})· εναλλακτικά,
+\begin{equation}\label{eq:sharp-as-interior-product}
+\theta^{\hspace{.5pt}\sharp}\,=\,\iota_1^{\hspace{.5pt}\theta}(g^{-1})\,
+\end{equation}
+(βλ. \eqref{eq:interior-product-dual-representation}).
+Παρομοίως, η γραμμική απεικόνιση $\,(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp: V^* \to V$ αναπαρίσταται από τον πίνακα $(g^{ij})_{i,j}$ ως προς τις βάσεις $\{\partial/\partial x^i\}_i$ και $\{dx^i\}_i$ καθότι
+\begin{equation}\label{eq:sharp-elementary-base-mapping}
+\left(dx^i\right)^\sharp =\, g^{ij}\frac{\partial}{\partial x^j}\,,
+\end{equation}
+ενώ γενικεύεται για οποιοδήποτε $r \ge 0$ ως
+\begin{equation}\label{eq:sharp-extended}
+(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp: \mathfrak{T}_{\,r}(V) \to \mathfrak{T}^{\,r}(V),
+\quad
+T^\sharp(\theta_1, \dots, \theta_r)\,=\,T(\theta_1^\sharp, \dots, \theta_r^\sharp)\,
+\end{equation}
+που αποτελεί την αντιστροφή της \eqref{eq:flat-extended-as-lowering}·
+συγκεκριμένα, εάν
+$Τ = Τ_{i_1 \dots i_r} dx^{i_1} \otimes \dots \otimes dx^{i_r}$
+και ο τανυστής $g^{-1}$ αναπαρίσταται από τις ποσότητες $\{g^{ij}\}$ ως προς την ίδια βάση, τότε
+\begin{equation}\label{eq:flat-extended-as-lowering}
+Τ^{\hspace{.5pt}\sharp}
+\,=\,\,
+g^{\mu_1 i_1} \dots g^{\mu_r i_r} T_{\hspace{.5pt}\mu_1 \dots \mu_r}
+\,\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}},
+\end{equation}
+δηλαδή πρόκειται για την πλήρη ανύψωση δεικτών υπό τον ανταλλοίωτο τανυστή $g^{-1}$.
+Οι ιδιότητες της $(\hspace{.5pt}\cdot\hspace{.5pt})^\sharp$, συμπεριλαμβανομένου του γεγονότος ότι σέβεται την τανυστική δομή,
+συνοψίζονται για λόγους αναφοράς ως εξής. TODO
+\begin{proposition}[Μουσικός ισομορφισμός $\mathfrak{T}_{\,r}(V) \simeq \mathfrak{T}^{\,r}(V),$ $r \ge 0$]
+TODO
+\end{proposition}
 
-\subsection{Ο επαγόμενος ισομορφισμός $\mathfrak{T}_{\,r}(V) \simeq \mathfrak{T}^{\,r}(V)$}
+-------------
 
-\section{Εξωτερική άλγεβρα}
-	\label{sec:exterior-algebra}
+, απεικονίζοντας λόγου χάρη μονώνυμα σε μονώνυμα βάσει των φυσικών αντιμεταθέσεων
+\setlength{\jot}{12pt}
+\begin{align}
+    (\xi_1 \otimes \dots \otimes \xi_r)^{\hspace{.5pt}\flat}
+\,&=\,\,
+\xi_{\hspace{.5pt}1}^{\hspace{.5pt}\flat}
+\otimes \dots \otimes
+\xi_{\hspace{.5pt}r}^{\hspace{.5pt}\flat}\,, \label{eq:extended-flat-monomials-tensor-product} \\
+    (\xi_1 \odot \dots \odot \xi_r)^{\hspace{.5pt}\flat}
+\,&=\,\,
+\xi_{\hspace{.5pt}1}^{\hspace{.5pt}\flat}
+\odot \dots \odot
+\xi_{\hspace{.5pt}r}^{\hspace{.5pt}\flat}\,, \label{eq:extended-flat-monomials-symmetric-product} \\
+    (\xi_1 \wedge \dots \wedge \xi_r)^{\hspace{.5pt}\flat}
+\,&=\,\,
+\xi_{\hspace{.5pt}1}^{\hspace{.5pt}\flat}
+\wedge \,\dots \wedge
+\xi_{\hspace{.5pt}r}^{\hspace{.5pt}\flat}\,. \label{eq:extended-flat-monomials-wedge-product}
+\end{align}
+Οι παραπάνω θεωρήσεις αναδιατυπώνονται \textit{mutatis mutandis} ως προς ανταλλοίωτο τανυστή τάξεως $2$, οπότε οι συναλλοίωτοι τανυστές απεικονίζονται γραμμικά σε ανταλλοίωτους ίσης τάξης μέσω της πλήρους ανύψωσης δεικτών ως προς αυτόν. 
+
+\chapter{Εξωτερική άλγεβρα}
+	\label{chap:exterior-algebra}
 	
 \begin{equation}
 \mathfrak{A}^{\,r}(V)
@@ -3959,8 +4147,22 @@ dx^{i_1} \wedge \dots \wedge dx^{i_k} \hspace{.7pt}
 \,\,
 \det ( \eta^{i_\nu}_{\,\mu} )_{\mu, \nu}
 \end{equation}
+	
+\section{Γεωμετρία των απλών $r$-μορφών}
 
-\subsection{Υπολογιστικά ζητήματα}
+\subsection{Η γκρασσμανιανή πολλαπλότητα $\mathbf{Gr}_r(V)$, $0 \le r \le n$.}
+
+\section{Ο επαγόμενος ισομορφισμός $\bigwedge^{r} V^* \simeq \bigwedge^{n-r} V^*$}
+
+\subsection{Ο τελεστής Hodge}
+
+\subsection{Ο επαγόμενος ισομορφισμός $\bigwedge^{n-r} V^* \simeq  \bigwedge^{r} V $}
+
+\subsection{Το εξωτερικό γινόμενο}
+
+\subsection{Ο δυϊσμός εκροής--έργου}
+
+\section{Υπολογιστικά ζητήματα}
 
 \subsubsection{Γενικευμένο δέλτα του Kronecker}
 	\label{sec:generalized-kronecker}
@@ -4130,6 +4332,7 @@ dx^1 \wedge \dots \wedge dx^n \hspace{.5pt}
 \,\,\epsilon_{i_1 \dots i_n}
 \end{equation}
 
+
 \chapter{Τανυστές τάξεως 2}
 	\label{chapter:2-tensors}
 
@@ -4262,20 +4465,23 @@ $(\tilde{b}_{ij})$
 \section{($(2,0)$-τανυστές --- Φυσικές εφαρμογές}
 	\label{2-tensors-applications}
 
-\subsection{Τανυστής αδρανείας}
+\subsection{Τανυστής γωνιακής ταχύτητας και τανυστής αδρανείας}
 \subsection{Τανυστές των τάσεων και των παραμορφώσεων --- Ελαστικότητα και γενικευμένος νόμος του Hooke}
-\subsection{Τανυστής τάσης-ενέργειας του Maxwell}
-\subsection{Ηλεκτρομαγνητικός τανυστής Faraday}
+\subsection{Τανυστής τάσης-ενέργειας του Maxwell και ηλεκτρομαγνητικός τανυστής Faraday}
 
 \chapter{Τανυστικά πεδία}
 	\label{chapter:tensor-fields}
+	
+\section{Έννοια και τυπολογία του τανυστικού πεδίου}
 
-\subsection{Διαφορικές μορφές}
-\subsection{Στοιχεία όγκου}
-
-\section{Παράγωγος Lie}
+\section{Παράγωγος Lie --- Αναλλοιότητα}
 	\label{sec:lie-derivative}
-\subsection{Το γενικό συναλλοίωτο}
+	
+\section{Μη εκφυλισμένα πεδία τάξεως 2}
+
+\subsection{Ο επαγόμενος ισομορφισμός $ΤΜ\simeq Τ^*Μ$}
+
+\subsection{Ο επαγόμενος ισομορφισμός $\mathfrak{T}_{\,r}(M) \simeq \mathfrak{T}_{\,r}(M)$}
 
 \chapter{Ψευδορημάννειες μετρικές}
 	\label{chapter:pseudoriemannian-metrics}
@@ -5340,8 +5546,11 @@ h_{\mu\nu}
 \subsection{Χωροχρόνος Minkowski --- Mετασχηματισμοί Lorentz}
 	\label{sec:minkowski-spaces}
 
-\section{Ρημάννειες μετρικές}
-	\label{sec:riemannian-metrics}
+\chapter{Συμπλεκτικές μορφές}
+	\label{chapter:symplectic-forms}
+	
+\chapter{Ρημάννειες μετρικές}
+	\label{chapter:riemannian-metrics}
 	
 \begin{equation}
 \lvert\xi\rvert = g(\xi, \xi)^{1/2}
@@ -5357,28 +5566,52 @@ h_{\mu\nu}
 \lvert g(\xi, \eta) \rvert \le \lvert \xi \rvert \lvert \eta \rvert
 \end{equation}
 
-\subsection{Η επαγόμενη βαθμίδα}
+\section{Η επαγόμενη βαθμίδα}
 
-\subsection{Το στοιχείο όγκου}
+\section{Το στοιχείο όγκου}
 	\label{sec:volume-form}
 
-\subsection{Συνάρτηση απόστασης}
+\section{Συνάρτηση απόστασης}
 	\label{sec:distance-function}
 	
-\subsection{Επιφάνειες στον ευκλείδιο χώρο}
+\section{Επιφάνειες στον ευκλείδιο χώρο}
 	\label{sec:surfaces-in-euclidean-space}
 
-\subsection{Πρότυπες δομές}
+\section{Πρότυπες δομές}
 	\label{sec:model-structures}
 
-\subsubsection{Ευκλείδιος χώρος}
+\subsection{Ευκλείδιος χώρος}
 
-\subsubsection{Σφαίρα}
+\subsection{Σφαίρα}
 
-\subsubsection{Υπερβολοειδές}
+\subsection{Υπερβολοειδές}
+	
+\chapter{Διαφορικές μορφές}
+	\label{chapter:differential-forms}
 
-\chapter{Συμπλεκτικές μορφές}
-	\label{chapter:symplectic-forms}
+\section{Ολοκλήρωση μορφών}
+	\label{sec:integration}	
+	
+\section{Η εξωτερική παράγωγος}
+	\label{sec:exterior-derivative}
+	
+\section{Λήμμα Poincaré}
+	\label{sec:poincare-lemma}
+	
+\section{Θέωρημα Stokes}
+	\label{sec:stokes-theorem}
+	
+\chapter{Απόκλιση και στροβιλισμός}
+	\label{chapter:divergence-and-curl}
+	
+\chapter{Καμπυλότητα και συναλλοίωτη παράγωγος}
+	\label{chapter:covariant-derivative}
+	
+\chapter{Ολοκληρωσιμότητα και φυλλώσεις}
+	\label{chapter:integrability-and-foliations}
+	
+\chapter{Δομές επαφής}
+	\label{chapter:foliations}
 	
 \chapter{TODO: Ψευδορημάννειες μετρικές}
 	
