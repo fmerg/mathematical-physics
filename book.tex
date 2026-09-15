@@ -2582,7 +2582,7 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 \subsection{Συμβολισμός Einstein}
 	\label{sec:einstein-notation}
 
-Πρόκειται για σύμβαση που διευκολύνει την διατύπωση και τον χειρισμό πολυγραμμικών εκφράσεων. Δείκτης που εμφανίζεται δύο φορές σε έναν όρο, μία ως άνω (``ανταλλοίωτος'') και μία ως κάτω (``συναλλοίωτος''), θωρείται βωβός και ως αθροιζόμενος σε όλο το εύρος του χωρίς ρητό σύμβολο άθροισης. Δείκτης που εμφανίζεται μία φορά, δηλαδή είτε ως ``ανταλλοίωτος'' είτε ως ``συναλλοίωτος'', θεωρείται ελεύθερος και η σχέση ισχύει για κάθε τιμή στο εύρος του.
+Πρόκειται για σύμβαση που διευκολύνει την διατύπωση και τον αλγεβρικό χειρισμό πολυγραμμικών εκφράσεων. Δείκτης που εμφανίζεται δύο φορές σε έναν όρο, μία ως άνω (``ανταλλοίωτος'') και μία ως κάτω (``συναλλοίωτος''), θωρείται βωβός και ως αθροιζόμενος σε όλο το εύρος του χωρίς ρητό σύμβολο άθροισης. Δείκτης που εμφανίζεται μία φορά, δηλαδή είτε ως ``ανταλλοίωτος'' είτε ως ``συναλλοίωτος'', θεωρείται ελεύθερος και η σχέση ισχύει για κάθε τιμή στο εύρος του.
 Ενδεικτικά, η πολυγραμμική έκφραση
 \begin{equation*}
 \alpha^{\,i_1 \dots i_r}_{\hspace{1.5pt}\mu_1 \dots \mu_s}
@@ -2618,296 +2618,6 @@ y^j(q) = x^j(\phi^{-1}(q)), \qquad q \in \phi(U).
 Η παραπάνω ισοδυναμία μεταξύ γραμμικών συστημάτων, που ανιστοιχεί σε πολλαπλασιασμό με τον αντίστροφο πίνακα των συντελεστών,
 θα εφαρμόζεται εφ' εξής χωρίς ιδιαίτερη μνεία.
 
-\subsection{Ανταλλοίωτα και συναλλοίωτα διανύσματα}
-	\label{sec:contravariant-covariant-vectors}
-
-\noindent
-Δοθέντος γραμμικού χώρου $V$ διάστασης $n \ge 1$,
-συμβολίζουμε την τυχούσα βάση αυτού ως
-\begin{equation*}
-\frac{\partial}{\partial x^i},
-\quad
-1 \le i \le n\,.
-\end{equation*}
-Ως δυϊκή βάση αυτής στον γραμμικό χώρο $V^*$
-εννοείται η διατεταγμένη συλλογή των γραμμικών συναρτησοειδών
-$\{dx^i\}_i$  που προσδιορίζονται μέσω των σχέσεων
-\begin{equation*}
-dx^i \left( \frac{\partial}{\partial x^{\hspace{.5pt}j}} \right)
-\,=
-\,
-\delta^{\,i}_j\,,
-\quad
-1 \le i \le n\,.
-\end{equation*}
-Η παραπάνω
-χρήση μερικών παραγώγων έχει μνημοτεχνική χρησιμότητα και συνάδει με το γεγονός ότι, εάν $V$ είναι εφαπτόμενος χώρος στο σημείο μιας πολλαπλότητας, τότε κάθε βάση του επάγεται από κάποιο τοπικό σύστημα συντεταγμένων (βλ. Πρόταση \ref{prop:base-to-frame}).
-
-Συμβολίζουμε τους γραμμικούς αυτομορφισμούς ως $\varphi_*$,
-υποδηλώνοντας ότι, εάν ο $V$ εφάπτεται στο σημείο μιας πολλαπλότητας,
-κάθε αυτομορφισμός του υλοποιείται ως το διαφορικό
-τοπικής αμφιδιαφόρισης $\varphi$
-που το αφήνει αναλλοίωτο (βλ. Πρότασης \ref{prop:base-to-frame}).
-Ισοδύναμα,
-σταθεροποιώντας οποιαδήποτε βάση του $V$ για λόγους αναφοράς,
-ο αυτομορφισμός $\varphi_*$ που απεικονίζει τη
-βάση $\{\partial/\partial x^i\}_i$ στην $\{\partial/\partial y^i\}_i$
-αναπαρίσταται από τον πίνακα
-\begin{equation*}
-\left(\frac{\partial y^i}{\partial x^j}\right)_{i,j}\,
-\end{equation*}
-σε συμφωνία με το γεγονός ότι,
-εάν ο $V$ εφάπτεται στο σημείο μιας πολλαπλότητας,
-κάθε αλλαγή βάσης συντελείται
-μέσω του ιακωβιανού πίνακα αλλαγής συντεταγμένων
-που το σταθεροποιεί.
-Ο αντίστροφος πίνακας
-$(\partial x^i/\partial y^j)_{ij}$,
-που προσδιορίζεται ισοδύναμα μέσω των σχέσεων
-\begin{equation}\label{eq:index-annihilation}
-\frac{\partial y^i}{\partial x^\mu}
-\frac{\partial x^\mu}{\partial y^j}
-\,=\,
-\delta^{\,i}_j\,,
-\end{equation}
-αναπαριστά τον αντίστροφο αυτομορφισμό.
-Υπ' αυτόν τον συμβολισμό,
-η αλλαγή βάσης στον $V$
-εκφράζεται μέσω της ``ανταλλοίωτης'' σχέσης
-\begin{equation}\label{eq:contravariance-elementary}
-\frac{\partial}{\partial y^i}
-\,=\,
-\frac{\partial x^{\hspace{.5pt}j}}{\partial y^i}
-\,
-\frac{\partial}{\partial x^{\hspace{.5pt}j}}\,,
-\end{equation}
-δηλαδή χρησιμοποιώντας την αναπαράσταση του αντίστροφου αυτομορφισμού·
-και αντιστρόφως, η αλλαγή δυϊκής βάσης στον $V^*$
-εκφράζεται μέσω της ``συναλλοίωτης'' σχέσης
-\begin{equation}\label{eq:covariance-elementary}
-dy^{i}
-\,=\,
-\frac{\partial y^i}{\partial x^{\hspace{.5pt}j}}
-\,
-dx^{\hspace{.5pt}j}\,,
-\end{equation}
-\noindent
-δηλαδή χρησιμοποιώντας την αναπαράσταση του ίδιου του $\varphi$.
-Σημειώνεται ότι οι συντελεστές στις παραπάνω εκφράσεις
-είναι τυπικά σύμβολα προς μνημοτεχνική αναπαραγωγή της ανταλλοίωτης και συναλλοίωτης αλλαγής βάσης μέσω ενός τυπικού ``κανόνα της αλυσίδας'', χωρίς να έχουν ακόμα έννοια μερικής παραγώγου.
-
-Ως ``ανταλλοίωτα'', αντ. ``συναλλοίωτα'' διανύσματα εννοούνται τα στοιχεία του $V$, αντ. $V^*$,
-εφόσον μετασχηματίζονται ανταλλοίωτα, αντ.
-συναλλοίωτα ως προς τον μετασχηματισμό βάσης.
-Πράγματι, υπό τον παραπάνω συμβολισμό,
-τα ανταλλοίωτα διανύσματα μετασχηματίζονται ως
-\begin{equation}\label{eq:transform-contravariant-vector}
-\varphi_*\,\xi^i\hspace{.5pt}\frac{\partial}{\partial x^i}
-\,=\,
-\xi^{\hspace{.5pt}i} \hspace{1pt}
-\frac{\partial}{\partial y^{\hspace{.5pt}i}}
-\,=\,
-\xi^{\hspace{.5pt}j} \hspace{1pt}
-\frac{\partial x^{\hspace{.5pt}i}}{\partial y^{\hspace{.5pt}j}}
-\hspace{1pt}
-\frac{\partial}{\partial x^{\hspace{.5pt}i}}
-\,.
-\end{equation}
-
-\subsection{Συζυγείς ισομορφισμοί}
-	\label{sec:adjoint-isomorphisms}
-	
-Οι παραπάνω θεωρήσεις τυποποιούνται και γενικεύονται
-υπό την έννοια της συζυγίας.
-Δοθείσης γραμμικής απεικόνισης $\varphi: V \to W$,
-συμβολίζουμε το διαφορικό αυτής στο μηδέν ως
-\begin{equation}\label{eq:linear-differential}
-\varphi_*: V \to W,\quad \xi \mapsto \varphi_* \xi\,,
-\end{equation}
-αναφερόμενο ως
-``εξώθηση ανταλλοίωτου διανύσματος υπό την δράση της $\varphi$''.
-Σημειώνεται ότι το $\varphi_*$ ταυτίζεται εν προκειμένω με την
-$\varphi$ ένεκα γραμμικότητας.
-Ως ``εφελκυσμός συναλλοίωτου διανύσματος υπό την δράση της $\varphi$''
-εννοείται ο συζυγής μετασχηματισμός του $\varphi_*$,
-\begin{equation}\label{eq:linear-differential-adjoint}
-\varphi^*: W^* \to V^*,\quad \theta \mapsto \varphi^* \theta\,,
-\end{equation}
-που ορίζεται ειδικότερα μέσω της συνθήκης
-\begin{equation}\label{eq:linear-differential-adjoint-eval}
-\left(\varphi^*\theta\right)(\xi) \,=\, \theta \left(\varphi_* \xi \right).
-\end{equation}
-Ο εφελκυσμός συναλλοίωτου διανύσματος $\theta \in W^*$
-μας επιτρέπει επομένως να ``δούμε'' τη δράση του
-εντός $V$ υπό το πρίσμα της $\varphi$.
-Είναι σαφές ότι το διαφορικό $\varphi_*$ είναι ισομορφισμός εάν και μόνον εάν το συζυγές $\varphi^*$ είναι ισομορφισμός.
-
-\begin{lemma}[Ανταλλοίωτη και συναλλοίωτη αλλαγή βάσης υπό το πρίσμα της συζυγίας]
-Ένας γραμμικός ισομορφισμός $\varphi: V \to W$
-εξωθεί τη βάση $\{\partial/\partial x^i\}_i$
-στη βάση $\{\partial/\partial y^i\}_i$,
-\begin{equation}\label{eq:pushforward-basis}
-\frac{\partial}{\partial y^i}
-\,=\,
-\varphi_*\,\frac{\partial}{\partial x^i}\,,
-\end{equation}
-εάν και μόνον εάν το συζυγές διαφορικό εφελκύει τη δυϊκή βάση $\{dy^i\}_i$
-στη δυϊκή βάση $\{dx^i\}_i$,
-\begin{equation}\label{eq:pullback-basis-dual}
-dx^{i}
-\,=\,
-\varphi^*\hspace{.5pt}dy^i\,.
-\end{equation}
-\end{lemma}
-\begin{proof}
-Για το ευθύ, και εξ ορισμού του εφελκυσμού, παρατηρούμε ότι
-\begin{equation*}
-(\varphi^* dy^j)\left(\frac{\partial}{\partial x^i}\right)
-=
-dy^j\left(\varphi_*\,\frac{\partial}{\partial x^i}\right)
-=
-dy^j\left(\frac{\partial}{\partial y^i}\right)
-=
-\delta^j_i
-\end{equation*}
-για κάθε $i$, οπότε $\varphi^* dy^j = dx^j$
-ένεκα μοναδικότητας της δυϊκής βάσης.
-Για το αντίστροφο, πάλι εξ ορισμού του εφελκυσμού, παρατηρούμε ότι
-\begin{equation*}
-dy^i\left(\varphi_*\frac{\partial}{\partial x^j}\right)
-=
-(\varphi^* dy^i)\left(\frac{\partial}{\partial x^j}\right)
-=
-dx^i\left(\frac{\partial}{\partial x^j}\right)
-=
-\delta^i_j
-\end{equation*}
-για κάθε $i$, οπότε $\varphi_*(\partial/\partial x^j) = \partial/\partial y^j$ για τον ίδιο λόγο.
-\end{proof}
-\noindent
-Επικεντρώνουμε εφ' εξής στην περίπτωση όπου η $\varphi$ είναι ισομορφισμός.
-Κάνοντας καταχρηστική χρήση του συμβόλου $\varphi^*$,
-συμβολίζουμε το διαφορικό της $\varphi^{-1}$ στο μηδέν ως
-\begin{equation}\label{eq:linear-differential-invserse}
-\varphi^*: W \to V,\quad \xi \mapsto \varphi^* \xi\,,
-\end{equation}
-αναφερόμενο ως ``εφελκυσμός ανταλλοίωτου διανύσματος υπό την δράση της $\varphi$''. Ισχύει
-\begin{equation}\label{eq:pullback-inverse-base}
-\varphi^* \,=\, (\varphi^{-1})_* \,=\, \left(\varphi_*\right)^{-1}
-\end{equation}
-με το σύμβολο στα αριστερά να δηλώνει ανταλλοίωτο εφελκυσμό.
-Ως ``εξώθηση συναλλοίωτου διανύσματος υπό την δράση της $\varphi$'' εννοείται ο συζυγής μετασχηματισμός του $\varphi^*$,
-\begin{equation}\label{eq:linear-differential-adjoint-inverse}
-\varphi_*: V^* \to W^*,\quad \theta \mapsto \varphi_* \theta\,,
-\end{equation}
-που ορίζεται ειδικότερα μέσω της συνθήκης
-\begin{equation}\label{eq:linear-differential-adjoint-inverse-eval}
-\left(\varphi_*\theta\right)(\xi) \,=\, \theta \left(\varphi^* \xi \right).
-\end{equation}
-Η εξώθηση συναλλοίωτου διανύσματος $\theta \in V^*$
-μας επιτρέπει επομένως να ``δούμε'' τη δράση του
-εντός $W$ υπό το πρίσμα της $\varphi$.
-Επισημαίνεται ότι το σύμβολο $\varphi_*$ χρησιμοποιείται για την εξώθηση τόσο ανταλλοίωτων όσο και συναλλοίωτων διανυσμάτων,
-ενώ το ίδιο ισχύει για το σύμβολο $\varphi^*$ σε σχέση με τον εφελκυσμό.
-Κάνοντας χρήση της \eqref{eq:pullback-inverse-base} σε συνδυασμό με τους ορισμούς \eqref{eq:linear-differential-adjoint-eval} και \eqref{eq:linear-differential-adjoint-inverse-eval},
-ελέγχεται ευθέως ότι ισχύει πάντοτε
-\begin{equation}\label{eq:pullback-pushforward-inverses}
-\varphi^* \,=\, (\varphi_*)^{-1}
-\quad\textup{ ή, ισοδύναμα, }\quad
-\varphi_* = (\varphi^*)^{-1}
-\end{equation}
-υπό την ορθή ερμηνεία των εκάστοτε συμβόλων.
-Ο φορμαλισμός αυτός επιτρέπει την διατύπωση του ακόλουθου τεχνικού λήμματος,
-που επεκτείνει τον ανταλλοίωτο νόμο μετασχηματισμού
-\eqref{eq:transform-contravariant-vector}
-στη συναλλοίωτη περίπτωση με τη βοήθεια της συζυγίας.
-\begin{lemma}[Μετασχηματισμός ανταλλοίωτων και συναλλοίωτων διανυσμάτων]
-	\label{lemma:vector-transformation}
-Δοθέντος γραμμικού αυτομορφισμού $\varphi$
-που απεικονίζει την βάση $\{\partial/\partial x^i\}_i$ στην $\{\partial/\partial y^i\}_i$,
-\begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
-    \item[\textup{(i)}]
-    	για ανταλλοίωτα διανύσματα ισχύει
-\begin{equation}
-\varphi_*\,\xi^i\hspace{.5pt}\frac{\partial}{\partial x^i}
-\,=\,
-\xi^{\hspace{.5pt}j} \hspace{.5pt}
-\frac{\partial x^{\hspace{.5pt}i}}{\partial y^{\hspace{.5pt}j}}
-\hspace{1pt}
-\frac{\partial}{\partial x^{\hspace{.5pt}i}}
-\quad\quad
-\textit{ή, ισοδύναμα,}
-\quad\quad
-\varphi^*\,\eta^i\,\frac{\partial}{\partial y^i}
-\,=\,
-\eta^{\hspace{.5pt}j} \hspace{.5pt}
-\frac{\partial y^{\hspace{.5pt}i}}{\partial x^{\hspace{.5pt}j}}
-\hspace{1pt}
-\frac{\partial}{\partial y^{\hspace{.5pt}i}}
-\,.
-\end{equation}
-    \item[\textup{(ii)}]
-		για συναλλοίωτα διανύσματα ισχύει
-\begin{equation}
-\varphi_*\,\theta_i\hspace{.5pt}dx^i
-\,=\,
-\theta_j \hspace{.5pt}
-\frac{\partial y^{\hspace{.5pt}j}}{\partial x^{\hspace{.5pt}i}}
-\hspace{1pt}
-dx^i
-\quad\quad
-\textit{ή, ισοδύναμα,}
-\quad\quad
-\varphi^*\,\zeta_i\hspace{.5pt}dy^i
-\,=\,
-\zeta_j \hspace{.5pt}
-\frac{\partial x^{\hspace{.5pt}j}}{\partial y^{\hspace{.5pt}i}}
-\hspace{1pt}
-dy^i\,.
-\end{equation}
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-Κάνουμε χρήση των
-\eqref{eq:contravariance-elementary} και \eqref{eq:covariance-elementary}.
-Για την πρώτη σχέση του (i), παρατηρούμε ότι
-\begin{equation*}
-\varphi_* \, \xi^i \frac{\partial}{\partial x^i}
-\,=\,
-\xi^i \frac{\partial}{\partial y^i}
-\,=\,
-\xi^i \frac{\partial x^j}{\partial y^i} \frac{\partial}{\partial x^j}\,.
-\end{equation*}
-Η δεύτερη σχέση έπεται παρομοίως, εφόσον ο ανταλλοίωτος εφελκυσμός ταυτίζεται με τον αντίστροφο αυτομορφισμό, και άρα
-\begin{equation*}
-\varphi^* \, \eta^i \frac{\partial}{\partial y^i}
-\,=\,
-\eta^i \frac{\partial}{\partial x^i}
-\,=\,
-\eta^i \frac{\partial y^j}{\partial x^i} \frac{\partial}{\partial y^j}\,.
-\end{equation*}
-Για την πρώτη σχέση του (ii), παρατηρού ότι
-\begin{equation*}
-\varphi_* \, \theta_i dx^i
-\,=\,
-\theta_i \, \varphi_* dx^i
-\,=\,
-\theta_i \, dy^i
-\,=\,
-\theta_i \frac{\partial y^i}{\partial x^j} dx^j.
-\end{equation*}
-Η δεύτερη σχέση συνάγεται παρομοίως ως
-\begin{equation*}
-\varphi^* \, \zeta_i dy^i
-\,=\,
-\zeta_i \, \varphi^* dy^i
-\,=\,
-\zeta_i \, dx^i
-\,=\,
-\zeta_i \frac{\partial x^i}{\partial y^j} dy^j.
-\end{equation*}
-\end{proof}
-
 \subsection{O κανoνικός ισομορφισμός $V \simeq V^{**}$}
 
 Εφόσον ένας γραμμικός χώρος $V$ είναι πεπερασμένης διάστασης,
@@ -2938,33 +2648,464 @@ V = V^{**}.
 η δράση του υποκείμενου συναρτησοειδούς
 πάνω στο εν λόγω διάνυσμα.
 
-\section{Έννοια του τανυστή --- Μετασχηματισμός τανυστικών συνιστωσών}
+\section{Ανταλλοίωτα και συναλλοίωτα διανύσματα}
+	\label{sec:contravariant-covariant-vectors}
+
+\noindent
+Δοθέντος γραμμικού χώρου $V$ διάστασης $n \ge 1$,
+συμβολίζουμε την τυχούσα βάση αυτού ως
+\begin{equation*}
+\frac{\partial}{\partial x^i},
+\quad
+1 \le i \le n\,.
+\end{equation*}
+Η χρήση μερικών παραγώγων έχει μνημοτεχνική χρησιμότητα και υποδηλώνει ότι, εάν ο $V$ εφάπτεται σε σημείο πολλαπλότητας, κάθε βάση του επάγεται από κάποιο τοπικό σύστημα συντεταγμένων (βλ. Πρόταση \ref{prop:base-to-frame}).
+Ως δυϊκή βάση αυτής στον $V^*$
+εννοείται η διατεταγμένη συλλογή των συναρτησοειδών
+$\{dx^i\}$  που προσδιορίζονται μέσω των σχέσεων
+\begin{equation*}
+dx^i \left( \frac{\partial}{\partial x^{\hspace{.5pt}j}} \right)
+\,=
+\,
+\delta^{\,i}_j\,,
+\quad
+1 \le i \le n\,.
+\end{equation*}
+\noindent
+Συμβολίζουμε τους γραμμικούς αυτομορφισμούς του $V$
+ως $\varphi_*$, υποδηλώνοντας ότι,
+εάν εφάπτεται σε σημείο πολλαπλότητας,
+κάθε αυτομορφισμός του υλοποιείται ως το διαφορικό
+τοπικής αμφιδιαφόρισης $\varphi$
+που αφήνει το εν λόγω σημείο
+αναλλοίωτο (βλ. Πρότασης \ref{prop:base-to-frame}).
+Ισοδύναμα,
+σταθεροποιώντας οποιαδήποτε βάση του $V$ για λόγους αναφοράς,
+ο αυτομορφισμός $\varphi_*$ που απεικονίζει τη
+βάση $\{\partial/\partial x^i\}$ στην $\{\partial/\partial y^i\}$
+αναπαρίσταται από τον πίνακα
+\begin{equation*}
+\left(\frac{\partial y^i}{\partial x^j}\right)_{i,j}\,
+\end{equation*}
+σε συμφωνία με το γεγονός ότι,
+εάν ο $V$ εφάπτεται σε σημείο πολλαπλότητας,
+κάθε αλλαγή βάσης συντελείται
+μέσω του ιακωβιανού πίνακα αλλαγής συντεταγμένων
+που το σταθεροποιεί.
+Ο αντίστροφος πίνακας
+$(\partial x^i/\partial y^j)_{ij}$,
+που προσδιορίζεται μέσω των σχέσεων
+\begin{equation}\label{eq:index-annihilation}
+\frac{\partial y^i}{\partial x^\mu}
+\frac{\partial x^\mu}{\partial y^j}
+\,=\,
+\delta^{\,i}_j\,,
+\end{equation}
+αναπαριστά τον αντίστροφο αυτομορφισμό.
+Υπ' αυτόν τον συμβολισμό,
+η αλλαγή βάσης στον $V$
+εκφράζεται μέσω της ``ανταλλοίωτης'' σχέσης
+\begin{equation}\label{eq:contravariance-elementary}
+\frac{\partial}{\partial y^i}
+\,=\,
+\frac{\partial x^{\hspace{.5pt}j}}{\partial y^i}
+\,
+\frac{\partial}{\partial x^{\hspace{.5pt}j}}\,,
+\end{equation}
+δηλαδή χρησιμοποιώντας την αναπαράσταση του αντίστροφου αυτομορφισμού $(\varphi_*)^{-1}$·
+και αντιστρόφως, η αλλαγή δυϊκής βάσης στον $V^*$
+εκφράζεται μέσω της ``συναλλοίωτης'' σχέσης
+\begin{equation}\label{eq:covariance-elementary}
+dy^{i}
+\,=\,
+\frac{\partial y^i}{\partial x^{\hspace{.5pt}j}}
+\,
+dx^{\hspace{.5pt}j}\,,
+\end{equation}
+\noindent
+δηλαδή χρησιμοποιώντας την αναπαράσταση του ίδιου του $\varphi$.
+Σημειώνεται ότι οι συντελεστές στις παραπάνω γραμμικές
+εκφράσεις είναι τυπικά σύμβολα προς μνημοτεχνική αναπαραγωγή της ανταλλοίωτης και συναλλοίωτης αλλαγής βάσης μέσω ενός τυπικού ``κανόνα της αλυσίδας'', χωρίς να έχουν ακόμα έννοια μερικής παραγώγου.
+
+Ως \textbf{ανταλλοίωτα}, αντ. \textbf{συναλλοίωτα διανύσματα} αναφέρονται για λόγους εκφραστικής συμμετρίας
+τα στοιχεία του $V$, αντ. $V^*$,
+εφόσον μετασχηματίζονται ανταλλοίωτα, αντ.
+συναλλοίωτα ως προς την αρχική βάση.
+Πράγματι, για ανταλλοίωτα διανύσματα, ισχύει
+\begin{equation}\label{eq:transform-contravariant-vector}
+\varphi_*\,\xi^i\hspace{.5pt}\frac{\partial}{\partial x^i}
+\,=\,
+\xi^{\hspace{.5pt}i} \hspace{1pt}
+\frac{\partial}{\partial y^{\hspace{.5pt}i}}
+\,=\,
+\xi^{\hspace{.5pt}j} \hspace{1pt}
+\frac{\partial x^{\hspace{.5pt}i}}{\partial y^{\hspace{.5pt}j}}
+\hspace{1pt}
+\frac{\partial}{\partial x^{\hspace{.5pt}i}}
+\,.
+\end{equation}
+\noindent
+Παρακάτω αναπτύσσεται ο φορμαλισμός που επεκτείνει
+αυτήν τη θεώρηση υπό διαφορετικές οπτικές γωνίες,
+συμπεριλαμβανομένης εκείνης των συναλλοίωτων διανυσμάτων.
+
+\subsection{Συζυγείς ισομορφισμοί}
+	\label{sec:adjoint-isomorphisms}
+
+Δοθέντος γραμμικού μετασχηματισμού
+\begin{equation}\label{eq:linear-differential}
+\varphi_*: V \to W,\quad \xi \mapsto \varphi_* \xi\,,
+\end{equation}
+αναφερόμαστε στο $\varphi_* \xi$ ως
+εξώθηση του ανταλλοίωτου διανύσματος $\xi$
+(υπό τη δράση του $\varphi_*$).
+Ως συζυγής μετασχηματισμός του $\varphi_*$
+εννοείται η γραμμική απεικόνιση
+\begin{equation}\label{eq:linear-differential-adjoint}
+\varphi^*: W^* \to V^*,\quad \theta \mapsto \varphi^* \theta\,,
+\end{equation}
+που σέβεται την ανταλλοίωτη εξώθηση,
+δηλαδή
+\begin{equation}\label{eq:linear-differential-adjoint-eval}
+\varphi^*\theta\,(\xi) \,=\, \theta \left(\varphi_* \xi \right).
+\end{equation}
+Το $\varphi^* \theta$ αναφέρεται ως
+εφελκυσμός του συναλλοίωτου διανύσματος $\theta$
+(υπό τη δράση του $\varphi_*$).
+Με άλλα λόγια,
+ο συναλλοίωτος εφελκυσμός μας επιτρέπει να ``δούμε''
+εντός του $V$ την δράση των γραμμικών συναρτησοειδών του $W$
+(υπό το πρίσμα του $\varphi$).
+
+Είναι σαφές ότι o $\varphi_*$ συνιστά ισομορφισμό γραμμικών χώρων εάν και μόνον εάν ο $\varphi^*$ συνιστά ισομορφισμό μεταξύ των δυϊκών τους. Ισχύει ειδικότερα το εξής,
+που αποτελεί ουσιαστικά αναδιατύπωση των μετασχηματισμών
+\eqref{eq:contravariance-elementary} και \eqref{eq:covariance-elementary}.
+\begin{proposition}[Αλλαγή βάσης υπό το πρίσμα της συζυγίας]
+	\label{prop:change-of-basis-under-adjoint}
+Ένας γραμμικός ισομορφισμός $\varphi$
+εξωθεί τη βάση $\{\partial/\partial x^i\}$
+στην $\{\partial/\partial y^i\}$, δηλαδή
+\begin{equation}\label{eq:pushforward-basis}
+\frac{\partial}{\partial y^i}
+\,=\,
+\varphi_*\,\frac{\partial}{\partial x^i}\,,
+\end{equation}
+εάν και μόνον εάν ο συζυγής $\varphi^*$
+εφελκύει τη δυϊκή βάση $\{dy^i\}$
+στη δυϊκή $\{dx^i\}$, δηλαδή
+\begin{equation}\label{eq:pullback-basis-dual}
+dx^{i}
+\,=\,
+\varphi^*\hspace{.5pt}dy^i\,.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Για το ευθύ, παρατηρούμε ότι
+\begin{equation*}
+\varphi^* dy^j\left(\frac{\partial}{\partial x^i}\right)
+\,=\,
+dy^j\left(\varphi_*\,\frac{\partial}{\partial x^i}\right)
+\,=\,
+dy^j\left(\frac{\partial}{\partial y^i}\right)
+\,=\,
+\delta^{\hspace{.5pt}j}_i
+\end{equation*}
+για κάθε $i$, οπότε $\varphi^* dy^j = dx^j$
+από τη μοναδικότητα της δυϊκής βάσης.
+Για το αντίστροφο,
+\begin{equation*}
+dy^i\left(\varphi_*\frac{\partial}{\partial x^j}\right)
+\,=\,
+\varphi^* dy^i \left(\frac{\partial}{\partial x^j}\right)
+\,=\,
+dx^i\left(\frac{\partial}{\partial x^j}\right)
+\,=\,
+\delta^{\hspace{.5pt}i}_j
+\end{equation*}
+για κάθε $i$, οπότε $\varphi_* \partial/\partial x^j = \partial/\partial y^j$ για τον ίδιο λόγο.
+\end{proof}
+\noindent
+Επικεντρώνουμε εφ' εξής στην περίπτωση της ισομορφίας.
+Κάνοντας καταχρηστική χρήση του συμβόλου της συζυγίας,
+δηλώνουμε ως
+\begin{equation}\label{eq:inverse-isomorphism}
+\varphi^* \,\equiv\, \varphi_*^{-1}
+\end{equation}
+τον αντίστροφο γραμμικό ισομορφισμό του \eqref{eq:linear-differential},
+\begin{equation}\label{eq:linear-differential-invserse}
+\varphi^*: W \to V,\quad \xi \mapsto \varphi^* \xi\,.
+\end{equation}
+Αναφερόμαστε στο $\varphi^* \xi$ ως εφελκυσμό του ανταλλοίωτου διανύσματος $\xi$ (υπό το πρίσμα του $\varphi_*$).
+Παρομοίως, συμβολίζουμε καταχρηστικά ως
+\begin{equation}\label{eq:linear-differential-inverse}
+\varphi_* \,\equiv\, (\varphi_*^{-1})^*
+\end{equation}
+τον συζυγή μετασχηματισμό του \eqref{eq:linear-differential-invserse},
+\begin{equation}\label{eq:linear-differential-adjoint-inverse}
+\varphi_*: V^* \to W^*,\quad \theta \mapsto \varphi_* \theta\,,
+\end{equation}
+που ορίζεται ειδικότερα μέσω της συνθήκης
+\begin{equation}\label{eq:linear-differential-adjoint-inverse-eval}
+\varphi_*\theta \,(\xi) \,=\, \theta \left(\varphi^* \xi \right).
+\end{equation}
+Aναφερόμαστε στο $\varphi_* \theta$ ως εξώθηση του συναλλοίωτου διανύσματος $\theta$ (υπό την δράση του $\varphi$).
+Με άλλα λόγια,
+η συναλλοίωτη εξώθηση μας επιτρέπει να ``δούμε''
+εντός του $W$ την δράση των γραμμικών συναρτησοειδών του $V$
+(υπό το πρίσμα του $\varphi_*$).
+
+Επισημαίνεται ότι το σύμβολο $\varphi_*$ χρησιμοποιείται για την εξώθηση τόσο ανταλλοίωτων όσο και συναλλοίωτων διανυσμάτων,
+ενώ το ίδιο ισχύει για το σύμβολο $\varphi^*$ σε σχέση με τον εφελκυσμό.
+Κάνοντας χρήση των ορισμών
+\eqref{eq:linear-differential-adjoint-eval} και
+\eqref{eq:linear-differential-adjoint-inverse-eval}
+σε συνδυασμό με τους καταχρηστικούς συμβολισμούς
+\eqref{eq:inverse-isomorphism} και
+\eqref{eq:linear-differential-inverse},
+ελέγχεται ευθέως ότι ισχύει πάντοτε
+\begin{equation}\label{eq:pullback-pushforward-inverses}
+\varphi^* \,=\, (\varphi_*)^{-1}
+\quad\textup{ ή, ισοδύναμα, }\quad
+\varphi_* = (\varphi^*)^{-1}
+\end{equation}
+υπό την ορθή ερμηνεία των εμπλεκομένων συμβόλων·
+παρομοίως
+\begin{equation}\label{eq:pullback-pushforward-compositions}
+(\psi \circ \varphi)_* \,=\, \psi_* \circ \phi_*
+\quad
+\textup{και, αντιστρόφως,}
+\quad
+(\psi \circ \varphi)^* \,=\, \phi^* \circ \psi^*.
+\end{equation}
+Ο ενοποιητικός φορμαλισμός της συζυγίας
+επιτρέπει την διατύπωση της ακόλουθης πρότασης, που συνοψίζει τους νόμους μετασχηματισμού
+ανταλλοίωτων και συναλλοίωτων διανυσμάτων
+ως προς την εκάστοτε αρχική βάση του χώρου.
+\begin{proposition}[Μετασχηματισμός ανταλλοίωτων και συναλλοίωτων διανυσμάτων]
+	\label{lemma:vector-transformation}
+Δοθέντος γραμμικού αυτομορφισμού $\varphi_*$
+που εξωθεί την βάση $\{\partial/\partial x^i\}_i$ στην $\{\partial/\partial y^i\}_i$,
+\begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
+    \item[\textup{(i)}]
+    	για ανταλλοίωτα διανύσματα ισχύει
+\begin{equation}
+\hspace{-8pt}
+\varphi_*\,\xi^i\hspace{.5pt}\frac{\partial}{\partial x^i}
+\,=\,
+\xi^{\hspace{.5pt}j} \hspace{.5pt}
+\frac{\partial x^{\hspace{.5pt}i}}{\partial y^{\hspace{.5pt}j}}
+\hspace{1pt}
+\frac{\partial}{\partial x^{\hspace{.5pt}i}}
+\quad
+\textup{ή, ισοδύναμα,}
+\quad
+\varphi^*\,\eta^i\,\frac{\partial}{\partial y^i}
+\,=\,
+\eta^{\hspace{.5pt}j} \hspace{.5pt}
+\frac{\partial y^{\hspace{.5pt}i}}{\partial x^{\hspace{.5pt}j}}
+\hspace{1pt}
+\frac{\partial}{\partial y^{\hspace{.5pt}i}}
+\end{equation}
+    \item[\textup{(ii)}]
+		για συναλλοίωτα διανύσματα ισχύει
+\begin{equation}
+\hspace{-17pt}
+\varphi_*\,\theta_i\hspace{.5pt}dx^i
+\,=\,
+\theta_j \hspace{.5pt}
+\frac{\partial y^{\hspace{.5pt}j}}{\partial x^{\hspace{.5pt}i}}
+\hspace{1pt}
+dx^i
+\hspace{+3pt}
+\quad
+\textup{ή, ισοδύναμα,}
+\hspace{+4pt}
+\quad
+\varphi^*\,\zeta_i\hspace{.5pt}dy^i
+\,=\,
+\zeta_j \hspace{.5pt}
+\frac{\partial x^{\hspace{.5pt}j}}{\partial y^{\hspace{.5pt}i}}
+\hspace{1pt}
+dy^i
+\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Κάνουμε χρήση των
+\eqref{eq:contravariance-elementary} και \eqref{eq:covariance-elementary}.
+Για την πρώτη σχέση του (i), ισχύει
+\begin{equation*}
+\varphi_* \, \xi^i \frac{\partial}{\partial x^i}
+\,=\,
+\xi^i \frac{\partial}{\partial y^i}
+\,=\,
+\xi^i \hspace{.5pt} \frac{\partial x^j}{\partial y^i} \frac{\partial}{\partial x^j}\,.
+\end{equation*}
+Η δεύτερη σχέση συνάγεται παρομοίως ως
+\begin{equation*}
+\varphi^* \, \eta^i \frac{\partial}{\partial y^i}
+\,=\,
+\eta^i \frac{\partial}{\partial x^i}
+\,=\,
+\eta^i \hspace{.5pt} \frac{\partial y^j}{\partial x^i} \frac{\partial}{\partial y^j}\,.
+\end{equation*}
+Για την πρώτη σχέση του (ii), ισχύει
+\begin{equation*}
+\varphi_* \, \theta_i dx^i
+\,=\,
+\theta_i \, dy^i
+\,=\,
+\theta_i \hspace{.5pt} \frac{\partial y^i}{\partial x^j} dx^j.
+\end{equation*}
+Η δεύτερη σχέση συνάγεται παρομοίως ως
+\begin{equation*}
+\varphi^* \, \zeta_i dy^i
+\,=\,
+\zeta_i \, dx^i
+\,=\,
+\zeta_i \hspace{.5pt} \frac{\partial x^i}{\partial y^j} dy^j.
+\end{equation*}
+\end{proof}
+
+\subsection{Αναλλοιότητα και συμμετρίες διανυσμάτων}
+	\label{sec:invariance-and-symmetries-of-vectors}
+	
+Επικεντρώνουμε στους αυτομορφισμούς γραμμικού χώρου $V$.
+Ένα διατεταγμένο ζεύγος βάσεων
+$\{\partial/\partial x^i\}$, $\{\partial/\partial y^i\}$ καλούνται ομόλογες υπό τον αυτομορφισμό $\varphi_*$
+εάν
+\begin{equation}
+\frac{\partial}{\partial y^i}
+\,=\,
+\varphi_* \frac{\partial}{\partial x^i}
+\quad
+\textup{ή, ισοδύναμα,}
+\quad
+\frac{\partial}{\partial x^i}
+\,=\,
+\varphi^* \frac{\partial}{\partial y^i}\,,
+\end{equation}
+δηλαδή κάθε στοιχείο της πρώτης εξωθείται υπό τον $\varphi_*$
+στο αντίστοιχο στοιχείο της δεύτερης
+ή, ισοδύναμα, τα στοιχεία της δεύτερης εφελκύονται κατ' αντιστοιχία στα στοιχεία της πρώτης.
+Ειδικότερα, μια δυάδα βάσεων είναι ομόλογες υπό δοθέντα αυτομορφισμό ακριβώς εάν η αντιμετάθεσή της είναι ομόλογες
+υπό την αντιστροφή του.
+Καθε αυτομορφισμός οργανώνει
+τις βάσεις του χώρου σε δυάδες ομολογίας·
+και αντιστρόφως,
+κάθε δυάδα βάσεων προσδιορίζει αυτομορφισμό υπό τον οποίο καθίστανται ομόλογες.
+Βάσει της Πρότασης \ref{prop:change-of-basis-under-adjoint},
+η ομολογία βάσεων υπό δοθέντα αυτομορφισμό ισοδυναμεί με την ομολογία των δυϊκών τους ως προς τον συζυγή του.
+
+Ένα ανταλλοίωτο διάνυσμα $\xi$ λέγεται ότι μένει αναλλοίωτο
+υπό τον αυτομορφισμό $\varphi_*$ εάν
+\begin{equation}
+\varphi_* \xi \,=\, \xi
+\quad
+\textup{ή, ισοδύναμα,}
+\quad
+\varphi^* \xi \,=\, \xi,
+\end{equation}
+δηλαδή όταν εξωθείται (ή, ισοδύναμα, εφελκύεται) στον εαυτό του· σε αυτήν την περίπτωση, ο αυτομορφισμός $\varphi_*$ καλείται συμμετρία του $\xi$. Στη γλώσσα της γραμμικής άλγεβρας, ένας αυτομορφισμός συνιστά συμμετρία διανύσματος ακριβώς όταν αυτό αντιστοιχεί σε ιδιοκατεύθυνση με ιδιοτιμή $+1$ ή, απλούστερα, το σταθεροποιεί. Παρομοίως, ένα συναλλοίωτο διάνυσμα $\theta^*$ λέγεται ότι μένει αναλλοίωτο υπό τον $\varphi_*$ όταν σταθεροποιείται από τον συζυγή του, δηλαδή
+\begin{equation}
+\varphi^* \theta \,=\, \theta
+\quad
+\textup{ή, ισοδύναμα,}
+\quad
+\varphi_* \theta \,=\, \theta,
+\end{equation}
+οπότε και ο $\varphi_*$ αναφέρεται ως συμμετρία του.
+Είναι σαφές, βάσει των \eqref{eq:pullback-pushforward-compositions}, ότι οι συμμετρίες ανταλλοίωτου (αντ. συναλλοίωτου) διανύσματος συγκροτούν υποομάδα αυτομορφισμών του $V$ (αντ. $V^*$), αναφερόμενη ως η ομάδα των συμμετριών του.
+
+TODO: Πέρασμα από τον φορμαλισμό (κατά το ήμιση τυποποίηση αυτονότητων πραγμάτων) στη φυσική ερμηνεία
+
+\begin{proposition}[Φυσική έννοια της συμμετρίας διανύσματος]
+	\label{prop:symmetries-contravariant-vector}
+Ένας γραμμικός αυτομορφισμός αποτελεί συμμετρία δοθέντος διανύσματος εάν και μόνον εάν αυτό επιδέχεται κοινής αναπαράστασης σε κάποιο ---και τότε κάθε--- ζεύγος ομόλογων υπό αυτόν βάσεων.
+Ακριβέστερα,
+\begin{enumerate}[label=(\roman*), leftmargin=0pt, itemindent=*, align=left]
+    \item[\textup{(i)}]
+    	ένας αυτομορφισμός $\varphi_*$ συνιστά συμμετρία του ανταλλοίωτου διανύσματος $\xi$ εάν και μόνον εάν υπάρχει δυάδα ομόλογων βάσεων $\{\partial/\partial x^i\}$, $\{\partial/\partial y^i\}$ τέτοιων ώστε
+    	\begin{equation}\label{eq:covariant-vector-invariance}
+    		\xi
+    		\,=\,
+    		\xi^i\hspace{.5pt}\frac{\partial}{\partial x^i}
+    		\,=\,
+    		\xi^i\hspace{.5pt}\frac{\partial}{\partial y^i}\,.
+    	\end{equation}
+    Σε αυτήν την περίπτωση, αυτό ισχύει για κάθε δυάδα ομόλογων υπό τον $\varphi_*$ βάσεων.
+    \item[\textup{(ii)}]
+		ένας αυτομορφισμός $\varphi_*$ συνιστά συμμετρία του συναλλοίωτου διανύσματος $\theta$ εάν και μόνον εάν υπάρχει δυάδα ομόλογων βάσεων $\{\partial/\partial x^i\}$, $\{\partial/\partial y^i\}$ τέτοιων ώστε
+    	\begin{equation}\label{eq:cotravariant-vector-invariance}
+    		\theta
+    		\,=\,
+    		\theta_i\hspace{.5pt}dx^i
+    		\,=\,
+    		\theta_i\hspace{.5pt}dy^i\,.
+    	\end{equation}
+    Σε αυτήν την περίπτωση, αυτό ισχύει για κάθε δυάδα ομόλογων υπό τον $\varphi_*$ βάσεων.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Για το (i), υποθέτοντας $\varphi_* \xi = \xi$ και επιλέγοντας τυχούσα δυάδα ομόλογων βάσεων $\{\partial/\partial x^i\}$, $\{\partial/\partial y^i\}$, από την Πρόταση \ref{lemma:vector-transformation}, (i) έπεται ότι
+\begin{equation*}
+\xi = \xi^i \frac{\partial}{\partial x^i} = \xi^i \frac{\partial}{\partial y^i}.
+\end{equation*}
+Αντιστρόφως, εάν $\xi \,=\, \xi^i \partial/\partial x^i \,=\, \xi^i \partial/\partial y^i$ σε κάποια δυάδα ομόλογων βάσεων τότε
+\begin{equation*}
+\varphi_* \xi \,=\, \xi^i \frac{\partial}{\partial y^i} \,=\, \xi
+\end{equation*}
+βάσει του ίδιου σκέλους. Το (ii) αποδεικνύεται παρόμοια με χρήση του σκέλους (ii) και εφελκυσμού αντί εξώθησης.
+\end{proof}
+
+
+\section{Γενική έννοια του τανυστή}
 
 \begin{definition}[Τανυστής]
 	\label{def:(k,l)-tensor}
-Ως \textbf{$(r, s)$-τανυστής} στον γραμμικό χώρο $V$, όπου $r, s \ge 0$, ή \textbf{τανυστής τύπου $(r,s)$}, εννοείται μια βαθμωτή πολυγραμμική απεικόνιση της μορφής
+Ως \textbf{$(r, s)$-τανυστής} στον γραμμικό χώρο $V$,
+ή \textbf{τανυστής τύπου $(r,s)$}, εννοείται μια βαθμωτή πολυγραμμική απεικόνιση της μορφής
 \begin{equation*}\label{eq:general-tensor-schema}
 T: \underbrace{V^* \times \dots \times V^*}_{\textstyle r \textup{ φορές}}
 \,\times\,
 \underbrace{V \times \dots \times V}_{\textstyle s \textup{ φορές}} \to \mathbb{R}\,.
 \end{equation*}
-Συμβολίζουμε ως $\mathfrak{T}^{\,r}_{\,s}(V)$ τον γραμμικό χώρο των $(r, s)$-τανυστών στον $V$.
-Ορίζουμε $\mathfrak{T}^{\,0}_{\,0}(V) = \mathbb{R}$.
-Είναι σαφές ότι
-$\mathfrak{T}^{\,0}_{\,1}(V) = V^*$,
-βάσει της κανονικής ταύτισης
-\eqref{eq:double-dual-canonical-identification} ισχύει
-$\mathfrak{T}^{\,1}_{\,0}(V) = V$.
+Συμβολίζουμε ως $\mathfrak{T}^{\,r}_{\,s}(V)$ τον γραμμικό χώρο των τανυστών τάξεως $(r, s)$ στον $V$.
 \end{definition}
 \noindent
+Ορίζουμε $\mathfrak{T}^{\,0}_{\,0}(V) = \mathbb{R}$,
+ενώ είναι σαφές ότι
+\begin{equation}
+\mathfrak{T}^{\,0}_{\,1}(V) = V^*,
+\quad
+\mathfrak{T}^{\,1}_{\,0}(V) = V,
+\end{equation}
+με την δεύτερη ισότητα να οφείλεται στον κανονικό ισομορφισμό
+\eqref{eq:double-dual-canonical-identification}.
+
+\subsection{Τανυστικό γινόμενο}
+	\label{sec:tensor-product}
+
 \begin{definition}[Τανυστικό γινόμενο]
 	\label{def:tensor-product}
 Ως \textbf{τανυστικό γινόμενο} εννοείται η δυαδική πράξη
-$\otimes$
-που δοθέντων τανυστών
-$S \in \mathfrak{T}^{\,p}_{\,q}(V)$, $T \in \mathfrak{T}^{\,r}_{\,s}(V)$ επιστρέφει τον τανυστή
-$S \otimes T \in \mathfrak{T}^{\,p+r}_{\,q+s}(V)$
-που ορίζεται μέσω της σχέσης
+\begin{equation}\label{eq:tensor-product-scheme}
+\otimes:
+\,
+\mathfrak{T}^{\,p}_{\,q}(V)
+\,
+\times
+\,
+\mathfrak{T}^{\,r}_{\,s}(V)
+\,
+\to
+\,
+\mathfrak{T}^{\,p+r}_{\,q+s}(V),
+\quad\,\,
+(S, T) \mapsto S \otimes T,
+\end{equation}
+το αποτέλεσμα της οποίας ορίζεται μέσω της δράσης
 \setlength{\jot}{12pt}
 \begin{equation}\label{eq:tensor-product}
 \begin{split}
@@ -2980,13 +3121,21 @@ T\,(\theta^{\hspace{.5pt}p+1}, \dots, \theta^{\hspace{.5pt}p+r}, \xi_{\hspace{.5
 \end{equation}
 \end{definition}
 \noindent
-Ελέγχεται ευθέως ότι το τανυστικό γινόμενο είναι προσεταιριστικό και διγραμμικό, ενώ επίσης ικανοποιεί κατά προφανή τρόπο τη θεμελιώδη ταυτότητα
+Ελέγχεται ευθέως ότι το τανυστικό γινόμενο είναι προσεταιριστικό και διγραμμικό.
+\begin{lemma}
+Δοθείσης βάσης $\{\partial/\partial x^i\}$ σε γραμμικό χώρο $V$,
+ισχύει
 \setlength{\jot}{12pt}
 \begin{equation}\label{eq:tensor-product-kronecker}
 \begin{split}
-&\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
+\frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
+\hspace{.5pt}
 \otimes
-dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s}
+\hspace{.5pt}
+dx^{\hspace{.75pt}j_1} \hspace{.5pt}
+\otimes
+&\dots
+\otimes dx^{\hspace{.75pt}j_s}
 \left(
 dx^{\hspace{.5pt}\mu_1}
 \dots,
@@ -2996,15 +3145,19 @@ dx^{\hspace{.5pt}\mu_r},
 \frac{\partial}{\partial x^{\nu_s}}
 \right)
 \,=\,\\
-&\,\delta_{\hspace{.5pt}i_1}^{\hspace{.5pt}\mu_1} \dots \delta_{\hspace{.5pt}i_r}^{\hspace{.5pt}\mu_r}\,
-\delta_{\hspace{.5pt}\nu_1}^{\hspace{.5pt}j_1} \dots \delta_{\hspace{.5pt}\nu_s}^{\hspace{.5pt}j_s}\,.
+&\,\delta_{\hspace{.5pt}i_1}^{\hspace{.75pt}\mu_1} \dots \delta_{\hspace{.5pt}i_r}^{\hspace{.75pt}\mu_r}\,
+\delta_{\hspace{.5pt}\nu_1}^{\hspace{.75pt}j_1} \dots \delta_{\hspace{.5pt}\nu_s}^{\hspace{.75pt}j_s}\,.
 \end{split}
 \end{equation}
+\end{lemma}
+\begin{proof}
+Έπεται ευθέως από την χαρακτηριστική ιδιότητα των δυϊκών βάσεων και την προσαιτεριστικότητα του τανυστικού γινομένου.
+\end{proof}
 \begin{proposition}[Δομή του γραμμικού χώρου $\mathfrak{T}^{\,r}_{\,s}(V)$]
 	\label{prop:general-tensor-space-structure}
 Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$
 διάστασης $n \ge 1$, η συλλογή
-\begin{equation}\label{eq:general-tensor-space-base}
+\begin{equation}\label{eq:general-tensor-base}
 \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
 \otimes
 dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s},
@@ -3013,7 +3166,7 @@ dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s},
 \quad
 1 \le j_1, \dots, j_s \le n\,,
 \vspace{5pt}
-\end{equation}\label{eq:general-tensor-base}
+\end{equation}
 συγκροτεί βάση του $\mathfrak{T}^{\,r}_{\,s}(V)$,
 που επομένως έχει διάσταση $n^{r+s}$. Ειδικότερα, ισχύει
 \begin{equation}\label{eq:general-tensor-space-structure}
@@ -3026,19 +3179,18 @@ dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s},
 \end{equation}\label{eq:general-tensor-space}
 \end{proposition}
 \begin{proof}
-Δοθέντος $T \in \mathfrak{T}^{\,r}_{\,s}(V)$,
-θεωρούμε τις ποσότητες
+Δοθέντος $(r,s)$-τανυστή $T$,
+θεωρούμε τις βαθμωτές ποσότητες
 \begin{equation*}
 T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
 \,
-\equiv
+=
 \,
-T\left(
+T(
 dx^{i_1}, \dots, dx^{i_r},
-\frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_s}}
-\right).
+\partial/\partial x^{j_1}, \dots, \partial/\partial x^{j_1}).
 \end{equation*}
-Εφαρμόζοντάς τον τανυστή $Τ$ σε τυχούσα $(r+s)$-άδα ορισμάτων,
+Εφαρμόζοντας τον $Τ$ σε τυχούσα $(r+s)$-άδα ορισμάτων,
 συνάγεται ευθέως λόγω πολυγραμμικότητας και εξ ορισμού του τανυστικού γινομένου ότι είναι της μορφής
 \begin{equation*}
 T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
@@ -3072,18 +3224,21 @@ dx^{\hspace{.5pt}\mu_r},
 $
 λαμβάνουμε $\lambda^{\hspace{1.5pt}\mu_1 \dots \mu_r}_{\hspace{1.5pt}\nu_1 \dots \nu_s}
 =
-0$ (βλ. \eqref{eq:tensor-product-kronecker}).
+0$, βλ. \eqref{eq:tensor-product-kronecker}.
 Εφόσον οι δείκτες είναι αυθαίρετοι, όλοι οι συντελεστές μηδενίζονται.
 \end{proof}
 
-\begin{definition}[Αναπαράσταση τανυστή -- Συνιστώσες]
+\subsection{Μετασχηματισμός τανυστικών συνιστωσών}
+	\label{sec:tensor-components-transform}
+
+\begin{definition}[Αναπαράσταση τανυστή]
 	\label{def:tensor-representation}
-Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$ διάστασης $n \ge 1$, θεωρούμε το ανάπτυγμα
+Δοθείσης βάσης $\{\partial/\partial x^i\}_i$ σε γραμμικό χώρο $V$, θεωρούμε το ανάπτυγμα
 \begin{equation}\label{eq:tensor-representation}
 T
 \,=\,
 T^{\,i_1 \dots i_r}_{\,\,j_1 \dots j_s}
-\,
+\,\,
 \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}}
 \otimes
 dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s}
@@ -3091,8 +3246,6 @@ dx^{\hspace{.75pt}j_1} \otimes \dots \otimes dx^{\hspace{.75pt}j_s}
 ενός $(r,s)$-τανυστή $Τ$ ως προς την επαγόμενη βάση του
 $\mathfrak{T}^{\,r}_{\,s}(V)$, βλ. Πρόταση \ref{prop:general-tensor-space-structure}.
 Η συλλογή των βαθμωτών ποσοτήτων
-$\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$,
-όπου συγκεκριμένα
 \begin{equation}\label{eq:tensor-quantities}
 T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
 \,
@@ -3101,15 +3254,15 @@ T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}
 T\left(
 dx^{i_1}, \dots, dx^{i_r},
 \frac{\partial}{\partial x^{j_1}}, \dots, \frac{\partial}{\partial x^{j_s}}
-\right),
+\right)
 \end{equation}
 λέγεται ότι \textbf{αναπαριστούν τον $Τ$ ως προς τη βάση $\{\partial/\partial x^i\}_i$}
 και καλούνται \textbf{συνιστώσες} αυτού ως προς την εν λόγω βάση.
 \end{definition}
 \noindent
 Ελέγχεται ευθέως ότι εάν οι τανυστές $S$ και $T$ αναπαρίστανται από τις
-ποσότητες $\{S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}\}$ και
-$\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ αντιστοίχως,
+ποσότητες $S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}$ και
+$Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}$ αντιστοίχως,
 τότε το τανυστικό τους γινόμενο αναπαρίσταται ως
 \begin{equation}\label{eq:tensor-product-quantities}
 (S \otimes Τ)^{\,i_1 \dots i_{\hspace{.5pt}p+r}}_{\,j_1 \dots j_{\hspace{.5pt}q+s}}
@@ -3120,9 +3273,9 @@ S^{\,i_1 \dots i_p}_{\,j_1 \dots j_q}
 \end{equation}
 \begin{proposition}[Μετασχηματισμός τανυστικών συνιστωσών]
 	\label{prop:tensor-transform}
-Δοθέντος τανυστή $Τ \in \mathfrak{T}^{\,r}_{\,s}(V)$ με συνιστώσες
-$\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$,
-$\{\widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τις βάσεις $\{\partial/\partial x^i\}_i$, $\{\partial/\partial y^i\}_i$ αντιστοίχως, ισχύει
+Δοθέντος τανυστή $Τ$ με συνιστώσες
+$Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}$ και
+$\widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}$ ως προς τις βάσεις $\{\partial/\partial x^i\}_i$ και $\{\partial/\partial y^i\}_i$ αντιστοίχως, ισχύει
 \begin{equation}\label{eq:tensor-transform}
 \widetilde{T}^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}
 \,=\,
@@ -3186,7 +3339,17 @@ dx^{\mu_1}, \dots, dx^{\mu_r},
 που είναι το ζητούμενο.
 \end{proof}
 
-\section{Ανταλλοίωτοι και συναλλοίωτοι τανυστές}
+\subsection{Εξώθηση και εφελκυσμός}
+	\label{sec:pullback-and-pushforward}
+	
+TODO
+	
+\subsection{Συμμετρίες ενός τανυστή}
+	\label{sec:tensor-symmetries}
+	
+TODO
+
+\subsection{Ανταλλοιότητα και συναλλοιότητα}
 
 \begin{definition}[Ανταλλοίωτοι και συναλλοίωτοι τανυστές]
 	\label{def:covariant-contravariant-tensor}
@@ -3209,7 +3372,10 @@ dx^{\mu_1}, \dots, dx^{\mu_r},
 τον γραμμικό χώρο των $r$-ανταλλοίωτων και $r$-συναλλοίωτων τανυστών αντιστοίχως.
 Ως \textbf{ανταλλοίωτο}, αντ. \textbf{συναλλοίωτο διάνυσμα} αναφέρεται για λόγους εκφραστικής συμμετρίας ένα στοιχείο του $V$, αντ. $V^*$.
 \end{definition}
-\begin{remark}[Δομή του $\mathfrak{T}^{\,r}(V)$ και ανταλλοίωτος μετασχηματισμός]
+
+\subsubsection{Ανταλλοίωτοι τανυστές}
+	\label{sec:contravariant-tensors}
+
 Από την Πρόταση \ref{prop:general-tensor-space-structure} για $s=0$, έπεται ότι η συλλογή
 \begin{equation}\label{eq:contravariant-tensor-space-base}
 \frac{\partial}{\partial x^{i_1}} \otimes \dots \otimes \frac{\partial}{\partial x^{i_r}},
@@ -3242,8 +3408,10 @@ o τανυστικός μετασχηματισμός \eqref{eq:tensor-transform
 \,
 T^{\mu_1 \dots \mu_r}\,.
 \end{equation}
-\end{remark}
-\begin{remark}[Δομή του $\mathfrak{T}_{\,r}(V)$ και συναλλοίωτος μετασχηματισμός]
+
+\subsubsection{Συναλλοίωτοι τανυστές}
+	\label{sec:covariant-tensors}
+	
 Παρομοίως, η συλλογή
 \begin{equation}\label{eq:covariant-tensor-space-base}
 dx^{i_1} \otimes \dots \otimes dx^{i_r},
@@ -3277,9 +3445,8 @@ o γενικός τανυστικός μετασχηματισμός εξειδ�
 T_{\mu_1 \dots \mu_r}\,
 \frac{\partial x^{\mu_1}}{\partial y^{i_1}} \dots \frac{\partial x^{\mu_r}}{\partial y^{i_r}}\,.
 \end{equation}
-\end{remark}
 
-\subsection{Τανυστικά μονώνυμα}
+\subsubsection{Τανυστικά μονώνυμα}
 	\label{sec:tensor-mononyms}
 	
 Ο κανονικός ισομορφισμός \eqref{eq:contravariant-space-canonical-isomorphism} δηλώνει ότι
@@ -3306,6 +3473,9 @@ $1 \le i_1, \dots, i_r \le n\,$,
 συγκροτεί βάση του $\mathfrak{T}^{\,r}(V)$
 ακριβώς όταν τα ανταλλοίωτα διανύσματα $\xi_i$
 συγκροτούν βάση του $V$ (και αντιστοίχως για τους $\mathfrak{T}_{\,r}(V)$ και $V^*$). Είναι σαφές πως οι περισσότεροι τανυστές δεν συνιστούν μονώνυμα.
+
+\section{Συμμετρία και αντισυμμετρία}
+	\label{sec:symmetry-and-antisymmetry}
 
 \subsection{Δράση συμμετρικής ομάδας}
 	\label{seq:symmetric-group-action}
@@ -3407,203 +3577,7 @@ T(\theta^{\sigma 1}, \dots, \theta^{\sigma r}),
 \end{equation}
 και αντιστοίχως για τη συναλλοίωτη περίπτωση.
 
-\section{Στοιχειώδεις τανυστικές πράξεις με δείκτες}
-
-\subsection{Συναίρεση και συστολή}
-
-\begin{definition}[Συναίρεση ανταλλοίωτου με συναλλοίωτο δείκτη]
-	\label{def:contraction-of-index}
-Δοθέντος $(r,s)$-τανυστή $Τ$ που αναπαρίσταται ως
-$\{T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}\}$
-σε τυχούσα βάση, ως \textbf{συναίρεση του ανταλλοίωτου δείκτη $1 \le \alpha \le r$ με τον συναλλοίωτο δείκτη $1 \le \beta \le s$} εννοείται ο $(r-1, s-1)$-τανυστής $c^{\,\alpha}_\beta(T)$ που αναπαρίσταται στην ίδια βάση από τις ποσότητες
-\begin{equation}\label{eq:contraction-representation}
-\left(c^{\,\alpha}_\beta(T)\right)^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_{s-1}}
-\,=\,
-T^{\,i_1 \dots i_{\alpha-1} \mu \hspace{.5pt} i_{\alpha} \dots i_{r-1}}_{\,j_1 \dots j_{\beta-1} \mu \hspace{.5pt} j_{\beta} \dots j_{s-1}}\,.
-\end{equation}
-\end{definition}
-\noindent
-Παρότι ο ορισμός της συναίρεσης δίνεται με αναφορά σε επιλεγμένη βάση, ελέγχεται ευθέως βάσει της \eqref{eq:index-annihilation} ότι είναι ανεξάρτητος από αυτήν· συγκεκριμένα, οι ποσότητες \eqref{eq:contraction-representation}
-υπακούν στον μετασχηματισμό \eqref{eq:tensor-transform}
-κάτω από αλλαγή βάσης και άρα συγκροτούν πράγματι
-τανυστή τάξεως $(r-1, s-1)$.
-Η έννοια της συναίρεσης δεν έχει προφανώς νόημα για ανταλλοίωτους ή συναλλοίωτους τανυστές, καθότι απαιτεί ζεύγος ανταλλοίωτου και συναλλοίωτου δείκτη.
-
-\begin{definition}[Συστολή συναλλοίωτου δείκτη με ανταλλοίωτο διάνυσμα]
-	\label{def:interior-product}
-Δοθέντος $(r,s)$-τανυστή $T$, ως \textbf{συστολή του συναλλοίωτου δείκτη $1 \le \beta \le s$ με το ανταλλοίωτο διάνυσμα $\xi$} εννοείται ο $(r, s-1)$-τανυστής $\iota_{\beta,\,\xi}(T)$ που ορίζεται μέσω της σχέσης
-\begin{equation}\label{eq:interior-product}
-\iota_{\beta,\,\xi}(T)
-\left(
-\theta^1, \dots, \theta^r, \xi_1, \dots, \xi_{s-1}
-\right)
-\,=\,
-T
-\left(
-\theta^1, \dots, \theta^{\hspace{.5pt}r},
-\xi_1, \dots, \xi_{\beta-1}, \xi, \xi_{\beta}, \dots, \xi_{s-1}
-\right).
-\end{equation}
-\end{definition}
-\noindent
-Εάν $\xi = \xi^\mu \partial/\partial x^\mu$ και ο τανυστής $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$, ελέγχεται ευθέως ότι η συστολή
-$\iota_{\beta,\,\xi}(T)$ αναπαρίσταται από τις ποσότητες
-\begin{equation}\label{eq:interior-product-representation}
-(\iota_{\beta,\,\xi}(T))^{\,i_1 \dots i_r}_{\,j_1 \dots j_{s-1}}
-=\,\,
-T^{\,i_1 \dots i_r}_{\,j_1 \dots j_{\beta-1} \mu j_{\beta} \dots j_{s-1}}
-\,
-\xi^\mu\,.
-\end{equation}
-
-\begin{definition}[Συστολή ανταλλοίωτου δείκτη με συναλλοίωτο δείκτη]
-	\label{def:interior-product-dual}
-Δοθέντος $(r,s)$-τανυστή $T$, ως \textbf{συστολή του ανταλλοίωτου δείκτη $1 \le \alpha \le r$ με συναλλοίωτο διάνυσμα $\theta$} εννοείται ο $(r-1, s)$-τανυστής $\iota^\alpha_\theta(T)$ που ορίζεται μέσω της σχέσης
-\begin{equation}\label{eq:interior-product-dual-representation}
-\iota^\alpha_\theta(T)
-\left(
-\theta^1, \dots, \theta^{\hspace{.5pt}r-1}, \xi_1, \dots, \xi_s
-\right)
-=\,\,
-T
-\left(
-\theta^1, \dots, \theta^{\alpha-1}, \theta, \theta^{\alpha}, \dots, \theta^{r-1},
-\xi_1, \dots, \xi_s
-\right).
-\end{equation}
-\end{definition}
-\noindent
-Εάν $\theta = \theta_\mu dx^\mu$ και ο τανυστής $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$, ελέγχεται ευθέως ότι η συστολή $\iota^\alpha_\theta(T)$ αναπαρίσταται από τις ποσότητες
-\begin{equation}\label{eq:interior-product-dual-representation}
-\left(\iota^\alpha_\theta(T)\right)^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_s}
-\,=\,
-T^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha} \dots i_{r-1}}_{\,j_1 \dots j_s}
-\,
-\theta_\mu\,.
-\end{equation}
-
-\noindent
-Η συστολή συναλλοίωτο, αντ. ανταλλοίωτο διάνυσμα δεν έχει προφανώς νόημα για συναλλοίωτους αντ. ανταλλοίωτους τανυστές.
-Στην παρακάτω υποενότητα επιδεικνύεται η πιο στοιχειώδης εφαρμογή των πράξεων της συστολής και συναίρεσης.
-
-\subsubsection{$(1,1)$-τανυστές --- Γραμμικοί ενδομορφισμοί}
-
-Σε αυτήν την παράγραφο εξετάζουμε τον γραμμικό χώρο $\mathfrak{T}^{\,1}_{\,1}(V)$, που είναι η απλούστερη κλάση μικτών τανυστών, και εξηγούμε γιατί είναι κανονικά ισομορφικός
-με τον χώρο $\mathcal{L}(V)$ των γραμμικών ενδομορφισμών του $V$. Δοθέντος $(1,1)$-τανυστή
-\begin{equation*}
-Τ
-\,=\,
-T^{\,i}_{\,j} \, \frac{\partial}{\partial x^i} \hspace{.2pt} \otimes \hspace{.5pt} dx^{\hspace{1pt}j}
-\,=\,
-\widetilde{T}^{\,i}_{\,j} \, \frac{\partial}{\partial y^i} \hspace{.2pt} \otimes \hspace{.5pt} dy^{\hspace{1pt}j},
-\end{equation*}
-παρατηρούμε κατ' αρχάς ότι ο τανυστικός νόμος μετασχηματισμού εξειδικεύεται ως
-\begin{equation*}\label{(1,1)-tensor-transform}
-\widetilde{T}^{\,i}_{\,j}
-\,=\,
-\frac{\partial y^i}{\partial x^{\mu}}
-\,
-T^{\mu}_{\,\nu}
-\,
-\frac{\partial x^{\nu}}{\partial y^j}\,,
-\end{equation*}
-που βάσει της \eqref{eq:index-annihilation}
-αναδιατυπώνεται με χρήση πινάκων ως
-\begin{equation}\label{eq:(1,1)-tensor-transform-matrix}
-(\widetilde{T}^{\,i}_{\,j})_{i,j}
-\,=\,
-\left(\frac{\partial y^i}{\partial x^{\hspace{1pt}j}}\right)_{i,j}
-\hspace{-3pt}
-(T^{\,i}_{\,j})_{i,j}
-\,
-\left(\frac{\partial x^i}{\partial y^{\hspace{1pt}j}}\right)_{i,j}.
-\end{equation}
-Ορίζουμε τώρα την απεικόνιση
-\begin{equation}\label{eq:(1,1)-tensor-space-canonical-isomorphism}
-\hat{(\hspace{1pt}\cdot\hspace{1pt})}: \mathfrak{T}^{\,1}_{\,1}(V) \to \mathcal{L}(V),
-\quad
-\hat{T}({\xi})
-\,=\,
-\iota_{1,\,\xi}(T)
-\end{equation}
-παρατηρώντας ότι $\hat{T}(\xi) \in \mathfrak{T}^{\,1}_{\,0}(V) = V$,
-ενώ σε επιλεγμένη βάση του $V$ ισχύει
-\begin{equation*}
-\hat{T}\left(\xi^i\hspace{.3pt}\frac{\partial}{\partial x^i}\right)
-\,=\,
-T^{\,i}_j\hspace{.5pt}\xi^j\hspace{.5pt}\frac{\partial}{\partial x^i}
-\end{equation*}
-(βλ. \eqref{eq:contraction-representation}).
-H τελευταία σχέση δείχνει ότι το $\hat{T}$ είναι πράγματι ενδομορφισμός του $V$, και συγκεκριμένα ο αναπαριστώμενος από τον πίνακα $(T^{\,i}_j)_{i,j}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$.
-Ελέγχεται τότε ότι η γραμμική απεικόνιση
-\eqref{eq:(1,1)-tensor-space-canonical-isomorphism}
-είναι αμφιμονοσήμαντη, στοιχειοθετώντας ισομορφισμό ανάμεσα στον χώρο των $(1,1)$-τανυστών και τον χώρο των γραμμικών ενδομορφισμών του $V$.
-Αυτό αντανακλάται στον αναδιατυπωμένο νόμο μετασχηματισμού \eqref{eq:(1,1)-tensor-transform-matrix} των τανυστικών συνιστωσών του $T$,
-που είναι ο γνώριμος μετασχηματισμός πίνακα γραμμικού ενδομορφισμού κάτω από αλλαγή βάσης. Σημειώνεται τέλος ότι το ίχνος ενός γραμμικού ενδομορφισμού ισούται με την συναίρεση των δεικτών του αντίστοιχου $(1,1)$-τανυστή, δηλαδή
-\begin{equation*}
-\operatorname{tr} \hat{T}\,=\,c^{\,1}_{\,1}(T)\,=\,T^{\,i}_{\,i}\,.
-\end{equation*}
-
-\subsection{Ανύψωση και καθίζηση δείκτη}
-	\label{sec:raising-and-lowering-index}
-
-Εάν η συστολή απαλείφει επιλεγμένο δείκτη παρουσία κάποιου ανταλλοίωτου ή συναλλοίωτου διανύσματος,
-οι παρακάτω πράξεις μεταβάλλουν τον τύπο επιλεγμένου δείκτη παρουσία κάποιου ανταλλοίωτου ή συναλλοίωτου τανυστή τάξεως 2.
-\begin{definition}[Καθίζηση ανταλλοίωτου δείκτη υπό $2$-συναλλοίωτο τανυστή]
-	\label{def:lowering-index}
-Δοθέντος $(r,s)$-τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $(0,2)$-τανυστή $g$ που αναπαρίσταται ως $\{g_{ij}\}$ ως προς την ίδια βάση, ως \textbf{καθίζηση του ανταλλοίωτου δείκτη $1 \le \alpha \le r$ υπό τον $g$} εννοείται ο $(r-1, s+1)$-τανυστής που αναπαρίσταται από τις ποσότητες
-\begin{equation}\label{eq:lowering-index}
-S^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_{s+1}}
-\,=\
-g_{\mu j_\alpha }\hspace{.5pt}Τ^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha+1} \dots i_{r-1}}_{\,j_1 \dots j_{\alpha-1} j_{\alpha + 1} \dots j_{s+1}}
-\end{equation}
-\end{definition}
-\begin{definition}[Ανύψωση συναλλοίωτου δείκτη υπό $2$-ανταλλοίωτο τανυστή]
-	\label{def:raising-index}
-Δοθέντος $(r,s)$-τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $(2,0)$-τανυστή $g$ που αναπαρίσταται ως $\{g^{\hspace{.5pt}ij}\}$ ως προς την ίδια βάση, ως \textbf{ανύψωση του συναλλοίωτου δείκτη $1 \le \alpha \le s$ υπό τον $g$} εννοείται ο $(r+1, s-1)$-τανυστής που αναπαρίσταται από τις ποσότητες
-\begin{equation}\label{eq:raising-index}
-S^{\,i_1 \dots i_{r+1}}_{\,j_1 \dots j_{s-1}}
-\,=\
-g^{\hspace{.5pt}\mu \hspace{.5pt} i_\alpha}\hspace{.5pt}Τ^{\,i_1 \dots
-i_{\alpha-1} i_{\alpha+1} \dots i_{r+1}}_{\,j_1 \dots j_{\alpha-1} \mu j_\alpha \dots j_{s-1}}
-\end{equation}
-\end{definition}
-\noindent
-Παρότι οι παραπάνω ορισμοί δίνονται με αναφορά σε επιλεγμένη βάση, ελέγχεται με χρήση της \eqref{eq:index-annihilation} ότι είναι ανεξάρτητοι από αυτήν· συγκεκριμένα, οι ποσότητες \eqref{eq:raising-index}, \eqref{eq:lowering-index}
-υπακούν στον μετασχηματισμό \eqref{eq:tensor-transform}
-κάτω από αλλαγή βάσης και άρα συγκροτούν πράγματι
-τανυστή τάξεως $(r-1, s+1)$, αντ. $(r+1, s-1)$.
-Σημειώνεται τέλος ότι οι παραπάνω εκφράσεις είναι γενικά ευαίσθητες στη θέση του πρώτου βωβού δείκτη $\mu$, ο οποίος καταλαμβάνει την αριστερή θέση· αμφότεροι οι ορισμοί θα μπορούσαν να δωθούν με τον $\mu$ να εμφανίζεται στην δεξιά θέση, χωρίς αυτό να επηρεάζει τη αλγεβρική χρησιμότητά τους (βλ. Ενότητα \ref{seq:induced-isomorphism-contravariance-covariance}) ---το σημαντικό είναι να συμφωνούν.
-Η διάκριση αυτή εκπίπτει εάν ο τανυστής $g$ είναι συμμετρικός και ενδιαφέρει μόνο κατά πρόσημο εάν είναι εναλλάσσων.
-
-\subsubsection{Πλήρης ανύψωση και καθίζηση}
-	\label{seq:full-raising-and-lowering}
-	
-Είναι σαφές ότι με διαδοχική εφαρμογή των παραπάνω πράξεων
-μπορούμε να κατεβάσουμε, αντ. ανεβάσουμε όλους τους ανταλλοίωτους, αντ. συναλλοίωτους δείκτες ενός τανυστή.
-Αυτό επιτρέπει την μετατροπή ενός ανταλλοίωτου, αντ. συναλλοίωτου τανυστή στον ``ομόλογό'' συναλλοίωτο, αντ. ανταλλοίωτο τανυστή ίσης τάξης υπό το πρίσμα της $g$.
-\begin{definition}[Πλήρης καθίζηση ανταλλοίωτου τανυστή υπό $2$-συναλλοίωτο τανυστή]
-	\label{def:full-lowering-index}
-Δοθέντος $r$-ανταλλοίωτου τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ^{\,i_1 \dots i_r}\}$ και $(0,2)$-τανυστή $g$ που αναπαρίσταται ως $\{g_{ij}\}$ ως προς την ίδια βάση, ως \textbf{πλήρης καθίζηση του $Τ$ υπό τον $g$} εννοείται ο $r$-συναλλοίωτος τανυστής που αναπαρίσταται από τις ποσότητες
-\begin{equation}\label{eq:full-lowering}
-Τ_{i_1 \dots i_r}
-\,=\,
-g_{\mu_1 i_1} \dots g_{\mu_r i_r} T^{\mu_1 \dots \mu_r}
-\end{equation}
-\end{definition}
-\begin{definition}[Πλήρης ανύψωση συναλλοίωτου τανυστή υπό $2$-ανταλλοίωτο τανυστή]
-	\label{def:full-raising-index}
-Δοθέντος $r$-συναλλοίωτου τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ_{\,i_1 \dots i_r}\}$ και $(2,0)$-τανυστή $g$ που αναπαρίσταται ως $\{g^{\hspace{.5pt}ij}\}$ ως προς την ίδια βάση, ως \textbf{πλήρης ανύψωση του $Τ$ υπό τον $g$} εννοείται ο $r$-ανταλλοίωτος τανυστής που αναπαρίσταται από τις ποσότητες
-\begin{equation}\label{eq:full-raising}
-Τ^{\,i_1 \dots i_r}
-\,=\,
-g^{\hspace{.5pt}\mu_1 i_1} \dots g^{\hspace{.5pt}\mu_r i_r} T_{\mu_1 \dots \mu_r}
-\end{equation}
-\end{definition}
-\noindent
-Η θεμελιώδης εφαρμογή αυτών για τους σκοπούς της φυσικής και της γεωμετρίας παρουσιάζεται στην Eνότητα \ref{seq:induced-isomorphism-contravariance-covariance}. Συγκεκριμένα, υπό φυσιολογικές παραδοχές για τον τανυστή $g$, η παραπάνω συσχέτιση μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών στοιχειοθετεί ισομορφισμό που επιδέχεται γεωμετρικής ερμηνείας υπό το πρίσμα του $g$.
-
-\section{Συμμετροποίηση --- Συμμετρικό γινόμενο}
+\subsection{Συμμετροποίηση --- Συμμετρικό γινόμενο}
 	\label{sec:symmetric-tensors}
 
 \begin{definition}[Συμμετροποίηση]\label{def:symmetrization}
@@ -3778,7 +3752,7 @@ $
 Eφόσον οι δείκτες είναι αυθαίρετοι, όλοι οι συντελεστές μηδενίζονται.
 \end{proof}
 
-\subsection{Συμμετρικά μονώνυμα}
+\subsubsection{Συμμετρικά μονώνυμα}
 	\label{sec:symmetric-mononyms}
 
 Ο κανονικός ισομορφισμός \eqref{eq:symmetric-contravariant-space-canonical-isomorphism} δηλώνει ότι
@@ -3807,7 +3781,7 @@ $1 \le i_1 \le \dots \le i_r \le n\,$,
 ακριβώς όταν τα ανταλλοίωτα διανύσματα $\xi_i$
 συγκροτούν βάση του $V$ (και αντιστοίχως για τους $\mathfrak{S}_{\,r}(V)$ και $V^*$). Είναι σαφές πως οι περισσότεροι συμμετρικοί τανυστές δεν συνιστούν συμμετρικά μονώνυμα.
 
-\section{Αντισυμμετροποίηση --- Σφηνοειδές γινόμενο}
+\subsection{Αντισυμμετροποίηση --- Σφηνοειδές γινόμενο}
 	\label{sec:antisymmetric-tensors}
 
 \begin{definition}[Αντισυμμετροποίηση]\label{def:antisymmetrization}
@@ -4018,7 +3992,7 @@ Eφόσον οι δείκτες είναι αυθαίρετοι, όλοι οι �
 
 TODO: Σχόλιο. για $r \ge n$ ο χώρος εκφυλίζεται, πράγμα που αντανακλά το γεγονός ότι ένας αντισυμμετρικός τανυστής μηδενίζεται οποτεδήποτε κάποιο όρισμά του είναι γραμμικός συνδυασμός κάποιων άλλων. Για $r = n$, ο χώρος $\mathfrak{A}_{\,n}(V)$ έχει διάσταση $1$, οπότε κάθε $n$-αντισυμμετρικός τανυστής είναι βαθμωτό πολλαπλάσιο ενός μοναδικού μονωνύμου.
 
-\subsection{Αντισυμμετρικά μονώνυμα}
+\subsubsection{Αντισυμμετρικά μονώνυμα}
 	\label{sec:antisymmetric-mononyms}
 
 Ο κανονικός ισομορφισμός \eqref{eq:antisymmetric-contravariant-space-canonical-isomorphism} δηλώνει ότι
@@ -4050,6 +4024,202 @@ $1 \le i_1 < \dots < i_r \le n\,$,
 Τέλος, ένα αντισυμμετρικά μονώνυμο εναλλάσσει πρόσημο υπό αντιμετάθεση οποιουδήποτε ζεύγους παραγόντων του, με αποτέλεσμα να μηδενίζεται όταν δύο παράγοντες είναι συγγραμμικοί.
 Είναι σαφές πως οι περισσότεροι αντισυμμετρικοί τανυστές δεν συνιστούν αντισυμμετρικά μονώνυμα.
 Η γεωμετρική θεωρία των αντισυμμετρικών μονωνύμων αναπτύσσεται στο Kεφάλαιο \ref{chapter:exterior-algebra}.
+
+\section{Στοιχειώδεις τανυστικές πράξεις με δείκτες}
+
+\subsection{Συναίρεση και συστολή}
+
+\begin{definition}[Συναίρεση ανταλλοίωτου με συναλλοίωτο δείκτη]
+	\label{def:contraction-of-index}
+Δοθέντος $(r,s)$-τανυστή $Τ$ που αναπαρίσταται ως
+$\{T^{\,i_1 \dots i_r}_{\hspace{1.5pt}j_1 \dots j_s}\}$
+σε τυχούσα βάση, ως \textbf{συναίρεση του ανταλλοίωτου δείκτη $1 \le \alpha \le r$ με τον συναλλοίωτο δείκτη $1 \le \beta \le s$} εννοείται ο $(r-1, s-1)$-τανυστής $c^{\,\alpha}_\beta(T)$ που αναπαρίσταται στην ίδια βάση από τις ποσότητες
+\begin{equation}\label{eq:contraction-representation}
+\left(c^{\,\alpha}_\beta(T)\right)^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_{s-1}}
+\,=\,
+T^{\,i_1 \dots i_{\alpha-1} \mu \hspace{.5pt} i_{\alpha} \dots i_{r-1}}_{\,j_1 \dots j_{\beta-1} \mu \hspace{.5pt} j_{\beta} \dots j_{s-1}}\,.
+\end{equation}
+\end{definition}
+\noindent
+Παρότι ο ορισμός της συναίρεσης δίνεται με αναφορά σε επιλεγμένη βάση, ελέγχεται ευθέως βάσει της \eqref{eq:index-annihilation} ότι είναι ανεξάρτητος από αυτήν· συγκεκριμένα, οι ποσότητες \eqref{eq:contraction-representation}
+υπακούν στον μετασχηματισμό \eqref{eq:tensor-transform}
+κάτω από αλλαγή βάσης και άρα συγκροτούν πράγματι
+τανυστή τάξεως $(r-1, s-1)$.
+Η έννοια της συναίρεσης δεν έχει προφανώς νόημα για ανταλλοίωτους ή συναλλοίωτους τανυστές, καθότι απαιτεί ζεύγος ανταλλοίωτου και συναλλοίωτου δείκτη.
+
+\begin{definition}[Συστολή συναλλοίωτου δείκτη με ανταλλοίωτο διάνυσμα]
+	\label{def:interior-product}
+Δοθέντος $(r,s)$-τανυστή $T$, ως \textbf{συστολή του συναλλοίωτου δείκτη $1 \le \beta \le s$ με το ανταλλοίωτο διάνυσμα $\xi$} εννοείται ο $(r, s-1)$-τανυστής $\iota_{\beta,\,\xi}(T)$ που ορίζεται μέσω της σχέσης
+\begin{equation}\label{eq:interior-product}
+\iota_{\beta,\,\xi}(T)
+\left(
+\theta^1, \dots, \theta^r, \xi_1, \dots, \xi_{s-1}
+\right)
+\,=\,
+T
+\left(
+\theta^1, \dots, \theta^{\hspace{.5pt}r},
+\xi_1, \dots, \xi_{\beta-1}, \xi, \xi_{\beta}, \dots, \xi_{s-1}
+\right).
+\end{equation}
+\end{definition}
+\noindent
+Εάν $\xi = \xi^\mu \partial/\partial x^\mu$ και ο τανυστής $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$, ελέγχεται ευθέως ότι η συστολή
+$\iota_{\beta,\,\xi}(T)$ αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:interior-product-representation}
+(\iota_{\beta,\,\xi}(T))^{\,i_1 \dots i_r}_{\,j_1 \dots j_{s-1}}
+=\,\,
+T^{\,i_1 \dots i_r}_{\,j_1 \dots j_{\beta-1} \mu j_{\beta} \dots j_{s-1}}
+\,
+\xi^\mu\,.
+\end{equation}
+
+\begin{definition}[Συστολή ανταλλοίωτου δείκτη με συναλλοίωτο δείκτη]
+	\label{def:interior-product-dual}
+Δοθέντος $(r,s)$-τανυστή $T$, ως \textbf{συστολή του ανταλλοίωτου δείκτη $1 \le \alpha \le r$ με συναλλοίωτο διάνυσμα $\theta$} εννοείται ο $(r-1, s)$-τανυστής $\iota^\alpha_\theta(T)$ που ορίζεται μέσω της σχέσης
+\begin{equation}\label{eq:interior-product-dual-representation}
+\iota^\alpha_\theta(T)
+\left(
+\theta^1, \dots, \theta^{\hspace{.5pt}r-1}, \xi_1, \dots, \xi_s
+\right)
+=\,\,
+T
+\left(
+\theta^1, \dots, \theta^{\alpha-1}, \theta, \theta^{\alpha}, \dots, \theta^{r-1},
+\xi_1, \dots, \xi_s
+\right).
+\end{equation}
+\end{definition}
+\noindent
+Εάν $\theta = \theta_\mu dx^\mu$ και ο τανυστής $T$ αναπαρίσταται από τις ποσότητες $\{T^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$, ελέγχεται ευθέως ότι η συστολή $\iota^\alpha_\theta(T)$ αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:interior-product-dual-representation}
+\left(\iota^\alpha_\theta(T)\right)^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_s}
+\,=\,
+T^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha} \dots i_{r-1}}_{\,j_1 \dots j_s}
+\,
+\theta_\mu\,.
+\end{equation}
+
+\noindent
+Η συστολή συναλλοίωτο, αντ. ανταλλοίωτο διάνυσμα δεν έχει προφανώς νόημα για συναλλοίωτους αντ. ανταλλοίωτους τανυστές.
+Στην παρακάτω υποενότητα επιδεικνύεται η πιο στοιχειώδης εφαρμογή των πράξεων της συστολής και συναίρεσης.
+
+\subsubsection{$(1,1)$-τανυστές --- Γραμμικοί ενδομορφισμοί}
+
+Σε αυτήν την παράγραφο εξετάζουμε τον γραμμικό χώρο $\mathfrak{T}^{\,1}_{\,1}(V)$, που είναι η απλούστερη κλάση μικτών τανυστών, και εξηγούμε γιατί είναι κανονικά ισομορφικός
+με τον χώρο $\mathcal{L}(V)$ των γραμμικών ενδομορφισμών του $V$. Δοθέντος $(1,1)$-τανυστή
+\begin{equation*}
+Τ
+\,=\,
+T^{\,i}_{\,j} \, \frac{\partial}{\partial x^i} \hspace{.2pt} \otimes \hspace{.5pt} dx^{\hspace{1pt}j}
+\,=\,
+\widetilde{T}^{\,i}_{\,j} \, \frac{\partial}{\partial y^i} \hspace{.2pt} \otimes \hspace{.5pt} dy^{\hspace{1pt}j},
+\end{equation*}
+παρατηρούμε κατ' αρχάς ότι ο τανυστικός νόμος μετασχηματισμού εξειδικεύεται ως
+\begin{equation*}\label{(1,1)-tensor-transform}
+\widetilde{T}^{\,i}_{\,j}
+\,=\,
+\frac{\partial y^i}{\partial x^{\mu}}
+\,
+T^{\mu}_{\,\nu}
+\,
+\frac{\partial x^{\nu}}{\partial y^j}\,,
+\end{equation*}
+που βάσει της \eqref{eq:index-annihilation}
+αναδιατυπώνεται με χρήση πινάκων ως
+\begin{equation}\label{eq:(1,1)-tensor-transform-matrix}
+(\widetilde{T}^{\,i}_{\,j})_{i,j}
+\,=\,
+\left(\frac{\partial y^i}{\partial x^{\hspace{1pt}j}}\right)_{i,j}
+\hspace{-3pt}
+(T^{\,i}_{\,j})_{i,j}
+\,
+\left(\frac{\partial x^i}{\partial y^{\hspace{1pt}j}}\right)_{i,j}.
+\end{equation}
+Ορίζουμε τώρα την απεικόνιση
+\begin{equation}\label{eq:(1,1)-tensor-space-canonical-isomorphism}
+\hat{(\hspace{1pt}\cdot\hspace{1pt})}: \mathfrak{T}^{\,1}_{\,1}(V) \to \mathcal{L}(V),
+\quad
+\hat{T}({\xi})
+\,=\,
+\iota_{1,\,\xi}(T)
+\end{equation}
+παρατηρώντας ότι $\hat{T}(\xi) \in \mathfrak{T}^{\,1}_{\,0}(V) = V$,
+ενώ σε επιλεγμένη βάση του $V$ ισχύει
+\begin{equation*}
+\hat{T}\left(\xi^i\hspace{.3pt}\frac{\partial}{\partial x^i}\right)
+\,=\,
+T^{\,i}_j\hspace{.5pt}\xi^j\hspace{.5pt}\frac{\partial}{\partial x^i}
+\end{equation*}
+(βλ. \eqref{eq:contraction-representation}).
+H τελευταία σχέση δείχνει ότι το $\hat{T}$ είναι πράγματι ενδομορφισμός του $V$, και συγκεκριμένα ο αναπαριστώμενος από τον πίνακα $(T^{\,i}_j)_{i,j}$ ως προς τη βάση $\{\partial/\partial x^i\}_i$.
+Ελέγχεται τότε ότι η γραμμική απεικόνιση
+\eqref{eq:(1,1)-tensor-space-canonical-isomorphism}
+είναι αμφιμονοσήμαντη, στοιχειοθετώντας ισομορφισμό ανάμεσα στον χώρο των $(1,1)$-τανυστών και τον χώρο των γραμμικών ενδομορφισμών του $V$.
+Αυτό αντανακλάται στον αναδιατυπωμένο νόμο μετασχηματισμού \eqref{eq:(1,1)-tensor-transform-matrix} των τανυστικών συνιστωσών του $T$,
+που είναι ο γνώριμος μετασχηματισμός πίνακα γραμμικού ενδομορφισμού κάτω από αλλαγή βάσης. Σημειώνεται τέλος ότι το ίχνος ενός γραμμικού ενδομορφισμού ισούται με την συναίρεση των δεικτών του αντίστοιχου $(1,1)$-τανυστή, δηλαδή
+\begin{equation*}
+\operatorname{tr} \hat{T}\,=\,c^{\,1}_{\,1}(T)\,=\,T^{\,i}_{\,i}\,.
+\end{equation*}
+
+\subsection{Ανύψωση και καθίζηση δείκτη}
+	\label{sec:raising-and-lowering-index}
+
+Εάν η συστολή απαλείφει επιλεγμένο δείκτη παρουσία κάποιου ανταλλοίωτου ή συναλλοίωτου διανύσματος,
+οι παρακάτω πράξεις μεταβάλλουν τον τύπο επιλεγμένου δείκτη παρουσία κάποιου ανταλλοίωτου ή συναλλοίωτου τανυστή τάξεως 2.
+\begin{definition}[Καθίζηση ανταλλοίωτου δείκτη υπό $2$-συναλλοίωτο τανυστή]
+	\label{def:lowering-index}
+Δοθέντος $(r,s)$-τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $(0,2)$-τανυστή $g$ που αναπαρίσταται ως $\{g_{ij}\}$ ως προς την ίδια βάση, ως \textbf{καθίζηση του ανταλλοίωτου δείκτη $1 \le \alpha \le r$ υπό τον $g$} εννοείται ο $(r-1, s+1)$-τανυστής που αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:lowering-index}
+S^{\,i_1 \dots i_{r-1}}_{\,j_1 \dots j_{s+1}}
+\,=\
+g_{\mu j_\alpha }\hspace{.5pt}Τ^{\,i_1 \dots i_{\alpha-1} \mu i_{\alpha+1} \dots i_{r-1}}_{\,j_1 \dots j_{\alpha-1} j_{\alpha + 1} \dots j_{s+1}}
+\end{equation}
+\end{definition}
+\begin{definition}[Ανύψωση συναλλοίωτου δείκτη υπό $2$-ανταλλοίωτο τανυστή]
+	\label{def:raising-index}
+Δοθέντος $(r,s)$-τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ^{\,i_1 \dots i_r}_{\,j_1 \dots j_s}\}$ και $(2,0)$-τανυστή $g$ που αναπαρίσταται ως $\{g^{\hspace{.5pt}ij}\}$ ως προς την ίδια βάση, ως \textbf{ανύψωση του συναλλοίωτου δείκτη $1 \le \alpha \le s$ υπό τον $g$} εννοείται ο $(r+1, s-1)$-τανυστής που αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:raising-index}
+S^{\,i_1 \dots i_{r+1}}_{\,j_1 \dots j_{s-1}}
+\,=\
+g^{\hspace{.5pt}\mu \hspace{.5pt} i_\alpha}\hspace{.5pt}Τ^{\,i_1 \dots
+i_{\alpha-1} i_{\alpha+1} \dots i_{r+1}}_{\,j_1 \dots j_{\alpha-1} \mu j_\alpha \dots j_{s-1}}
+\end{equation}
+\end{definition}
+\noindent
+Παρότι οι παραπάνω ορισμοί δίνονται με αναφορά σε επιλεγμένη βάση, ελέγχεται με χρήση της \eqref{eq:index-annihilation} ότι είναι ανεξάρτητοι από αυτήν· συγκεκριμένα, οι ποσότητες \eqref{eq:raising-index}, \eqref{eq:lowering-index}
+υπακούν στον μετασχηματισμό \eqref{eq:tensor-transform}
+κάτω από αλλαγή βάσης και άρα συγκροτούν πράγματι
+τανυστή τάξεως $(r-1, s+1)$, αντ. $(r+1, s-1)$.
+Σημειώνεται τέλος ότι οι παραπάνω εκφράσεις είναι γενικά ευαίσθητες στη θέση του πρώτου βωβού δείκτη $\mu$, ο οποίος καταλαμβάνει την αριστερή θέση· αμφότεροι οι ορισμοί θα μπορούσαν να δωθούν με τον $\mu$ να εμφανίζεται στην δεξιά θέση, χωρίς αυτό να επηρεάζει τη αλγεβρική χρησιμότητά τους (βλ. Ενότητα \ref{seq:induced-isomorphism-contravariance-covariance}) ---το σημαντικό είναι να συμφωνούν.
+Η διάκριση αυτή εκπίπτει εάν ο τανυστής $g$ είναι συμμετρικός και ενδιαφέρει μόνο κατά πρόσημο εάν είναι εναλλάσσων.
+
+\subsubsection{Πλήρης ανύψωση και καθίζηση}
+	\label{seq:full-raising-and-lowering}
+	
+Είναι σαφές ότι με διαδοχική εφαρμογή των παραπάνω πράξεων
+μπορούμε να κατεβάσουμε, αντ. ανεβάσουμε όλους τους ανταλλοίωτους, αντ. συναλλοίωτους δείκτες ενός τανυστή.
+Αυτό επιτρέπει την μετατροπή ενός ανταλλοίωτου, αντ. συναλλοίωτου τανυστή στον ``ομόλογό'' συναλλοίωτο, αντ. ανταλλοίωτο τανυστή ίσης τάξης υπό το πρίσμα της $g$.
+\begin{definition}[Πλήρης καθίζηση ανταλλοίωτου τανυστή υπό $2$-συναλλοίωτο τανυστή]
+	\label{def:full-lowering-index}
+Δοθέντος $r$-ανταλλοίωτου τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ^{\,i_1 \dots i_r}\}$ και $(0,2)$-τανυστή $g$ που αναπαρίσταται ως $\{g_{ij}\}$ ως προς την ίδια βάση, ως \textbf{πλήρης καθίζηση του $Τ$ υπό τον $g$} εννοείται ο $r$-συναλλοίωτος τανυστής που αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:full-lowering}
+Τ_{i_1 \dots i_r}
+\,=\,
+g_{\mu_1 i_1} \dots g_{\mu_r i_r} T^{\mu_1 \dots \mu_r}
+\end{equation}
+\end{definition}
+\begin{definition}[Πλήρης ανύψωση συναλλοίωτου τανυστή υπό $2$-ανταλλοίωτο τανυστή]
+	\label{def:full-raising-index}
+Δοθέντος $r$-συναλλοίωτου τανυστή $Τ$ που αναπαρίσταται από τις ποσότητες $\{Τ_{\,i_1 \dots i_r}\}$ και $(2,0)$-τανυστή $g$ που αναπαρίσταται ως $\{g^{\hspace{.5pt}ij}\}$ ως προς την ίδια βάση, ως \textbf{πλήρης ανύψωση του $Τ$ υπό τον $g$} εννοείται ο $r$-ανταλλοίωτος τανυστής που αναπαρίσταται από τις ποσότητες
+\begin{equation}\label{eq:full-raising}
+Τ^{\,i_1 \dots i_r}
+\,=\,
+g^{\hspace{.5pt}\mu_1 i_1} \dots g^{\hspace{.5pt}\mu_r i_r} T_{\mu_1 \dots \mu_r}
+\end{equation}
+\end{definition}
+\noindent
+Η θεμελιώδης εφαρμογή αυτών για τους σκοπούς της φυσικής και της γεωμετρίας παρουσιάζεται στην Eνότητα \ref{seq:induced-isomorphism-contravariance-covariance}. Συγκεκριμένα, υπό φυσιολογικές παραδοχές για τον τανυστή $g$, η παραπάνω συσχέτιση μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών στοιχειοθετεί ισομορφισμό που επιδέχεται γεωμετρικής ερμηνείας υπό το πρίσμα του $g$.
 
 \section{Επαγόμενος ισομορφισμός μεταξύ ανταλλοίωτων και συναλλοίωτων τανυστών ίσης τάξης}
 	\label{seq:induced-isomorphism-contravariance-covariance}
